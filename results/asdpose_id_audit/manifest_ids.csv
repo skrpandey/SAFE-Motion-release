@@ -1,0 +1,330 @@
+annotated_id,partition,n_groups,n_accepted_groups,canonical_person,conflict_people,status,n_segments,n_smm
+1,train,2,1,1,,accepted,58,11
+2,train,4,3,3,,accepted,150,60
+3,test,3,1,5,,accepted,80,4
+4,train,4,0,,,no candidate,117,23
+5,train,3,1,7,,accepted,71,4
+6,train,4,0,,,no candidate,137,39
+7,validation,4,4,11,,accepted,124,26
+8,train,4,0,,,no candidate,107,9
+9,validation,5,3,13,,accepted,159,11
+10,validation,4,2,15,,accepted,136,19
+11,train,1,0,,,no candidate,26,7
+12,train,4,3,17,,accepted,339,156
+13,train,4,3,18,,accepted,152,50
+14,validation,2,1,20,,accepted,59,15
+15,train,7,4,21,,accepted,172,15
+16,train,2,2,22,,accepted,123,22
+17,validation,3,1,24,,accepted,87,15
+18,train,2,2,25,,accepted,99,15
+19,train,4,2,26,,accepted,180,86
+20,train,2,0,,,no candidate,47,3
+21,test,3,3,28,,accepted,71,3
+22,train,4,1,29,,accepted,124,28
+23,train,4,2,30,,accepted,107,17
+24,train,3,2,31,,accepted,86,17
+25,validation,4,3,32,,accepted,183,25
+26,train,3,0,,,no candidate,64,14
+27,train,2,0,,,no candidate,48,2
+28,train,5,1,35,,accepted,125,12
+29,train,2,0,,,no candidate,47,3
+30,test,8,2,37,,accepted,243,56
+31,train,2,1,38,,accepted,40,4
+32,train,2,2,39,,accepted,57,7
+33,train,8,6,40,,accepted,309,31
+34,train,6,3,41,,accepted,171,18
+35,train,2,2,42,,accepted,119,22
+36,train,4,3,43,,accepted,139,35
+37,train,8,4,44,,accepted,336,79
+38,train,2,2,45,,accepted,52,3
+39,train,3,1,46,,accepted,84,18
+40,train,3,1,47,,accepted,85,7
+41,train,6,0,,,no candidate,187,21
+42,train,4,1,49,,accepted,89,5
+43,train,2,0,,,ambiguous only,46,2
+44,train,2,1,51,,accepted,79,28
+45,train,6,1,52,,accepted,146,9
+46,train,2,1,53,,accepted,76,7
+47,train,2,2,54,,accepted,50,6
+48,train,4,1,55,,accepted,93,6
+49,validation,4,1,56,,accepted,129,21
+50,train,2,0,,,no candidate,53,5
+51,train,2,1,58,,accepted,39,2
+52,train,3,3,59,,accepted,77,5
+53,train,4,1,60,,accepted,96,4
+54,train,4,2,61,,accepted,132,31
+55,train,2,2,62,,accepted,85,47
+56,train,4,2,63,,accepted,88,9
+57,train,5,0,,,ambiguous only,153,18
+58,train,3,0,,,no candidate,95,14
+59,test,1,1,67,,accepted,24,1
+60,validation,2,0,,,no candidate,55,10
+61,test,4,1,69,,accepted,99,16
+62,train,4,2,70,,accepted,98,5
+63,train,4,1,71,,accepted,103,10
+64,train,2,1,72,,accepted,48,2
+65,validation,4,3,73,,accepted,100,11
+66,test,3,1,74,,accepted,82,3
+67,train,2,0,,,no candidate,80,33
+68,test,2,0,,,no candidate,52,5
+69,train,4,2,77,,accepted,207,26
+70,train,3,0,,,no candidate,108,22
+71,validation,1,1,79,,accepted,72,12
+72,validation,4,1,80,,accepted,100,13
+73,train,2,1,81,,accepted,48,3
+74,train,5,0,,,ambiguous only,117,10
+75,train,4,2,83,,accepted,115,22
+76,train,2,0,,,no candidate,71,24
+77,train,4,3,85,,accepted,161,56
+78,train,2,2,86,,accepted,46,2
+79,train,4,1,87,,accepted,101,23
+80,train,2,0,,,no candidate,76,32
+81,validation,3,3,88,,accepted,73,6
+82,validation,4,0,,,no candidate,88,7
+83,train,3,0,,,no candidate,88,9
+84,validation,4,2,90,,accepted,152,11
+85,train,2,0,,,no candidate,66,17
+86,train,4,0,,,no candidate,148,34
+87,train,1,0,,,no candidate,26,1
+88,train,3,3,94,,accepted,88,19
+89,validation,4,0,,,no candidate,199,24
+90,train,1,0,,,no candidate,29,6
+91,train,2,0,,,no candidate,57,7
+92,train,4,0,,,no candidate,111,26
+93,train,2,1,97,,accepted,148,49
+94,train,2,2,98,,accepted,48,2
+95,train,4,4,99,,accepted,114,34
+96,train,2,2,100,,accepted,48,2
+97,train,4,3,101,,accepted,112,8
+98,validation,4,4,102,,accepted,157,12
+99,train,1,1,103,,accepted,20,1
+100,validation,4,4,104,,accepted,86,4
+101,train,3,2,105,,accepted,68,11
+102,train,2,0,,,ambiguous only,70,30
+103,train,4,1,107,,accepted,234,43
+104,train,4,0,,,no candidate,100,14
+105,validation,4,3,108,,accepted,157,38
+106,train,4,4,109,,accepted,120,26
+107,train,2,2,110,,accepted,69,12
+108,test,2,2,111,,accepted,65,9
+109,train,3,2,112,,accepted,137,57
+110,validation,3,3,113,,accepted,76,6
+111,train,2,2,114,,accepted,56,9
+112,validation,7,2,115,,accepted,189,43
+113,test,2,2,116,,accepted,158,53
+114,train,1,0,,,no candidate,20,2
+115,train,4,4,118,,accepted,181,40
+116,test,2,0,,,no candidate,53,4
+117,validation,2,1,120,,accepted,56,11
+118,train,4,4,121,,accepted,160,23
+119,train,4,3,122,,accepted,114,30
+120,train,3,1,123,,accepted,61,6
+121,validation,3,2,124,,accepted,69,4
+122,validation,2,0,,,no candidate,50,6
+123,train,3,2,126,,accepted,83,7
+124,train,1,0,,,no candidate,19,2
+125,train,2,1,128,,accepted,74,40
+126,train,2,2,129,,accepted,60,12
+127,train,2,2,130,,accepted,42,2
+128,train,3,0,,,no candidate,91,17
+129,train,2,0,,,no candidate,47,4
+130,train,2,1,133,,accepted,71,25
+131,train,2,1,134,,accepted,60,13
+132,test,2,0,,,no candidate,93,35
+133,train,4,3,135,,accepted,110,16
+134,train,3,0,,,ambiguous only,87,13
+135,train,3,3,138,,accepted,98,12
+136,validation,4,3,140,,accepted,105,8
+137,train,2,0,,,no candidate,52,2
+138,validation,4,2,142,,accepted,120,9
+139,test,4,3,143,,accepted,165,80
+140,train,3,1,144,,accepted,61,6
+141,train,4,4,145,,accepted,131,41
+142,train,4,2,146,,accepted,125,29
+143,train,3,2,148,,accepted,95,21
+144,train,3,3,149,,accepted,84,9
+145,train,4,2,150,,accepted,92,15
+146,train,6,0,,,no candidate,153,19
+147,train,4,4,152,,accepted,131,34
+148,test,1,0,,,no candidate,50,25
+149,train,4,2,154,,accepted,168,76
+150,validation,4,1,155,,accepted,89,9
+151,train,4,1,158,,accepted,230,42
+152,train,3,2,159,,accepted,118,51
+153,train,3,0,,,no candidate,98,15
+154,train,3,3,162,,accepted,86,20
+155,train,4,4,163,,accepted,129,32
+156,test,4,2,164,,accepted,150,48
+157,train,3,0,,,no candidate,80,9
+158,train,4,1,167,,accepted,166,67
+159,train,3,0,,,no candidate,88,11
+160,train,4,2,170,,accepted,108,8
+161,train,3,2,171,,accepted,84,11
+162,train,4,0,,,no candidate,97,8
+163,train,1,0,,,no candidate,23,2
+164,train,4,3,173,,accepted,91,18
+165,validation,7,0,,,no candidate,486,193
+166,train,3,0,,,no candidate,78,7
+167,train,3,1,174,,accepted,69,11
+168,train,2,1,177,,accepted,52,2
+169,validation,3,1,178,,accepted,79,12
+170,train,4,0,,,no candidate,116,33
+171,train,3,2,179,,accepted,90,14
+172,train,5,2,180,,accepted,282,52
+173,validation,6,3,181,,accepted,241,110
+174,validation,3,3,182,,accepted,103,19
+175,train,4,0,,,no candidate,262,147
+176,train,3,0,,,no candidate,87,11
+177,train,2,2,184,,accepted,56,4
+178,train,4,2,186,,accepted,213,55
+179,train,4,1,187,,accepted,161,55
+180,test,8,0,,,no candidate,253,40
+181,train,1,0,,,no candidate,26,2
+182,train,4,0,,,no candidate,101,13
+183,test,4,0,,,no candidate,161,29
+184,test,1,0,,,no candidate,40,1
+185,test,2,0,,,no candidate,44,3
+186,test,4,0,,,no candidate,154,32
+187,train,4,3,189,,accepted,143,45
+188,train,2,1,191,,accepted,71,19
+189,train,3,0,,,no candidate,100,13
+190,test,4,0,,,no candidate,97,23
+191,train,4,0,,,no candidate,88,7
+192,validation,4,0,,,no candidate,250,57
+193,train,8,0,,,no candidate,418,82
+194,train,4,1,193,,accepted,248,83
+195,train,3,0,,,no candidate,142,12
+196,train,2,1,194,,accepted,40,7
+197,train,3,1,195,,accepted,92,26
+198,test,4,0,,,no candidate,202,53
+199,train,4,4,196,,accepted,86,6
+200,train,4,0,,,no candidate,221,39
+201,validation,2,0,,,no candidate,47,3
+202,train,2,0,,,no candidate,60,7
+203,validation,7,0,,,no candidate,189,23
+204,test,3,0,,,no candidate,90,12
+205,train,2,1,197,,accepted,83,8
+206,train,3,0,,,no candidate,75,4
+207,train,3,0,,,no candidate,81,4
+208,train,2,1,199,,accepted,79,18
+209,train,4,0,,,no candidate,158,53
+210,test,1,0,,,no candidate,21,5
+211,train,7,0,,,no candidate,241,34
+212,validation,2,0,,,no candidate,72,18
+213,train,4,3,201,,accepted,112,12
+214,train,5,1,202,,accepted,152,17
+215,test,5,0,,,no candidate,167,17
+216,validation,1,0,,,no candidate,80,23
+217,train,4,2,204,,accepted,152,21
+218,train,2,2,205,,accepted,203,89
+219,validation,1,0,,,no candidate,24,2
+220,train,3,0,,,no candidate,67,8
+221,train,6,3,207,,accepted,142,11
+222,train,4,3,209,,accepted,159,26
+223,train,2,1,210,,accepted,153,110
+224,train,2,1,211,,accepted,53,10
+225,validation,1,0,,,no candidate,30,1
+226,validation,4,1,212,,accepted,115,28
+227,train,8,0,,,no candidate,273,72
+228,train,4,4,213,,accepted,159,43
+229,train,1,0,,,no candidate,19,2
+230,validation,3,1,215,,accepted,123,23
+231,train,2,0,,,no candidate,42,3
+232,validation,4,0,,,no candidate,176,43
+233,test,7,0,,,no candidate,207,29
+234,validation,4,0,,,no candidate,153,27
+235,train,8,0,,,no candidate,305,72
+236,train,4,3,217,,accepted,149,14
+237,test,3,0,,,no candidate,141,25
+238,train,1,0,,,no candidate,29,1
+239,train,4,0,,,no candidate,106,7
+240,validation,4,3,218,,accepted,188,91
+241,test,4,0,,,no candidate,141,31
+242,train,1,0,,,no candidate,22,2
+243,train,4,2,220,,accepted,197,101
+244,train,2,1,221,,accepted,103,17
+245,train,3,0,,,ambiguous only,94,14
+246,validation,4,4,223,,accepted,109,6
+247,test,1,0,,,no candidate,43,9
+248,train,3,1,224,,accepted,86,9
+249,train,2,1,225,,accepted,56,10
+250,train,4,0,,,no candidate,140,41
+251,validation,4,2,226,,accepted,190,43
+252,train,4,0,,,no candidate,141,48
+253,train,4,0,,,no candidate,177,32
+254,validation,2,0,,,no candidate,51,4
+255,train,6,4,227,,accepted,208,25
+256,validation,1,0,,,no candidate,25,2
+257,train,3,0,,,no candidate,99,6
+258,train,1,0,,,no candidate,34,6
+259,train,7,0,,,no candidate,201,33
+260,train,1,0,,,no candidate,26,3
+261,train,4,1,230,,accepted,148,62
+262,train,3,0,,,no candidate,89,16
+263,train,4,3,231,,accepted,149,25
+264,train,4,1,232,,accepted,194,49
+265,validation,4,3,233,,accepted,115,14
+266,train,4,1,234,,accepted,107,15
+267,train,3,0,,,no candidate,74,8
+268,validation,4,2,235,,accepted,180,19
+269,train,4,1,236,,accepted,122,25
+270,test,4,0,,,no candidate,202,80
+271,validation,1,0,,,no candidate,31,2
+272,train,4,0,,,no candidate,174,32
+273,train,4,0,,,no candidate,170,33
+274,train,2,0,,,no candidate,41,4
+275,train,1,1,239,,accepted,25,3
+276,train,3,0,,,no candidate,95,18
+277,train,3,0,,,no candidate,92,10
+278,train,3,0,,,no candidate,83,26
+279,train,1,0,,,no candidate,25,4
+280,train,2,2,240,,accepted,66,9
+281,train,3,1,241,,accepted,88,16
+282,test,4,0,,,no candidate,126,24
+283,validation,4,1,2,,accepted,201,47
+284,train,4,3,4,,accepted,207,57
+285,train,4,0,,,no candidate,207,44
+286,test,4,0,,,no candidate,155,27
+287,train,4,0,,,no candidate,6,6
+288,train,7,6,14,,accepted,289,46
+289,train,3,0,,,no candidate,4,4
+290,train,1,1,23,,accepted,1,1
+291,train,4,0,,,no candidate,217,53
+292,train,2,0,,,no candidate,109,30
+293,train,4,0,,,no candidate,230,81
+294,train,3,0,,,no candidate,124,0
+295,train,2,0,,,no candidate,93,7
+296,test,4,2,141,,accepted,170,28
+297,test,3,3,147,,accepted,119,6
+298,train,4,2,156,,accepted,195,53
+299,train,4,0,,,no candidate,187,25
+300,train,4,0,,,no candidate,304,150
+301,validation,4,2,161,,accepted,221,38
+302,train,3,0,,,no candidate,148,29
+303,test,5,1,169,,accepted,255,44
+304,test,3,0,,,no candidate,146,37
+305,train,3,0,,,no candidate,142,36
+306,validation,4,0,,,no candidate,219,46
+307,test,2,0,,,ambiguous only,132,49
+308,validation,3,0,,,no candidate,151,35
+309,train,4,0,,,no candidate,308,149
+310,test,3,3,183,,accepted,120,5
+311,test,3,3,185,,accepted,104,30
+312,train,6,0,,,no candidate,100,100
+313,train,8,0,,,no candidate,66,66
+314,train,2,0,,,no candidate,20,20
+315,train(short only),3,1,188,,accepted,3,3
+316,test,3,0,,,no candidate,44,44
+317,train,6,0,,,no candidate,26,26
+318,train(short only),4,0,,,no candidate,29,29
+319,train,4,3,190,,accepted,34,34
+320,test,4,0,,,no candidate,32,32
+321,train,7,3,192,,accepted,39,39
+322,validation,7,1,194,,accepted,50,50
+323,train(short only),3,0,,,no candidate,6,6
+324,validation,3,1,198,,accepted,11,11
+325,validation,3,1,200,,accepted,14,14
+326,train,4,1,203,,accepted,54,54
+327,train,8,6,206,,accepted,20,20
+328,train,4,4,208,,accepted,7,7
+329,validation,4,0,,,no candidate,29,29

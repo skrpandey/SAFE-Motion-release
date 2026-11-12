@@ -1,0 +1,101 @@
+identifier,answer,frames_with_person,reason
+v_ArmFlapping_01_neg_161_322,unsure,8,hand held at mouth in every frame; static; eating or hand action unclear
+v_ArmFlapping_02_neg_1050_1250,unsure,7,only head visible; arms cropped; blurred
+v_ArmFlapping_02_neg_1250_1450,unsure,5,heavy blur; child partly visible; arms not seen
+v_ArmFlapping_03_neg_0_100,no,8,infant sitting still on floor; dark; arms low
+v_ArmFlapping_03_neg_100_200,no,8,infant sitting; arms low near lap; ordinary
+v_ArmFlapping_03_neg_636_737,unsure,8,arm motion blur in several frames but below shoulder; dark
+v_ArmFlapping_05_neg_240_340,no,8,infant lying still on mat
+v_ArmFlapping_08_neg_894_1054,no,8,toddler sitting with book; reaching
+v_ArmFlapping_09_neg_510_710,no,8,girl reading book; one frame hand to face
+v_ArmFlapping_09_neg_2160_2360,no,8,girl reading on couch
+v_ArmFlapping_09_neg_3260_3460,no,8,girl reading and turning pages
+v_ArmFlapping_13_neg_0_200,no,8,baby sitting playing with push toy; some blur
+v_ArmFlapping_14_neg_736_836,unsure,8,hands clasped at chest across frames; holding or wringing unclear
+v_ArmFlapping_18_neg_700_900,unsure,8,block play; arm raised to head only in last two frames
+v_ArmFlapping_18_neg_2360_2560,no,8,boy playing with blocks; crawling; reaching
+v_ArmFlapping_22_neg_315_413,unsure,8,hands at belly; single blurred raised-arm frame
+v_ArmFlapping_24_neg_425_592,unsure,8,walking outdoors; one frame arms bent at shoulder
+v_ArmFlapping_28_neg_270_470,yes,8,hand to face frames 1/4/5 alternating with arm down; fist raised frame 6
+v_ArmFlapping_28_neg_470_670,unsure,8,arms out to sides at chest height frames 3-6; below shoulder
+v_ArmFlapping_29_neg_540_740,no,8,toddler eating in high chair
+v_ArmFlapping_29_neg_1140_1340,unsure,8,being fed; arm raised at head frames 5-6; narrow crop
+v_ArmFlapping_30_neg_11030_11230,unsure,8,lying in bed; hand held at face all frames; dark
+v_ArmFlapping_31_neg_529_729,unsure,7,close-up head; arms mostly cropped; camera moving
+v_ArmFlapping_31_neg_929_1129,no,3,holding toy in frames 1-3 then out of frame
+v_ArmFlapping_34_neg_1823_1990,unsure,5,hands together at chin frames 5-6; arms out frame 7; clapping?
+v_ArmFlapping_36_neg_3410_3610,yes,8,bent-elbow hand raise repeated frames 3-8; cloth shaken in other hand
+v_ArmFlapping_40_neg_879_1039,no,8,infant on tummy then crawling
+v_ArmFlapping_41_neg_749_949,unsure,0,no person in any frame
+v_ArmFlapping_44_neg_4049_4208,unsure,8,head close-up looking down; arms not visible
+v_ArmFlapping_46_neg_160_320,unsure,8,head only; arms cropped
+v_ArmFlapping_52_neg_2119_2280,unsure,8,mostly head; arms largely cropped
+v_ArmFlapping_53_neg_150_350,unsure,8,car seat; arms folded; hand at chin static
+v_ArmFlapping_57_neg_150_250,no,8,baby crawling
+v_ArmFlapping_60_neg_7612_8012,unsure,8,adults in car; hand held over mouth frames 4-8; static
+v_ArmFlapping_60_neg_15205_15604,unsure,8,only waist and hands fiddling with pocket; head not visible
+v_HandAction_01_0_neg_3017_3217,yes,8,hands on face in changing positions frames 1-4; hands moving 7-8
+v_HandAction_01_0_neg_4815_5015,no,8,sitting still; one hand to chin once
+v_HandAction_02_0_neg_2438_2637,unsure,0,title text frames only
+v_HandAction_04_neg_2400_2600,unsure,8,talking head; arms cropped; hand appears once
+v_HandAction_04_neg_3800_4000,unsure,8,talking head; arms not visible
+v_HandAction_04_neg_5380_5580,no,8,child standing back to camera; arms at sides
+v_HandAction_05_0_neg_0_200,unsure,8,close-up talking; hand near face or neck in 3 frames
+v_HandAction_05_0_neg_2800_3000,unsure,6,person small; turning while handling clothing; then leaves
+v_HandAction_05_0_neg_5400_5600,unsure,8,figure small and distant; arms hard to see
+v_HandAction_05_0_neg_8200_8400,unsure,5,person at frame edge; small; mostly cropped
+v_HandAction_06_neg_1760_1960,yes,8,hands at face in changing postures: clasped; spread; on cheeks
+v_HandAction_07_neg_400_600,no,8,boy kneeling at table playing with toy
+v_HandAction_07_neg_800_1000,no,8,boy crawling on floor playing
+v_HandAction_09_neg_330_530,unsure,8,only top of head and eyes visible
+v_HandAction_10_neg_510_710,unsure,0,empty room
+v_HeadBanging_10_neg_0_200,no,6,toddler in high chair watching screen
+v_HeadBanging_10_neg_720_920,unsure,8,hands together in front of chest all frames; clapping or wringing unclear
+v_HeadBanging_10_neg_1120_1320,unsure,8,pointing gestures with raised arm; then crying
+v_HeadBanging_13_neg_507_661,yes,8,arms raised above shoulders elbows bent; changing frames 1-5
+v_HeadBanging_15_neg_1061_1246,unsure,8,lying on bed; hand at face frames 1-2; then face close-up
+v_HeadBanging_16_neg_0_200,unsure,6,only top of head; blurred
+v_HeadBanging_16_neg_770_970,unsure,5,only top of head at frame edge; blurred
+v_HeadBanging_17_neg_2800_3000,no,6,baby leaning on windowsill looking outside
+v_HeadBanging_22_neg_0_112,yes,8,arms above shoulder; hair whipping; facing changes across frames
+v_HeadBanging_36_neg_909_1089,unsure,8,car interior; only top of head
+v_HeadBanging_39_neg_993_1191,yes,8,head repeatedly lowered toward table with motion blur
+v_HeadBanging_39_neg_1787_1986,yes,8,head repeatedly down at table edge with blur; adult hand on back
+v_HeadBanging_42_neg_0_200,no,8,baby sitting on floor playing
+v_HeadBanging_46_neg_1367_1526,no,8,child sitting on adult lap; then gets up
+v_HeadBanging_46_neg_2805_2965,unsure,0,text only
+v_HeadBanging_47_1_neg_0_200,unsure,2,photo montage; filmed child only in 2 frames
+v_HeadBanging_47_1_neg_200_400,no,8,compilation: toddler in high chair; child at glass door
+v_HeadBanging_48_neg_0_182,no,8,toddler crouched looking at object in hands
+v_HeadBanging_53_0_neg_2810_3010,yes,8,head down to carpet frames 1/3-5; up 2/6-8; repeated
+v_HeadBanging_53_0_neg_9410_9610,no,8,boy at restaurant table playing; turning
+v_Spinning_07_neg_398_531,yes,8,facing back/side repeatedly; arm out; hair flying
+v_Spinning_16_neg_437_544,unsure,0,dark frames; no person visible
+v_Spinning_18_neg_4470_4670,no,8,standing at gate holding rail; still
+v_Spinning_21_neg_610_693,unsure,8,single half-turn while looking up; no repeated rotation
+v_Spinning_21_neg_776_859,unsure,8,back to camera then turns in last frames; camera moving
+v_Spinning_21_neg_943_1026,unsure,8,blurred; looking up; some facing changes; not conclusive
+v_Spinning_21_neg_1109_1192,unsure,8,face close-up then blurred back of head; arms not visible
+v_Spinning_25_neg_0_200,unsure,7,dark; pushing toy; leaning over with head down once
+v_Spinning_31_neg_869_1069,unsure,8,face close-up; arms not visible
+v_Spinning_40_neg_480_679,yes,8,facing front/back alternately; looking up; bent arms raised
+v_Spinning_40_neg_1079_1279,yes,8,repeated front/back facing changes; arms out; looking up
+v_Spinning_43_neg_0_160,yes,6,arms outstretched at shoulder while body turns frames 1-4
+v_Spinning_44_neg_660_860,yes,8,repeated facing changes while looking up; arm out
+v_Spinning_44_neg_1260_1460,yes,8,front/side/back repeated; looking up; hands raised
+v_Spinning_44_neg_1860_2060,yes,8,front/back alternating across frames; looking up
+v_Spinning_47_neg_0_200,unsure,8,small and dark; arms forward possibly holding a device
+v_Spinning_47_neg_960_1160,yes,8,facing changes with arms out and hair flying; small and dark
+v_Spinning_48_neg_0_200,unsure,4,child barely visible at bottom edge; blurred
+v_Spinning_48_neg_1800_2000,unsure,5,only head at bottom edge
+v_Spinning_54_neg_404_474,yes,8,front-side-back-front rotation frames 1-4
+v_Spinning_54_neg_682_752,yes,8,back-side-front turns frames 1-4 with blur; then falls
+v_Spinning_55_neg_1360_1560,yes,8,facing direction changes nearly every frame; arm raised
+v_Spinning_57_neg_760_920,yes,8,front-side-back-front rotation frames 5-8
+v_Spinning_62_neg_0_200,yes,8,arms raised at or above shoulder in changing positions
+v_Spinning_62_neg_200_400,yes,8,arms raised above shoulder repeatedly; tilted camera
+v_Spinning_62_neg_1010_1210,unsure,8,toddler walking arms out; older boy close-up; one arm raised
+v_Spinning_63_neg_1010_1210,yes,7,arms out at shoulder while turning; then hands up on dishwasher
+v_Spinning_63_neg_2210_2410,yes,8,arms outstretched; facing changes back/side/front
+v_Spinning_64_neg_1159_1359,unsure,8,partial turn looking up; one bend; inconclusive
+v_Spinning_64_neg_2557_2757,unsure,7,heavy camera blur; child partly cropped

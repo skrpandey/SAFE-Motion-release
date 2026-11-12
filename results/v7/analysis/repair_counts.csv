@@ -1,0 +1,10 @@
+# descriptive counts from the repair_selection_v14 train logs (read only)
+quantity,value
+fits,164
+"selected epoch is the last (25), original rule",25
+"selected epoch is the last (25), cleaned rule",24
+selections changed by the cleaned rule,12
+validation rows pool -> cleaned (134 fits),2713 -> 2702
+validation rows pool -> cleaned (30 fits),5620 -> 5601
+code.commit = (blank),30
+code.commit = 1eb7012,134

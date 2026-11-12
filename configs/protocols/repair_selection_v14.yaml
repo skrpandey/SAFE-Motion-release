@@ -1,0 +1,56 @@
+# Protocol repair_selection_v14: post hoc repair of a discovered validation alias (2026-11-05)
+# Approved by the author 2026-11-05 (staged option B, USD 30 cap). Written and committed before any
+# model trained under it is scored. The commit hash is recorded in configs/protocols/REGISTRY.md.
+status: post hoc repair of a discovered issue; within-project prespecification only
+issue: >
+  Raw child 194 appears as annotated ID 196 in the optimization split and as ID 322 in the internal
+  validation split of every ASDPose fit (seed-0 subject split of the length-protocol rows,
+  train_asdpose.py line 169), 19 of 5,620 validation rows on the real split and 11 of 2,713 on the
+  host. Validation was used only to select the best epoch. Epoch states were not stored, so the
+  repair reruns the trajectories. Evidence in results/asdpose_id_audit/DECISION.md and
+  docs/REPAIR_DECISION_2026-11-05.md.
+scope: >
+  All 164 ASDPose fits, the exact lines of aws/queue_v7.txt (71), queue_v8.txt (24),
+  queue_v10.txt (27), queue_v12.txt (36) and queue_v13.txt (6). First the 30 headline fits (v13 six,
+  v12 C_groupdro twelve, v7 runs-mid A_none six, v8 frozen-mid A_none six), then the other 134.
+fixed_recipe: >
+  Training data, architecture, optimization, learning-rate schedule (cosine, 25 epochs), batch
+  size, AMP, seeds, masks and evaluation population as in the historical lines. The only added work
+  per epoch is saving the state and the validation predictions.
+val_exclude_ids: [322]
+val_exclude_rule: validation rows of any person already used for optimization
+selection:
+  metric: validation AUROC (unchanged)
+  tie_rule: first epoch reaching the maximum, strict improvement (unchanged)
+  original: all validation rows (historical membership); sensitivity comparison
+  cleaned: validation rows without val_exclude_ids; PRIMARY reported results
+  computed_from: the same per-epoch validation predictions for both rules
+outputs:
+  epoch_dir: results/repair_v14/epochs
+  cache_root: cache/repair_v14
+  note: >
+    epoch_dir holds per-epoch states, val_preds.npz and train_log.json per fit; cache_root holds
+    orig/ and clean/ checkpoints with the historical file names. score_v7.py, score_v10.py,
+    score_v12.py and score_v13.py run once per selection with --cache-dir cache/repair_v14/RULE
+    and --out results/repair_v14/RULE/PROTOCOL.
+result_sets:
+  historical: the original checkpoints and score files (unchanged, preserved)
+  rerun_orig: rerun, original selection rule (sensitivity; separates rerun variability)
+  rerun_clean: rerun, cleaned selection rule (primary)
+reporting_rules: >
+  Report the number of fits whose selected epoch changes between the two rules, per protocol.
+  Regenerate every retained table and figure from rerun_clean, with rerun_orig and historical
+  beside it in the supplement. No completion criterion depends on sign, size, significance or
+  unchanged checkpoints.
+operators: >
+  Implementation frozen as of this commit. No operator correction is included (the two clipped
+  validation draws give identical masks under the corrected initialization). Boundary events are
+  logged without random draws (safe_motion/eventlog.py, SM_EVENT_LOG), namely augmentation
+  severities above 15/16 and whole-segment frozen segments (hold mode, segment unchanged).
+  Static-mask clipping counts are stored in each train_log.json.
+determinism: >
+  Torch and cuDNN versions, cudnn benchmark and deterministic flags, GPU, git commit and the
+  cache-index hash are recorded per fit. GPU kernels are not bitwise deterministic, so these are
+  reruns of the same recipe, not reproductions of the historical trajectories.
+budget: USD 30 total for compute and storage; report before exceeding it
+excluded: [C1, C4, C5, C6]

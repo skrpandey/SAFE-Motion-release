@@ -1,0 +1,26 @@
+contrast,point,ci_lo,ci_hi,verdict,group,auc_conf0,logit_point,logit_lo,logit_hi
+conf0 - clean (raw AUC),-0.0082,-0.0263,0.0085,undetermined,ours_v10_A_both,0.5988,-0.0343,-0.1089,0.0347
+conf0 - clean (raw AUC),-0.0287,-0.0600,-0.0016,differs_from_zero,ours_v10_A_dropout,0.6101,-0.1224,-0.2582,-0.0068
+conf0 - clean (raw AUC),-0.0340,-0.0611,-0.0095,differs_from_zero,ours_v10_A_none,0.6066,-0.1447,-0.2609,-0.0406
+conf0 - clean (raw AUC),-0.0078,-0.0318,0.0162,undetermined,ours_v10_A_velocity,0.6027,-0.0325,-0.1330,0.0682
+conf0 - clean (raw AUC),-0.0285,-0.0567,-0.0027,differs_from_zero,ours_v10_B_coorddrop,0.6076,-0.1212,-0.2440,-0.0115
+conf0 - clean (raw AUC),0.0087,-0.0206,0.0365,undetermined,ours_v7_A_both,0.5873,0.0359,-0.0855,0.1514
+conf0 - clean (raw AUC),-0.0074,-0.0322,0.0155,undetermined,ours_v7_A_dropout,0.6178,-0.0316,-0.1384,0.0664
+conf0 - clean (raw AUC),-0.0497,-0.0792,-0.0225,differs_from_zero,ours_v7_A_none,0.5916,-0.2104,-0.3373,-0.0966
+conf0 - clean (raw AUC),-0.0040,-0.0357,0.0257,undetermined,ours_v7_A_velocity,0.5748,-0.0163,-0.1468,0.1059
+conf0 - clean (raw AUC),-0.0658,-0.1045,-0.0308,differs_from_zero,ours_v7_B_coorddrop,0.5628,-0.2735,-0.4340,-0.1297
+conf0 - clean (raw AUC),-0.0473,-0.0935,-0.0017,differs_from_zero,abl_dropout,0.5585,-0.1946,-0.3848,-0.0071
+conf0 - clean (raw AUC),-0.0066,-0.0328,0.0223,undetermined,abl_dropout_v3norm,0.5855,-0.0271,-0.1368,0.0926
+conf0 - clean (raw AUC),-0.0391,-0.0830,0.0041,undetermined,abl_velocity,0.5653,-0.1612,-0.3414,0.0170
+conf0 - clean (raw AUC),0.0415,-0.0113,0.0921,undetermined,abl_velocity_v3norm,0.5416,0.1664,-0.0452,0.3705
+conf0 - clean (raw AUC),-0.0619,-0.1091,-0.0150,differs_from_zero,v1,0.5877,-0.2629,-0.4630,-0.0642
+conf0 - clean (raw AUC),-0.0108,-0.0349,0.0128,undetermined,v2_family,0.5699,-0.0440,-0.1445,0.0530
+conf0 - clean (raw AUC),0.0275,-0.0149,0.0735,undetermined,v3,0.5958,0.1131,-0.0621,0.3010
+conf0 - clean (raw AUC),-0.0073,-0.0329,0.0185,undetermined,permuted_v1,0.5712,-0.0298,-0.1347,0.0754
+conf0 - clean (raw AUC),-0.0426,-0.0777,-0.0088,differs_from_zero,permuted_v2,0.4997,-0.1707,-0.3137,-0.0352
+conf0 - clean (raw AUC),0.0000,0.0000,0.0000,within_margin,v3_noconf_family,0.5639,0.0000,0.0000,0.0000
+conf0 - clean (raw AUC),-0.0397,-0.0806,0.0035,undetermined,agcn_base,0.5913,-0.1671,-0.3422,0.0142
+conf0 - clean (raw AUC),-0.0230,-0.0581,0.0144,undetermined,agcn_remedies,0.5832,-0.0956,-0.2402,0.0596
+conf0 - clean (raw AUC),-0.0353,-0.0783,0.0061,undetermined,base_no_remedies,0.5731,-0.1461,-0.3282,0.0251
+conf0 - clean (raw AUC),-0.0462,-0.0934,-0.0006,differs_from_zero,stgcn_base,0.5519,-0.1892,-0.3859,-0.0024
+conf0 - clean (raw AUC),0.0021,-0.0200,0.0235,undetermined,stgcn_remedies,0.5887,0.0088,-0.0819,0.0980

@@ -1,0 +1,12 @@
+stage,segments,children,smm,non_smm
+release (cache index),36928,329,8267,28661
+"release, train split",32177,289,7210,24967
+"release, test split",4751,40,1057,3694
+"QC pass (both classes), all",17770,327,5796,11974
+"length protocol (n_frames >= 200), all",30227,326,6782,23445
+"real train (length, train children minus validation)",20773,229,4797,15976
+"real validation (length, 20 percent of train children)",5620,57,1199,4421
+real test (length),3834,40,786,3048
+host train (length + QC pass),9859,227,3318,6541
+host validation (length + QC pass),2713,57,844,1869
+host test (length + QC pass),1966,40,596,1370

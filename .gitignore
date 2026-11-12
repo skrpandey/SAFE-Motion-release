@@ -1,0 +1,35 @@
+# Data, caches and model weights stay out of git
+/cache/
+/data/
+checkpoints/
+*.pt
+*.pth
+*.pkl
+*.npz
+*.npy
+*.zip
+# Large run outputs; per-run score CSVs and summaries are committed
+results/**/raw/
+logs/**/*.out
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.synctex*
+paper/build.log
+results/v9_smoke/
+results/v10_smoke/
+paper/figures/*.png
+results/v11_smoke/
+results/v11/features/
+results/v11/features_mediapipe/
+results/v11/within_set/
+results/v11/label_noise_sheets/
+results/v11/mediapipe_cache/keypoints.f32

@@ -1,0 +1,3 @@
+world,n,segments_with_newly_valid_jf,newly_valid_jf_mean,corr_newly_valid_vs_eps,centroid_shift_norm_mean,centroid_shift_norm_max,corr_shift_vs_eps,auc_newly_valid_vs_label
+S,1966,1233,18.51,0.378,0.0098,0.1908,0.345,0.426
+I,1966,1233,18.24,0.365,0.0097,0.1584,0.339,0.508

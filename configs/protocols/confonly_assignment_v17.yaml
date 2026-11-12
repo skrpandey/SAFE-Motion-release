@@ -1,0 +1,116 @@
+# Protocol v17: replication of the corrected confidence-only no-remedy contrast under independently
+# regenerated training assignments. Every earlier confidence-only cell (v13, v15conf, v16) used one
+# realization of the planted training worlds (world seed 0). This protocol regenerates the per-segment
+# severities and masks of both worlds three times (world seeds 1, 2, 3) and retrains the no-remedy
+# cell in each, so that assignment-to-assignment variation can be reported separately from
+# optimizer-seed variation. Frozen and committed before any fit under it is trained or scored; the
+# commit hash is recorded in configs/protocols/REGISTRY.md by the following commit. Definitions
+# (host, operator, worlds, severities, R, MWI, mask-mean statistics, length protocol, selection
+# repair, training recipe) are those of v13, repair_selection_v14, v15conf and v16 unless restated.
+
+frozen: true
+frozen_date: 2026-11-11
+status: within-project prespecification; added after the v16 analyses, frozen before its fits
+purpose: >
+  Measure how much the confidence-only matched-world interaction varies when the planted training
+  assignments of World S and World I are regenerated. The nine-seed and ST-GCN results of v16 hold
+  the v15conf training masks fixed, so they establish replication over optimizer seeds and
+  architecture conditional on one construction of the training worlds. Every assignment is
+  reported, including an adverse one.
+depends_on: [armconf_v13.yaml, repair_selection_v14.yaml, remedies_confonly_v15.yaml,
+             confonly_extension_v16.yaml, train_recipe_v15.md]
+inherits: confonly_extension_v16.yaml
+
+# ------------------------------------------------------------------ common setting
+mechanism: armruns              # operator confscale (safe_motion/planted.py MECHANISM_MODE)
+strength: mid
+worlds: [S, I]
+world_seeds: [1, 2, 3]          # training-assignment realizations; seed 0 is the v15conf/v16 assignment
+world_seed_0: >
+  the v15conf A_none fits (seeds 0-2, world seed 0) are reported beside the new assignments as a
+  fourth point and are not pooled with them. The seeds of the severity and mask generators carry
+  the world letter (safe_motion/planted.py tags sev|{world}|mid|armruns{seed} and
+  armrunsmask|{world}|mid|{seed}), so the World S and World I draws of one world seed are
+  independent of each other and of every other world seed.
+valid_rule: coords              # the coordinate-invariant rule of protocol v13
+training_recipe: v15            # configs/protocols/train_recipe_v15.md; the trainer refuses v17 otherwise
+model_and_training: >
+  as v15conf and v16 part B: CompactCTRGCN, 25 epochs, batch 128, AMP, image normalisation,
+  cosine schedule, AdamW 1e-3 / 1e-4, c_in 3 (x, y, confidence), no dropout, no remedy
+selection:
+  machinery: per-epoch path of repair_selection_v14 (every epoch state and validation predictions stored)
+  metric: validation AUROC, first epoch reaching the maximum
+  cleaned: validation rows without val_exclude_ids; PRIMARY
+  original: all validation rows; stored and scored as a sensitivity set
+val_exclude_ids: [322]
+val_exclude_rule: validation rows of any person already used for optimization (repair_selection_v14)
+outputs:
+  epoch_dir: results/v17/epochs
+  cache_root: cache/v17
+note: protocol v17, confidence-only training-assignment replication
+
+# ------------------------------------------------------------------ parts and cells
+parts:
+  A_assignments:
+    cell: A_none (CompactCTRGCN)
+    seeds: [0, 1, 2]
+    world_seeds: [1, 2, 3]
+    runs: "3 world seeds x 2 worlds x 3 seeds = 18"
+runs_total: 18
+
+# ------------------------------------------------------------------ gates
+gates:
+  G17_invariance: >
+    All fits use the SegmentDataset path with the "coords" rule unchanged, so the v13 invariance
+    gate applies (coordinates identical under both test policies); score_v16.py refuses a
+    checkpoint that does not carry valid_rule "coords".
+  G17_convergence: >
+    An assignment is interpreted only if the mean clean-test AUROC of its World I models (cleaned
+    selection, three seeds) is at least 0.75, the v16 gate. An assignment that fails the gate is
+    still reported, labelled as not converged under the shared training budget, and is not dropped.
+
+# ------------------------------------------------------------------ scoring
+scoring: >
+  As v16: clean; own operator at mid, worlds S and I, test mask seeds 2000, 3000, 4000 (the test
+  masks do not depend on the world seed, which affects training and validation masks only); the
+  four operators at mid, mask 2000. Host test rows as v7. Statistics on the mask mean inside each of
+  2,000 paired identifier-clustered resamples, seeds averaged inside resamples (analyze_v7_masks.py
+  convention). Realized severities and the planted cue strength (cue-only AUROC of the realized
+  arm low-confidence fraction) of every assignment, including world seed 0, are summarized on the
+  optimization rows without any model (experiments/assignment_severities_v17.py).
+
+# ------------------------------------------------------------------ pre-specified analysis
+criteria:
+  P17_1_per_assignment:
+    descriptive: true
+    report: >
+      For each world seed 1, 2, 3: MWI with the conditional paired interval on the logit and raw
+      scales; R(f_S) and R(f_I) with intervals (reference read against the +-0.05 margin); clean
+      AUROC of f_S minus f_I with interval (read against +-0.02); the seed-and-mask sensitivity
+      interval. The same quantities for world seed 0 (v15conf A_none, seeds 0-2) beside them.
+  D17_2_assignment_spread:
+    descriptive: true
+    report: >
+      Mean and sample SD (n - 1) of the point MWI across world seeds 1-3, logit and raw; the same
+      across world seeds 0-3; the range; and each new assignment minus world seed 0 as a paired
+      descriptive difference. Three assignments are a pragmatic robustness check, not an estimate
+      of a population variance, and the text must say so.
+  D17_3_pooled:
+    descriptive: true
+    report: >
+      MWI with the nine new fits per world pooled (world seeds 1-3 x seeds 0-2), conditional
+      interval and seed-and-mask sensitivity interval, as a secondary display. It is not pooled
+      with world seed 0.
+reporting_rules: >
+  Cleaned selection is primary; the original selection goes to the supplement. No pass/fail rule is
+  attached to the spread: the outcome enters the paper as the measured assignment-to-assignment
+  variation whichever way it falls. No fit is rerun to move an interval. The manuscript's
+  replication sentence must state what was held fixed (host, recipe, rule, selection, test masks)
+  and what was regenerated (the training severities and masks of both worlds).
+
+# ------------------------------------------------------------------ compute
+compute: >
+  One on-demand g5.2xlarge (us-east-1c, other zones of the VPC on capacity errors), queue v17,
+  scoring its own checkpoints under both selections and terminating itself. Runtime guard
+  SM_MAX_HOURS=5. Projected cost about USD 3 to 4 (18 fits at about 7 min plus scoring); author
+  cap USD 10. CPU smoke of the trainer, scorer, analysis and table builder before launch.

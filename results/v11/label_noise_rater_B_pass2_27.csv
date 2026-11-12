@@ -1,0 +1,28 @@
+identifier,answer,kind,frames,evidence
+v_ArmFlapping_28_neg_270_470,unsure,handaction,1;2;3;4;5;6;7;8,Hand approaches eye in frames 1 and 4-5 but repetitive finger action remains unclear.
+v_ArmFlapping_36_neg_3410_3610,no,none,1;2;3;4;5;6;7;8,Seated child holds cloth and makes occasional hand gestures without a repeated elevated arm pattern.
+v_HandAction_01_0_neg_3017_3217,no,none,1;2;3;4;5;6;7;8,Hands cover face and adjust headphones; no repeated flicking or wringing pattern is visible.
+v_HandAction_06_neg_1760_1960,no,none,1;2;3;4;5;6;7;8,Hands move from mouth to open palms and then ears without a repeated stereotyped pattern.
+v_HandAction_10_neg_510_710,yes,handaction,1;2;3;4;5;6;7;8,Hands repeatedly open and close together in front of face across successive frames.
+v_HeadBanging_10_neg_720_920,yes,handaction,2;3;4;5;6;7;8,Hands repeatedly cross and wring together at chest height with changing grips.
+v_HeadBanging_13_neg_507_661,unsure,flapping,1;2;3;4;5;6;7;8,Child raises arms several times while another person gestures nearby; waving or imitation cannot be excluded.
+v_HeadBanging_22_neg_0_112,yes,flapping,1;2;3;4,Raised bent arm drops and rises again between frames 1 and 3 without an apparent object.
+v_HeadBanging_39_neg_1787_1986,no,none,1;2;3;4;5;6;7;8,Two children play and bend near furniture; no repeated head-to-surface cycles are visible.
+v_HeadBanging_39_neg_993_1191,no,none,1;2;3;4;5;6;7;8,Foreground child leans down once and then shifts near another child; no two head-to-surface cycles.
+v_HeadBanging_53_0_neg_2810_3010,no,none,1;2;3;4;5;6;7;8,Child lies on floor and lifts upper body once; no repeated head impact pattern.
+v_Spinning_07_neg_398_531,no,none,1;2;3;4;5;6;7;8,Child changes facing direction while stepping across the floor rather than rotating in one place.
+v_Spinning_40_neg_1079_1279,yes,spinning,1;2;3;4;5;6;7;8,Child alternates back front and side orientations repeatedly while remaining in roughly the same floor area.
+v_Spinning_40_neg_480_679,yes,spinning,1;2;3;4;5;6;7;8,Front back and side orientations recur across consecutive frames with feet near the same spot.
+v_Spinning_43_neg_0_160,no,none,1;2;3;4;5;6;7;8,Foreground child crosses the room with arms extended; changing orientation accompanies travel.
+v_Spinning_44_neg_1260_1460,unsure,spinning,1;2;3;4;5;6;7;8,Body faces alternating directions but feet are cropped so stationary rotation cannot be verified.
+v_Spinning_44_neg_1860_2060,unsure,spinning,1;2;3;4;5;6;7;8,Front and back views alternate repeatedly; cropped lower legs and feet prevent confirming in-place rotation.
+v_Spinning_44_neg_660_860,unsure,spinning,1;2;3;4;5;6;7;8,Child turns through multiple orientations but feet remain outside the cropped frames.
+v_Spinning_47_neg_960_1160,unsure,flapping,1;2;3;4;5;6;7;8,Arms appear to move near shoulder height but child is distant and underexposed.
+v_Spinning_54_neg_404_474,no,none,1;2;3;4;5;6;7;8,Toddler changes stance and then walks toward camera; no sustained in-place rotation.
+v_Spinning_54_neg_682_752,no,none,1;2;3;4;5;6;7;8,Toddler walks across floor and leans onto furniture rather than spinning in place.
+v_Spinning_55_neg_1360_1560,unsure,spinning,1;2;3;4;5;6;7;8,Facing direction changes repeatedly but feet are outside the frames and movement across floor is uncertain.
+v_Spinning_57_neg_760_920,no,none,1;2;3;4;5;6;7;8,Toddler walks around an adult and kitchen furniture with ordinary changes of direction.
+v_Spinning_62_neg_0_200,yes,flapping,1;4,Arm is raised above shoulder then both arms extend near shoulder level without an apparent target.
+v_Spinning_62_neg_200_400,yes,flapping,1;3;6;7,Arms rise and change position repeatedly above shoulder level while no object is being handled.
+v_Spinning_63_neg_1010_1210,no,none,1;3;4;5;6;7;8,Toddler approaches kitchen counter and reaches upward toward cabinetry; not repeated flapping.
+v_Spinning_63_neg_2210_2410,no,none,1;2;3;4;5;6;7;8,Toddler moves along kitchen counter turning toward the camera and back without repeated movements.

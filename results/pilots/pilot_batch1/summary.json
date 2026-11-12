@@ -1,0 +1,30 @@
+{
+ "n_test": 4751,
+ "n_boot": 10000,
+ "propensity_auc_unweighted": 0.7026982311442166,
+ "balance_check_weighted_auc": 0.49377496850981073,
+ "balance_check_pass": true,
+ "ess_negatives": 2445.871913990356,
+ "n_negatives": 3694,
+ "n_qc_negatives": 1648,
+ "n_models": 29,
+ "share_ci_contains_zero": 0.1724137931034483,
+ "spearman_rw_vs_qc": 0.9975369458128076,
+ "H4_pass": false,
+ "child_confounding": {
+  "raw": {
+   "auc": 0.7021573248495733,
+   "ci": [
+    0.671875839163165,
+    0.7329566526039216
+   ]
+  },
+  "within_child": {
+   "auc": 0.6720607044382488,
+   "ci": [
+    0.6384952910678865,
+    0.7061549385406555
+   ]
+  }
+ }
+}

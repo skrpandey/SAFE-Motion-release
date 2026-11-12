@@ -1,0 +1,11 @@
+# post hoc: conditional vs seeds-and-masks-resampled intervals, logit MWI
+contrast,mechanism,rule,point,conditional,seeds_masks_resampled,conditional_excludes_zero,crossed_excludes_zero
+velocity minus none,missing runs,,+0.018,"[-0.034, +0.066]","[-0.149, +0.182]",False,False
+whole-joint dropout minus none,missing runs,,+0.051,"[+0.002, +0.095]","[-0.090, +0.192]",True,False
+velocity + dropout minus none,missing runs,,+0.007,"[-0.048, +0.059]","[-0.138, +0.152]",False,False
+coordinate dropout minus none,missing runs,,+0.066,"[+0.026, +0.099]","[-0.073, +0.208]",True,False
+whole-joint dropout minus none,whole-joint absence,,+0.009,"[-0.059, +0.079]","[-0.106, +0.115]",False,False
+coordinate dropout minus none,whole-joint absence,,+0.051,"[-0.013, +0.107]","[-0.085, +0.210]",False,False
+whole-joint dropout minus none,frozen frames,,+0.064,"[+0.017, +0.111]","[-0.042, +0.157]",True,False
+whole-joint dropout minus none,arm confidence,original,+0.052,"[-0.001, +0.105]","[-0.037, +0.149]",False,False
+mid minus low strength,missing runs,,+0.370,"[+0.226, +0.509]","[+0.062, +0.619]",True,True

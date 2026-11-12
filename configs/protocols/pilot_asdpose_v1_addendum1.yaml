@@ -1,0 +1,9 @@
+# Addendum 1 to pilot_asdpose_v1.yaml, frozen before batch 2 trains or scores anything.
+# Reason: CPU smoke runs showed probe R^2 near 0.95 for the tracking stats even after one epoch
+# on 200 segments, because confidence is a direct input. The probe therefore needs a floor that
+# shows what an untrained network already exposes.
+batch2_linear_probe_reference:
+  model: TinyTCN, same c_in as the cell, random init with torch.manual_seed(0), no training
+  procedure: identical to the cell probe (features, ridge, alpha CV, test R^2, CI)
+  report: probe R^2 of the trained cell minus the random-init R^2, per target
+  status: descriptive only; not a go/no-go criterion

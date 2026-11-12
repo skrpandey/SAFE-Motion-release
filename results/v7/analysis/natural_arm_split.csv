@@ -1,0 +1,6 @@
+# post hoc: own-operator response of the corrected-rule arm-confidence models within host test segments split at the median natural arm low-confidence fraction
+subset,world,segments,R
+natural arm low-confidence below median (0.109),S,983,"+0.604 [+0.476, +0.741]"
+natural arm low-confidence below median (0.109),I,983,"+0.040 [+0.008, +0.083]"
+natural arm low-confidence above median (0.109),S,983,"+0.610 [+0.523, +0.719]"
+natural arm low-confidence above median (0.109),I,983,"+0.069 [+0.037, +0.099]"

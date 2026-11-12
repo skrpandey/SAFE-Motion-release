@@ -1,0 +1,26 @@
+contrast,point,ci_lo,ci_hi,verdict,group,auc_full,auc_dfr,auc_dfr_lo,auc_dfr_hi
+dfr - full (raw AUC),0.0322,-0.0098,0.0766,undetermined,ours_v10_A_both,0.6071,0.6393,0.5942,0.6831
+dfr - full (raw AUC),0.0442,-0.0002,0.0894,undetermined,ours_v10_A_dropout,0.6388,0.6830,0.6389,0.7251
+dfr - full (raw AUC),0.0148,-0.0231,0.0541,undetermined,ours_v10_A_none,0.6405,0.6553,0.6128,0.6990
+dfr - full (raw AUC),0.0566,0.0136,0.1004,differs_from_zero,ours_v10_A_velocity,0.6104,0.6670,0.6237,0.7071
+dfr - full (raw AUC),0.0175,-0.0207,0.0564,undetermined,ours_v10_B_coorddrop,0.6360,0.6535,0.6088,0.6954
+dfr - full (raw AUC),0.0667,0.0133,0.1216,differs_from_zero,ours_v7_A_both,0.5786,0.6453,0.6003,0.6904
+dfr - full (raw AUC),0.0434,-0.0021,0.0887,undetermined,ours_v7_A_dropout,0.6252,0.6686,0.6252,0.7111
+dfr - full (raw AUC),0.0301,-0.0168,0.0759,undetermined,ours_v7_A_none,0.6413,0.6714,0.6284,0.7147
+dfr - full (raw AUC),0.0447,-0.0041,0.0951,undetermined,ours_v7_A_velocity,0.5788,0.6235,0.5805,0.6629
+dfr - full (raw AUC),0.0365,-0.0048,0.0810,undetermined,ours_v7_B_coorddrop,0.6286,0.6650,0.6223,0.7052
+dfr - full (raw AUC),0.0807,0.0214,0.1407,differs_from_zero,abl_dropout,0.6058,0.6865,0.6323,0.7351
+dfr - full (raw AUC),0.0924,0.0375,0.1496,differs_from_zero,abl_dropout_v3norm,0.5921,0.6845,0.6385,0.7317
+dfr - full (raw AUC),0.0790,0.0276,0.1321,differs_from_zero,abl_velocity,0.6044,0.6834,0.6312,0.7366
+dfr - full (raw AUC),0.1415,0.0723,0.2090,differs_from_zero,abl_velocity_v3norm,0.5001,0.6416,0.5855,0.6933
+dfr - full (raw AUC),0.0351,-0.0189,0.0899,undetermined,v1,0.6496,0.6847,0.6314,0.7340
+dfr - full (raw AUC),0.0902,0.0450,0.1370,differs_from_zero,v2_family,0.5807,0.6710,0.6328,0.7094
+dfr - full (raw AUC),0.0918,0.0266,0.1549,differs_from_zero,v3,0.5683,0.6601,0.6032,0.7146
+dfr - full (raw AUC),0.0129,-0.0420,0.0713,undetermined,permuted_v1,0.5785,0.5914,0.5366,0.6484
+dfr - full (raw AUC),0.0209,-0.0473,0.0820,undetermined,permuted_v2,0.5423,0.5631,0.5098,0.6131
+dfr - full (raw AUC),0.0671,0.0224,0.1139,differs_from_zero,v3_noconf_family,0.5639,0.6310,0.5881,0.6696
+dfr - full (raw AUC),-0.0710,-0.1324,-0.0069,differs_from_zero,agcn_base,0.6310,0.5600,0.5092,0.6143
+dfr - full (raw AUC),0.0036,-0.0512,0.0625,undetermined,agcn_remedies,0.6062,0.6098,0.5605,0.6602
+dfr - full (raw AUC),0.0363,-0.0191,0.0926,undetermined,base_no_remedies,0.6084,0.6447,0.5917,0.6944
+dfr - full (raw AUC),0.0338,-0.0285,0.0979,undetermined,stgcn_base,0.5981,0.6319,0.5784,0.6859
+dfr - full (raw AUC),-0.0308,-0.0958,0.0397,undetermined,stgcn_remedies,0.5866,0.5558,0.4974,0.6155

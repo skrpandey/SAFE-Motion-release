@@ -1,0 +1,101 @@
+identifier,answer,frames_with_person,reason
+v_ArmFlapping_01_neg_161_322,unsure,8,"Fingers return near lips, but eating or purposeful contact cannot be ruled out."
+v_ArmFlapping_02_neg_1050_1250,no,8,Baby sits and begins crawling near toy on carpet.
+v_ArmFlapping_02_neg_1250_1450,no,6,Baby crawls and moves behind furniture; visible motion is ordinary.
+v_ArmFlapping_03_neg_0_100,no,8,Child remains seated with adult nearby; no repetitive arm or head motion.
+v_ArmFlapping_03_neg_100_200,no,8,Baby sits with adult beside them; no repeated target motion.
+v_ArmFlapping_03_neg_636_737,no,8,Baby sits beside supporting adult and makes incidental arm movements.
+v_ArmFlapping_05_neg_240_340,no,8,Baby lies on blanket with small incidental limb movements.
+v_ArmFlapping_08_neg_894_1054,no,8,Child shifts from leaning to sitting upright; no target repetition.
+v_ArmFlapping_09_neg_510_710,no,8,Child reads book and briefly touches face; ordinary activity.
+v_ArmFlapping_09_neg_2160_2360,no,8,Child remains seated reading; no stereotypy-like motion.
+v_ArmFlapping_09_neg_3260_3460,no,8,Child reads book and adjusts hair once; no repetitive hand action.
+v_ArmFlapping_13_neg_0_200,no,6,Seated child moves toy and body; no repeated target motion visible.
+v_ArmFlapping_14_neg_736_836,no,8,Standing child holds hands in front while looking around; no target motion.
+v_ArmFlapping_18_neg_700_900,no,8,Child plays with blocks and lifts arms once while holding objects.
+v_ArmFlapping_18_neg_2360_2560,no,8,"Child plays with blocks on floor, leaning forward and back."
+v_ArmFlapping_22_neg_315_413,unsure,8,One arm rises overhead briefly; repeated flapping is not confirmed.
+v_ArmFlapping_24_neg_425_592,unsure,7,Arms lift during outdoor play; limited evidence for repeated flapping.
+v_ArmFlapping_28_neg_270_470,unsure,8,Hand repeatedly near face; unclear whether purposeful touch or repetitive action.
+v_ArmFlapping_28_neg_470_670,no,8,Seated infant reaches toward camera and shifts hands once.
+v_ArmFlapping_29_neg_540_740,no,8,Child eats at table and looks sideways.
+v_ArmFlapping_29_neg_1140_1340,no,8,Seated child eats from plate; hand-to-mouth motion is ordinary eating.
+v_ArmFlapping_30_neg_11030_11230,unsure,8,"Dim view shows hands near face, but action is not distinguishable."
+v_ArmFlapping_31_neg_529_729,no,8,Child holds toy car and crouches among playset pieces.
+v_ArmFlapping_31_neg_929_1129,no,3,"Child plays behind large toy track, then becomes obscured by structure."
+v_ArmFlapping_34_neg_1823_1990,no,6,Baby sits and reaches toward toys on carpet.
+v_ArmFlapping_36_neg_3410_3610,no,8,Seated child shifts hands while holding cloth; no repeated target gesture.
+v_ArmFlapping_40_neg_879_1039,no,8,Infant lies and pushes up on arms on floor.
+v_ArmFlapping_41_neg_749_949,unsure,0,No person visible in empty room.
+v_ArmFlapping_44_neg_4049_4208,no,8,Child manipulates activity table toys with hands at waist height.
+v_ArmFlapping_46_neg_160_320,no,8,Child handles objects on tabletop or toy track; purposeful play.
+v_ArmFlapping_52_neg_2119_2280,no,8,Baby sits and manipulates colorful toy repeatedly as play.
+v_ArmFlapping_53_neg_150_350,no,8,"Child sits in car seat, moves legs and briefly touches mouth."
+v_ArmFlapping_57_neg_150_250,no,7,Infant crawls across floor and approaches doorway.
+v_ArmFlapping_60_neg_7612_8012,unsure,0,Only adults are visible inside vehicle; no child to assess.
+v_ArmFlapping_60_neg_15205_15604,unsure,0,Only adult torso and hands visible; no child appears.
+v_HandAction_01_0_neg_3017_3217,unsure,8,Hands repeatedly touch face and forehead; rhythmic repetition not established.
+v_HandAction_01_0_neg_4815_5015,no,8,Person wearing headphones looks around and raises a finger once.
+v_HandAction_02_0_neg_2438_2637,unsure,0,Only black title cards with text; no child visible.
+v_HandAction_04_neg_2400_2600,unsure,0,Only an adult is visible; no child can be assessed.
+v_HandAction_04_neg_3800_4000,unsure,0,Only an adult visible; no child to assess.
+v_HandAction_04_neg_5380_5580,no,8,Child stands and steps in a room; no repeated target motion.
+v_HandAction_05_0_neg_0_200,unsure,0,Only an adult appears; no child visible for assessment.
+v_HandAction_05_0_neg_2800_3000,unsure,3,Small child appears partly obscured beside adult; limbs cannot be assessed.
+v_HandAction_05_0_neg_5400_5600,unsure,5,Child near adult is small and partly obscured; arm and head detail unclear.
+v_HandAction_05_0_neg_8200_8400,unsure,0,Distant adult crosses room; no child is clearly visible.
+v_HandAction_06_neg_1760_1960,no,8,Hands move from clasped to cheeks once; no repeated movement cycle.
+v_HandAction_07_neg_400_600,no,8,Child manipulates objects on counter and moves around kitchen.
+v_HandAction_07_neg_800_1000,no,8,Child crawls across floor toward doorway; ordinary locomotion.
+v_HandAction_09_neg_330_530,no,8,"Baby sits and smiles on bed, hands resting on lap."
+v_HandAction_10_neg_510_710,yes,8,"Hands repeatedly open, close and move together in front of face."
+v_HeadBanging_10_neg_0_200,no,6,Toddler sits in high chair looking toward screen and camera.
+v_HeadBanging_10_neg_720_920,yes,8,"Hands repeatedly clasp, separate and return toward face in high chair."
+v_HeadBanging_10_neg_1120_1320,unsure,8,Hand returns near ear and face; purposeful gesture versus repetition unclear.
+v_HeadBanging_13_neg_507_661,unsure,7,Hands rise near head; later frames are obstructed and repetition unclear.
+v_HeadBanging_15_neg_1061_1246,no,8,Child lies on bed and shifts arms and head without repeated target motion.
+v_HeadBanging_16_neg_0_200,no,8,Child leans near another person and watches an object; no target repetition.
+v_HeadBanging_16_neg_770_970,no,8,Infant watches nearby toy and leans on furniture; no target repetition.
+v_HeadBanging_17_neg_2800_3000,no,8,Child looks and reaches toward window; no target repetition.
+v_HeadBanging_22_neg_0_112,yes,8,Arms repeatedly rise above shoulder height and lower while child kneels.
+v_HeadBanging_36_neg_909_1089,no,8,Child moves head while seated in car seat; no surface contact.
+v_HeadBanging_39_neg_993_1191,no,8,Two children play and look around; no repetitive target motion.
+v_HeadBanging_39_neg_1787_1986,no,8,Children move and bend beside toys; no repetitive target movement.
+v_HeadBanging_42_neg_0_200,no,8,Child sits and adjusts posture among toys on floor.
+v_HeadBanging_46_neg_1367_1526,no,8,"Child sits, moves hands, then rises from chair."
+v_HeadBanging_46_neg_2805_2965,unsure,0,Frames show text on black background; no person visible.
+v_HeadBanging_47_1_neg_0_200,unsure,6,"Frames show changing TV images and cuts, not assessable continuous movement."
+v_HeadBanging_47_1_neg_200_400,unsure,8,"TV footage cuts between scenes, so continuous target movement cannot be established."
+v_HeadBanging_48_neg_0_182,no,8,Seated child handles clothing or stroller fabric without repeated target motion.
+v_HeadBanging_53_0_neg_2810_3010,unsure,8,Distant child on carpet too small to assess arms and head reliably.
+v_HeadBanging_53_0_neg_9410_9610,no,8,Child handles objects at table and turns toward adult.
+v_Spinning_07_neg_398_531,no,8,Child walks and looks down; body turning appears ordinary locomotion.
+v_Spinning_16_neg_437_544,unsure,0,"No child visible; frames show ceiling, wall and window."
+v_Spinning_18_neg_4470_4670,no,8,Child stands holding the top rail of a safety gate.
+v_Spinning_21_neg_610_693,no,8,"Child walks near toys, looks upward and turns once."
+v_Spinning_21_neg_776_859,no,8,"Child walks near toys, moving across the room."
+v_Spinning_21_neg_943_1026,no,8,Child looks upward and walks around room without repeated target motion.
+v_Spinning_21_neg_1109_1192,no,8,Head turns and child moves close to camera; no repeated target motion.
+v_Spinning_25_neg_0_200,no,8,"Child walks to table, bends and explores object; no repeated target motion."
+v_Spinning_31_neg_869_1069,no,8,Child turns from side profile to camera once.
+v_Spinning_40_neg_480_679,unsure,8,"Hands move near face repeatedly, but gestures lack clear recurring pattern."
+v_Spinning_40_neg_1079_1279,yes,8,"Standing child's whole body repeatedly changes orientation between front, side and back."
+v_Spinning_43_neg_0_160,yes,8,Foreground child repeatedly swings raised arms between positions while moving.
+v_Spinning_44_neg_660_860,no,8,Standing child tilts head backward and turns; no repeated surface contact.
+v_Spinning_44_neg_1260_1460,no,8,Child looks upward and shifts stance; no target motion repeated.
+v_Spinning_44_neg_1860_2060,no,8,Standing child looks upward and shifts posture; no repeated target movement.
+v_Spinning_47_neg_0_200,unsure,8,Distant narrow frames make head and arm movements difficult to assess.
+v_Spinning_47_neg_960_1160,unsure,8,Distant narrow view obscures clear arm and head detail.
+v_Spinning_48_neg_0_200,no,8,"Children stand, crawl and play with toys; ordinary play visible."
+v_Spinning_48_neg_1800_2000,no,8,"Child crawls, stands and walks across room; ordinary activity."
+v_Spinning_54_neg_404_474,no,8,"Toddler walks, turns and shifts weight; no repeated target motion."
+v_Spinning_54_neg_682_752,no,8,"Child walks, bends and crawls, without repeated target motion."
+v_Spinning_55_neg_1360_1560,no,8,Toddler walks and turns while moving across room.
+v_Spinning_57_neg_760_920,no,8,Toddler walks around chair beside seated adult; ordinary movement.
+v_Spinning_62_neg_0_200,unsure,8,Arm rises near head and extends sideways; repetition during movement is unclear.
+v_Spinning_62_neg_200_400,no,8,Child remains low beside standing adult; ordinary posture and movement.
+v_Spinning_62_neg_1010_1210,no,8,Children walk and approach camera with arms extended during play.
+v_Spinning_63_neg_1010_1210,no,7,"Child reaches toward kitchen cabinet with raised arms; purposeful reaching, not flapping."
+v_Spinning_63_neg_2210_2410,yes,8,"Whole body changes orientation back, front, side, then back while standing."
+v_Spinning_64_neg_1159_1359,no,8,Toddler bobs head and turns while standing; no head-to-surface repetition.
+v_Spinning_64_neg_2557_2757,no,7,Toddler walks and runs across room; no repeated target movement.

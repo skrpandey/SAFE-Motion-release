@@ -1,0 +1,111 @@
+{
+ "inputs": {
+  "cache_index": "21da783f17a7b0c3 (first 16 MiB)",
+  "asdpose_zip": "c740273ef78f716c (first 16 MiB)",
+  "errmat": "48ce4cf3fb6e1eb2 (first 16 MiB)"
+ },
+ "group_status": {
+  "no candidate": 713,
+  "accepted": 385,
+  "ambiguous": 18
+ },
+ "id_status": {
+  "accepted": 185,
+  "no candidate": 137,
+  "ambiguous only": 7
+ },
+ "coverage": {
+  "train": {
+   "ids": 229,
+   "accepted_ids": 132,
+   "segments": 25316,
+   "segments_accepted": 15024,
+   "smm": 5763,
+   "smm_accepted": 3439
+  },
+  "validation": {
+   "ids": 57,
+   "accepted_ids": 37,
+   "segments": 6823,
+   "segments_accepted": 4418,
+   "smm": 1409,
+   "smm_accepted": 854
+  },
+  "test": {
+   "ids": 40,
+   "accepted_ids": 15,
+   "segments": 4751,
+   "segments_accepted": 1905,
+   "smm": 1057,
+   "smm_accepted": 386
+  },
+  "real_test_length_protocol": {
+   "segments": 3834,
+   "segments_accepted": 1538,
+   "smm": 786,
+   "smm_accepted": 287
+  }
+ },
+ "consistency_ids_with_2plus_accepted_groups": {
+  "n": 114,
+  "conflicts": 0
+ },
+ "accepted_err_px_quantiles": [
+  2.86,
+  6.23,
+  7.93,
+  7.95
+ ],
+ "wrong_child_err_px_quantiles_for_accepted": [
+  9.88,
+  11.9,
+  19.65,
+  42.25
+ ],
+ "aliases": [
+  {
+   "annotated_id": 196,
+   "partition": "train",
+   "canonical_person": 194
+  },
+  {
+   "annotated_id": 322,
+   "partition": "validation",
+   "canonical_person": 194
+  }
+ ],
+ "aliases_across_partitions": [
+  {
+   "annotated_id": 196,
+   "partition": "train",
+   "canonical_person": 194
+  },
+  {
+   "annotated_id": 322,
+   "partition": "validation",
+   "canonical_person": 194
+  }
+ ],
+ "raw_children_with_accepted_id": 184,
+ "raw_children_total": 241,
+ "pass2": {
+  "unresolved_test_ids": 25,
+  "usable_queries": 147,
+  "controls": {
+   "n": 57,
+   "correct": 52,
+   "ratio_ge_2": {
+    "n": 32,
+    "correct": 32
+   }
+  },
+  "resolved_test_ids": {
+   "68": 76,
+   "116": 119,
+   "304": 175
+  },
+  "resolved_share_person_with_other_id": false,
+  "still_unresolved_test_ids": 22
+ },
+ "decision": "unresolved: no cross-partition person found among 188 assigned IDs; one train/validation alias; 22 test IDs without any matching released recording"
+}

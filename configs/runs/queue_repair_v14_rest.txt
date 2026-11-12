@@ -1,0 +1,134 @@
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --world-seed 1 --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --world-seed 2 --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world S --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world I --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world S --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world I --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world S --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world I --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world S --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world I --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world S --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world I --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world S --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world I --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --mechanism whole --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --mechanism whole --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism whole --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism whole --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --mechanism whole --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --mechanism whole --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --mechanism whole --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --mechanism whole --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism whole --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism whole --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --mechanism whole --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --mechanism whole --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --mechanism whole --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --mechanism whole --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism whole --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism whole --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --mechanism whole --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --mechanism whole --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength low --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength low --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength low --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength low --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength low --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength low --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism frozen --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism frozen --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism frozen --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism frozen --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism frozen --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism frozen --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --mechanism armruns --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --mechanism armruns --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --mechanism armruns --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --mechanism armruns --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --mechanism armruns --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --mechanism armruns --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism armruns --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism armruns --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism armruns --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism armruns --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism armruns --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v8 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism armruns --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world S --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world S --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world S --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world I --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world I --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world I --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world S --mechanism whole --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world S --mechanism whole --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world S --mechanism whole --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world I --mechanism whole --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world I --mechanism whole --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_blind --world I --mechanism whole --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --real-world I --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --real-world I --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --real-world I --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --real-world I --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --real-world I --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --real-world I --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --real-world I --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --real-world I --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --real-world I --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --real-world I --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --real-world I --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --real-world I --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --real-world I --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --real-world I --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v10 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --real-world I --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world S --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world S --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world S --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world I --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world I --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world I --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world S --mechanism frozen --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world S --mechanism frozen --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world S --mechanism frozen --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world I --mechanism frozen --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world I --mechanism frozen --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_adversarial --world I --mechanism frozen --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world S --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world S --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world S --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world I --mechanism runs --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world I --mechanism runs --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world I --mechanism runs --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world S --mechanism frozen --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world S --mechanism frozen --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world S --mechanism frozen --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world I --mechanism frozen --strength mid --seed 0 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world I --mechanism frozen --strength mid --seed 1 --repair-protocol configs/protocols/repair_selection_v14.yaml
+--proto v12 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell C_augment --world I --mechanism frozen --strength mid --seed 2 --repair-protocol configs/protocols/repair_selection_v14.yaml

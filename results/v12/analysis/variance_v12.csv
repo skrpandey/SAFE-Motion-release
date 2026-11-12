@@ -1,0 +1,64 @@
+# post hoc sensitivity; crossed_ci: one draw of children, masks and fitted seeds per replicate
+mechanism,cell,quantity,point,per_mask,cond_ci,crossed_ci,seed_combo_min,seed_combo_max,seed_combo_sd,mask_range,sd_boot_cond,sd_crossed
+runs,A_none,R model v7_S_w0_runs_mid_A_none_s0,0.7908,+0.8567; +0.7816; +0.7340,,,,,,,,
+runs,A_none,R model v7_S_w0_runs_mid_A_none_s1,0.6063,+0.6639; +0.5941; +0.5610,,,,,,,,
+runs,A_none,R model v7_S_w0_runs_mid_A_none_s2,0.7652,+0.8111; +0.7753; +0.7090,,,,,,,,
+runs,A_none,R model v7_I_w0_runs_mid_A_none_s0,-0.0676,-0.0378; -0.0702; -0.0948,,,,,,,,
+runs,A_none,R model v7_I_w0_runs_mid_A_none_s1,-0.0377,+0.0262; -0.0543; -0.0850,,,,,,,,
+runs,A_none,R model v7_I_w0_runs_mid_A_none_s2,0.0135,+0.0746; +0.0180; -0.0521,,,,,,,,
+runs,C_groupdro,R model v12_S_w0_runs_mid_C_groupdro_s0,0.447,+0.5408; +0.4342; +0.3660,,,,,,,,
+runs,C_groupdro,R model v12_S_w0_runs_mid_C_groupdro_s1,0.3804,+0.4867; +0.3534; +0.3010,,,,,,,,
+runs,C_groupdro,R model v12_S_w0_runs_mid_C_groupdro_s2,0.4056,+0.4959; +0.4061; +0.3149,,,,,,,,
+runs,C_groupdro,R model v12_I_w0_runs_mid_C_groupdro_s0,-0.0381,-0.0424; -0.0568; -0.0152,,,,,,,,
+runs,C_groupdro,R model v12_I_w0_runs_mid_C_groupdro_s1,-0.0587,-0.0413; -0.1391; +0.0043,,,,,,,,
+runs,C_groupdro,R model v12_I_w0_runs_mid_C_groupdro_s2,-0.0323,-0.0019; -0.1027; +0.0075,,,,,,,,
+runs,C_adversarial,R model v12_S_w0_runs_mid_C_adversarial_s0,0.7794,+0.8535; +0.7674; +0.7174,,,,,,,,
+runs,C_adversarial,R model v12_S_w0_runs_mid_C_adversarial_s1,0.6632,+0.6753; +0.6511; +0.6631,,,,,,,,
+runs,C_adversarial,R model v12_S_w0_runs_mid_C_adversarial_s2,0.7685,+0.8058; +0.7387; +0.7611,,,,,,,,
+runs,C_adversarial,R model v12_I_w0_runs_mid_C_adversarial_s0,-0.0657,-0.0731; -0.1054; -0.0187,,,,,,,,
+runs,C_adversarial,R model v12_I_w0_runs_mid_C_adversarial_s1,0.023,+0.0383; +0.0385; -0.0079,,,,,,,,
+runs,C_adversarial,R model v12_I_w0_runs_mid_C_adversarial_s2,-0.052,-0.0059; -0.1333; -0.0169,,,,,,,,
+runs,C_augment,R model v12_S_w0_runs_mid_C_augment_s0,0.6304,+0.6687; +0.6706; +0.5518,,,,,,,,
+runs,C_augment,R model v12_S_w0_runs_mid_C_augment_s1,0.6774,+0.7287; +0.7206; +0.5829,,,,,,,,
+runs,C_augment,R model v12_S_w0_runs_mid_C_augment_s2,0.7057,+0.7314; +0.6715; +0.7143,,,,,,,,
+runs,C_augment,R model v12_I_w0_runs_mid_C_augment_s0,-0.1201,-0.0890; -0.1209; -0.1506,,,,,,,,
+runs,C_augment,R model v12_I_w0_runs_mid_C_augment_s1,-0.0199,+0.0106; -0.0379; -0.0322,,,,,,,,
+runs,C_augment,R model v12_I_w0_runs_mid_C_augment_s2,-0.013,-0.0141; -0.0343; +0.0093,,,,,,,,
+runs,A_none,SE,0.7514,+0.7563; +0.7525; +0.7453,"[+0.6532, +0.8629]","[+0.5895, +0.9214]",0.5928,0.8584,0.0935,0.0109,0.0533,0.0834
+runs,C_groupdro,SE,0.454,+0.5363; +0.4975; +0.3284,"[+0.3612, +0.5637]","[+0.2796, +0.6180]",0.4127,0.5057,0.0315,0.2079,0.0525,0.0855
+runs,C_groupdro,Delta SE vs A_none,-0.2973,-0.2200; -0.2550; -0.4170,"[-0.3566, -0.2313]","[-0.4667, -0.1212]",-0.4457,-0.0871,0.0936,0.197,0.0325,0.0888
+runs,C_adversarial,SE,0.7686,+0.7918; +0.7858; +0.7283,"[+0.6686, +0.8799]","[+0.6171, +0.9230]",0.6402,0.8451,0.0693,0.0635,0.0539,0.0777
+runs,C_adversarial,Delta SE vs A_none,0.0173,+0.0355; +0.0333; -0.0170,"[-0.0441, +0.0704]","[-0.1416, +0.1717]",-0.2182,0.2523,0.1104,0.0525,0.0294,0.0802
+runs,C_augment,SE,0.7222,+0.7404; +0.7519; +0.6741,"[+0.6237, +0.8284]","[+0.5825, +0.8825]",0.6434,0.8259,0.0615,0.0778,0.0538,0.0774
+runs,C_augment,Delta SE vs A_none,-0.0292,-0.0159; -0.0006; -0.0712,"[-0.0749, +0.0092]","[-0.1736, +0.1135]",-0.215,0.233,0.1062,0.0706,0.0216,0.0738
+frozen,A_none,R model v8_S_w0_frozen_mid_A_none_s0,0.3605,+0.3383; +0.3520; +0.3912,,,,,,,,
+frozen,A_none,R model v8_S_w0_frozen_mid_A_none_s1,0.3392,+0.3687; +0.2510; +0.3978,,,,,,,,
+frozen,A_none,R model v8_S_w0_frozen_mid_A_none_s2,0.3598,+0.4107; +0.3361; +0.3327,,,,,,,,
+frozen,A_none,R model v8_I_w0_frozen_mid_A_none_s0,0.0222,+0.0304; +0.0134; +0.0227,,,,,,,,
+frozen,A_none,R model v8_I_w0_frozen_mid_A_none_s1,-0.0326,-0.0457; +0.0095; -0.0617,,,,,,,,
+frozen,A_none,R model v8_I_w0_frozen_mid_A_none_s2,-0.0128,+0.0055; +0.0225; -0.0664,,,,,,,,
+frozen,C_groupdro,R model v12_S_w0_frozen_mid_C_groupdro_s0,0.0368,+0.0736; -0.0003; +0.0372,,,,,,,,
+frozen,C_groupdro,R model v12_S_w0_frozen_mid_C_groupdro_s1,0.0679,+0.0910; +0.0486; +0.0640,,,,,,,,
+frozen,C_groupdro,R model v12_S_w0_frozen_mid_C_groupdro_s2,0.102,+0.1099; +0.0738; +0.1222,,,,,,,,
+frozen,C_groupdro,R model v12_I_w0_frozen_mid_C_groupdro_s0,-0.04,-0.0897; -0.0252; -0.0052,,,,,,,,
+frozen,C_groupdro,R model v12_I_w0_frozen_mid_C_groupdro_s1,-0.0286,-0.0209; -0.0317; -0.0331,,,,,,,,
+frozen,C_groupdro,R model v12_I_w0_frozen_mid_C_groupdro_s2,-0.0645,-0.0404; -0.0803; -0.0730,,,,,,,,
+frozen,C_adversarial,R model v12_S_w0_frozen_mid_C_adversarial_s0,0.3909,+0.4132; +0.3175; +0.4421,,,,,,,,
+frozen,C_adversarial,R model v12_S_w0_frozen_mid_C_adversarial_s1,0.3189,+0.3605; +0.2458; +0.3504,,,,,,,,
+frozen,C_adversarial,R model v12_S_w0_frozen_mid_C_adversarial_s2,0.3292,+0.3577; +0.2867; +0.3433,,,,,,,,
+frozen,C_adversarial,R model v12_I_w0_frozen_mid_C_adversarial_s0,0.091,+0.0801; +0.0602; +0.1326,,,,,,,,
+frozen,C_adversarial,R model v12_I_w0_frozen_mid_C_adversarial_s1,0.0254,+0.0189; +0.0501; +0.0073,,,,,,,,
+frozen,C_adversarial,R model v12_I_w0_frozen_mid_C_adversarial_s2,0.0467,-0.0198; +0.0860; +0.0738,,,,,,,,
+frozen,C_augment,R model v12_S_w0_frozen_mid_C_augment_s0,0.3587,+0.4188; +0.2812; +0.3763,,,,,,,,
+frozen,C_augment,R model v12_S_w0_frozen_mid_C_augment_s1,0.3536,+0.3839; +0.3048; +0.3720,,,,,,,,
+frozen,C_augment,R model v12_S_w0_frozen_mid_C_augment_s2,0.3246,+0.3528; +0.2671; +0.3540,,,,,,,,
+frozen,C_augment,R model v12_I_w0_frozen_mid_C_augment_s0,0.0177,-0.0124; +0.0148; +0.0507,,,,,,,,
+frozen,C_augment,R model v12_I_w0_frozen_mid_C_augment_s1,-0.0204,-0.0373; +0.0413; -0.0651,,,,,,,,
+frozen,C_augment,R model v12_I_w0_frozen_mid_C_augment_s2,0.0489,+0.0310; +0.0534; +0.0622,,,,,,,,
+frozen,A_none,SE,0.3609,+0.3758; +0.2979; +0.4090,"[+0.2870, +0.4460]","[+0.2345, +0.4729]",0.317,0.3931,0.0262,0.1111,0.0404,0.0603
+frozen,C_groupdro,SE,0.1133,+0.1418; +0.0865; +0.1116,"[+0.0798, +0.1535]","[+0.0406, +0.1886]",0.0654,0.1665,0.0324,0.0553,0.0192,0.0373
+frozen,C_groupdro,Delta SE vs A_none,-0.2476,-0.2340; -0.2114; -0.2975,"[-0.3057, -0.1887]","[-0.3508, -0.1397]",-0.3277,-0.1505,0.0395,0.086,0.0298,0.0537
+frozen,C_adversarial,SE,0.292,+0.3508; +0.2179; +0.3074,"[+0.2224, +0.3605]","[+0.1692, +0.4214]",0.2279,0.3655,0.0445,0.1329,0.0354,0.0628
+frozen,C_adversarial,Delta SE vs A_none,-0.0689,-0.0250; -0.0800; -0.1017,"[-0.1202, -0.0228]","[-0.1689, +0.0356]",-0.1651,0.0485,0.049,0.0766,0.0246,0.0516
+frozen,C_augment,SE,0.3302,+0.3914; +0.2478; +0.3515,"[+0.2726, +0.3839]","[+0.2162, +0.4592]",0.2757,0.3791,0.034,0.1436,0.0286,0.0583
+frozen,C_augment,Delta SE vs A_none,-0.0307,+0.0156; -0.0501; -0.0576,"[-0.0831, +0.0128]","[-0.1289, +0.0622]",-0.1173,0.0621,0.0407,0.0732,0.0246,0.049

@@ -1,0 +1,6 @@
+# post hoc: natural tracker-failure statistics on whole length-protocol segments; operators: missing runs mean 15 frames per joint independent, frozen runs mean 20 frames, arm confidence x0.3 floor 0.05
+split,class,segments,missing_jointframe_fraction,per_joint_missing_min,per_joint_missing_max,per_joint_missing_argmax,comissing_mean_joints_given_any,share_missing_jf_in_all17_frames,missing_run_mean,missing_run_median,missing_run_p90,n_missing_runs,whole_segment_missing_joint_fraction,frozen_frame_fraction,frozen_run_mean,frozen_run_median,frozen_run_p90,n_frozen_runs,arm_conf_below_0.3,arm_conf_zero,arm_conf_median_nonzero,arm_conf_hist_0.0_0.3_0.5_0.7_1.0
+train,non-SMM,20397,0.4523,0.2992,0.6105,16,7.96,0.6196,31.8,3.0,85.0,1890389,0.1668,0.2729,51.7,8.0,179.0,41258,0.4418,0.3744,0.795,0.442/0.043/0.084/0.431
+train,SMM,5996,0.256,0.077,0.4634,16,4.6,0.238,18.5,3.0,41.0,513238,0.0605,0.0571,22.4,6.0,70.0,5571,0.2151,0.1434,0.804,0.215/0.048/0.106/0.631
+test,non-SMM,3048,0.4292,0.2687,0.6163,16,7.5,0.58,32.1,3.0,84.0,266154,0.1633,0.2422,49.9,7.0,171.0,5676,0.4133,0.3439,0.794,0.413/0.043/0.088/0.455
+test,SMM,786,0.2412,0.0527,0.481,16,4.32,0.1733,21.0,3.0,40.0,65968,0.076,0.0391,20.8,5.0,56.8,633,0.1913,0.1227,0.808,0.191/0.050/0.111/0.648

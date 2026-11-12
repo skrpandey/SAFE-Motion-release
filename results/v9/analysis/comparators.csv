@@ -1,0 +1,7 @@
+model,host,cell,seed,auc_clean,filtered_gap,qc_fail_n,R_armruns,sens_armruns,R_frozen,sens_frozen,R_runs,sens_runs,R_whole,sens_whole,R_gapfill,cpi_tracking_stats
+mmasd_chest_squat/A_dropout/0,mmasd_chest_squat,A_dropout,0,0.7817,0.2580,8,0.0739,0.5553,0.1115,0.5412,-0.2543,1.4242,-0.0577,1.5161,0.0576,-0.0048
+mmasd_chest_squat/A_dropout/1,mmasd_chest_squat,A_dropout,1,0.7363,0.0755,8,0.1898,0.6938,-0.0164,0.5674,-0.1652,1.3920,0.3465,1.7253,0.0801,-0.0001
+mmasd_chest_squat/A_dropout/2,mmasd_chest_squat,A_dropout,2,0.6938,0.2489,8,0.1786,0.7386,0.0340,0.5614,-0.0831,1.2325,-0.0072,1.5880,0.0638,-0.0025
+mmasd_chest_squat/A_none/0,mmasd_chest_squat,A_none,0,0.7690,0.2490,8,0.1254,1.2193,-0.0645,0.8171,-0.3965,2.4674,-0.1737,4.3755,0.0079,0.0092
+mmasd_chest_squat/A_none/1,mmasd_chest_squat,A_none,1,0.6374,-0.0905,8,0.1181,1.0284,-0.0128,0.4964,-0.1706,1.8028,0.0587,3.1028,0.0184,-0.0025
+mmasd_chest_squat/A_none/2,mmasd_chest_squat,A_none,2,0.5410,0.1649,8,0.1663,1.2432,0.0078,0.7039,0.0309,1.2420,0.0820,2.7851,0.0420,0.0049

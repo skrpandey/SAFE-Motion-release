@@ -1,0 +1,3 @@
+statistic,auc,ci_lo,ci_hi,null_p95,null_p05,perm_p_two_sided,n_windows,no_position_cue
+"start position fraction, raw AUC",0.2819,0.2272,0.3359,0.5492,0.4507,0.0050,550,False
+"video-grouped 5-fold logistic on position, OOF AUC",0.7156,,,,,,550,

@@ -1,0 +1,48 @@
+# Protocol v13: the arm-confidence cells rerun with a coordinate-invariant preprocessing rule.
+# Written after review C (docs/reviews/2026-11-03_presubmission/review_C_ojcs_v4.md, M4) and the
+# invariance check of 2026-11-03 (results/v10/analysis/conf_invariance.csv): on the v7 path the
+# valid-joint test is "confidence > 0", so the confscale floor of 0.05 turns naturally missing
+# joint-frames into valid points that shift the window centroid, and the final x,y tensors differ
+# between the two test policies in 151 of 200 host test segments. Frozen before any v13 run.
+# Commit in REGISTRY.md.
+
+frozen: true
+frozen_date: 2026-11-03
+frozen_commit: "e573c60"
+purpose: >
+  Make "coordinates held fixed" true of the final input tensor, not only of the raw array, for
+  the confidence-only mechanism, and re-measure its shortcut effect under that rule.
+depends_on: [pilot_asdpose_v7.yaml, pilot_asdpose_v8.yaml]
+inherits: pilot_asdpose_v8.yaml
+
+preprocessing_change:
+  rule: >
+    valid joint-frame = coordinates not both zero (x != 0 or y != 0), instead of confidence > 0.
+    Everything else in SegmentDataset is unchanged (window, image normalisation, flip, channel
+    stacking). Under confscale the floored joint-frames keep coordinates (0, 0) and stay
+    invalid, so the centroid, the scale and the encoded x,y are identical between the S and I
+    test policies and the clean input; only the confidence channel differs.
+  scope: this rule applies to the v13 cells only; v7 to v12 cells keep their rule (recorded)
+  gate_before_scoring: >
+    the invariance check of results/v10/analysis/conf_invariance.csv is rerun on the v13 path:
+    the max absolute x,y difference between the S and I policies and against the clean tensor
+    must be exactly 0 on all 200 checked segments; if not, no v13 cell is scored
+
+cells:
+  A_none: {mechanism: armruns, strength: mid, worlds: [S, I], seeds: [0, 1, 2], runs: 6}
+model_and_training: as v7 (CompactCTRGCN, c_in 3, 25 epochs, batch 128, AMP, image normalisation,
+  best validation epoch under the cell's own world)
+comparator: the v8 armruns A_none cells (same operator, same seeds, old rule), not rerun
+
+scoring: >
+  own operator, worlds S and I, test mask seeds [2000, 3000, 4000]; crossed operators at mid, mask
+  2000; clean. Statistics on the mask mean inside each child resample as effects_masks.csv.
+criteria:
+  V13_1_invariance: the gate above, pass or fail, reported
+  V13_2_effect: >
+    SE(v13 A_none, armruns) with its interval, logit and raw; paired difference against the v8
+    armruns SE on shared resamples with interval; no pass rule on the size. The sentence
+    "attributable to the confidence channel, with the coordinate input identical between policies"
+    may be used only if V13_1 passes.
+  V13_3_reference: R(f_I) of the v13 reference with interval, read against the +-0.05 margin
+expected_cost: 6 runs x about 4 min on the host plus scoring, under 1 h, about USD 1.5

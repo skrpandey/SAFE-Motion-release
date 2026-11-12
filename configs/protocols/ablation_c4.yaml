@@ -1,0 +1,35 @@
+# Protocol C4: paired-world confidence-channel ablation sensitivity (post hoc addition, 2026-11-05)
+# Plan: docs/PLAN_v2_2026-11-05.md, Phase 4 (C4). Written before any model is scored under it.
+# commit: <filled at commit>
+status: post hoc addition to an already-inspected study; within-project prespecification only
+question: >
+  For the six v13 arm-confidence checkpoints (worlds S and I, seeds 0-2, coordinate-invariant valid
+  rule), how much do the label-tied and label-independent test responses change when the confidence
+  channel is ablated, in each training world? Is the ablation sensitivity different between worlds?
+models: results/aws/v13/cache/pilot_v13_{S,I}_w0_armruns_mid_A_none_s{0,1,2}.pt (unchanged)
+rows: host test split as in score_v13.py (length protocol, QC pass, 1,966 segments, 40 children)
+ablations:
+  const: confidence channel set to one constant for every joint-frame after the planted operator
+    and after preprocessing; the constant is the mean confidence of the clean host validation
+    segments (computed once, recorded in the output)
+  perm: whole confidence sequences permuted across test segments (each segment receives the full
+    (T, 17) confidence array of another test segment, same permutation for every model, policy and
+    mask; seed 20261105); coordinates untouched
+  coordinate input: must be identical to the non-ablated input on every scored segment (asserted)
+conditions: clean; armruns policy S and I at mid strength, test masks 2000/3000/4000; each with
+  no ablation (reproduces v13), const, perm
+quantities (logit and raw AUROC; mask mean inside each resample; seeds averaged inside resamples):
+  R_abl(f_w) = m_abl(w, S) - m_abl(w, I) for w in {S, I} and each ablation
+  MWI_abl = R_abl(f_S) - R_abl(f_I)
+  change in R and in MWI against no ablation, per world, paired on shared resamples
+  clean AUROC per world under each ablation
+statistics: 2,000 child-clustered resamples shared with score_v13 / analyze_v7_masks convention;
+  95% percentile intervals; conditional on fitted models and masks
+reading rules (result-neutral):
+  - report every quantity for both worlds and both ablations, whatever its sign or size
+  - the result is called "sensitivity to the specified ablation"; it is not a reliance measure and
+    the World I reference is not assumed to remove every legitimate use of confidence
+  - no claim that the matched-world interaction is better or worse than the ablation is made in
+    advance; the text states what each quantity shows
+check: no-ablation condition must reproduce results/v13 scores to 1e-5 per segment, else stop
+compute: inference only, local GPU, expected under 15 min (well below the 4-5 h local limit)

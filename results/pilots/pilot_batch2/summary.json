@@ -1,0 +1,59 @@
+{
+ "cells": [
+  "A_both",
+  "A_dropout",
+  "A_none",
+  "A_velocity",
+  "B_coorddrop",
+  "C_qc_none",
+  "C_qc_velocity"
+ ],
+ "H1": {
+  "both_minus_none_auc_standard": {
+   "point": 0.03927704493056572,
+   "ci": [
+    0.01929574821752049,
+    0.059323214424840995
+   ]
+  },
+  "both_minus_none_auc_qc": {
+   "point": 0.0548539096729157,
+   "ci": [
+    0.027179246523080316,
+    0.08338081380623713
+   ]
+  },
+  "both_minus_none_gap_dprime": {
+   "point": -0.02988278932634081,
+   "ci": [
+    -0.06437433791075792,
+    0.002979511399834616
+   ]
+  },
+  "pass": true
+ },
+ "coorddrop_share_of_qc_gain": -0.03165815472203534,
+ "coorddrop_minus_none_auc_qc": {
+  "point": -0.0017365735595337162,
+  "ci": [
+   -0.015969744231833873,
+   0.01600755286231107
+  ]
+ },
+ "A_velocity_share_of_qc_gain": 0.40942628097789785,
+ "A_dropout_share_of_qc_gain": 0.24975406061620864,
+ "qcpool_velocity_minus_none_auc_qc": {
+  "point": 0.04456851457229205,
+  "ci": [
+   0.021992395827656896,
+   0.06840620789448776
+  ]
+ },
+ "qcpool_velocity_minus_none_auc_standard": {
+  "point": 0.06117388959262482,
+  "ci": [
+   0.044750492833850214,
+   0.07889021378756354
+  ]
+ }
+}

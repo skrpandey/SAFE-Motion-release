@@ -1,0 +1,44 @@
+UTD-MHAD: 861 clips, 58299 frames, 8 subjects, 27 actions; absent ['a8_s1_t4', 'a23_s6_t4', 'a27_s8_t4']
+length p0/p5/p50/p95/p100 [41.0, 50.0, 67.0, 93.0, 125.0]; zero joint-frames 0, NaN 0, repeated frames 0, repeated joint-frames 0, z [1.7736494541168213, 4.051525592803955]
+action                 clips  len p5  med  p95  mean
+swipe_left               32    51   60   72  61.0
+swipe_right              32    51   58   72  59.6
+wave                     32    53   65   79  65.5
+clap                     32    53   62   74  61.8
+throw                    32    49   59   68  58.8
+arm_cross                32    53   62   80  64.2
+basketball_shoot         32    49   60   72  60.1
+draw_x                   31    58   66   78  66.0
+draw_circle_cw           32    66   75   89  75.6
+draw_circle_ccw          32    65   73   95  74.6
+draw_triangle            32    66   75   99  77.0
+bowling                  32    68   76   90  76.7
+boxing                   32    53   67   84  68.5
+baseball_swing           32    64   74   85  74.3
+tennis_swing             32    49   64   76  64.0
+arm_curl                 32    44   57   79  59.4
+tennis_serve             32    54   68   83  67.7
+push                     32    48   61   79  62.2
+knock                    32    54   65   90  67.7
+catch                    32    45   60   71  59.0
+pickup_throw             32    69   83  120  87.0
+jog                      32    53   68   81  67.5
+walk                     31    61   72   98  76.0
+sit_to_stand             32    48   55   65  55.0
+stand_to_sit             32    49   57   69  57.1
+lunge                    32    66   76  100  80.2
+squat                    31    52   87  114  82.4
+tracking statistic ranges: {'q_lowconf': [0.0, 0.0], 'q_missing': [0.0, 0.0], 'q_frozen': [0.0, 0.0], 'q_arm_lowconf': [0.0, 0.0]}
+bone-length CV p5/p50/p95 [0.0444, 0.085, 0.1369]
+
+audit, 27 actions, leave-one-subject-out:
+  tracking            lr: macro AUC 0.500 [nan, nan] bacc 0.037  [all features constant; chance by construction]
+  tracking            gb: macro AUC 0.500 [nan, nan] bacc 0.037  [all features constant; chance by construction]
+  length              lr: macro AUC 0.649 [0.623, 0.688] bacc 0.075  null AUC 0.485 (95th 0.506) p=0.005
+  length              gb: macro AUC 0.608 [0.592, 0.631] bacc 0.070  null AUC 0.485 (95th 0.509) p=0.020
+  bone_len_cv         lr: macro AUC 0.674 [0.636, 0.736] bacc 0.096  null AUC 0.485 (95th 0.506) p=0.005
+  bone_len_cv         gb: macro AUC 0.639 [0.607, 0.677] bacc 0.101  null AUC 0.487 (95th 0.504) p=0.020
+  bone_len_cv+length  lr: macro AUC 0.730 [0.705, 0.773] bacc 0.119  null AUC 0.487 (95th 0.509) p=0.005
+  bone_len_cv+length  gb: macro AUC 0.688 [0.666, 0.714] bacc 0.094  null AUC 0.489 (95th 0.510) p=0.020
+per-class OvR AUC length|gb, six furthest from 0.5: pickup_throw 0.804, sit_to_stand 0.757, draw_circle_ccw 0.724, draw_circle_cw 0.717, lunge 0.715, draw_triangle 0.714
+per-class OvR AUC bone_len_cv|gb, six furthest from 0.5: squat 0.924, pickup_throw 0.858, swipe_right 0.726, draw_triangle 0.724, sit_to_stand 0.719, wave 0.714

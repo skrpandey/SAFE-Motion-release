@@ -1,0 +1,7 @@
+# post hoc sensitivity; crossed_ci: one draw of identifiers, test masks and fitted seeds per replicate; three fitted seeds, so a sensitivity display, not a calibrated interval over training randomness
+proto,mechanism,strength,quantity,point,cond_ci,crossed_ci,raw_point,raw_cond_ci,raw_crossed_ci,seed_combo_min,seed_combo_max,seed_combo_sd_ddof1,per_mask,mask_range,sd_boot_cond_ddof0,sd_crossed_ddof0,n_boot,n_masks,n_seeds_per_world
+v7,runs,mid,SE,0.7514,"[+0.6532, +0.8629]","[+0.5912, +0.9289]",0.131,"[+0.1153, +0.1493]","[+0.1031, +0.1627]",0.5928,0.8584,0.0935,+0.7563; +0.7525; +0.7453,0.0109,0.0533,0.0863,2000,3,3
+v7,runs,low,SE,0.3811,"[+0.2939, +0.4750]","[+0.2089, +0.6059]",0.0689,"[+0.0518, +0.0904]","[+0.0374, +0.1123]",0.2158,0.5174,0.0957,+0.2368; +0.4421; +0.4644,0.2276,0.0462,0.1004,2000,3,3
+v7,whole,mid,SE,0.4726,"[+0.4064, +0.5477]","[+0.3606, +0.5997]",0.0814,"[+0.0663, +0.0978]","[+0.0604, +0.1055]",0.4398,0.5251,0.0348,+0.4566; +0.4263; +0.5350,0.1086,0.0357,0.0607,2000,3,3
+v8,frozen,mid,SE,0.3609,"[+0.2870, +0.4460]","[+0.2384, +0.4843]",0.0578,"[+0.0464, +0.0686]","[+0.0376, +0.0763]",0.317,0.3931,0.0262,+0.3758; +0.2979; +0.4090,0.1111,0.0404,0.0622,2000,3,3
+v13,armruns,mid,SE,0.5501,"[+0.4888, +0.6181]","[+0.4566, +0.6497]",0.0846,"[+0.0675, +0.1042]","[+0.0640, +0.1068]",0.5079,0.6019,0.0317,+0.5303; +0.5519; +0.5682,0.0378,0.0343,0.0496,2000,3,3

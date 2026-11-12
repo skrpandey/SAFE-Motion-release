@@ -1,0 +1,5 @@
+rule,windows_removed,negatives_remaining
+lower_yes_removed,5,418
+lower_yes_and_unsure_removed,75,348
+upper_yes_removed,16,407
+upper_yes_and_unsure_removed,75,348

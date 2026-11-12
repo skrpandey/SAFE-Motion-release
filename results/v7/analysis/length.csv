@@ -1,0 +1,16 @@
+model,cell,seed,spearman_neg,spearman_pos,ridge_r2_log_length,length_not_exploited
+v7_real_A_both_s0,A_both,0,0.0406,-0.0381,0.0289,True
+v7_real_A_both_s1,A_both,1,0.0022,-0.0636,0.0007,True
+v7_real_A_both_s2,A_both,2,0.0165,-0.0813,-0.0035,True
+v7_real_A_dropout_s0,A_dropout,0,0.0091,-0.0390,0.0081,True
+v7_real_A_dropout_s1,A_dropout,1,0.0216,0.0181,0.0081,True
+v7_real_A_dropout_s2,A_dropout,2,0.0093,-0.0367,0.0044,True
+v7_real_A_none_s0,A_none,0,0.0188,-0.0307,-0.0110,True
+v7_real_A_none_s1,A_none,1,0.0218,-0.0079,-0.0111,True
+v7_real_A_none_s2,A_none,2,-0.0025,-0.0897,0.0018,True
+v7_real_A_velocity_s0,A_velocity,0,0.0083,-0.0567,0.0116,True
+v7_real_A_velocity_s1,A_velocity,1,0.0053,-0.0675,0.0015,True
+v7_real_A_velocity_s2,A_velocity,2,0.0229,-0.0398,0.0028,True
+v7_real_B_coorddrop_s0,B_coorddrop,0,0.0154,-0.0678,0.0082,True
+v7_real_B_coorddrop_s1,B_coorddrop,1,0.0117,-0.0146,-0.0207,True
+v7_real_B_coorddrop_s2,B_coorddrop,2,0.0033,-0.0333,-0.0061,True

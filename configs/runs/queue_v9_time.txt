@@ -1,0 +1,5 @@
+results/v9/mmasd_chest_squat/runs_mid/I/A_none/seed0/fold0 --host mmasd_chest_squat --mechanism runs --strength mid --world I --cell A_none --fold 0 --seed 0 --amp --workers 0
+results/v9/mmasd_chest_squat/runs_mid/I/A_none/seed0/fold1 --host mmasd_chest_squat --mechanism runs --strength mid --world I --cell A_none --fold 1 --seed 0 --amp --workers 0
+results/v9/mmasd_chest_squat/runs_mid/I/A_none/seed0/fold2 --host mmasd_chest_squat --mechanism runs --strength mid --world I --cell A_none --fold 2 --seed 0 --amp --workers 0
+results/v9/mmasd_chest_squat/runs_mid/I/A_none/seed0/fold3 --host mmasd_chest_squat --mechanism runs --strength mid --world I --cell A_none --fold 3 --seed 0 --amp --workers 0
+results/v9/mmasd_chest_squat/runs_mid/I/A_none/seed0/fold4 --host mmasd_chest_squat --mechanism runs --strength mid --world I --cell A_none --fold 4 --seed 0 --amp --workers 0

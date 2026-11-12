@@ -1,0 +1,142 @@
+# Protocol v11: the SSBD/ESBD transfer test, reported in full. Written from docs/PLAN.md §5.4 and
+# §14.5, the base project's external report (asdpose-smm-detection/reports/external_transfer_report.md,
+# 2026-08-20, read-only) and the 2026-11-02 review disposition (MAJOR 7, MAJOR 8). Frozen before
+# any model is scored on the external set under this protocol. Commit in REGISTRY.md.
+# All-or-nothing: every quantity below is reported, whichever way it comes out.
+
+frozen: true
+frozen_date: 2026-11-03
+frozen_commit: "b69599d"
+purpose: >
+  Answer, on in-the-wild video of annotated stereotypies, (1) whether the ASDPose tracking-quality
+  artifact is release-specific, (2) how the ASDPose-trained models transfer and what the confidence
+  channel, the pose extractor and the classifier head each contribute to the transfer gap, (3) how
+  the models respond to the planted operators on this set relative to their real-data references,
+  and (4) what calibration looks like at the published operating point.
+depends_on: [pilot_asdpose_v5.yaml, pilot_asdpose_v7.yaml, pilot_asdpose_v8.yaml, identification_v10.yaml]
+inherits: pilot_asdpose_v8.yaml
+
+# ------------------------------------------------------------------ the external set (fixed, read-only)
+external_set:
+  cache: <SAFE-SMM repo>/cache/external (index.csv + keypoints.f32; read-only)
+  built_by: the base project's external/build_cache.py under its frozen configs/external_ssbd.yaml
+    (2026-08-20); 550 windows of exactly 200 frames at 30 fps, COCO-17 RTMPose with per-joint
+    confidence, the same extractor and child-selection rule for both classes
+  positives: 127 annotated stereotypy clips, 127 source videos (armflapping 41, spinning 44,
+    headbanging 33, handaction 9)
+  negatives: 423 windows cut from the same source videos outside every annotated span (2 s guard
+    bands, per-video cap 6); 12 windows with no detected person are kept
+  cluster: child_id = source video (127 clusters); every interval is video-clustered
+  known_properties: >
+    length neutral by construction (all 200 frames); quality-only logistic regression fit within
+    the set reached 0.555 in the base project; residual label noise (unannotated footage is not
+    negative) biases against the detector; these numbers are re-measured here, not copied
+  not_changed: no window is added, dropped or re-cut; the 12 no-person windows stay
+
+# ------------------------------------------------------------------ models scored
+models:
+  ours_v7_real: the five v7 real cells x 3 seeds (results/aws/v7/cache/pilot_v7_real_*.pt), image
+    normalisation with the external img_h, length protocol irrelevant (fixed 200)
+  ours_v10_real_I: the five real-data World I references x 3 seeds (pilot_v10_real_I_*.pt)
+  published: the SAFE-SMM checkpoints of pilot_asdpose_v5.yaml (compact v1, v2 family, v3, v3
+    no-confidence family, the four ablations, base, two permuted controls; ST-GCN and AGCN pairs),
+    read-only from asdpose-smm-detection/cache, scored with their own preprocessing as in v5
+  seed_handling: families averaged inside resamples; single checkpoints reported as such
+
+# ------------------------------------------------------------------ T1 to T9, each reported in full
+tests:
+  T1_artifact_release_specific:
+    statistics: >
+      quality-only AUC on the external set from (a) the ASDPose-fit logistic regression on the four
+      tracking statistics and (b) a within-set fit (video-grouped 5-fold, gradient boosting and
+      logistic regression), with video-clustered bootstrap intervals and a label-permutation null
+      (200 permutations); ASDPose standard-split value 0.714 beside them
+    reading_rule: >
+      "release-specific" may be said only if the within-set interval's upper end is below 0.60 and
+      the permutation p is above 0.05; otherwise "weaker on this set" with the numbers
+  T2_transfer:
+    statistics: >
+      clean AUC of every model on the external set with video-clustered intervals; paired
+      contrasts on shared resamples: v3 minus v1, v3 minus the released checkpoint, each ours_v7
+      cell minus A_none, each ours_v7 cell minus its v10 real_I counterpart; ASDPose full-split
+      AUC beside every external AUC; per-category AUC (each category's positives against all
+      negatives; handaction n = 9 is marked indicative); firing rate at the published 0.85
+      operating point
+    no_pass_rule: the numbers are the result
+  T3_confidence_channel:
+    statistics: every model rescored with the confidence channel zeroed; paired difference with interval
+  T4_estimator_swap_both_classes:
+    design: >
+      MediaPipe Pose (33 landmarks, installed version recorded in the report) run on BOTH classes:
+      positives from the existing <data root>/stimming/mediapipe/pose-data clips sliced to the
+      annotated span and resampled to 30 fps, negatives re-extracted from the source videos at the
+      same frame spans as the RTMPose negatives, on CPU. 33 landmarks mapped to COCO-17 by the
+      standard correspondence (nose 0; eyes 2, 5; ears 7, 8; shoulders 11, 12; elbows 13, 14;
+      wrists 15, 16; hips 23, 24; knees 25, 26; ankles 27, 28); landmark visibility used as the
+      confidence channel. A second external cache in the Stage 1 layout, 550 windows, same
+      identifiers. OpenPose-25 is not swapped (no negatives exist and no extractor is installed).
+    disclosed_differences: >
+      MediaPipe is a single-person estimator with no child-selection rule, so the tracked person
+      may differ from the RTMPose track in multi-person frames; its visibility is not a detector
+      confidence; both are stated beside every T4 number
+    statistics: >
+      for every model: AUC under MediaPipe input, paired difference against the RTMPose AUC on
+      shared video resamples; quality-only within-set AUC under MediaPipe (T1 repeated); the
+      tracking-statistic distributions of both classes under both extractors
+    gate: >
+      G1-style layout check (joint order, left-right, coordinate range) and a per-window parity
+      check between the RTMPose and MediaPipe windows (same identifiers, same frame counts) before
+      any scoring; failures are reported and the affected windows are listed, not dropped
+    fallback: >
+      if negative re-extraction fails for more than 5 percent of windows, T4 is reported as
+      positive-class score sensitivity only, as the review's fallback allows, and the claim is
+      restricted accordingly
+  T5_operator_responses:
+    statistics: >
+      R under the four operators at mid (worlds S and I planted on the external rows, mask seed
+      2000, direction: negatives degraded more, as the ASDPose cue) and under gapfill, for every
+      ours_v7 cell and its v10 real_I reference, with paired differences; three test-mask seeds for
+      missing runs. Reported as responses relative to the real-data reference under the v10
+      wording rule; no reliance sentence
+  T6_head_versus_representation:
+    design: >
+      DFR: logistic regression on the penultimate features of each ours_v7 and published compact
+      model, video-grouped 5-fold on the external set (fold assignment seed 0, written to
+      results/v11/folds.json), out-of-fold AUC; within-set ceiling: TinyTCN and CompactCTRGCN
+      trained from scratch on the external set with the same folds, 3 seeds, 25 epochs, batch 32,
+      window-std normalisation, out-of-fold AUC
+    statistics: per model, full-model external AUC, DFR AUC and their paired difference; the
+      within-set ceilings with intervals
+  T7_calibration:
+    design: >
+      temperature scaling fitted on the training folds of the same 5-fold assignment, applied to
+      the held-out fold; reported as ECE (15 bins), Brier score, and precision, recall and firing
+      rate at the published 0.85 operating point and at the external-fold-optimal F1 threshold,
+      before and after scaling
+    rule: AUC is reported once and never as a calibration outcome (monotone scaling leaves it unchanged;
+      if it moves, that is a bug to be found)
+  T8_position_in_video:
+    statistics: >
+      AUC of a window's start position (fraction of the source video) against the label,
+      video-grouped 5-fold, with interval and permutation null; the pre-registered reading is
+      "no position cue" if the interval contains 0.50
+  T9_label_noise_audit:
+    design: >
+      100 negative windows sampled uniformly without replacement (seed 0, list written to
+      results/v11/label_noise_sample.csv), each rendered as a contact sheet of 8 frames from the
+      source video span, for manual viewing by the user; the user records per window whether it
+      contains stereotypy-like movement (yes / no / unsure)
+    statistics: the fraction "yes" with a Wilson interval; the T2 AUCs are also recomputed with the
+      "yes" windows removed, as a sensitivity bound, never as the headline
+    status: the viewing is a user task; until done, T9 is reported as pending and T2 carries the
+      base project's disclosure
+
+# ------------------------------------------------------------------ statistics and run
+statistics: >
+  video-clustered paired bootstrap over the 127 source videos, 2,000 resamples, seeds averaged
+  inside resamples; logit AUC with raw AUC beside it; permutation nulls where stated
+compute: >
+  local GPU for scoring and the within-set CV (the designated local use: external CV and scoring);
+  MediaPipe extraction on CPU; expected under 2 GPU-hours and 2 CPU-hours; no AWS
+outputs: results/v11/{scores, mediapipe_cache, analysis/*.csv, criteria.json, REPORT.md}
+no_reruns: no ASDPose model is retrained; the external set is not re-cut

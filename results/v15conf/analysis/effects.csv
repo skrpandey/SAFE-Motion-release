@@ -1,0 +1,10 @@
+cell,contrast,logit,raw,R_S,R_I,R_I_verdict,n_seeds,lowers_P15_1,p_inv,raw_p_inv
+A_none,MWI(A_none),"+0.58686 [+0.52017, +0.66727]","+0.09074 [+0.07177, +0.11292]","+0.61919 [+0.54384, +0.70746]","+0.03232 [+0.00212, +0.06544]",differs_from_zero,3/3,,,
+C_groupdro,MWI(C_groupdro),"+0.23035 [+0.18417, +0.27810]","+0.03695 [+0.02743, +0.04861]","+0.21511 [+0.16874, +0.26036]","-0.01524 [-0.04194, +0.01524]",within_margin,3/3,,,
+C_groupdro,MWI(C_groupdro) - MWI(A_none),"-0.35651 [-0.41878, -0.30211]","-0.05380 [-0.06861, -0.04156]",,,,,True,0.0010,0.0010
+C_groupdro,"clean AUROC(C_groupdro) - clean AUROC(A_none), World S",,"+0.00077 [-0.01330, +0.01600]",,,,,,,
+C_groupdro,"clean AUROC(C_groupdro) - clean AUROC(A_none), World I",,"-0.00070 [-0.01058, +0.00949]",,,,,,,
+C_groupdro,"MWI(C_groupdro) - MWI(A_none), seeds and masks resampled (logit)","-0.35651 [-0.47042, -0.25859]",,,,,,,,
+C_groupdro,"MWI(C_groupdro) - MWI(A_none), seeds and masks resampled (raw)",,"-0.05380 [-0.07518, -0.03592]",,,,,,,
+"A_none (v13, legacy recipe)","MWI(A_none, v13 cleaned)","+0.55013 [+0.48883, +0.61810]","+0.08457 [+0.06751, +0.10415]","+0.60564 [+0.53016, +0.68433]","+0.05551 [+0.02917, +0.08237]",,3/3,,,
+A_none,"MWI(A_none, v15conf) - MWI(A_none, v13 cleaned) [descriptive]","+0.03673 [-0.00819, +0.08674]","+0.00617 [+0.00008, +0.01380]",,,,,,,

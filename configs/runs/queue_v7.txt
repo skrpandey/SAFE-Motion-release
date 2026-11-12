@@ -1,0 +1,71 @@
+results/v7/S_w0_runs_mid/A_none/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --seed 0
+results/v7/I_w0_runs_mid/A_none/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --seed 0
+results/v7/S_w0_runs_mid/A_velocity/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world S --strength mid --seed 0
+results/v7/I_w0_runs_mid/A_velocity/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world I --strength mid --seed 0
+results/v7/S_w0_runs_mid/A_dropout/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --seed 0
+results/v7/I_w0_runs_mid/A_dropout/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --seed 0
+results/v7/S_w0_runs_mid/A_both/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world S --strength mid --seed 0
+results/v7/I_w0_runs_mid/A_both/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world I --strength mid --seed 0
+results/v7/S_w0_runs_mid/B_coorddrop/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --seed 0
+results/v7/I_w0_runs_mid/B_coorddrop/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --seed 0
+results/v7/S_w0_runs_mid/A_none/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --seed 1
+results/v7/I_w0_runs_mid/A_none/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --seed 1
+results/v7/S_w0_runs_mid/A_velocity/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world S --strength mid --seed 1
+results/v7/I_w0_runs_mid/A_velocity/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world I --strength mid --seed 1
+results/v7/S_w0_runs_mid/A_dropout/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --seed 1
+results/v7/I_w0_runs_mid/A_dropout/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --seed 1
+results/v7/S_w0_runs_mid/A_both/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world S --strength mid --seed 1
+results/v7/I_w0_runs_mid/A_both/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world I --strength mid --seed 1
+results/v7/S_w0_runs_mid/B_coorddrop/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --seed 1
+results/v7/I_w0_runs_mid/B_coorddrop/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --seed 1
+results/v7/S_w0_runs_mid/A_none/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --seed 2
+results/v7/I_w0_runs_mid/A_none/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --seed 2
+results/v7/S_w0_runs_mid/A_velocity/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world S --strength mid --seed 2
+results/v7/I_w0_runs_mid/A_velocity/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --world I --strength mid --seed 2
+results/v7/S_w0_runs_mid/A_dropout/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --seed 2
+results/v7/I_w0_runs_mid/A_dropout/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --seed 2
+results/v7/S_w0_runs_mid/A_both/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world S --strength mid --seed 2
+results/v7/I_w0_runs_mid/A_both/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --world I --strength mid --seed 2
+results/v7/S_w0_runs_mid/B_coorddrop/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --seed 2
+results/v7/I_w0_runs_mid/B_coorddrop/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --seed 2
+results/v7/real/A_none/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --seed 0
+results/v7/real/A_velocity/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --seed 0
+results/v7/real/A_dropout/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --seed 0
+results/v7/real/A_both/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --seed 0
+results/v7/real/B_coorddrop/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --seed 0
+results/v7/real/A_none/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --seed 1
+results/v7/real/A_velocity/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --seed 1
+results/v7/real/A_dropout/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --seed 1
+results/v7/real/A_both/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --seed 1
+results/v7/real/B_coorddrop/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --seed 1
+results/v7/real/A_none/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --seed 2
+results/v7/real/A_velocity/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_velocity --seed 2
+results/v7/real/A_dropout/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --seed 2
+results/v7/real/A_both/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_both --seed 2
+results/v7/real/B_coorddrop/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --seed 2
+results/v7/S_w0_whole_mid/A_none/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --mechanism whole --seed 0
+results/v7/I_w0_whole_mid/A_none/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --mechanism whole --seed 0
+results/v7/S_w0_whole_mid/A_dropout/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism whole --seed 0
+results/v7/I_w0_whole_mid/A_dropout/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism whole --seed 0
+results/v7/S_w0_whole_mid/B_coorddrop/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --mechanism whole --seed 0
+results/v7/I_w0_whole_mid/B_coorddrop/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --mechanism whole --seed 0
+results/v7/S_w0_whole_mid/A_none/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --mechanism whole --seed 1
+results/v7/I_w0_whole_mid/A_none/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --mechanism whole --seed 1
+results/v7/S_w0_whole_mid/A_dropout/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism whole --seed 1
+results/v7/I_w0_whole_mid/A_dropout/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism whole --seed 1
+results/v7/S_w0_whole_mid/B_coorddrop/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --mechanism whole --seed 1
+results/v7/I_w0_whole_mid/B_coorddrop/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --mechanism whole --seed 1
+results/v7/S_w0_whole_mid/A_none/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength mid --mechanism whole --seed 2
+results/v7/I_w0_whole_mid/A_none/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength mid --mechanism whole --seed 2
+results/v7/S_w0_whole_mid/A_dropout/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world S --strength mid --mechanism whole --seed 2
+results/v7/I_w0_whole_mid/A_dropout/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_dropout --world I --strength mid --mechanism whole --seed 2
+results/v7/S_w0_whole_mid/B_coorddrop/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world S --strength mid --mechanism whole --seed 2
+results/v7/I_w0_whole_mid/B_coorddrop/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell B_coorddrop --world I --strength mid --mechanism whole --seed 2
+results/v7/S_w0_runs_low/A_none/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength low --seed 0
+results/v7/I_w0_runs_low/A_none/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength low --seed 0
+results/v7/S_w0_runs_low/A_none/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength low --seed 1
+results/v7/I_w0_runs_low/A_none/seed1 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength low --seed 1
+results/v7/S_w0_runs_low/A_none/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --strength low --seed 2
+results/v7/I_w0_runs_low/A_none/seed2 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --strength low --seed 2
+results/v7/S_w1_runs_mid/A_none/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --world-seed 1 --strength mid --seed 0
+results/v7/S_w2_runs_mid/A_none/seed0 --proto v7 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --world-seed 2 --strength mid --seed 0

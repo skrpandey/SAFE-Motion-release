@@ -1,0 +1,81 @@
+# Protocol v12: remedies designed to remove the planted cue (pre-submission reviews of
+# 2026-11-03, docs/reviews/2026-11-03_presubmission/, review A concerns 3 and 4). Frozen before
+# any v12 cell is trained. Commit in REGISTRY.md. Definitions (host, operators, worlds,
+# severities, R, SE, mask-mean statistics, length protocol) are those of v7, v8 and the
+# mask-mean analysis of the revision (experiments/analyze_v7_masks.py) unless restated here.
+
+frozen: true
+frozen_date: 2026-11-03
+frozen_commit: "7e1b3a0"
+purpose: >
+  Test whether training methods aimed at the quality cue, unlike the regularizers of v7 and v8,
+  lower the shortcut effect SE on the ASDPose host. A detected reduction would be the paper's
+  first positive remedy result; a non-detection extends the negative result to cue-targeted
+  methods.
+depends_on: [pilot_asdpose_v7.yaml, pilot_asdpose_v8.yaml, identification_v10.yaml]
+inherits: pilot_asdpose_v8.yaml
+
+# ------------------------------------------------------------------ cells (new)
+cells:
+  C_groupdro:
+    method: >
+      Group DRO (Sagawa et al. 2020) with four training groups: label (SMM, non-SMM) crossed
+      with planted degradation (segment's planted severity above or below the median severity
+      of the training split in that world). Exponentiated-gradient group weights, step size
+      0.01, fixed here; no group-adjusted margins; no early stopping beyond the v7 rule.
+    rationale: the planted degradation is the nuisance attribute; the cue is the group
+  C_adversarial:
+    method: >
+      A second head on the pooled features predicts the four tracking statistics of the input
+      window (low-confidence, missing, frozen and arm low-confidence fractions, recomputed on
+      the planted input at each step) by mean squared error, through a gradient reversal layer
+      (Ganin and Lempitsky 2015) with lambda 0.3, fixed here. The classification loss and the
+      reversed regression loss are summed.
+    rationale: removes the quality statistics from the representation
+  C_augment:
+    method: >
+      Operator augmentation: on top of the world's planted degradation, each training window
+      receives, with probability 0.5 per step, one additional degradation drawn uniformly from
+      the four operators (missing runs, whole-joint absence, frozen frames, arm confidence), with
+      severity drawn from the World I mixture independently of the label, re-drawn every step
+      (not deterministic per segment). Test-time planting is unchanged.
+    rationale: >
+      the crossed table predicts that training against label-independent degradation of every
+      form flattens the responses; a label-independent dose on top of World S dilutes the
+      planted association
+mechanisms: [runs, frozen]           # one information-removing operator that the blind control
+                                     # could test, and the largest natural component of the cue
+strength: mid
+worlds: [S, I]
+seeds: [0, 1, 2]
+runs: "3 cells x 2 mechanisms x 2 worlds x 3 seeds = 36"
+model_and_training: as v7 (CompactCTRGCN, 25 epochs, batch 128, AMP, image normalisation,
+  best validation epoch under the cell's own training world)
+comparator: the v7 / v8 A_none cells of the same mechanism, world and seeds (not rerun)
+
+# ------------------------------------------------------------------ scoring
+scoring: >
+  matched operator, worlds S and I, test mask seeds [2000, 3000, 4000], as v7 and v8; SE on the
+  mask mean inside each child resample (experiments/analyze_v7_masks.py convention); crossed
+  operators at mid for A_none-style reading (all four operators, mask 2000); clean AUC
+
+# ------------------------------------------------------------------ pass rules
+criteria:
+  P12_1_reduction:
+    pass_if: >
+      for a cell and mechanism, SE(cell) - SE(A_none) on the mask mean has a 95 percent paired
+      child-clustered interval entirely below zero on the logit scale and on the raw-AUC scale.
+      "Lowers SE" may be said only for cells and mechanisms that pass.
+  P12_2_cost:
+    report: >
+      clean-AUC change against A_none in World I and in World S with intervals, so a reduction
+      bought with accuracy is visible
+  P12_3_flatten:
+    report: >
+      for C_augment, the World I model's responses under the three operators it was not
+      planted with in its world (crossed table), against the A_none World I responses
+family: >
+  the six contrasts SE(cell) - SE(A_none) (3 cells x 2 mechanisms) are one declared family;
+  intervals are reported uncorrected and the family is named; no cell is rerun to move an
+  interval
+expected_cost: about 36 x 7 min = 4.2 h on one g5.2xlarge plus scoring, about USD 6

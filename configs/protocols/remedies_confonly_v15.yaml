@@ -1,0 +1,119 @@
+# Protocol v15conf: the Group DRO remedy under confidence-only planting with the coordinate-
+# invariant valid-joint rule. Written after the independent v15 review of 2026-11-09
+# (an independent review of the revised manuscript; plan of action, phase 3) and approved by the author on 2026-11-09 (twelve-fit design, USD 10 cap). Frozen and
+# committed before any fit under it is trained or scored. The commit hash is recorded in
+# configs/protocols/REGISTRY.md (filled in by the following commit). Definitions (host, operators,
+# worlds, severities, R, MWI/SE, mask-mean statistics, length protocol) are those of v7, v8, v12 and
+# v13 unless restated here.
+
+frozen: true
+frozen_date: 2026-11-09
+frozen_commit: "e95cd84"
+status: pre-specified addition after the v15 review; within-project prespecification only
+purpose: >
+  Connect the strongest remedy result of the paper (Group DRO lowers the matched-world interaction
+  under missing runs and frozen frames, protocol v12) to the least destructive planted intervention
+  (arm-confidence scaling under the coordinate-invariant rule, protocol v13), where the encoded
+  x, y input is identical between the two test policies and only the confidence channel carries
+  the planted cue. Either outcome is reported.
+depends_on: [pilot_asdpose_v7.yaml, pilot_asdpose_v8.yaml, remedies_v12.yaml, armconf_v13.yaml,
+             repair_selection_v14.yaml, train_recipe_v15.md]
+inherits: pilot_asdpose_v8.yaml
+
+# ------------------------------------------------------------------ cells
+cells:
+  C_groupdro:
+    method: as remedies_v12.yaml C_groupdro (four groups label x planted severity above/below the
+      training median, exponentiated-gradient weights, step 0.01, no group adjustment)
+    valid_rule: coords
+  A_none:
+    method: no remedy (the v13 A_none cell), the within-protocol comparator
+    valid_rule: coords
+mechanism: armruns              # operator confscale (safe_motion/planted.py MECHANISM_MODE)
+strength: mid
+worlds: [S, I]
+seeds: [0, 1, 2]
+runs: "2 cells x 2 worlds x 3 seeds = 12"
+model_and_training: as v7 (CompactCTRGCN, c_in 3 (x, y, confidence), no dropout, 25 epochs, batch
+  128, AMP, image normalisation, cosine schedule, AdamW 1e-3 / 1e-4)
+
+# ------------------------------------------------------------------ recipe and selection
+training_recipe:
+  value: v15
+  definition: configs/protocols/train_recipe_v15.md (training crop start uniform on [0, T-W]
+    inclusive; DataLoader worker RNG reseeded per worker and epoch via asdpose.worker_init)
+  rule: >
+    Both arms (C_groupdro and A_none) are trained under the same recipe, so the primary contrast
+    is not confounded by the recipe. The trainer refuses a v15conf fit unless SM_TRAIN_RECIPE=v15 is
+    set, and records the recipe in every train_log.json. This supersedes the "legacy" line of
+    the plan of action (author decision 2026-11-09, twelve-fit design): the
+    historical v13 A_none fits are not reused as the primary comparator.
+selection:
+  machinery: the per-epoch path of repair_selection_v14 (every epoch state and the validation
+    predictions are stored; the trainer is called with --repair-protocol pointing at this file)
+  metric: validation AUROC, first epoch reaching the maximum (unchanged)
+  cleaned: validation rows without val_exclude_ids; PRIMARY (the paper's cleaned rule from the start)
+  original: all validation rows; stored as a sensitivity set, scored, reported in the supplement
+val_exclude_ids: [322]
+val_exclude_rule: validation rows of any person already used for optimization (repair_selection_v14)
+outputs:
+  epoch_dir: results/v15conf/epochs
+  cache_root: cache/v15conf
+  note: >
+    epoch_dir holds per-epoch states, val_preds.npz and train_log.json per fit; cache_root holds
+    clean/ and orig/ checkpoints named pilot_v15conf_{S,I}_w0_armruns_mid_{cell}_s{k}.pt.
+    experiments/score_v15conf.py runs once per selection with --cache-dir cache/v15conf/RULE and
+    --out results/v15conf/RULE; the analysis reads results/v15conf/clean.
+note: pre-specified remedy experiment under confidence-only planting (protocol v15conf)
+
+# ------------------------------------------------------------------ gate
+gate_before_scoring:
+  V15_1_invariance: >
+    The v15conf cells use the SegmentDataset path and the "coords" rule of protocol v13 without
+    change, so the v13 gate applies (results/v13/analysis/conf_invariance_v13.csv: max |x, y
+    difference| exactly 0 between the S and I test policies and against the clean tensor, 200
+    host test segments; passed 2026-11-03). experiments/score_v15conf.py asserts that every
+    checkpoint carries valid_rule "coords"; a checkpoint without it is not scored.
+
+# ------------------------------------------------------------------ scoring
+scoring: >
+  own operator (confscale) at mid, worlds S and I, test mask seeds [2000, 3000, 4000]; the four
+  operators at mid, mask 2000 (crossed reading); clean. Host test rows as v7 (length protocol, QC
+  pass). Statistics on the mask mean inside each identifier-clustered resample (2,000 resamples,
+  seeds averaged inside resamples; the convention of analyze_v7_masks.py and analyze_v12.py).
+
+# ------------------------------------------------------------------ pre-specified rules
+criteria:
+  P15_1_reduction:
+    primary: true
+    contrast: MWI(C_groupdro) - MWI(A_none), both cells of this protocol, cleaned selection
+    pass_if: >
+      the paired identifier-clustered interval of the mask-mean contrast lies entirely below zero
+      on the logit scale and on the raw-AUROC scale (the P12_1 rule). "Lowers the interaction under
+      confidence-only planting" may be said only if it passes. One contrast; no family; the
+      inversion p (analyze_v7.p_inversion) is reported on both scales.
+  P15_2_cost:
+    report: clean-AUROC change of C_groupdro against A_none in World I and in World S with intervals
+  P15_3_reference:
+    report: R(f_I) of both cells with intervals, read against the +-0.05 margin
+  P15_4_sensitivity:
+    report: >
+      the seed-and-mask crossed-factor resampled interval of the contrast (variance_v12.py
+      convention: shared identifier resample, shared draw of three masks with replacement, an
+      independent draw of three fitted seeds per world-cell) beside the conditional interval;
+      a sensitivity display, not a calibrated interval over training randomness
+  D15_5_recipe:
+    descriptive: true
+    report: >
+      MWI(A_none, v15conf) minus MWI(A_none, v13 cleaned selection, legacy recipe) with a paired
+      interval. The two cells differ in the training recipe and in independent reruns, so the
+      difference is reported as descriptive and is not a test of the recipe; no pass rule.
+reporting_rules: >
+  Every quantity above is reported from the cleaned selection, with the original selection in the
+  supplement. No fit is rerun to move an interval. The outcome enters the supplement (table S3e)
+  and one paragraph of the remedy section; Contribution 3 is adjusted to the outcome, including a
+  non-detection. The AWS instance id, wall time and cost are recorded in REGISTRY.md.
+expected_cost: >
+  12 fits x about 7 min on one A10G, sequential, plus scoring of 24 checkpoints (two selections)
+  and bootstrap: about 2 h on one on-demand g5.2xlarge (about USD 1.21/h), about USD 2.5.
+  Author cap USD 10. Runtime guard SM_MAX_HOURS=4; the queue terminates the instance when done.

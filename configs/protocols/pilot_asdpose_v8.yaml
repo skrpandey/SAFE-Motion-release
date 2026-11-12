@@ -1,0 +1,148 @@
+# Protocol v8: addendum to the AWS round. Mechanism coverage of the natural QC cue (panel review
+# 2026-10-25, R-2), pre-registered equivalence margins and headline wording (R-3), a per-child
+# companion statistic (R-8), the null and variance-component policy (R-9), and the comparator
+# measures for the related-work comparison (R-6). Frozen before any v8 cell is trained or any
+# v7 checkpoint is scored under the v8 grid. Commit in REGISTRY.md. Definitions are those of v6;
+# the length-controlled protocol, model and seeds are those of v7.
+
+inherits: pilot_asdpose_v7.yaml
+
+# ------------------------------------------------------------------ audit of the natural cue
+# Computed 2026-10-28 on the SAFE-SMM segment cache before freezing (3,000 random segments for
+# run statistics, all 32,177 + 4,751 for the per-segment rates). Numbers are what the operators
+# below are matched to; they are reported in the paper's mechanism-coverage table.
+natural_cue_audit:
+  frozen_frames:
+    definition: all 17 joints' coordinates identical to the previous frame (q_frozen)
+    whole_skeleton: "95.7% of frozen frame-pairs freeze all 17 joints; partial freezes 4.3%"
+    rate_by_class_train: {non_smm: 0.279, smm: 0.054}
+    segments_with_any_freeze_train: {non_smm: 0.543, smm: 0.294}
+    fully_frozen_segments: "q90 of non-SMM rate is 1.0: about a tenth of non-SMM segments never move"
+    run_length_frames: {non_smm: {median: 8, mean: 51, q90: 163}, smm: {median: 5, mean: 19, q90: 52}}
+    run_start_position: near-uniform over the segment, slight excess at the start
+  arm_low_confidence:
+    definition: arm joints (COCO 5-10) with confidence < 0.3 (q_arm_lowconf)
+    rate_by_class_train: {non_smm: 0.447, smm: 0.220}
+    composition: "84% of low-confidence arm joint-frames have confidence exactly 0 (missing);
+      16% have 0 < confidence < 0.3, median 0.15, IQR 0.10 to 0.22"
+    reading: >
+      the missing-runs operator of v3 (zero on all joints) already writes the dominant part of
+      this statistic; the rescaling operator below plants the remaining, non-missing part
+
+# ------------------------------------------------------------------ operators (two added)
+operators:
+  zero: as v6 (missing runs or whole joints; x = y = confidence = 0)
+  gapfill: as v6
+  conflow: as v6
+  hold: >
+    frozen-frame runs. A frame-level two-state Markov chain with stationary frozen probability
+    eps and mean run length 20 frames (inside the natural median-to-mean range); every frozen
+    frame, all 17 joints, is replaced by the last non-frozen frame (coordinates and confidence);
+    a run that starts at frame 0 copies the first non-frozen frame. Cue and information loss,
+    the natural form.
+  confscale: >
+    arm-restricted confidence rescaling. The missing-runs chain of v3 (mean run 15 frames)
+    restricted to the six arm joints; on masked joint-frames the confidence is multiplied by 0.3
+    and floored at 0.05, coordinates kept. The planted values fall in [0.05, 0.3), the natural
+    range of the non-missing low-confidence part. Cue without information loss.
+mechanisms: {runs: zero, whole: zero, frozen: hold, armruns: confscale}   # training pairs
+severities: >
+  the v3 Beta family at the same strengths for every mechanism (mid: non-SMM Beta(2,4),
+  SMM Beta(2,8)), so mechanisms differ only in the operator; eps is the stationary frozen or
+  masked fraction. Planted frozen rates then sit near the natural non-SMM mean (0.28) for the
+  more-degraded class and above the natural SMM mean for the other; the paper reports both.
+worlds: [S, I]
+
+# ------------------------------------------------------------------ cells trained (AWS, appended to the v7 queue)
+cells:
+  host_frozen_mid:
+    cells: [A_none, A_dropout]
+    worlds: [S, I]
+    mechanism: frozen
+    runs: 12
+  host_armruns_mid:
+    cells: [A_none, A_dropout]
+    worlds: [S, I]
+    mechanism: armruns
+    runs: 12
+  total_runs: 24
+  expected_cost: about 6 A10G-hours; USD 4 spot, USD 8 on-demand
+queue_file: aws/queue_v8.txt (run after aws/queue_v7.txt on the same instance)
+runtime_guard: >
+  the instance terminates itself 30 hours after boot whatever the queue state (aws/bootstrap.sh);
+  v7 + v8 + scoring is about 24 A10G-hours; a spot restart restarts the clock
+
+# ------------------------------------------------------------------ scoring grid (v7 and v8 checkpoints)
+scoring:
+  matched: >
+    every planted-world model under its own training operator and strength, worlds S and I,
+    three test-mask seeds [2000, 3000, 4000]; this gives SE per mechanism
+  crossed: >
+    every A_none planted-world model (v7 runs, whole; v8 frozen, armruns) under all four
+    training operators at mid, worlds S and I, mask seed 2000; this gives the operator
+    specificity table (v6 finding V1/V2, now on Compact with three seeds)
+  real_models: >
+    the five real full-split cells under all four operators x {S, I} at mid, mask seed 2000,
+    plus gapfill as the information-loss bound; the invariance reference for each operator is
+    the matching World I A_none cell of this round
+  length_recoverability: as v7
+
+# ------------------------------------------------------------------ statistics fixed here
+equivalence:
+  R_margin: 0.05          # logit-AUC scale; half-width of the invariance-trained zero's CI in v5/v6
+  clean_auc_margin: 0.02  # as v6 V7
+  procedure: >
+    two one-sided tests at 95% on the child-clustered paired bootstrap: a "no change", "within
+    margin of zero" or "equivalent" statement requires the whole interval inside the margin;
+    "reduces" requires the interval to exclude zero; an interval that straddles the margin is
+    reported as undetermined. No sentence in the abstract, contributions or conclusion states a
+    zero, an equality or a direction that its interval does not support against the margin.
+comparator: base no-remedy cell of the same architecture, never a different model
+per_child_companion:
+  statistic: >
+    per segment, d_i = (2 y_i - 1) (logit(s_S) - logit(s_I)) under the matched operator, positive
+    when the planted cue pushes the segment toward its own label; per child, the mean d_c over
+    that child's test segments; companion = mean over children of |d_c|, and the number of
+    children (of 40) whose d_c has the opposite sign to the pooled R
+  purpose: pooled R is signed and admits cancellation across children; R = 0 is necessary, not
+    sufficient, for invariance; the companion is reported beside every R that is read as zero
+null_policy:
+  p_values: retired for both the gap and R
+  reference: the World I model of the same cell is the no-reliance reference for R and for the gap
+  shuffled_spread: >
+    diagnostic only, 100 draws, labels shuffled within child in the training set, reported as
+    a spread beside the reference; the shuffling protocol is stated where it is shown
+variance_components: >
+  beside every child-bootstrap interval: SD over the three training seeds and the range over
+  the three mask realizations, in the same table
+comparator_measures:            # the same models, the same test set; related-work comparison
+  filtered_gap: AUC on QC-pass minus AUC on QC-fail test segments (SAFE-SMM statistic)
+  conditional_permutation: >
+    tracking statistics permuted within strata of the label and of the model's clean score
+    decile; the AUC change is the conditional importance of the tracking statistics (CPI-style)
+  paired_prediction_sensitivity: mean |d_i| over segments under the matched operator
+  table: R, SE, filtered gap, conditional permutation, sensitivity for every scored model
+
+# ------------------------------------------------------------------ pass rules
+criteria:
+  M1_mechanism_coverage:
+    pass_if: >
+      SE(A_none, frozen, mid) > 0 and SE(A_none, armruns, mid) > 0, each with CI excluding 0;
+      the World I A_none cells read R with CI inside [-0.05, +0.05] under their own operator
+  M2_operator_specificity:
+    report: >
+      the crossed table; for each training operator, R of the World I model under the other
+      three operators with CIs; the paper states which invariances transfer and which do not;
+      no pass rule, the pattern is the result
+  M3_remedy_by_mechanism:
+    report: >
+      SE(A_dropout) - SE(A_none) per mechanism with CI; whole-joint dropout is expected to act
+      on whole and runs, and not on frozen or armruns; reported either way
+  M4_real_cells_under_natural_form:
+    report: >
+      R under hold and confscale for the five real cells with the matching World I reference,
+      raw AUCs, the companion statistic, and the equivalence verdict per the margin
+  M5_comparators:
+    report: >
+      the comparator table and the Spearman between each pair of measures over the scored
+      models, with a child-bootstrap interval; no pass rule

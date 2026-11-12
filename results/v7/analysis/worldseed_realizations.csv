@@ -1,0 +1,7 @@
+# post hoc: World S models under missing runs, mid strength; realization 0 has seeds 0-2, realizations 1 and 2 seed 0 only
+model,training_mask_realization,seed,R_fS,MWI_with_WorldI_mean
+v7_S_w0_runs_mid_A_none_s0,0,0,"+0.791 [+0.692, +0.899]","+0.821 [+0.712, +0.952]"
+v7_S_w0_runs_mid_A_none_s1,0,1,"+0.606 [+0.519, +0.709]","+0.637 [+0.548, +0.744]"
+v7_S_w0_runs_mid_A_none_s2,0,2,"+0.765 [+0.661, +0.881]","+0.796 [+0.686, +0.916]"
+v7_S_w1_runs_mid_A_none_s0,1,0,"+0.677 [+0.591, +0.768]","+0.707 [+0.613, +0.814]"
+v7_S_w2_runs_mid_A_none_s0,2,0,"+0.720 [+0.617, +0.824]","+0.751 [+0.642, +0.867]"

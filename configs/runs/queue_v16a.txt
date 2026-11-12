@@ -1,0 +1,6 @@
+--proto v16 --amp --batch-size 128 --epochs 25 --workers 6 --mechanism armruns --strength mid --repair-protocol configs/protocols/confonly_extension_v16.yaml --arch stgcn --cell A_none_stgcn --world S --seed 0
+--proto v16 --amp --batch-size 128 --epochs 25 --workers 6 --mechanism armruns --strength mid --repair-protocol configs/protocols/confonly_extension_v16.yaml --arch stgcn --cell A_none_stgcn --world I --seed 0
+--proto v16 --amp --batch-size 128 --epochs 25 --workers 6 --mechanism armruns --strength mid --repair-protocol configs/protocols/confonly_extension_v16.yaml --arch stgcn --cell A_none_stgcn --world S --seed 1
+--proto v16 --amp --batch-size 128 --epochs 25 --workers 6 --mechanism armruns --strength mid --repair-protocol configs/protocols/confonly_extension_v16.yaml --arch stgcn --cell A_none_stgcn --world I --seed 1
+--proto v16 --amp --batch-size 128 --epochs 25 --workers 6 --mechanism armruns --strength mid --repair-protocol configs/protocols/confonly_extension_v16.yaml --arch stgcn --cell A_none_stgcn --world S --seed 2
+--proto v16 --amp --batch-size 128 --epochs 25 --workers 6 --mechanism armruns --strength mid --repair-protocol configs/protocols/confonly_extension_v16.yaml --arch stgcn --cell A_none_stgcn --world I --seed 2

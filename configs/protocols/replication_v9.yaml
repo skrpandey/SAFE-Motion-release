@@ -1,0 +1,178 @@
+# Protocol v9: replication of the shortcut effect and of the remedy result on two further hosts
+# (MMASD, OpenPose BODY_25 mapped to COCO-17; UTD-MHAD, Kinect 20 joints). Frozen before any v9
+# cell is trained. Commit in REGISTRY.md. Definitions (operators, worlds, severities, R, SE,
+# remedy interaction) are those of v6 to v8 unless restated here. Audits that motivated the
+# choices: results/audit_mmasd/REPORT.md, results/audit_utd_mhad/REPORT.md (2026-10-31).
+
+frozen: true
+frozen_date: 2026-10-31
+frozen_commit: "f48595a"
+purpose: >
+  Test whether the two ASDPose findings replicate on other data: (1) the shortcut effect SE is
+  positive and scales with planted strength; (2) whole-joint dropout does not lower SE and
+  raises it under at least one mechanism. Also a zero-cue host (UTD-MHAD) for the zero point.
+depends_on: [pilot_asdpose_v6.yaml, pilot_asdpose_v7.yaml, pilot_asdpose_v8.yaml]
+inherits: pilot_asdpose_v8.yaml
+
+# ------------------------------------------------------------------ what is different from ASDPose
+design_differences:
+  subjects: >
+    11 children (MMASD pair) and 8 subjects (UTD-MHAD) against 40 ASDPose test children. No
+    held-out split: every subject is scored out of fold (subject-grouped K-fold; each fold's
+    models never saw its test subjects). Clustered bootstrap intervals are reported but, with
+    8 to 11 clusters, no equivalence verdict is made and the +-0.05 / +-0.02 margins of v8 do
+    not apply. Pass rules below are stated on direction, with a permutation null.
+  null: >
+    for each SE, a permutation null from models trained with the world assignment permuted
+    across subjects (label-to-severity pairing shuffled at the subject level, so the planted
+    cue is absent in expectation); N_PERM = 20 per host and mechanism, A_none only, seed 0.
+    An SE is "above its null" when it exceeds the 95th percentile of the 20 permuted SEs.
+  windows: >
+    MMASD: window 150 frames (59 percent of clips are under 200; 25 percent under 150; clips
+    shorter than the window are excluded from training and testing; test uses the centre
+    window). UTD-MHAD: window 64 frames (median clip 67; clips shorter than 64 are excluded).
+    Random crop in training, no tiling, lengths never an input. The length-recoverability check
+    of v7 is run per host with the same thresholds (|Spearman| < 0.10 within class).
+  normalisation: >
+    MMASD: coordinates divided by est_h, the largest y of the selected skeleton over the clip
+    (no image size is released). UTD-MHAD: coordinates in metres, window-standardised per
+    clip. ASDPose image normalisation is not applicable to either.
+
+# ------------------------------------------------------------------ hosts
+hosts:
+  mmasd_maracas:
+    data: <data root>/mmasd, loader safe_motion/data/mmasd.py, selection rule "track"
+    joints: COCO-17 from BODY_25 (COCO17_FROM_BODY25); operators as on ASDPose
+    task: maracas_forward_shaking (label 0) vs maracas_shaking (label 1)
+    why: >
+      the only pair with both classes in every child and no measured tracking or length cue
+      (tracking GB 0.52 [0.44, 0.63], LR 0.49; length 0.51); 231 clips, 11 children
+    folds: child-grouped 5-fold, assignment seed 0, fixed before training and written to
+      results/v9/mmasd_maracas/folds.json by the first run
+    direction_of_planting: >
+      label 0 (forward shaking) is degraded more in World S; the audit found no natural
+      direction, so the choice is arbitrary and fixed here
+    gates:
+      clean_auc: >
+        A_none, World I, seed 0, out-of-fold clean AUC >= 0.65. If below, the host is replaced
+        by chest_expansion (0) vs squat (1) (tracking 0.49, length 0.615; the length protocol
+        above is then the control) and the replacement is recorded in REGISTRY.md before any
+        further cell is trained.
+      quality_only: >
+        gradient boosting on the four tracking statistics, fit on each fold's training
+        children, out-of-fold AUC within 0.5 +- 0.08 (the agreed looseness for 11 children)
+    mechanisms: [runs, whole, frozen, armruns]
+    natural_counterparts: >
+      runs, whole and armruns have natural counterparts (missing median 0.059, arm low-conf
+      p95 0.333); frozen has almost none (2.4 percent of clips at 0.10 or more) and is
+      reported as synthetic on this host
+  utd_mhad_body_vs_arm:
+    data: <data root>/utd-mhad, loader safe_motion/data/utd_mhad.py
+    joints: 20 Kinect joints; build_masks(..., n_joints=20, arm_joints=utd_mhad.ARM_JOINTS)
+    task: >
+      label 1 = whole-body actions {pickup_throw, jog, walk, sit_to_stand, stand_to_sit,
+      lunge, squat} (222 clips); label 0 = the 20 arm gestures (639 clips)
+    why: zero-cue host (all four tracking statistics are exactly 0 in the release)
+    folds: leave-one-subject-out (8 folds), all 8 subjects scored once
+    direction_of_planting: label 0 (arm gestures) degraded more in World S; arbitrary, fixed here
+    gates:
+      clean_auc_ceiling: >
+        A_none, World I, seed 0, out-of-fold clean AUC <= 0.97. If above, the task is replaced
+        by a harder pre-registered grouping: label 1 = {draw_x, draw_circle_cw,
+        draw_circle_ccw, draw_triangle, swipe_left, swipe_right} vs label 0 = {wave, clap,
+        throw, arm_cross, push, knock} (the arm-only grouping), recorded in REGISTRY.md.
+      length_auc: reported for the binary task (audit 0.61 to 0.65 on 27 classes)
+    mechanisms: [runs, whole, frozen]
+    excluded_mechanisms: >
+      armruns (confscale) and conflow write confidence into a channel that is constant 1 on
+      this host; a cue with no natural counterpart, excluded
+    note: >
+      the zero operator writes x = y = confidence = 0, a failure form Kinect never produces;
+      acceptable for a clean host and stated in the paper
+
+# ------------------------------------------------------------------ model, cells, seeds
+model: >
+  CompactCTRGCN fast configuration as v7 (25 epochs for MMASD; 60 epochs for UTD-MHAD because
+  of the small clip count, both fixed here), batch 64, mixed precision, AdamW, cosine schedule,
+  natural class prior, horizontal flip (mmasd: COCO-17 flip order; utd_mhad: FLIP_ORDER),
+  best validation epoch on a subject-level validation split inside each fold's training
+  subjects (val_fraction 0.25, seed 0)
+seeds: "0, 1, 2 for every cell"
+strengths: mid for every cell; low for A_none under runs only (scaling check)
+cells:
+  mmasd_maracas:
+    runs_mid:    {cells: [A_none, A_dropout, B_coorddrop], worlds: [S, I]}
+    runs_low:    {cells: [A_none], worlds: [S, I]}
+    whole_mid:   {cells: [A_none, A_dropout], worlds: [S, I]}
+    frozen_mid:  {cells: [A_none, A_dropout], worlds: [S, I]}
+    armruns_mid: {cells: [A_none, A_dropout], worlds: [S, I]}
+    real:        {cells: [A_none, A_dropout], worlds: [none]}     # natural data, no planting
+    fits: "(6+2+4+4+4) cells-worlds x 3 seeds x 5 folds + 2 x 3 x 5 = 330 fits"
+    permutation_null: "4 mechanisms x 20 perms x 2 worlds x 5 folds = 800 short fits, seed 0"
+  utd_mhad_body_vs_arm:
+    runs_mid:    {cells: [A_none, A_dropout, B_coorddrop], worlds: [S, I]}
+    runs_low:    {cells: [A_none], worlds: [S, I]}
+    whole_mid:   {cells: [A_none, A_dropout], worlds: [S, I]}
+    frozen_mid:  {cells: [A_none, A_dropout], worlds: [S, I]}
+    fits: "(6+2+4+4) cells-worlds x 3 seeds x 8 folds = 384 fits"
+    permutation_null: "3 mechanisms x 20 perms x 2 worlds x 8 folds = 960 short fits, seed 0"
+velocity_cells: >
+  not run (velocity was undetermined everywhere on ASDPose; budget goes to the dropout
+  contrast and the null)
+expected_cost: >
+  from data size only (audit): about 1 to 2 A10G-minutes per (cell, seed) including folds on
+  MMASD, under 1 minute on UTD-MHAD; roughly 12 to 20 A10G-hours in total with the nulls,
+  USD 15 to 25 on-demand. One g5.2xlarge, same launch as v7, runtime guard 30 h, mirror on.
+  UTD-MHAD may run on the local CPU if measured to be under 2 h in total; decided at launch.
+
+# ------------------------------------------------------------------ scoring
+scoring:
+  matched: >
+    every planted model scored out of fold under its training operator and strength, worlds
+    S and I, test mask seeds [2000, 3000, 4000]; SE per mechanism from the pooled out-of-fold
+    scores (every subject appears once)
+  crossed: >
+    A_none models of both worlds under all host mechanisms at mid, mask seed 2000 (operator
+    specificity on a second and third host)
+  real_mmasd: >
+    the two real cells under all four operators at mid plus gapfill, beside the World I
+    A_none references of this host
+  length_recoverability: as v7, per host
+  statistics: >
+    subject-clustered paired bootstrap, 2,000 resamples, seeds averaged inside resamples;
+    added here and absent from the v7 code: the SE(mid) - SE(low) contrast with its interval,
+    and subject-bootstrap intervals for every Spearman between comparator measures
+  analysis_code: >
+    experiments/analyze_v9.py (to be written to this file; smoke-tested on v7
+    checkpoints before launch, outputs deleted)
+
+# ------------------------------------------------------------------ pass rules
+criteria:
+  R1_se_positive:
+    pass_if: >
+      on each host, SE(A_none, runs, mid) > 0 with the 95 percent interval excluding 0 and
+      above its permutation null; the same for every other mechanism run on that host
+  R2_scaling:
+    pass_if: SE(mid) - SE(low) > 0 with interval excluding 0, under runs, on each host
+  R3_dropout_does_not_remove:
+    pass_if: >
+      on each host and mechanism, SE(A_dropout) - SE(A_none) has an interval that does not lie
+      entirely below 0 ("dropout lowers SE" is the claim this round could refute)
+  R4_dropout_raises_somewhere:
+    report: >
+      the number of (host, mechanism) pairs where SE(A_dropout) - SE(A_none) > 0 with interval
+      excluding 0, against the ASDPose count of 3 of 4; no pass rule
+  R5_reference:
+    report: >
+      R(f_I) under its own operator with interval, per host and mechanism; no zero is claimed;
+      the crossed table is reported as on ASDPose
+  R6_length:
+    pass_if: every real and planted A_none cell meets the v7 recoverability threshold
+  R7_real_mmasd:
+    report: >
+      responses of the two real MMASD cells beside the references; read as on ASDPose (a
+      response is evidence of a learned cue only if it exceeds references not trained against
+      that operator); no pass rule
+headline_wording: >
+  as v8. In addition: "replicates" requires R1 and R2 on both hosts and R3 on both; a host
+  where R1 fails is reported as a failed replication, all cells included.

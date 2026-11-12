@@ -1,0 +1,9 @@
+rating,yes,no,unsure,yes_fraction,wilson_lo,wilson_hi
+model_A_first_pass,25,25,50,0.25,0.175,0.343
+model_B_first_pass,6,67,27,0.06,0.028,0.125
+lower_bound_both_reruns_yes,5,25,70,0.05,0.022,0.112
+upper_bound_any_rerun_yes,16,25,59,0.16,0.101,0.244
+rerun_A_on_27,14,1,12,,,
+rerun_B_on_27,7,13,7,,,
+agreement_first_pass_100,47,,,kappa 0.223,,
+agreement_reruns_27,9,,,kappa 0.090,,

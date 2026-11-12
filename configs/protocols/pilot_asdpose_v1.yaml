@@ -1,0 +1,94 @@
+# Pilot protocol v1 on ASDPose (PLAN §13.3 H1, H4; §14.1; §14.3).
+# Frozen before any model is trained or scored under it. The commit that adds this file is
+# recorded in configs/protocols/REGISTRY.md. Do not edit after freezing; write v2 instead.
+#
+# Pilot status: one seed per cell. Pilot numbers decide go/no-go only. They are not paper
+# cells (paper cells need three seeds, project rule).
+
+data:
+  source: <SAFE-SMM repo>/cache/segments   # read-only, SAFE-SMM cache
+  source_commit: e5217a5                                        # asdpose-smm-detection HEAD
+  split: released 289/40 children (index.csv `split`)
+  val: subject_level_val_split(val_fraction=0.2, seed=0), copied from SAFE-SMM
+  window: 200            # SAFE-SMM tiling kept for comparability with the 30 score files
+  normalize: image       # v3 normalization for every cell
+  class_prior: natural   # no balanced sampling
+  flip_prob: 0.5
+
+qc_filter:               # SAFE-SMM frozen values, never re-tuned
+  q_frozen_max: 0.10
+  q_arm_lowconf_max: 0.30
+  applies_to: negatives only (positives always kept)
+
+tracking_stats: [q_lowconf, q_missing, q_frozen, q_arm_lowconf]   # pure tracking, no energy
+
+# ---------------------------------------------------------------- batch 1: CPU only
+batch1:
+  inputs: every *_test_scores.csv in asdpose-smm-detection/results/segment_scores/ that
+          covers the 4,751 ASDPose test segments (external_* and gate03 excluded)
+  metrics:
+    auc_standard: all test segments
+    auc_qc: QC-filtered test negatives, all positives
+    auc_reweighted:
+      propensity: logistic regression P(y=1 | tracking_stats), standardized features, C=1.0,
+                  fit on the test split (scores never used)
+      weights: negatives get w = [p/(1-p)] * [n_neg/n_pos]; positives w = 1
+      truncation: negative weights clipped at their 99th percentile
+      auc: weighted Mann-Whitney over all positive-negative pairs
+      balance_check: weighted AUC of the propensity score itself, must be in [0.45, 0.55]
+      report: Kish effective sample size of the weighted negatives
+    dprime: sqrt(2) * Phi^-1(AUC)                      # equal-variance binormal
+    gap_dprime: dprime(standard) - dprime(protocol)     # primary scale (§14.3.1)
+    binormal_check: slope of z(TPR) on z(FPR) by least squares over ROC points, per model
+  bootstrap: 10000 child-clustered resamples, seed 0, paired across protocols
+  child_confounding:
+    question: does tracking quality predict the label within children?
+    method: within-child centred tracking_stats -> label, logistic regression, AUC on test
+            children with child-clustered CI; compared with the uncentred AUC
+  H4_pass_if: at least 80% of models have the paired 95% CI of (auc_reweighted - auc_qc)
+              containing 0, AND Spearman(auc_reweighted, auc_qc) across models at least 0.9
+  H4_fail_action: reweighted protocol is reported as a different estimand, not a substitute
+
+# ---------------------------------------------------------------- batch 2: GPU, tiny TCN
+batch2:
+  model:
+    name: TinyTCN
+    input: (C, 200, 17) flattened to C*17 channels, BatchNorm1d
+    stem: Conv1d(C*17 -> 96, k=1)
+    blocks: 4 residual blocks, Conv1d(96, 96, k=5, dilation 1/2/4/8) + BN + ReLU, dropout 0.1
+    head: global average pool over time, Linear(96 -> 2)
+  train:
+    epochs: 50
+    batch_size: 64
+    optimizer: adamw, lr 0.001, weight_decay 0.0001, cosine schedule
+    selection: best validation AUC epoch (val pool follows the cell's training pool)
+    seed: 0
+  cells:
+    A_none:        {velocity: false, joint_dropout: 0.0,  coord_dropout: 0.0,  pool: full}
+    A_velocity:    {velocity: true,  joint_dropout: 0.0,  coord_dropout: 0.0,  pool: full}
+    A_dropout:     {velocity: false, joint_dropout: 0.15, coord_dropout: 0.0,  pool: full}
+    A_both:        {velocity: true,  joint_dropout: 0.15, coord_dropout: 0.0,  pool: full}
+    B_coorddrop:   {velocity: false, joint_dropout: 0.0,  coord_dropout: 0.15, pool: full}
+    C_qc_none:     {velocity: false, joint_dropout: 0.0,  coord_dropout: 0.0,  pool: qc}
+    C_qc_velocity: {velocity: true,  joint_dropout: 0.0,  coord_dropout: 0.0,  pool: qc}
+  definitions:
+    joint_dropout: SAFE-SMM whole-joint dropout; zeroes x, y AND confidence of a joint for
+                   the whole window, so missingness stops being informative
+    coord_dropout: same per-joint, per-window mask rate, applied only to joints that are
+                   tracked; zeroes x, y (and velocity) but leaves confidence untouched, so the
+                   real missing-joint pattern stays readable (regularization, cue kept)
+    pool_qc: training and validation negatives restricted by qc_filter; positives all kept
+  evaluation: batch1 metrics on the test split for every cell
+  linear_probe:
+    features: penultimate layer (pooled 96-d), best checkpoint, eval-mode preprocessing
+    targets: each of tracking_stats, standardized
+    model: ridge, alpha chosen by 5-fold child-grouped CV on train children over
+           {0.1, 1, 10, 100}
+    report: test R^2 per target, child-clustered CI
+  H1_pass_if: A_both vs A_none has higher auc_standard, higher auc_qc and lower gap_dprime,
+              and the paired child-clustered 95% CI of (auc_qc difference) excludes 0
+  descriptive_only:
+    - share of the A_none -> A_both auc_qc gain recovered by B_coorddrop (regularization only)
+    - C_qc_velocity minus C_qc_none on auc_qc (remedy where the cue is weak)
+    - probe R^2 per cell
+  gpu_budget: at most 3.5 GPU-h for batch 2; logged in results/gpu_ledger.csv

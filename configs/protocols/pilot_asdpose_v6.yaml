@@ -1,0 +1,127 @@
+# Pilot protocol v6: validation round for the reliance statistic, in response to the external
+# feasibility review of 2026-10-25 (docs/reviews/2026-10-25_disposition.md). Local, under
+# 1 GPU-h. Frozen before any model is trained or scored under it. Commit in REGISTRY.md.
+
+inherits: pilot_asdpose_v5.yaml
+
+# ------------------------------------------------------------------ definitions, fixed here
+definitions:
+  R: >
+    R(f) = logit(AUC_S(f)) - logit(AUC_I(f)) for one model f under a test-time intervention.
+    An evaluation contrast; it mixes learned cue use, class-asymmetric information loss and the
+    model's response to degradation it was not trained on. Always reported with the raw AUCs.
+  shortcut_effect: >
+    SE = R(f_S) - R(f_I), f_S and f_I the same cell trained in World S and World I. The identified
+    quantity; the headline planted-world numbers are this.
+  remedy_interaction: >
+    gain_S(r) - gain_I(r), the change in a remedy's clean-AUC gain over the no-remedy cell when the
+    same degradation becomes label-tied. An interaction, not a regularization / removal split.
+  R_mirror: logit(AUC_S(f)) - logit(AUC_Sp(f)), Sp the mirrored world (SMM degraded more)
+  logit: clipped at [1e-6, 1 - 1e-6]; raw AUCs shown beside every logit contrast
+  variability: >
+    child-clustered paired bootstrap (test uncertainty), plus the spread over
+    training seeds and over mask realizations, reported separately
+
+# ------------------------------------------------------------------ host and test set
+host_test: QC-symmetric test split (2,440 segments, 40 children); mechanism runs
+nonlinear_host_probe:
+  model: >
+    HistGradientBoosting on the four tracking statistics, host train children -> host
+    validation children; child-clustered CI on validation children
+  wording: >
+    the host is "quality-filtered with weak measured association" if this AUC < 0.60;
+    "no natural cue" is not used
+
+# ------------------------------------------------------------------ operators and worlds
+operators:
+  zero: x = y = confidence = 0 on masked joint-frames (cue + information loss; v3 to v5)
+  gapfill: coordinates interpolated across masked frames, confidence kept (information loss, no cue)
+  conflow: confidence set to 0.05 on masked joint-frames, coordinates kept (cue, no loss)
+worlds: [S, I, Sp]            # Sp: mirror of S, SMM degraded more
+strength: mid (low only where stated)
+test_mask_seeds: [2000, 3000, 4000]  # 2000 as in v5; three realizations for operator zero at mid
+conditions_per_model:
+  - clean
+  - "zero x worlds S, I, Sp x mid x 3 mask seeds"
+  - "zero x worlds S, I x low x seed 2000"
+  - "gapfill x worlds S, I, Sp x mid x seed 2000"
+  - "conflow x worlds S, I, Sp x mid x seed 2000"
+cue_only_oracle: >
+  logistic regression and HistGradientBoosting on the four tracking statistics
+  recomputed from the planted test arrays, fit on the host validation children of
+  the same world (same mask procedure), AUC on host test; per operator and world
+
+# ------------------------------------------------------------------ models
+models_scored:
+  behavior_only_clean_trained: tcn_D_qcsym_none seeds 0-2 (host, no degradation in training)
+  invariant: tcn_v3_I seeds 0-2; compact_v4_I seeds 0-2 (trained in World I, mid)
+  cue: tcn_v3_S seeds 0-2; compact_v4_S seeds 0-2 (trained in World S, mid)
+  low_strength: tcn_v3_low_S, tcn_v3_low_I seeds 0-2
+  full_split: tcn_A_none (6), tcn_A_dropout (3), tcn_B_coorddrop (6), tcn_A_both (6)
+models_trained: >
+  # TinyTCN, host, mid, missing runs, cell A_none
+  mirrored: World Sp, world seed 0, training seeds 0-2            (3 runs)
+  mask_realizations: World S, world seeds 1 and 2, training seed 0 (2 runs); seed 0 exists (v3)
+gpu_budget: at most 1.0 GPU-h
+
+# ------------------------------------------------------------------ statistics computed
+per_model_and_condition:
+  - "AUC and R per operator, world pair and mask seed"
+  - "decision_flip_rate: fraction of host test segments whose decision at threshold 0.5 differs
+    between S and I planting (operator zero, mid, seed 2000)"
+  - "paired_logit_change: mean over segments of logit(score_S) - logit(score_I), by class"
+crossed_strengths: >
+  SE for mid-trained and low-trained TinyTCN pairs evaluated at both test
+  strengths (2 x 2 table)
+
+# ------------------------------------------------------------------ pass rules
+criteria:
+  V1_invariant_zero:
+    pass_if: >
+      tcn_v3_I and compact_v4_I have R with CI containing 0 under all three operators
+      (S vs I, mid, seed 2000) and R_mirror with CI containing 0 under operator zero
+  V2_cue_only_operator:
+    pass_if: >
+      under conflow, tcn_v3_S and compact_v4_S have R > 0 with CI excluding 0, and
+      tcn_v3_I and compact_v4_I have CI containing 0
+  V3_information_loss_component:
+    report: >
+      R under gapfill for every model; for tcn_D_qcsym_none it is the information-loss
+      component of its v5 reading; no pass rule, the size is the result
+  V4_direction:
+    pass_if: >
+      the Sp-trained TinyTCN has R (S vs I, zero, mid) < 0 with CI excluding 0, and
+      SE_mirror = R(f_S) - R(f_Sp) > 0 with CI excluding 0
+  V5_crossed_strengths:
+    pass_if: >
+      SE(mid-trained) - SE(low-trained) > 0 with CI excluding 0 when both pairs are
+      evaluated at the mid test strength, AND the same sign when both are evaluated at low
+  V6_mask_realizations:
+    pass_if: >
+      the range of SE(TinyTCN, mid) over the three test mask seeds is smaller than the
+      half-width of its bootstrap CI, AND SE from the two extra training-mask worlds lies
+      inside the seed-0 CI
+  V7_equivalence_of_clean_accuracy:
+    statistic: paired difference AUC_clean(f_S) - AUC_clean(f_I), TinyTCN and Compact, mid
+    pass_if: the 95% CI lies inside [-0.02, +0.02] (equivalence margin fixed here)
+
+# ------------------------------------------------------------------ length-controlled protocol (frozen for the AWS round)
+length_protocol:
+  test: >
+    fixed 200-frame centre window; test segments shorter than 200 frames excluded
+    (917 of 4,751: 271 SMM, 646 non-SMM); count reported with every number
+  train: >
+    random 200-frame crop, no tiling; training segments shorter than 200 frames excluded
+    (5,784 of 32,177)
+  length_cue_ceiling: >
+    AUC of original length against the label among included test segments,
+    HistGradientBoosting on length alone, reported before any model is scored.
+    Computed 2026-10-25 before freezing, 3,834 included test segments (786 SMM),
+    AUC 0.947 [0.907, 0.971]; all test segments 0.904. Exclusion does not weaken
+    the annotation-level length cue; the fixed window removes the model's direct
+    access to it, and recoverability (below) measures what remains.
+  recoverability: >
+    among included test segments, (a) ridge regression of original length from
+    the model's penultimate features, child-grouped CV R^2; (b) Spearman of the
+    model's score with original length within each class
+  applies_to: every cell trained in the AWS round (v7); pilot cells under tiling stay marked

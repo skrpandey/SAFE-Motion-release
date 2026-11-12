@@ -1,0 +1,69 @@
+# Pilot protocol v3: planted worlds on the ASDPose QC host (PLAN §5.2, §13.3 H2/H3), plus a
+# fresh-seed confirmation of the v2 post hoc gap-scale observation.
+# Frozen before any v3 model is trained or scored. Commit recorded in REGISTRY.md.
+# Pilot status: go/no-go only.
+
+inherits: pilot_asdpose_v2.yaml     # TinyTCN, training settings, cells A_*/B_*, scales, pooling
+
+host:
+  pool: qc_sym (both classes pass qc_filter) in train, val and test children
+  pool_check_v2: quality-only AUC on val children 0.530 (pilot v2), i.e. the host has no cue
+  test: test segments passing qc_filter, both classes
+
+operator:
+  name: joint-missing runs (safe_motion/planted.py), x = y = confidence = 0 on missing joint-frames
+  run_length_mean: 15 frames; two-state Markov chain per joint, stationary missing prob eps
+  masks: fixed per segment (sha256 of identifier and world tag), same in every epoch
+  contract: eps = 0 identity (tested); realized missing fraction 0.098 / 0.300 / 0.603 at
+            eps 0.1 / 0.3 / 0.6 (tested)
+
+worlds:
+  S: eps | non-SMM ~ Beta(neg), eps | SMM ~ Beta(pos)
+  I: eps drawn from the same mixture, independent of the label (mixing weight = SMM share)
+strengths:
+  mid: {neg: [2, 4], pos: [2, 8]}    # Bayes AUC of eps 0.727; realized missing-fraction AUC on
+                                     # host train 0.709 in S, 0.518 in I (natural ASDPose 0.714)
+  low: {neg: [2, 4], pos: [2, 6]}    # Bayes AUC 0.634; realized 0.630 in S, 0.511 in I
+world_seed_train_val: 0             # one fixed world per strength; training seeds vary
+world_seed_test: 1000
+
+runs:
+  planted_mid: cells [A_none, A_velocity, A_dropout, A_both, B_coorddrop] x worlds [S, I]
+               x seeds [0, 1, 2]
+  planted_low: cells [A_none] x worlds [S, I] x seeds [0, 1, 2]
+  real_confirm: cells [A_none, A_both, B_coorddrop] on full ASDPose (v2 settings) x fresh
+                seeds [3, 4, 5]
+  selection: best validation AUC on the model's own world (planted val), as for real runs
+
+test_sets_planted:   # every planted model is scored on all three
+  clean: host test, no planting                      -> AUC_clean (true behaviour accuracy)
+  S: host test planted with World S at the model's strength, test seed -> AUC_S
+  I: host test planted with World I at the same strength, test seed     -> AUC_I
+
+metrics:
+  reliance_measured: R = logit(AUC_S) - logit(AUC_I)    # asymmetric vs symmetric degradation
+  shortcut_effect: R(World S model) - R(World I model)  # matched-world reference removes the
+                                                        # cue-free offset seen in v2
+  decomposition_per_remedy:                             # r in A_velocity, A_dropout, A_both,
+    total_gain: AUC_clean(S, r) - AUC_clean(S, A_none)  #   B_coorddrop; mid strength
+    regularization_part: AUC_clean(I, r) - AUC_clean(I, A_none)
+    shortcut_part: total_gain - regularization_part
+    reliance_change: R(S, r) - R(S, A_none)
+  ci: v2 pooling (seed-averaged, 10000 child-clustered resamples, seed 0, paired indices)
+
+criteria:
+  H2_pass_if: at mid, A_none shortcut_effect > 0 with CI excluding 0
+  H3_pass_if: A_none shortcut_effect at low > 0 with CI excluding 0, AND
+              shortcut_effect(mid) - shortcut_effect(low) > 0 with CI excluding 0
+  H5b_decomposition:
+    supports_shortcut_removal_if: A_dropout or A_both has shortcut_part CI excluding 0 (above),
+                                  AND B_coorddrop has shortcut_part CI containing 0
+    supports_regularization_if: every remedy has shortcut_part CI containing 0 and at least one
+                                has regularization_part CI excluding 0 (above)
+    otherwise: inconclusive
+  H6_real_confirm:
+    scope: fresh seeds 3-5 only, logit gap standard vs qc
+    pass_if: CI of logit_gap(A_both) - logit_gap(A_none) excludes 0 (below), AND
+             CI of logit_gap(B_coorddrop) - logit_gap(A_none) contains 0
+
+gpu_budget: at most 2.5 GPU-h for v3; logged in results/gpu_ledger.csv

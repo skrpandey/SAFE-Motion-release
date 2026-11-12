@@ -1,0 +1,73 @@
+# Pilot protocol v2 on ASDPose. Supersedes v1 for everything below; v1 results stay as reported.
+# Frozen before any v2 model is trained or scored. Commit recorded in REGISTRY.md.
+# Changes from v1 and why (results/pilot_batch1/REPORT.md, results/pilot_batch2/REPORT.md):
+#   1. primary scale: logit-AUC gap (z-ROC slopes 0.50-0.66 for strong models break d')
+#   2. symmetric QC pool replaces the v1 negatives-only pool (which inverted the cue)
+#   3. three seeds for the factorial and the regularization-only control
+#   4. permutation null shuffles validation labels too (v1 lesson from SAFE-SMM's control)
+#   5. penultimate-layer probe dropped (random-init reference matched trained R^2)
+# Pilot status: go/no-go only; paper cells are re-run under the final protocol.
+
+inherits: pilot_asdpose_v1.yaml   # data, qc_filter, tracking_stats, TinyTCN, train settings
+
+scales:
+  primary: logit_gap = logit(AUC_standard) - logit(AUC_protocol)
+  sensitivity:
+    - raw Δ = AUC_standard - AUC_protocol
+    - d_a gap, d_a = sqrt(2 / (1 + b^2)) * a from a least-squares binormal fit of
+      z(TPR) = a + b z(FPR) over 50 interior ROC points
+  binormal_slope: reported per model
+
+test_protocols:
+  standard: all test segments
+  qc: negatives filtered by qc_filter, all positives (SAFE-SMM hard-negative)
+  qc_sym: both classes filtered by qc_filter
+  reweighted: v1 definition, reported as a separate estimand (H4 failed in v1)
+
+seeds:
+  training_seeds: [0, 1, 2]       # torch / numpy / augmentation seed
+  val_split_seed: 0               # same validation children for every run, as in SAFE-SMM
+  reuse: v1 seed-0 runs of A_none, A_velocity, A_dropout, A_both, B_coorddrop are seed 0 here
+         (identical code path and settings); seeds 1 and 2 are new
+
+cells:
+  A_none:          {velocity: false, joint_dropout: 0.0,  coord_dropout: 0.0,  pool: full}
+  A_velocity:      {velocity: true,  joint_dropout: 0.0,  coord_dropout: 0.0,  pool: full}
+  A_dropout:       {velocity: false, joint_dropout: 0.15, coord_dropout: 0.0,  pool: full}
+  A_both:          {velocity: true,  joint_dropout: 0.15, coord_dropout: 0.0,  pool: full}
+  B_coorddrop:     {velocity: false, joint_dropout: 0.0,  coord_dropout: 0.15, pool: full}
+  D_qcsym_none:    {velocity: false, joint_dropout: 0.0,  coord_dropout: 0.0,  pool: qc_sym}
+  D_qcsym_velocity: {velocity: true, joint_dropout: 0.0,  coord_dropout: 0.0,  pool: qc_sym}
+
+pool_qc_sym: training and validation segments of BOTH classes must pass qc_filter
+pool_check: before training, quality-only logistic regression (tracking_stats) fit on the
+            qc_sym training children, AUC on qc_sym validation children; reported, and the
+            D cells are read as "weak-cue pool" only if this AUC is in [0.40, 0.60]
+
+permutation_null:
+  cell: A_none
+  runs: 10, permutation seeds 100..109
+  shuffle: training AND validation labels, each permuted globally once per run
+  selection: best shuffled-validation AUC epoch, as for real runs
+  report: null distribution of logit_gap(standard vs qc) and of AUC_qc; the observed A_none and
+          A_both values are compared with it (empirical p with +1 correction)
+
+pooling_over_seeds:
+  point: mean over seeds of the per-seed metric
+  ci: child-clustered bootstrap, 10000 resamples, seed 0; the same resample indices are applied
+      to every seed and cell, the metric averaged over seeds within each resample
+  paired: differences between cells use the same indices
+
+criteria:
+  H1_pass_if: A_both - A_none, seed-averaged, has AUC_standard > 0, AUC_qc > 0 and
+              logit_gap < 0, and the CI of the AUC_qc difference excludes 0
+  H5_regularization_only:
+    question: does regularization that keeps the cue visible recover the remedy gain?
+    supports_shortcut_removal_if: CI of (B_coorddrop - A_none) on AUC_qc contains 0 AND
+                                  CI of (A_both - B_coorddrop) on AUC_qc excludes 0 (above)
+    supports_regularization_if: CI of (B_coorddrop - A_none) on AUC_qc excludes 0 (above) and
+                                its point is at least half of (A_both - A_none)
+    otherwise: inconclusive
+  D_cells: descriptive; velocity minus none on AUC_qc_sym and AUC_standard, with CIs
+
+gpu_budget: at most 2.5 GPU-h for v2; logged in results/gpu_ledger.csv

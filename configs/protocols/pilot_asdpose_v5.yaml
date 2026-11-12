@@ -1,0 +1,76 @@
+# Pilot protocol v5 (PLAN §15, contribution A on real data): the matched-world reliance measure
+# applied to real ASDPose models by test-time intervention. Scoring only, no training.
+# Frozen before any model is scored under it. Commit recorded in REGISTRY.md.
+
+inherits: pilot_asdpose_v4.yaml   # operators, strengths, logit scale, pooling, bootstrap
+
+question: >
+  On models trained on real ASDPose (natural cue present), does R = logit(AUC_S) - logit(AUC_I)
+  under a test-time planted intervention behave as the planted worlds say it should: zero for a
+  model trained without the cue, positive for models that learned it, and does it change the
+  conclusions the raw filtered gap gives about the SAFE-SMM models?
+
+models:
+  safe_smm_checkpoints:       # read-only, asdpose-smm-detection/cache (commit e5217a5)
+    compact: [stage1_detector, stage1_detector_v2, stage1_v2_seed1, stage1_v2_seed2,
+              stage1_detector_v3, stage1_v3_noconf_seed0, stage1_v3_noconf_seed1,
+              stage1_v3_noconf_seed2, stage1_abl_velocity, stage1_abl_dropout,
+              stage1_abl_velocity_v3norm, stage1_abl_dropout_v3norm, wacv_ours_base,
+              stage1_permuted, stage1_v2_permuted]
+    stgcn: [wacv_stgcn_base, wacv_stgcn_remedies]
+    agcn: [wacv_agcn_base, wacv_agcn_remedies]
+    excluded: stage2_sapl_* (different objective; the lambda-0 seeds duplicate v3)
+    seed_groups: {v2_family: [stage1_detector_v2, stage1_v2_seed1, stage1_v2_seed2],
+                  v3_noconf_family: [stage1_v3_noconf_seed0, stage1_v3_noconf_seed1, stage1_v3_noconf_seed2]}
+  pilot_tcn:                  # this repo, cache/pilot_*.pt, all TinyTCN on full ASDPose
+    A_none: seeds 0-5 (v1/v2 seeds 0-2, v3 fresh seeds 3-5)
+    A_both: seeds 0-5
+    B_coorddrop: seeds 0-5
+    A_velocity: seeds 0-2
+    A_dropout: seeds 0-2
+    D_qcsym_none: seeds 0-2 (trained with no access to the cue; the real-data cue-free reference)
+    D_qcsym_velocity: seeds 0-2
+    permutation_null: A_none perm100-109 (train and val labels shuffled)
+  preprocessing: each model's own, read from its checkpoint config (normalize, velocity,
+                 confidence); window 200, centre crop, tiling, as SAFE-SMM score_rows
+
+test_set: the full released test split, 4,751 segments, 40 children (natural cue present).
+          The QC-sym subset (2,440) is reported as a secondary view from the same scores.
+
+intervention:
+  applied_to: raw (T, 17, 3) segment before any preprocessing, masks fixed per identifier
+  worlds: S (non-SMM degraded more, the natural direction) and I (label-independent, same
+          marginal; mixing weight = SMM share of the full test split)
+  mechanisms: runs (primary; the form OpenPose failures take), whole (secondary)
+  strengths: mid (primary; matched to the natural cue, v3 design), low (secondary)
+  mask_seed: 2000 (fresh; training masks used 0, v3/v4 test masks 1000)
+  conditions_per_model: clean + 2 mechanisms x 2 strengths x 2 worlds = 9 scoring passes
+
+metrics:
+  R: logit(AUC_S) - logit(AUC_I), per mechanism and strength
+  raw_gap: AUC_standard - AUC_qc and logit_gap (v2 definitions) from the clean scores
+  AUC_clean: standard protocol on clean scores
+  pooling: seed-averaged within a seed group; child-clustered paired bootstrap, 10000 resamples,
+           seed 0, the same indices for every model and condition
+  zero_point_reference: World I models in v3/v4 had R in [-0.05, +0.04] at both strengths
+
+criteria:
+  H10_zero_point:
+    pass_if: D_qcsym_none has R (runs, mid) with CI containing 0 AND logit_gap with CI excluding 0
+             (above)
+    meaning: R removes the cue-free offset that the raw gap carries on real data
+  H11_cue_use:
+    pass_if: A_none (TinyTCN, 6 seeds) R (runs, mid) > 0 with CI excluding 0, AND
+             stage1_detector (SAFE-SMM v1) R (runs, mid) > 0 with CI excluding 0
+  H12_remedy_real:
+    pass_if: R(A_both) - R(A_none) < 0 with CI excluding 0 (6 seeds each, runs, mid)
+    descriptive: B_coorddrop - A_none; SAFE-SMM v1 -> v2 family -> v3 on R
+  H13_ranking:
+    statistic: Spearman between R (runs, mid) and logit_gap over the non-permuted SAFE-SMM
+               checkpoints (one value per seed group)
+    descriptive: no pass rule; the paper reports where R and the raw gap disagree
+  permutation_null: R of the 10 shuffled-label TinyTCN models; empirical p for A_none R
+  accuracy_blindness: AUC_clean against R across all models, descriptive (v4 finding on planted
+                      hosts, heavy cue use leaves clean accuracy unchanged)
+
+gpu_budget: scoring only; at most 0.5 GPU-h; logged in results/gpu_ledger.csv

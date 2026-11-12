@@ -1,0 +1,109 @@
+"""Post hoc count of the ASDPose segments excluded by the QC filter and the 200-frame length rule,
+from the SAFE-SMM cache index only (no model output).
+
+Per identifier and split: segments, short segments, QC failures by class (frozen-frame fraction
+>= 0.10 or arm low-confidence fraction >= 0.30 at cutoff 0.3), fully untracked segments and the
+host share. Pooled per split: SMM rate among QC-failing and QC-passing segments and QC-fail rates.
+Writes results/v7/analysis/qc_exclusion{,_summary}.csv, paper/tables/qc_exclusion.tex and
+paper/figures/fig_qc_exclusion.{pdf,svg}.
+"""
+import csv
+import os
+import sys
+from collections import defaultdict
+
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt   # noqa: E402
+import numpy as np                # noqa: E402
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from safe_motion.data import asdpose as D   # noqa: E402
+from safe_motion.paths import guard_output   # noqa: E402
+
+QC = {"q_frozen_max": 0.10, "q_arm_lowconf_max": 0.30}
+MIN_FRAMES = 200
+
+
+def main():
+    rows = D.load_index()
+    per = defaultdict(lambda: {"segments": 0, "smm": 0, "short": 0, "qc_fail": 0, "qc_fail_smm": 0, "qc_fail_nonsmm": 0,
+                               "nonsmm": 0, "all_missing": 0, "host": 0, "host_smm": 0})
+    for r in rows:
+        k = (r["split"], r["child_id"]); p = per[k]
+        smm = r["binary_label"] == 1
+        p["segments"] += 1; p["smm"] += smm; p["nonsmm"] += (not smm)
+        short = r["n_frames"] < MIN_FRAMES; fail = not D.passes_qc(r, QC)
+        p["short"] += short; p["qc_fail"] += fail
+        p["qc_fail_smm"] += (fail and smm); p["qc_fail_nonsmm"] += (fail and not smm)
+        p["all_missing"] += r["q_missing"] >= 1.0
+        if not short and not fail:
+            p["host"] += 1; p["host_smm"] += smm
+    out = []
+    for (split, cid), p in sorted(per.items()):
+        out.append({"split": split, "identifier": cid, **p,
+                    "short_rate": round(p["short"] / p["segments"], 4), "qc_fail_rate": round(p["qc_fail"] / p["segments"], 4),
+                    "qc_fail_rate_nonsmm": round(p["qc_fail_nonsmm"] / p["nonsmm"], 4) if p["nonsmm"] else "",
+                    "qc_fail_rate_smm": round(p["qc_fail_smm"] / p["smm"], 4) if p["smm"] else "",
+                    "host_share": round(p["host"] / p["segments"], 4)})
+    path = "results/v7/analysis/qc_exclusion.csv"; guard_output(path)
+    with open(path, "w", newline="") as f:
+        f.write("# post hoc: per released subject identifier, from the SAFE-SMM cache index; QC thresholds frozen 0.10 / 0.30 at cutoff 0.3; length rule 200 frames\n")
+        w = csv.DictWriter(f, fieldnames=list(out[0])); w.writeheader(); w.writerows(out)
+    print("wrote", path)
+
+    # pooled summary
+    def pooled(sel):
+        n = len(sel); smm = sum(r["binary_label"] for r in sel)
+        fail = [r for r in sel if not D.passes_qc(r, QC)]; ok = [r for r in sel if D.passes_qc(r, QC)]
+        short = sum(r["n_frames"] < MIN_FRAMES for r in sel)
+        host = [r for r in ok if r["n_frames"] >= MIN_FRAMES]
+        return {"segments": n, "smm": smm, "smm_rate": round(smm / n, 4) if n else "",
+                "qc_fail": len(fail), "qc_fail_rate_nonsmm": round(sum(1 for r in fail if r["binary_label"] == 0) / max(1, sum(1 for r in sel if r["binary_label"] == 0)), 4),
+                "qc_fail_rate_smm": round(sum(1 for r in fail if r["binary_label"] == 1) / max(1, smm), 4),
+                "smm_rate_qc_fail": round(sum(r["binary_label"] for r in fail) / len(fail), 4) if fail else "",
+                "smm_rate_qc_pass": round(sum(r["binary_label"] for r in ok) / len(ok), 4) if ok else "",
+                "short": short, "short_rate": round(short / n, 4) if n else "",
+                "all_missing": sum(r["q_missing"] >= 1.0 for r in sel),
+                "host_segments": len(host), "host_smm": sum(r["binary_label"] for r in host),
+                "identifiers": len(set(r["child_id"] for r in sel)), "host_identifiers": len(set(r["child_id"] for r in host))}
+    summ = []
+    for split in ("train", "test"):
+        sel = [r for r in rows if r["split"] == split]
+        summ.append({"population": f"{split}, all segments", **pooled(sel)})
+        summ.append({"population": f"{split}, length protocol (at least {MIN_FRAMES} frames)", **pooled([r for r in sel if r["n_frames"] >= MIN_FRAMES])})
+    summ.append({"population": "all", **pooled(rows)})
+    sp = "results/v7/analysis/qc_exclusion_summary.csv"; guard_output(sp)
+    with open(sp, "w", newline="") as f:
+        f.write("# post hoc: pooled QC and length exclusion summary from the cache index\n")
+        w = csv.DictWriter(f, fieldnames=list(summ[0])); w.writeheader(); w.writerows(summ)
+    for s in summ:
+        print(s)
+
+    # table: per-split pooled rows
+    def pct(x):
+        return f"{100 * float(x):.1f}\\%" if x != "" else ""
+    L = ["% generated by experiments/qc_exclusion_report.py (post hoc) from the SAFE-SMM cache index; do not edit",
+         r"\begin{tabular}{lrrrrrrrr}", r"\toprule",
+         r"Population & Segments & IDs & SMM rate & QC fail, non-SMM & QC fail, SMM & SMM rate, QC fail & SMM rate, QC pass & $<$200 frames \\", r"\midrule"]
+    for s in summ:
+        L.append(f"{s['population']} & {s['segments']:,} & {s['identifiers']} & {pct(s['smm_rate'])} & {pct(s['qc_fail_rate_nonsmm'])} & {pct(s['qc_fail_rate_smm'])} & "
+                 f"{pct(s['smm_rate_qc_fail'])} & {pct(s['smm_rate_qc_pass'])} & {pct(s['short_rate'])} \\\\")
+    L += [r"\bottomrule", r"\end{tabular}"]
+    tp = "paper/tables/qc_exclusion.tex"; guard_output(tp); open(tp, "w").write("\n".join(L) + "\n"); print("wrote", tp)
+
+    # figure: per-identifier QC-fail rate (non-SMM) and host share, by split
+    fig, axes = plt.subplots(1, 2, figsize=(7.0, 2.4))
+    for ax, (col, lab) in zip(axes, (("qc_fail_rate_nonsmm", "QC-fail rate of non-SMM segments"), ("host_share", "share of an identifier's segments in the host"))):
+        for split, color in (("train", "0.45"), ("test", "#0072B2")):
+            v = [float(r[col]) for r in out if r["split"] == split and r[col] != ""]
+            ax.hist(v, bins=np.linspace(0, 1, 21), alpha=0.6, color=color, label=f"{split} ({len(v)} identifiers)")
+        ax.set_xlabel(lab, fontsize=8); ax.set_ylabel("identifiers", fontsize=8); ax.tick_params(labelsize=8)
+        ax.legend(fontsize=7, frameon=False)
+    fig.tight_layout()
+    fp = "paper/figures/fig_qc_exclusion"; guard_output(fp + ".pdf")
+    fig.savefig(fp + ".pdf", bbox_inches="tight"); fig.savefig(fp + ".svg", bbox_inches="tight"); print("wrote", fp + ".pdf")
+
+
+if __name__ == "__main__":
+    main()

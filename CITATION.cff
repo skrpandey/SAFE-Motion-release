@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper."
+title: "SAFE-Motion: code and results for Auditing Tracking-Quality Cues in Skeleton-Based Stereotypy Detection with Matched Training Worlds"
+type: software
+authors:
+  - name: "The SAFE-Motion authors (see the paper)"
+year: 2026
+license: MIT

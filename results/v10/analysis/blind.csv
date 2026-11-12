@@ -1,0 +1,13 @@
+contrast,point,ci_lo,ci_hi,verdict,mechanism,R_S,R_I,R_I_ci,sd_seeds_S,sd_seeds_I,mask_range,clean_S,clean_I
+SE(A_none),0.7563,0.6178,0.9202,differs_from_zero,runs,0.7772,0.0210,"(-0.0534, 0.0966)",0.1008,0.0564,0.0109,0.7804,0.7846
+SE(A_blind),0.3599,0.2824,0.4549,differs_from_zero,runs,0.5140,0.1541,"(0.0968, 0.2221)",0.0534,0.0448,0.0640,0.8168,0.8064
+"SE(A_none) - SE(A_blind), standard minus interpolated interaction",0.3963,0.2795,0.5161,differs_from_zero,runs,,,,,,,,
+"SE(A_blind) / SE(A_none), interpolated/standard interaction ratio",0.4759,0.3976,0.5802,differs_from_zero,runs,,,,,,,,
+R(A_blind trained in S) under gapfill,0.5024,0.4148,0.6113,differs_from_zero,runs,,,,,,,,
+R(A_blind trained in I) under gapfill,0.1427,0.0855,0.2073,differs_from_zero,runs,,,,,,,,
+SE(A_none),0.4566,0.3302,0.5882,differs_from_zero,whole,0.4779,0.0213,"(-0.0660, 0.1217)",0.0251,0.0221,0.1086,0.8022,0.8053
+SE(A_blind),0.4708,0.3658,0.5829,differs_from_zero,whole,0.4621,-0.0087,"(-0.0859, 0.0851)",0.0335,0.0798,0.0826,0.7943,0.8077
+"SE(A_none) - SE(A_blind), standard minus interpolated interaction",-0.0141,-0.1493,0.1147,undetermined,whole,,,,,,,,
+"SE(A_blind) / SE(A_none), interpolated/standard interaction ratio",1.0309,0.7798,1.3970,differs_from_zero,whole,,,,,,,,
+R(A_blind trained in S) under gapfill,0.2164,0.1569,0.2871,differs_from_zero,whole,,,,,,,,
+R(A_blind trained in I) under gapfill,0.1938,0.1202,0.2879,differs_from_zero,whole,,,,,,,,

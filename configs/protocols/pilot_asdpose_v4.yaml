@@ -1,0 +1,37 @@
+# Pilot protocol v4 (PLAN §15): (a) matched-world measure on CompactCTRGCN, (b) a second planted
+# mechanism to test "a remedy lowers reliance only when it matches the artifact's form".
+# Frozen before any v4 model is trained or scored. Commit recorded in REGISTRY.md.
+# Pilot status: go/no-go for AWS spending.
+
+inherits: pilot_asdpose_v3.yaml   # host, worlds, strengths, test sets, R, decomposition, pooling
+
+part_a_compact:
+  model: CompactCTRGCN (safe_motion/models/ctrgcn.py, copied from SAFE-SMM e5217a5), 353K params
+  fast_config: "epochs 25, batch_size 128, amp on; other settings as v1 batch2.train"
+  timing_check: 0.6 min per epoch on the planted host (2 epochs, discarded, not scored)
+  mechanism: runs (v3 masks)
+  runs: "cell A_none x worlds S, I; mid seeds 0, 1, 2; low seeds 0, 1"
+  H7_pass_if: shortcut_effect(mid) > 0 with CI excluding 0, AND shortcut_effect(low) > 0 with CI
+              excluding 0, AND shortcut_effect(mid) - shortcut_effect(low) > 0 with CI excluding 0,
+              AND the World I model's R has a CI containing 0 at both strengths
+  note: low uses two seeds (budget); stated wherever the result is reported
+
+part_b_whole_joint:
+  model: TinyTCN (v1 settings)
+  mechanism: whole (each joint absent for the whole segment with probability eps; same Beta
+             strengths as v3)
+  pre_check: realized missing-fraction AUC on host train, mid S 0.679, mid I 0.512, low S 0.622,
+             low I 0.513 (experiments/planted_precheck_v4.py); weaker than runs (0.709) at mid,
+             parameters kept identical to v3 so the two mechanisms share severities
+  runs: cells [A_none, A_dropout, B_coorddrop, A_velocity] x worlds [S, I] x seeds [0, 1, 2], mid
+  H8_matched_remedy:
+    pass_if: on mechanism whole, A_dropout has reliance_change < 0 with CI excluding 0 AND
+             shortcut_part > 0 with CI excluding 0, AND B_coorddrop has reliance_change with CI
+             containing 0
+  H9_mechanism_contrast:
+    statistic: reliance_change(A_dropout, whole) - reliance_change(A_dropout, runs [v3 TinyTCN])
+    pass_if: < 0 with CI excluding 0
+    pairing: both are scored on the same host test children; same bootstrap indices
+  descriptive: A_velocity decomposition on mechanism whole
+
+gpu_budget: at most 4.0 GPU-h (sum of per-run wall hours) for v4; two queues may share the GPU

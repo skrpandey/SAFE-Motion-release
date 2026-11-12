@@ -1,0 +1,46 @@
+# Post hoc sensitivity (2026-11-09): illustrative hypothetical test-cluster scenarios for the
+# ASDPose intervals. Written and frozen before any scenario was computed; added after the main
+# results were known, so it is a post hoc analysis and is labelled as such wherever reported.
+#
+# What it is for: the primary intervals cluster the bootstrap on the 40 released test subject
+# identifiers. The identity audit (results/asdpose_id_audit/DECISION.md) matched 18 of them to 18
+# distinct persons in the released recordings and could not match 22. These scenarios show how the
+# Table I interactions and the two Group DRO contrasts change under stated alternative clusterings
+# of the test identifiers.
+#
+# What it cannot do: none of the scenarios detects an alias between an unmatched test identifier
+# and a matched test person or a development participant, and none changes the fitted models, so
+# training-side contamination (if any) is untouched. Scenario B is not a general worst case; merging
+# clusters need not widen an AUROC-contrast interval. Participant independence stays open until an
+# authoritative crosswalk exists. No scenario is selected or dropped on the basis of its result.
+name: cluster_scenarios_post_hoc
+status: post hoc; frozen 2026-11-09 before computation
+source_of_identities: results/asdpose_id_audit/manifest_ids.csv (pass 1) + fullsearch pass 2 (IDs 68, 116, 304 resolved)
+test_identifiers: [3, 21, 30, 59, 61, 66, 68, 108, 113, 116, 132, 139, 148, 156, 180, 183, 184, 185, 186, 190,
+                   198, 204, 210, 215, 233, 237, 241, 247, 270, 282, 286, 296, 297, 303, 304, 307, 310, 311, 316, 320]
+matched_identifiers: [3, 21, 30, 59, 61, 66, 68, 108, 113, 116, 139, 156, 296, 297, 303, 304, 310, 311]   # 18 distinct persons
+unmatched_identifiers: [132, 148, 180, 183, 184, 185, 186, 190, 198, 204, 210, 215, 233, 237, 241, 247, 270, 282, 286, 307, 316, 320]
+scenarios:
+  primary:
+    description: the published clustering, one cluster per released identifier
+    clusters: 40
+  A_pairwise:
+    description: unmatched identifiers merged in adjacent pairs by ascending identifier (132+148, 180+183, ...); matched identifiers unchanged
+    clusters: 29
+    pairs: [[132, 148], [180, 183], [184, 185], [186, 190], [198, 204], [210, 215], [233, 237], [241, 247], [270, 282], [286, 307], [316, 320]]
+  B_one_cluster:
+    description: all 22 unmatched identifiers as one cluster; matched identifiers unchanged. Illustrative only, not a bound.
+    clusters: 19
+  C_matched_only:
+    description: test rows of the 18 matched identifiers only (restricted population; not an independent cohort, since unmatched development identifiers may alias these persons)
+    clusters: 18
+quantities:
+  - Table I interactions (mask mean, logit and raw): v7 missing runs mid and low, v7 whole-joint absence, v8 frozen frames, v13 arm confidence
+  - Group DRO minus no-remedy under missing runs and under frozen frames (protocol v12, logit and raw)
+estimator: unchanged from the primary analysis (paired cluster bootstrap, 2,000 resamples, shared resample indices; seeds and masks averaged inside each resample)
+reporting:
+  - point estimate and 95% interval per scenario, next to the primary values; changes reported in either direction
+  - cluster-size distribution per scenario; number of resamples with a single class, if any
+  - a Limitations sentence stating what the scenarios cannot detect
+script: experiments/cluster_scenarios_v7.py
+outputs: results/v7/analysis/cluster_scenarios.csv and results/v12/analysis/cluster_scenarios.csv inside a release tree

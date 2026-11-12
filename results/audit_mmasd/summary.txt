@@ -1,0 +1,110 @@
+MMASD: 1693 clip folders, 1374 non-empty clips, 254674 frames, 32 children, 10 classes with frames
+empty folders by activity: {'body_swing': 2, 'drumming': 202, 'frog_pose': 113, 'maracas_forward_shaking': 2}
+class                     clips children  len p5   p25   med   p75   p95   mean
+arm_swing                   105     11     92   125   150   200   225  158.6
+body_swing                  117     10    120   150   200   250   305  211.2
+chest_expansion             114     10     90   131   175   225   275  180.8
+drumming                    343     12     77   150   180   225   300  188.1
+maracas_forward_shaking     101     11     75   150   200   240   300  194.5
+maracas_shaking             130     11     94   125   180   240   300  191.0
+sing_and_clap               113     11     75   150   210   270   330  214.2
+squat                       102     11     60   100   200   275   349  197.2
+tree_pose                   129     10    100   125   150   175   240  155.2
+twist_pose                  120     10    100   125   150   180   250  161.5
+clips per child min/median/max [15.0, 33.5, 131.0]; days {16: 356, 1: 543, 8: 475}; tags {'i': 351, 'n': 488, 'y': 535}
+selection: {'people_per_frame_median': 3.2236666666666665, 'n_persistent_tracks': {4: 420, 5: 70, 3: 809, 6: 16, 2: 58, 1: 1}, 'selected_coverage_pct_5_50': [0.98, 1.0], 'selected_is_shortest_frac': 0.3296863603209336, 'n_clips_multi_persistent': 1371}
+tracking statistics (COCO-17 subset), per class mean:
+class                         q_lowconf     q_missing      q_frozen q_arm_lowconf
+arm_swing                         0.114         0.067         0.007         0.123
+body_swing                        0.096         0.060         0.008         0.044
+chest_expansion                   0.084         0.059         0.005         0.047
+drumming                          0.141         0.077         0.009         0.032
+maracas_forward_shaking           0.114         0.078         0.015         0.076
+maracas_shaking                   0.111         0.073         0.018         0.075
+sing_and_clap                     0.148         0.077         0.009         0.066
+squat                             0.116         0.070         0.013         0.048
+tree_pose                         0.083         0.050         0.000         0.055
+twist_pose                        0.209         0.129         0.000         0.207
+
+activity, 10 classes, child-grouped StratifiedGroupKFold(8):
+  tracking         lr: macro AUC 0.604 [0.571, 0.649]  bacc 0.197  null AUC 0.493 (95th 0.516) p=0.005  (18.1 s)
+  tracking         gb: macro AUC 0.657 [0.623, 0.704]  bacc 0.221  null AUC 0.500 (95th 0.524) p=0.020  (244.1 s)
+  length           lr: macro AUC 0.501 [0.456, 0.555]  bacc 0.129  null AUC 0.493 (95th 0.512) p=0.239  (9.4 s)
+  length           gb: macro AUC 0.549 [0.494, 0.613]  bacc 0.153  null AUC 0.491 (95th 0.511) p=0.020  (207.7 s)
+  tracking+length  lr: macro AUC 0.602 [0.558, 0.660]  bacc 0.209  null AUC 0.495 (95th 0.515) p=0.005  (18.6 s)
+  tracking+length  gb: macro AUC 0.670 [0.628, 0.723]  bacc 0.267  null AUC 0.499 (95th 0.519) p=0.020  (243.5 s)
+activity, BODY_25 statistics (no permutations):
+  tracking         lr: macro AUC 0.655 [0.622, 0.701]  bacc 0.213  (4.3 s)
+  tracking         gb: macro AUC 0.706 [0.666, 0.758]  bacc 0.270  (9.0 s)
+  length           lr: macro AUC 0.501 [0.456, 0.555]  bacc 0.129  (4.1 s)
+  length           gb: macro AUC 0.549 [0.494, 0.613]  bacc 0.153  (8.3 s)
+  tracking+length  lr: macro AUC 0.651 [0.613, 0.703]  bacc 0.220  (4.4 s)
+  tracking+length  gb: macro AUC 0.718 [0.676, 0.771]  bacc 0.276  (9.0 s)
+per-class OvR AUC tracking|gb: arm_swing 0.788, body_swing 0.572, chest_expansion 0.588, drumming 0.781, maracas_forward_shaking 0.626, maracas_shaking 0.610, sing_and_clap 0.577, squat 0.476, tree_pose 0.666, twist_pose 0.888
+per-class OvR AUC length|gb: arm_swing 0.630, body_swing 0.573, chest_expansion 0.496, drumming 0.500, maracas_forward_shaking 0.477, maracas_shaking 0.485, sing_and_clap 0.482, squat 0.654, tree_pose 0.624, twist_pose 0.571
+per-class OvR AUC tracking+length|gb: arm_swing 0.821, body_swing 0.607, chest_expansion 0.553, drumming 0.789, maracas_forward_shaking 0.599, maracas_shaking 0.604, sing_and_clap 0.562, squat 0.556, tree_pose 0.710, twist_pose 0.903
+activity, selection rule maxconf (no permutations):
+  tracking         lr: macro AUC 0.613 [0.583, 0.659]  bacc 0.200  (4.2 s)
+  tracking         gb: macro AUC 0.654 [0.623, 0.696]  bacc 0.240  (9.2 s)
+  length           lr: macro AUC 0.501 [0.456, 0.555]  bacc 0.129  (3.8 s)
+  length           gb: macro AUC 0.549 [0.494, 0.613]  bacc 0.153  (8.2 s)
+  tracking+length  lr: macro AUC 0.612 [0.570, 0.668]  bacc 0.207  (4.2 s)
+  tracking+length  gb: macro AUC 0.673 [0.642, 0.720]  bacc 0.271  (9.1 s)
+
+theme ['rhythm', 'robot', 'yoga']:
+  tracking         lr: macro AUC 0.663 [0.608, 0.714]  bacc 0.508  (2.2 s)
+  tracking         gb: macro AUC 0.689 [0.641, 0.730]  bacc 0.514  (3.8 s)
+  length           lr: macro AUC 0.550 [0.494, 0.616]  bacc 0.401  (2.1 s)
+  length           gb: macro AUC 0.562 [0.492, 0.642]  bacc 0.432  (3.3 s)
+  tracking+length  lr: macro AUC 0.654 [0.603, 0.706]  bacc 0.475  (2.3 s)
+  tracking+length  gb: macro AUC 0.696 [0.640, 0.749]  bacc 0.527  (3.5 s)
+
+children by theme set: {'rhythm+robot': 5, 'robot': 6, 'rhythm': 11, 'yoga': 10}
+within theme rhythm: ['drumming', 'maracas_forward_shaking', 'maracas_shaking', 'sing_and_clap'], 687 clips, 16 children, 8 folds
+  tracking         lr: macro AUC 0.681 [0.632, 0.761]  bacc 0.410  (2.1 s)
+  tracking         gb: macro AUC 0.658 [0.619, 0.713]  bacc 0.356  (4.0 s)
+  length           lr: macro AUC 0.464 [0.389, 0.557]  bacc 0.244  (2.1 s)
+  length           gb: macro AUC 0.488 [0.441, 0.553]  bacc 0.274  (4.0 s)
+  tracking+length  lr: macro AUC 0.651 [0.576, 0.755]  bacc 0.362  (2.2 s)
+  tracking+length  gb: macro AUC 0.663 [0.611, 0.734]  bacc 0.369  (3.9 s)
+  pair drumming vs maracas_forward_shaking           clips  444 children 16 (both  7)  tracking AUC gb 0.800 lr 0.737  length AUC 0.495
+  pair drumming vs maracas_shaking                   clips  473 children 16 (both  7)  tracking AUC gb 0.796 lr 0.759  length AUC 0.537
+  pair drumming vs sing_and_clap                     clips  456 children 16 (both  7)  tracking AUC gb 0.577 lr 0.484  length AUC 0.466
+  pair maracas_forward_shaking vs maracas_shaking    clips  231 children 11 (both 11)  tracking AUC gb 0.523 lr 0.491  length AUC 0.508
+  pair maracas_forward_shaking vs sing_and_clap      clips  214 children 11 (both 11)  tracking AUC gb 0.628 lr 0.722  length AUC 0.453
+  pair maracas_shaking vs sing_and_clap              clips  243 children 11 (both 11)  tracking AUC gb 0.721 lr 0.718  length AUC 0.460
+within theme robot: ['arm_swing', 'body_swing', 'chest_expansion', 'squat'], 438 clips, 11 children, 8 folds
+  tracking         lr: macro AUC 0.600 [0.569, 0.661]  bacc 0.324  (2.0 s)
+  tracking         gb: macro AUC 0.588 [0.515, 0.672]  bacc 0.313  (4.2 s)
+  length           lr: macro AUC 0.473 [0.430, 0.522]  bacc 0.277  (2.0 s)
+  length           gb: macro AUC 0.588 [0.541, 0.650]  bacc 0.345  (3.6 s)
+  tracking+length  lr: macro AUC 0.608 [0.564, 0.678]  bacc 0.356  (2.0 s)
+  tracking+length  gb: macro AUC 0.647 [0.574, 0.733]  bacc 0.387  (3.8 s)
+  pair arm_swing vs body_swing                       clips  222 children 11 (both 10)  tracking AUC gb 0.733 lr 0.805  length AUC 0.699
+  pair arm_swing vs chest_expansion                  clips  219 children 11 (both 10)  tracking AUC gb 0.678 lr 0.708  length AUC 0.566
+  pair arm_swing vs squat                            clips  207 children 11 (both 11)  tracking AUC gb 0.741 lr 0.747  length AUC 0.802
+  pair body_swing vs chest_expansion                 clips  231 children 10 (both 10)  tracking AUC gb 0.682 lr 0.627  length AUC 0.553
+  pair body_swing vs squat                           clips  219 children 11 (both 10)  tracking AUC gb 0.435 lr 0.339  length AUC 0.605
+  pair chest_expansion vs squat                      clips  216 children 11 (both 10)  tracking AUC gb 0.491 lr 0.490  length AUC 0.615
+within theme yoga: ['tree_pose', 'twist_pose'], 249 clips, 10 children, 8 folds
+  tracking         lr: macro AUC 0.890 [0.816, 0.947]  bacc 0.827  (1.6 s)
+  tracking         gb: macro AUC 0.846 [0.766, 0.926]  bacc 0.768  (2.1 s)
+  length           lr: macro AUC 0.509 [0.450, 0.582]  bacc 0.518  (1.5 s)
+  length           gb: macro AUC 0.522 [0.465, 0.589]  bacc 0.553  (2.1 s)
+  tracking+length  lr: macro AUC 0.890 [0.817, 0.945]  bacc 0.823  (1.6 s)
+  tracking+length  gb: macro AUC 0.863 [0.788, 0.937]  bacc 0.780  (2.1 s)
+  pair tree_pose vs twist_pose                       clips  249 children 10 (both 10)  tracking AUC gb 0.846 lr 0.890  length AUC 0.522
+
+tag y vs n (1023 clips; tag meaning undocumented):
+  tracking         lr: macro AUC 0.514 [0.456, 0.583]  bacc 0.534  (1.8 s)
+  tracking         gb: macro AUC 0.570 [0.524, 0.623]  bacc 0.547  (2.4 s)
+  length           lr: macro AUC 0.537 [0.465, 0.607]  bacc 0.557  (1.8 s)
+  length           gb: macro AUC 0.502 [0.442, 0.571]  bacc 0.524  (2.3 s)
+  tracking+length  lr: macro AUC 0.523 [0.461, 0.591]  bacc 0.512  (1.9 s)
+  tracking+length  gb: macro AUC 0.561 [0.511, 0.620]  bacc 0.538  (2.5 s)
+
+ADOS: 20 of 32 children matched by id
+  comparison q_lowconf +0.29 q_missing +0.24 q_frozen +0.21 q_arm_lowconf +0.03 log_length -0.27 (n=20)
+  sa_total   q_lowconf +0.24 q_missing +0.18 q_frozen +0.02 q_arm_lowconf +0.08 log_length -0.26 (n=20)
+  rrb_total  q_lowconf +0.54 q_missing +0.46 q_frozen +0.24 q_arm_lowconf +0.27 log_length -0.16 (n=20)
+  total      q_lowconf +0.35 q_missing +0.27 q_frozen +0.12 q_arm_lowconf +0.13 log_length -0.24 (n=20)

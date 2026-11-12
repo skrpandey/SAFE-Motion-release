@@ -1,0 +1,90 @@
+{
+ "n_boot": 2000,
+ "n_perm": 200,
+ "n_rows": 550,
+ "n_videos": 127,
+ "T1": {
+  "within_set_gb": {
+   "classifier": "within_set_gb",
+   "auc": 0.5604512201932206,
+   "ci_lo": 0.5081010123199609,
+   "ci_hi": 0.611763715020559,
+   "null_mean": 0.5056667783548333,
+   "null_p95": 0.553824388972655,
+   "perm_p": 0.03482587064676617,
+   "asdpose_standard_reference": 0.714
+  },
+  "within_set_lr": {
+   "classifier": "within_set_lr",
+   "auc": 0.5570819604996184,
+   "ci_lo": 0.4997800605453165,
+   "ci_hi": 0.616370596683889,
+   "null_mean": 0.5007739989948066,
+   "null_p95": 0.559526069879563,
+   "perm_p": 0.07960199004975124,
+   "asdpose_standard_reference": 0.714
+  },
+  "release_specific": false,
+  "reading": "weaker on this set"
+ },
+ "T2": {
+  "released_checkpoint": "not available in this repository (base project's score_baseline.py and the authors' model.pth loader were not retained); the contrast is reported against v1 and against the no-remedy base cell instead",
+  "n_groups": 25
+ },
+ "T4": {
+  "gate": {
+   "layout": {
+    "joint_order": "COCO-17 from MediaPipe 33 via [0, 2, 5, 7, 8, 11, 12, 13, 14, 15, 16, 23, 24, 25, 26, 27, 28]",
+    "frames_with_detection": 0.887090909090909,
+    "nose_above_shoulders_when_detected": 0.8956650953064152,
+    "left_right_shoulders_distinct": 0.9999795039967206,
+    "normalised_range_x": [
+     -3.021006932258606,
+     3.377841165065765
+    ],
+    "normalised_range_y": [
+     -2.5106227660179137,
+     4.995967702865601
+    ],
+    "note": "left and right follow the subject's side as MediaPipe defines them, the same convention as COCO"
+   },
+   "parity": {
+    "same_identifiers_and_order": true,
+    "all_windows_200_frames": true,
+    "n_failures": 0,
+    "failure_fraction_negatives": 0.0,
+    "windows_with_no_detection": 12
+   },
+   "fallback_applies": false,
+   "mediapipe_version": "0.10.9"
+  },
+  "fallback_positive_only": false
+ },
+ "T7": {
+  "auc_unchanged_every_model": true
+ },
+ "T8": {
+  "statistic": "start position fraction, raw AUC",
+  "auc": 0.2819474693322909,
+  "ci_lo": 0.2272121119593288,
+  "ci_hi": 0.3358684646722071,
+  "null_p95": 0.549200964241172,
+  "null_p05": 0.4507408648387037,
+  "perm_p_two_sided": 0.004975124378109453,
+  "n_windows": 550,
+  "no_position_cue": false
+ },
+ "T9": {
+  "status": "model-rated, no human adjudication; lower and upper bounds",
+  "n_sampled": 100,
+  "flagged_by_first_pass": 27,
+  "yes_lower": 5,
+  "yes_upper": 16,
+  "unsure_lower": 70,
+  "unsure_upper": 59,
+  "kappa_first_pass": 0.223,
+  "kappa_reruns_27": 0.09,
+  "n_dropped_lower": 5,
+  "n_dropped_upper": 16
+ }
+}

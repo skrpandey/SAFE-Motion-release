@@ -1,0 +1,6 @@
+results/v13/S_w0_armruns_mid/A_none/seed0 --proto v13 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --mechanism armruns --strength mid --seed 0
+results/v13/S_w0_armruns_mid/A_none/seed1 --proto v13 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --mechanism armruns --strength mid --seed 1
+results/v13/S_w0_armruns_mid/A_none/seed2 --proto v13 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world S --mechanism armruns --strength mid --seed 2
+results/v13/I_w0_armruns_mid/A_none/seed0 --proto v13 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --mechanism armruns --strength mid --seed 0
+results/v13/I_w0_armruns_mid/A_none/seed1 --proto v13 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --mechanism armruns --strength mid --seed 1
+results/v13/I_w0_armruns_mid/A_none/seed2 --proto v13 --arch compact --amp --batch-size 128 --epochs 25 --workers 6 --cell A_none --world I --mechanism armruns --strength mid --seed 2

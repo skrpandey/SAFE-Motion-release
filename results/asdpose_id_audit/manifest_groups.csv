@@ -1,0 +1,1117 @@
+f1,f2,f3,st,best_raw_file,raw_child,best_err_px,other_child_err_px,status,partition,n_segments,n_smm
+1,1,1,304.0,data/1_PLS_1_1.pkl,1,36.02305,82.37028,no candidate,train,29,4
+1,1,2,446.0,data/1_PLS_1_2.pkl,1,3.945183,67.191154,accepted,train,29,7
+2,1,1,998.0,data/3_PLS_1_1.pkl,3,2.7984958,24.064213,accepted,train,38,17
+2,1,2,998.0,data/3_PLS_1_2.pkl,3,3.798668,49.480244,accepted,train,36,18
+2,1,3,998.0,data/3_PLS_1_3.pkl,3,2.7730572,30.741552,accepted,train,40,18
+2,1,4,1120.0,data/3_PLS_1_4.pkl,3,30.133615,71.354294,no candidate,train,36,7
+3,1,1,1735.0,data/5_ADOS_1_1.pkl,5,9.954879,40.108074,no candidate,test,28,1
+3,1,3,2484.0,data/5_ADOS_1_3.pkl,5,2.6806836,30.759968,accepted,test,24,2
+3,1,4,2528.0,data/5_ADOS_1_4.pkl,5,16.26612,44.778366,no candidate,test,28,1
+4,1,1,3313.0,data/164_ADOS_1_1.pkl,164,33.798676,50.270954,no candidate,train,26,6
+4,1,2,2284.0,data/173_ADOS_1_2.pkl,173,25.739126,30.76372,no candidate,train,32,8
+4,1,3,3033.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,27,2
+4,1,4,3139.0,data/53_Cognitive_1_1.pkl,53,52.652706,58.833126,no candidate,train,32,7
+5,1,1,659.0,data/7_ADOS_1_1.pkl,7,3.9083993,25.7383,accepted,train,26,1
+5,1,2,1285.0,data/7_ADOS_1_2.pkl,7,14.285121,135.6639,no candidate,train,25,2
+5,1,3,1954.0,data/7_ADOS_1_3.pkl,7,8.842956,72.83044,no candidate,train,20,1
+6,1,1,1688.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,39,11
+6,1,2,913.0,data/29_ADOS_1_4.pkl,29,24.035738,47.364193,no candidate,train,28,11
+6,1,3,680.0,data/10_ADOS_1_3.pkl,10,12.350261,66.89994,no candidate,train,36,7
+6,1,4,1208.0,data/10_ADOS_1_4.pkl,10,12.458857,33.981186,no candidate,train,34,10
+7,1,1,2219.0,data/11_ADOS_1_1.pkl,11,2.674485,19.836517,accepted,validation,34,7
+7,1,2,2940.0,data/11_ADOS_1_2.pkl,11,2.787618,19.76813,accepted,validation,25,2
+7,1,3,2219.0,data/11_ADOS_1_3.pkl,11,2.7290232,28.17056,accepted,validation,31,8
+7,1,4,2219.0,data/11_ADOS_1_4.pkl,11,2.758013,46.50383,accepted,validation,34,9
+8,1,1,918.0,data/12_ADOS_1_1.pkl,12,10.146053,30.828983,no candidate,train,34,3
+8,1,2,2192.0,data/12_ADOS_1_2.pkl,12,17.000317,59.25108,no candidate,train,27,2
+8,1,3,1045.0,data/12_ADOS_1_3.pkl,12,8.749057,67.49078,no candidate,train,20,2
+8,1,4,2104.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,26,2
+9,1,1,1519.0,data/13_PLS_1_1.pkl,13,2.8365598,18.76827,accepted,validation,47,5
+9,1,3,1281.0,data/13_PLS_1_3.pkl,13,6.0914726,63.731873,accepted,validation,23,1
+9,1,4,1095.0,data/13_PLS_1_4.pkl,13,19.613796,69.787,no candidate,validation,27,2
+9,2,2,238.0,data/13_ADOS_1_2.pkl,13,6.1528697,26.348696,accepted,validation,39,1
+9,2,4,322.0,data/13_ADOS_1_4.pkl,13,15.036402,39.501778,no candidate,validation,23,2
+10,1,1,42.0,data/15_ADOS_1_1.pkl,15,2.786621,35.80222,accepted,validation,61,15
+10,2,1,895.0,data/15_ADOS_2_1.pkl,15,19.756329,86.18443,no candidate,validation,33,1
+10,2,2,426.0,data/15_ADOS_1_2.pkl,15,6.1694074,34.068882,accepted,validation,18,1
+10,2,3,1050.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,24,2
+11,1,4,1417.0,data/16_ADOS_1_4.pkl,16,8.801039,32.62299,no candidate,train,26,7
+12,1,1,717.0,data/17_ADOS_2_1.pkl,17,2.830045,19.8036,accepted,train,83,35
+12,1,2,717.0,data/17_ADOS_2_2.pkl,17,2.8252935,17.700348,accepted,train,87,41
+12,1,3,717.0,data/17_ADOS_2_3.pkl,17,5.498271,32.74246,accepted,train,80,42
+12,1,4,932.0,data/17_ADOS_2_4.pkl,17,16.971506,56.178955,no candidate,train,89,38
+13,1,1,87.0,data/18_ADOS_1_1.pkl,18,2.7749965,23.96432,accepted,train,45,14
+13,1,2,87.0,data/18_ADOS_1_2.pkl,18,3.912436,18.742739,accepted,train,37,9
+13,1,3,87.0,data/18_ADOS_1_3.pkl,18,2.7905538,35.63447,accepted,train,38,14
+13,1,4,87.0,data/18_ADOS_1_4.pkl,18,10.013435,83.28526,no candidate,train,32,13
+14,1,1,264.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,23,4
+14,1,2,424.0,data/20_PLS_1_2.pkl,20,0.15172721,62.15882,accepted,validation,36,11
+15,1,1,540.0,data/21_ADOS_1_1.pkl,21,2.8407996,16.89016,accepted,train,22,2
+15,1,2,2215.0,data/21_ADOS_1_2.pkl,21,19.591528,94.55339,no candidate,train,28,1
+15,1,3,54.0,data/21_ADOS_1_3.pkl,21,2.928989,35.649124,accepted,train,17,3
+15,1,4,60.0,data/21_ADOS_1_4.pkl,21,8.827819,48.025986,no candidate,train,20,3
+15,2,1,1087.0,data/21_ADOS_2_1.pkl,21,6.272193,22.611635,accepted,train,26,2
+15,2,3,1695.0,data/21_ADOS_2_3.pkl,21,3.8749073,52.543976,accepted,train,26,2
+15,2,4,1712.0,data/21_ADOS_2_4.pkl,21,15.018152,47.152607,no candidate,train,33,2
+16,1,1,446.0,data/22_PLS_1_1.pkl,22,2.8385816,42.69686,accepted,train,57,11
+16,1,2,446.0,data/22_PLS_1_2.pkl,22,2.6110253,19.660986,accepted,train,66,11
+17,1,1,427.0,data/24_ADOS_1_1.pkl,24,3.8646162,31.619823,accepted,validation,27,4
+17,1,4,356.0,data/24_ADOS_1_4.pkl,24,11.033377,79.99542,no candidate,validation,29,8
+17,2,4,1716.0,data/24_ADOS_2_4.pkl,24,26.497066,61.4244,no candidate,validation,31,3
+18,1,1,665.0,data/25_PLS_1_1.pkl,25,3.9818015,22.576897,accepted,train,49,8
+18,1,2,3106.0,data/25_Cognitive_1_2.pkl,25,6.243828,42.556576,accepted,train,50,7
+19,1,1,2874.0,data/26_ADOS_1_1.pkl,26,5.452214,59.897865,accepted,train,48,19
+19,1,2,1077.0,data/26_ADOS_1_2.pkl,26,2.8845413,52.55084,accepted,train,35,16
+19,1,3,822.0,data/26_ADOS_1_3.pkl,26,19.453016,117.78047,no candidate,train,47,24
+19,1,4,1186.0,data/26_ADOS_1_4.pkl,26,12.184107,64.87625,no candidate,train,50,27
+20,1,3,2390.0,data/27_ADOS_1_3.pkl,27,61.302467,100.360886,no candidate,train,23,1
+20,1,4,80.0,data/27_ADOS_1_4.pkl,27,14.998916,23.976027,no candidate,train,24,2
+21,1,1,2188.0,data/28_ADOS_1_1.pkl,28,2.6920214,25.160685,accepted,test,25,1
+21,1,3,2188.0,data/28_ADOS_1_3.pkl,28,2.762878,53.144505,accepted,test,26,1
+21,1,4,2188.0,data/28_ADOS_1_4.pkl,28,5.5952563,69.828766,accepted,test,20,1
+22,1,1,35.0,data/29_ADOS_1_1.pkl,29,22.286064,38.05649,no candidate,train,30,8
+22,1,2,39.0,data/29_ADOS_1_2.pkl,29,14.9696455,32.719402,no candidate,train,27,5
+22,1,3,1.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,38,7
+22,1,4,952.0,data/29_ADOS_1_4.pkl,29,5.559898,33.73049,accepted,train,29,8
+23,1,1,439.0,data/30_ADOS_1_1.pkl,30,7.76868,11.337269,ambiguous,train,20,2
+23,1,2,108.0,data/30_ADOS_1_2.pkl,30,6.23205,25.793745,accepted,train,23,1
+23,1,3,933.0,data/30_ADOS_1_3.pkl,30,6.2704124,47.040394,accepted,train,34,7
+23,1,4,1583.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,30,7
+24,1,1,1080.0,data/31_ADOS_1_1.pkl,31,2.71543,85.8892,accepted,train,36,11
+24,1,2,569.0,data/31_ADOS_1_2.pkl,31,2.851946,61.705063,accepted,train,29,4
+24,1,4,2908.0,data/31_ADOS_1_4.pkl,31,10.040487,47.542233,no candidate,train,21,2
+25,1,1,3048.0,data/32_ADOS_1_1.pkl,32,6.2229395,41.93094,accepted,validation,51,7
+25,1,2,3045.0,data/32_ADOS_1_2.pkl,32,4.069555,26.316704,accepted,validation,55,8
+25,1,3,3047.0,data/32_ADOS_1_3.pkl,32,7.724467,33.634235,accepted,validation,53,8
+25,1,4,1523.0,data/32_PLS_1_4.pkl,32,20.282135,71.14866,no candidate,validation,24,2
+26,1,2,2168.0,data/33_ADOS_1_2.pkl,33,47.724693,118.570885,no candidate,train,21,3
+26,1,3,1956.0,data/33_ADOS_1_3.pkl,33,21.819675,81.120346,no candidate,train,20,4
+26,1,4,146.0,data/33_ADOS_1_4.pkl,33,15.801119,34.577427,no candidate,train,23,7
+27,1,3,63.0,data/34_ADOS_1_3.pkl,34,8.753131,51.608673,no candidate,train,25,1
+27,1,4,1624.0,data/34_ADOS_1_4.pkl,34,15.737557,45.44555,no candidate,train,23,1
+28,1,1,1581.0,data/35_ADOS_1_1.pkl,35,8.670469,20.445728,no candidate,train,29,1
+28,2,1,2407.0,data/35_ADOS_2_1.pkl,35,25.793596,97.755684,no candidate,train,26,2
+28,2,2,533.0,data/35_ADOS_1_2.pkl,35,3.7462656,10.066914,ambiguous,train,15,1
+28,2,3,1220.0,data/35_ADOS_1_3.pkl,35,2.8305671,44.922974,accepted,train,30,4
+28,2,4,50.0,data/35_ADOS_1_4.pkl,35,17.951197,37.588024,no candidate,train,25,4
+29,1,1,399.0,data/36_ADOS_1_1.pkl,36,22.446423,65.31533,no candidate,train,24,2
+29,1,2,847.0,data/36_ADOS_1_2.pkl,36,22.337116,52.50078,no candidate,train,23,1
+30,1,1,2398.0,data/37_ADOS_1_1.pkl,37,2.82031,14.17623,accepted,test,36,12
+30,1,2,453.0,data/87_ADOS_1_2.pkl,87,23.852995,68.08472,no candidate,test,28,8
+30,1,3,3049.0,data/37_ADOS_1_3.pkl,37,2.987494,33.457737,accepted,test,35,11
+30,1,4,3049.0,data/37_ADOS_1_4.pkl,37,14.961561,94.23819,no candidate,test,38,13
+30,2,1,2234.0,data/37_ADOS_2_1.pkl,37,8.329692,68.14875,no candidate,test,27,4
+30,2,2,1656.0,data/37_ADOS_2_2.pkl,37,11.438127,12.4072,no candidate,test,25,2
+30,2,3,227.0,data/37_ADOS_2_3.pkl,37,14.173792,30.392448,no candidate,test,24,3
+30,2,4,1018.0,data/37_ADOS_2_4.pkl,37,14.230365,53.145638,no candidate,test,30,3
+31,1,1,4394.0,data/38_Cognitive_1_1.pkl,38,17.011576,117.59918,no candidate,train,22,1
+31,1,2,1340.0,data/38_Cognitive_1_2.pkl,38,7.8397517,40.056522,accepted,train,18,3
+32,1,1,1627.0,data/39_ADOS_1_1.pkl,39,2.8184469,124.38057,accepted,train,29,3
+32,1,4,1626.0,data/39_ADOS_1_4.pkl,39,6.2373204,62.89542,accepted,train,28,4
+33,1,1,2402.0,data/40_ADOS_1_1.pkl,40,3.7669673,32.495228,accepted,train,49,7
+33,1,2,2402.0,data/40_ADOS_1_2.pkl,40,8.976496,71.60765,no candidate,train,51,5
+33,1,3,2954.0,data/40_ADOS_1_3.pkl,40,3.9357512,27.941418,accepted,train,49,3
+33,1,4,3011.0,data/40_ADOS_1_4.pkl,40,26.119375,73.39968,no candidate,train,64,5
+33,2,1,3221.0,data/40_ADOS_2_1.pkl,40,0.10222447,73.19334,accepted,train,25,4
+33,2,2,1013.0,data/40_ADOS_2_2.pkl,40,0.19540796,53.923134,accepted,train,25,3
+33,2,3,1866.0,data/40_ADOS_2_3.pkl,40,2.6518,80.62105,accepted,train,22,3
+33,2,4,927.0,data/40_ADOS_2_4.pkl,40,1.9760225,93.24634,accepted,train,24,1
+34,1,1,1279.0,data/41_ADOS_1_1.pkl,41,6.1751933,22.418116,accepted,train,31,1
+34,1,2,1497.0,data/41_ADOS_1_2.pkl,41,3.9011743,23.955297,accepted,train,31,6
+34,1,3,1238.0,data/41_ADOS_1_3.pkl,41,8.3560095,44.86911,no candidate,train,24,1
+34,1,4,905.0,data/41_ADOS_1_4.pkl,41,13.910048,51.380867,no candidate,train,27,6
+34,2,3,2770.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,29,2
+34,2,4,2156.0,data/41_ADOS_2_4.pkl,41,6.242341,34.40913,accepted,train,29,2
+35,1,1,3059.0,data/42_Cognitive_1_1.pkl,42,5.554016,79.835495,accepted,train,56,14
+35,1,2,3059.0,data/42_Cognitive_1_2.pkl,42,2.73699,34.084698,accepted,train,63,8
+36,1,1,351.0,data/43_Cognitive_1_1.pkl,43,3.7982752,19.689041,accepted,train,33,3
+36,1,2,310.0,data/43_Cognitive_1_2.pkl,43,3.7837574,14.155964,accepted,train,32,7
+36,1,3,922.0,data/43_Cognitive_1_3.pkl,43,2.7508006,43.375557,accepted,train,42,12
+36,1,4,1317.0,data/43_Cognitive_1_4.pkl,43,10.14207,34.07574,no candidate,train,32,13
+37,1,1,1684.0,data/44_ADOS_1_1.pkl,44,2.7424269,17.673302,accepted,train,75,22
+37,1,2,1726.0,data/44_ADOS_1_2.pkl,44,2.7675812,22.268986,accepted,train,42,9
+37,1,3,653.0,data/44_PLS_1_3.pkl,44,9.987306,44.0773,no candidate,train,40,13
+37,1,4,1683.0,data/44_ADOS_1_4.pkl,44,3.9271579,45.154755,accepted,train,80,27
+37,2,1,666.0,data/44_ADOS_2_1.pkl,44,2.820306,16.270105,accepted,train,30,1
+37,2,2,85.0,data/107_ADOS_1_1.pkl,107,20.464863,37.119144,no candidate,train,24,1
+37,2,3,2993.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,18,3
+37,2,4,2899.0,data/44_ADOS_2_4.pkl,44,18.586311,44.077663,no candidate,train,27,3
+38,1,1,1326.0,data/45_ADOS_1_1.pkl,45,2.7472215,20.317606,accepted,train,24,1
+38,1,2,2829.0,data/45_ADOS_1_2.pkl,45,3.8917117,20.095346,accepted,train,28,2
+39,1,1,3017.0,data/46_Cognitive_1_1.pkl,46,5.5170507,42.579132,accepted,train,39,16
+39,1,2,857.0,data/169_ADOS_1_2.pkl,169,16.98982,21.216099,no candidate,train,22,1
+39,1,3,233.0,data/46_PLS_1_3.pkl,46,13.212116,53.645115,no candidate,train,23,1
+40,1,1,2336.0,data/47_ADOS_1_1.pkl,47,15.039717,50.84202,no candidate,train,26,3
+40,1,2,869.0,data/47_ADOS_1_2.pkl,47,19.497557,42.00856,no candidate,train,30,1
+40,1,4,263.0,data/47_ADOS_1_4.pkl,47,6.169768,31.867308,accepted,train,29,3
+41,1,1,1896.0,data/48_ADOS_1_1.pkl,48,12.115719,33.406788,no candidate,train,41,3
+41,1,2,1896.0,data/48_ADOS_1_2.pkl,48,26.195621,52.879642,no candidate,train,24,3
+41,2,1,1158.0,data/48_ADOS_2_1.pkl,48,30.81187,47.745396,no candidate,train,31,6
+41,2,2,822.0,data/48_ADOS_2_2.pkl,48,16.853788,41.53419,no candidate,train,30,5
+41,2,3,255.0,data/48_ADOS_1_3.pkl,48,11.695811,96.98022,no candidate,train,24,2
+41,2,4,1215.0,data/48_ADOS_1_4.pkl,48,16.775518,94.470985,no candidate,train,37,2
+42,1,2,159.0,data/49_ADOS_1_2.pkl,49,0.10603339,42.223022,accepted,train,27,2
+42,2,1,103.0,data/49_ADOS_1_1.pkl,49,41.952095,73.70649,no candidate,train,19,1
+42,2,2,2355.0,data/49_ADOS_2_2.pkl,49,18.214005,68.049164,no candidate,train,23,1
+42,2,3,111.0,data/49_ADOS_1_3.pkl,49,39.14591,111.47043,no candidate,train,20,1
+43,1,3,179.0,data/50_ADOS_1_3.pkl,50,11.477443,44.540718,no candidate,train,25,1
+43,1,4,1068.0,data/50_ADOS_1_4.pkl,50,6.1519127,16.936,ambiguous,train,21,1
+44,1,1,1146.0,data/51_PLS_1_1.pkl,51,5.5131354,45.26198,accepted,train,33,7
+44,1,2,296.0,data/51_PLS_1_2.pkl,51,21.72889,89.22533,no candidate,train,46,21
+45,1,1,904.0,data/52_ADOS_1_1.pkl,52,23.951012,76.64937,no candidate,train,22,2
+45,1,3,1020.0,data/52_ADOS_1_3.pkl,52,31.721703,58.640385,no candidate,train,29,2
+45,1,4,812.0,data/52_ADOS_1_4.pkl,52,42.595608,83.07377,no candidate,train,21,2
+45,2,2,1403.0,data/52_ADOS_2_2.pkl,52,5.6010103,50.421165,accepted,train,26,1
+45,2,3,193.0,data/52_ADOS_2_3.pkl,52,49.118183,166.22891,no candidate,train,20,1
+45,2,4,249.0,data/52_ADOS_2_4.pkl,52,21.089857,42.20746,no candidate,train,28,1
+46,1,1,3404.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,54,6
+46,1,2,4032.0,data/53_Cognitive_1_2.pkl,53,2.7931278,101.55345,accepted,train,22,1
+47,1,1,2079.0,data/54_ADOS_1_1.pkl,54,5.620289,78.19007,accepted,train,21,4
+47,1,2,2079.0,data/54_ADOS_1_2.pkl,54,3.941562,46.062977,accepted,train,29,2
+48,1,1,905.0,data/55_ADOS_1_1.pkl,55,6.2121973,44.69444,accepted,train,20,1
+48,1,2,1238.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,21,2
+48,1,3,798.0,data/55_ADOS_1_3.pkl,55,8.785185,26.496897,no candidate,train,23,1
+48,1,4,836.0,data/55_ADOS_1_4.pkl,55,11.431003,53.055992,no candidate,train,29,2
+49,1,1,823.0,data/56_ADOS_1_1.pkl,56,2.8199806,16.318205,accepted,validation,43,7
+49,1,2,1286.0,data/56_ADOS_1_2.pkl,56,11.188055,51.41697,no candidate,validation,30,6
+49,1,3,2028.0,data/56_ADOS_1_3.pkl,56,34.71453,103.30502,no candidate,validation,31,3
+49,1,4,166.0,data/56_ADOS_1_4.pkl,56,25.632786,90.06933,no candidate,validation,25,5
+50,1,1,1057.0,data/57_ADOS_1_1.pkl,57,21.195791,77.659195,no candidate,train,39,4
+50,1,2,922.0,data/57_ADOS_1_2.pkl,57,10.127609,47.48629,no candidate,train,14,1
+51,1,1,1242.0,data/58_ADOS_1_1.pkl,58,12.51712,54.388527,no candidate,train,19,1
+51,1,2,2080.0,data/58_ADOS_1_2.pkl,58,3.87366,19.697392,accepted,train,20,1
+52,1,1,1100.0,data/59_ADOS_1_1.pkl,59,2.7268274,17.032732,accepted,train,31,2
+52,1,2,1287.0,data/59_ADOS_1_2.pkl,59,2.716225,16.918173,accepted,train,28,2
+52,1,3,1018.0,data/59_ADOS_1_3.pkl,59,2.889171,22.379019,accepted,train,18,1
+53,1,1,1589.0,data/60_ADOS_1_1.pkl,60,8.673202,19.762564,no candidate,train,26,1
+53,1,2,2039.0,data/60_ADOS_1_2.pkl,60,3.9040384,65.42853,accepted,train,24,1
+53,1,3,90.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,22,1
+53,1,4,698.0,data/60_ADOS_1_4.pkl,60,23.57644,70.04935,no candidate,train,24,1
+54,1,1,1063.0,data/61_ADOS_1_1.pkl,61,19.884972,56.776146,no candidate,train,41,13
+54,1,2,739.0,data/61_ADOS_1_2.pkl,61,2.8561995,25.658669,accepted,train,40,13
+54,1,3,1725.0,data/61_ADOS_1_3.pkl,61,8.326003,81.536125,no candidate,train,22,2
+54,1,4,1039.0,data/61_ADOS_1_4.pkl,61,2.7571418,23.865929,accepted,train,29,3
+55,1,1,602.0,data/62_ADOS_1_1.pkl,62,6.253529,35.270493,accepted,train,44,25
+55,1,2,602.0,data/62_ADOS_1_2.pkl,62,2.8043926,17.095722,accepted,train,41,22
+56,1,1,1288.0,data/63_ADOS_1_1.pkl,63,33.52127,89.12433,no candidate,train,19,1
+56,1,2,644.0,data/63_ADOS_1_2.pkl,63,28.418625,73.401825,no candidate,train,28,5
+56,1,3,1854.0,data/63_ADOS_1_3.pkl,63,6.219366,45.425907,accepted,train,17,1
+56,1,4,574.0,data/63_ADOS_1_4.pkl,63,2.6971765,45.333725,accepted,train,24,2
+57,1,1,1156.0,data/64_ADOS_1_1.pkl,64,16.430452,61.660152,no candidate,train,38,2
+57,1,2,453.0,data/64_ADOS_1_2.pkl,64,10.080642,92.91966,no candidate,train,27,3
+57,1,3,1382.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,32,1
+57,2,1,2.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,34,11
+57,2,2,1047.0,data/64_ADOS_2_2.pkl,64,3.9789393,11.807608,ambiguous,train,22,1
+58,1,1,914.0,data/66_ADOS_1_1.pkl,66,22.488321,79.94709,no candidate,train,31,7
+58,1,3,671.0,data/66_ADOS_1_3.pkl,66,15.202502,89.63498,no candidate,train,36,4
+58,1,4,150.0,data/66_ADOS_1_4.pkl,66,30.784712,99.89097,no candidate,train,28,3
+59,1,4,1441.0,data/67_ADOS_1_4.pkl,67,7.8902,25.732225,accepted,test,24,1
+60,1,1,374.0,data/68_PLS_1_1.pkl,68,17.169428,47.342007,no candidate,validation,33,4
+60,1,2,374.0,data/68_PLS_1_2.pkl,68,27.042608,54.04384,no candidate,validation,22,6
+61,1,1,1880.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,22,7
+61,1,2,757.0,data/69_ADOS_1_2.pkl,69,47.62586,61.51518,no candidate,test,27,4
+61,1,3,1794.0,data/69_ADOS_1_3.pkl,69,5.5640416,105.05911,accepted,test,31,3
+61,1,4,242.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,19,2
+62,1,1,1555.0,data/70_ADOS_1_1.pkl,70,3.7993243,16.730173,accepted,train,25,1
+62,1,2,210.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,28,1
+62,2,1,39.0,data/70_ADOS_2_1.pkl,70,8.414064,42.643196,no candidate,train,27,1
+62,2,2,536.0,data/70_ADOS_2_2.pkl,70,4.148044,14.998932,accepted,train,18,2
+63,1,1,1272.0,data/71_ADOS_1_1.pkl,71,11.825337,76.336784,no candidate,train,31,2
+63,1,2,83.0,data/71_ADOS_1_2.pkl,71,28.717947,81.453865,no candidate,train,27,3
+63,1,3,309.0,data/71_ADOS_1_3.pkl,71,4.7172337,29.486485,accepted,train,19,3
+63,1,4,876.0,data/71_ADOS_1_4.pkl,71,14.211586,88.84029,no candidate,train,26,2
+64,1,1,2124.0,data/72_PLS_1_1.pkl,72,22.539589,51.35294,no candidate,train,21,1
+64,1,2,1344.0,data/72_PLS_1_2.pkl,72,3.864403,61.77467,accepted,train,27,1
+65,1,1,948.0,data/73_ADOS_1_1.pkl,73,26.434944,69.86045,no candidate,validation,20,2
+65,1,2,1327.0,data/73_ADOS_1_2.pkl,73,2.7754586,19.740883,accepted,validation,29,2
+65,1,3,1059.0,data/73_ADOS_1_3.pkl,73,3.7638464,53.50871,accepted,validation,28,3
+65,1,4,1362.0,data/73_ADOS_1_4.pkl,73,6.2718377,27.696669,accepted,validation,23,4
+66,1,2,2091.0,data/74_ADOS_1_2.pkl,74,5.5530376,26.29862,accepted,test,33,1
+66,1,3,2166.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,29,1
+66,1,4,1285.0,data/74_ADOS_1_4.pkl,74,16.784811,42.61734,no candidate,test,20,1
+67,1,1,2237.0,data/25_PLS_1_2.pkl,25,143.9582,162.56519,no candidate,train,48,24
+67,1,2,646.0,data/75_PLS_1_2.pkl,75,23.377,41.338448,no candidate,train,32,9
+68,1,1,414.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,21,1
+68,1,2,586.0,data/76_PLS_1_2.pkl,76,10.514703,257.39032,no candidate,test,31,4
+69,1,1,2509.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,68,6
+69,1,2,1763.0,data/77_ADOS_1_2.pkl,77,8.808727,19.69965,no candidate,train,47,6
+69,1,3,2380.0,data/77_Cognitive_1_3.pkl,77,2.7886062,52.359756,accepted,train,27,4
+69,1,4,2380.0,data/77_Cognitive_1_4.pkl,77,2.790653,41.22477,accepted,train,65,10
+70,1,1,1190.0,data/78_ADOS_1_1.pkl,78,11.836327,36.383068,no candidate,train,23,2
+70,1,2,1274.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,29,6
+70,1,4,1288.0,data/78_PLS_1_4.pkl,78,11.83481,21.180666,no candidate,train,56,14
+71,1,1,646.0,data/79_ADOS_1_1.pkl,79,2.7779987,48.675888,accepted,validation,72,12
+72,1,1,876.0,data/80_ADOS_1_1.pkl,80,17.024422,43.547413,no candidate,validation,23,5
+72,1,2,997.0,data/80_ADOS_1_2.pkl,80,61.23195,88.45665,no candidate,validation,23,4
+72,1,3,374.0,data/80_ADOS_1_3.pkl,80,7.9243875,55.47335,accepted,validation,33,1
+72,1,4,812.0,data/80_ADOS_1_4.pkl,80,16.859055,39.562687,no candidate,validation,21,3
+73,1,1,575.0,data/81_ADOS_1_1.pkl,81,19.480268,53.81764,no candidate,train,28,1
+73,1,2,1698.0,data/81_ADOS_1_2.pkl,81,3.9870815,16.986073,accepted,train,20,2
+74,1,1,1905.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,17,2
+74,1,3,1832.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,22,3
+74,1,4,1495.0,data/82_ADOS_1_4.pkl,82,8.815569,33.94002,no candidate,train,28,3
+74,2,1,1343.0,data/82_ADOS_2_1.pkl,82,20.348488,38.87389,no candidate,train,22,1
+74,2,2,87.0,data/82_ADOS_1_2.pkl,82,6.223417,16.774578,ambiguous,train,28,1
+75,1,1,1446.0,data/83_ADOS_1_1.pkl,83,3.937982,14.623296,accepted,train,33,6
+75,1,2,86.0,data/83_ADOS_1_2.pkl,83,17.96153,78.87989,no candidate,train,35,6
+75,1,3,1637.0,data/83_ADOS_1_3.pkl,83,14.872676,81.08829,no candidate,train,23,6
+75,1,4,122.0,data/83_ADOS_1_4.pkl,83,5.6869187,58.202423,accepted,train,24,4
+76,1,1,660.0,data/84_ADOS_1_1.pkl,84,35.8241,50.334927,no candidate,train,27,8
+76,1,2,1182.0,data/84_ADOS_1_2.pkl,84,11.858879,47.61751,no candidate,train,44,16
+77,1,1,730.0,data/85_ADOS_1_1.pkl,85,2.7396944,68.600395,accepted,train,38,19
+77,1,2,730.0,data/85_ADOS_1_2.pkl,85,6.1914897,92.1577,accepted,train,45,19
+77,1,3,2299.0,data/85_ADOS_1_3.pkl,85,59.01587,153.1196,no candidate,train,39,8
+77,1,4,2304.0,data/85_ADOS_1_4.pkl,85,5.0898957,43.4184,accepted,train,39,10
+78,1,1,977.0,data/86_PLS_1_1.pkl,86,2.9211621,96.74644,accepted,train,22,1
+78,1,2,111.0,data/86_PLS_1_2.pkl,86,2.86603,62.86556,accepted,train,24,1
+79,1,1,1073.0,data/87_ADOS_1_1.pkl,87,11.18,88.83536,no candidate,train,21,4
+79,1,2,913.0,data/87_ADOS_1_2.pkl,87,5.447176,35.269073,accepted,train,25,7
+79,1,3,2124.0,data/208_ADOS_1_3.pkl,208,72.65776,77.19494,no candidate,train,22,3
+79,1,4,887.0,data/87_ADOS_1_4.pkl,87,10.121569,19.407732,no candidate,train,33,9
+80,1,1,712.0,data/186_ADOS_1_1.pkl,186,32.43164,42.33237,no candidate,train,45,22
+80,1,2,1620.0,data/125_PLS_1_2.pkl,125,243.57112,264.4698,no candidate,train,31,10
+81,1,2,1214.0,data/88_ADOS_1_2.pkl,88,0.12731883,44.277473,accepted,validation,23,2
+81,1,3,497.0,data/88_ADOS_1_3.pkl,88,0.040012367,19.39,accepted,validation,27,3
+81,1,4,1297.0,data/88_ADOS_1_4.pkl,88,0.11369095,26.56287,accepted,validation,23,1
+82,1,1,804.0,data/89_ADOS_1_1.pkl,89,22.391285,35.218822,no candidate,validation,20,1
+82,1,2,1375.0,data/89_ADOS_1_2.pkl,89,11.774343,31.982115,no candidate,validation,19,2
+82,1,3,1375.0,data/89_ADOS_1_3.pkl,89,14.950137,66.38871,no candidate,validation,25,2
+82,1,4,183.0,data/89_ADOS_1_4.pkl,89,40.05971,110.47991,no candidate,validation,24,2
+83,1,1,1468.0,data/213_PLS_1_1.pkl,213,27.246996,29.807726,no candidate,train,32,3
+83,1,2,358.0,data/186_PLS_1_2.pkl,186,34.44237,41.343548,no candidate,train,25,3
+83,1,3,358.0,data/94_PLS_1_3.pkl,94,24.322699,31.773844,no candidate,train,31,3
+84,1,1,1026.0,data/90_PLS_1_1.pkl,90,20.807068,93.02131,no candidate,validation,51,4
+84,1,2,898.0,data/90_PLS_1_2.pkl,90,27.94535,109.77308,no candidate,validation,37,5
+84,1,3,701.0,data/90_ADOS_1_3.pkl,90,0.06790635,92.0294,accepted,validation,31,1
+84,1,4,436.0,data/90_ADOS_1_4.pkl,90,0.041880585,124.12246,accepted,validation,33,1
+85,1,1,249.0,data/91_PLS_1_1.pkl,91,54.807507,142.84897,no candidate,train,42,12
+85,1,2,140.0,data/91_PLS_1_2.pkl,91,23.817036,74.35028,no candidate,train,24,5
+86,1,1,1289.0,data/92_PLS_1_1.pkl,92,21.51976,145.4012,no candidate,train,53,12
+86,1,2,159.0,data/92_PLS_1_2.pkl,92,10.761778,62.98249,no candidate,train,28,4
+86,1,3,398.0,data/102_ADOS_1_3.pkl,102,99.37122,107.42079,no candidate,train,31,10
+86,1,4,515.0,data/92_ADOS_1_4.pkl,92,13.685196,102.58631,no candidate,train,36,8
+87,1,1,508.0,data/93_ADOS_1_1.pkl,93,19.632029,43.401726,no candidate,train,26,1
+88,1,1,1015.0,data/94_PLS_1_1.pkl,94,0.10012345,70.59313,accepted,train,28,5
+88,1,2,497.0,data/94_PLS_1_2.pkl,94,2.6815708,26.470112,accepted,train,22,5
+88,1,3,997.0,data/94_PLS_1_3.pkl,94,2.886888,82.977165,accepted,train,38,9
+89,1,1,524.0,data/71_ADOS_1_1.pkl,71,76.22802,81.61546,no candidate,validation,49,7
+89,1,2,1280.0,data/149_ADOS_1_2.pkl,149,27.756071,35.7203,no candidate,validation,54,7
+89,1,3,326.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,43,7
+89,1,4,1129.0,data/116_Cognitive_1_1.pkl,116,31.231607,44.90426,no candidate,validation,53,3
+90,1,1,1710.0,data/95_ADOS_1_1.pkl,95,42.12867,75.207924,no candidate,train,29,6
+91,1,1,396.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,31,4
+91,1,2,1646.0,data/96_ADOS_1_2.pkl,96,11.519501,29.66713,no candidate,train,26,3
+92,1,1,1704.0,data/99_ADOS_1_1.pkl,99,33.00006,39.525024,no candidate,train,28,5
+92,1,2,1704.0,data/49_ADOS_1_2.pkl,49,48.22487,78.59593,no candidate,train,27,4
+92,1,3,1804.0,data/204_ADOS_1_3.pkl,204,23.564373,27.892706,no candidate,train,24,9
+92,1,4,1804.0,data/204_ADOS_1_4.pkl,204,27.321798,31.744852,no candidate,train,32,8
+93,1,1,1587.0,data/97_ADOS_1_1.pkl,97,27.965664,76.240776,no candidate,train,80,19
+93,1,2,1045.0,data/97_PLS_1_2.pkl,97,2.8040967,50.669434,accepted,train,68,30
+94,1,1,1737.0,data/98_ADOS_1_1.pkl,98,3.9694111,30.738348,accepted,train,26,1
+94,1,2,62.0,data/98_ADOS_1_2.pkl,98,2.7505958,45.84965,accepted,train,22,1
+95,1,1,1671.0,data/99_ADOS_1_1.pkl,99,2.8500693,38.50487,accepted,train,32,9
+95,1,2,1381.0,data/99_ADOS_1_2.pkl,99,0.11480782,39.997726,accepted,train,25,4
+95,1,3,1089.0,data/99_ADOS_1_3.pkl,99,1.9170039,51.341972,accepted,train,28,11
+95,1,4,1737.0,data/99_ADOS_1_4.pkl,99,1.9911144,26.150528,accepted,train,29,10
+96,1,3,547.0,data/100_ADOS_1_3.pkl,100,0.052586507,19.877024,accepted,train,27,1
+96,1,4,706.0,data/100_ADOS_1_4.pkl,100,1.893005,33.08947,accepted,train,21,1
+97,1,1,580.0,data/101_ADOS_1_1.pkl,101,0.056073483,78.635864,accepted,train,31,1
+97,1,2,466.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,25,1
+97,1,3,1180.0,data/101_ADOS_1_3.pkl,101,0.09467812,64.651,accepted,train,26,4
+97,1,4,1734.0,data/101_ADOS_1_4.pkl,101,1.8210124,28.088558,accepted,train,30,2
+98,1,1,1382.0,data/102_PLS_1_1.pkl,102,2.9390638,123.03798,accepted,validation,58,4
+98,1,2,1376.0,data/102_ADOS_1_2.pkl,102,0.23190506,43.08881,accepted,validation,50,4
+98,1,3,1472.0,data/102_ADOS_1_3.pkl,102,1.864679,64.2647,accepted,validation,22,2
+98,1,4,1719.0,data/102_ADOS_1_4.pkl,102,0.06542738,50.216145,accepted,validation,27,2
+99,1,1,1121.0,data/103_PLS_1_1.pkl,103,2.8310912,128.71988,accepted,train,20,1
+100,1,1,1403.0,data/104_ADOS_1_1.pkl,104,0.08508515,24.159744,accepted,validation,22,1
+100,1,2,1493.0,data/104_ADOS_1_2.pkl,104,0.102994844,43.77703,accepted,validation,23,1
+100,1,3,1008.0,data/104_ADOS_1_3.pkl,104,1.9285517,53.616104,accepted,validation,23,1
+100,1,4,755.0,data/104_ADOS_1_4.pkl,104,1.9018738,95.798225,accepted,validation,18,1
+101,1,1,534.0,data/105_PLS_1_1.pkl,105,4.162842,59.762634,accepted,train,21,1
+101,1,2,534.0,data/105_PLS_1_2.pkl,105,21.336397,86.16033,no candidate,train,26,5
+101,1,3,299.0,data/105_PLS_1_3.pkl,105,0.12682988,94.550545,accepted,train,21,5
+102,1,1,1447.0,data/106_ADOS_1_1.pkl,106,21.288725,32.59649,no candidate,train,37,16
+102,1,2,1679.0,data/106_ADOS_1_2.pkl,106,3.8637233,11.432128,ambiguous,train,33,14
+103,1,1,1660.0,data/107_PLS_1_1.pkl,107,62.474342,76.965164,no candidate,train,70,13
+103,1,2,1335.0,data/107_ADOS_1_2.pkl,107,4.8823543,60.351685,accepted,train,48,7
+103,1,3,1660.0,data/218_ADOS_1_3.pkl,218,86.3315,87.98272,no candidate,train,51,10
+103,1,4,1660.0,data/177_ADOS_1_3.pkl,177,106.749306,111.53258,no candidate,train,65,13
+104,1,1,1203.0,data/14_ADOS_1_3.pkl,14,34.59153,45.46053,no candidate,train,24,4
+104,1,2,1273.0,data/141_ADOS_1_1.pkl,141,73.22685,86.1697,no candidate,train,32,4
+104,1,3,236.0,data/158_ADOS_1_4.pkl,158,39.148293,40.4821,no candidate,train,30,4
+104,1,4,242.0,data/26_ADOS_1_1.pkl,26,41.598366,49.457203,no candidate,train,14,2
+105,1,1,1314.0,data/108_PLS_1_1.pkl,108,14.749935,28.966393,no candidate,validation,49,14
+105,1,2,1106.0,data/108_PLS_1_2.pkl,108,2.6832886,26.807013,accepted,validation,42,8
+105,1,3,1625.0,data/108_ADOS_1_3.pkl,108,1.8638675,19.279715,accepted,validation,37,7
+105,1,4,1263.0,data/108_ADOS_1_4.pkl,108,1.8234447,49.82517,accepted,validation,29,9
+106,1,1,2044.0,data/109_ADOS_1_1.pkl,109,2.84405,65.43128,accepted,train,34,10
+106,1,2,2026.0,data/109_ADOS_1_2.pkl,109,0.10091879,89.30008,accepted,train,18,2
+106,1,3,1315.0,data/109_ADOS_1_3.pkl,109,1.8075477,42.67291,accepted,train,28,8
+106,1,4,223.0,data/109_ADOS_1_4.pkl,109,1.9050777,131.52176,accepted,train,40,6
+107,1,1,101.0,data/110_PLS_1_1.pkl,110,0.062208187,82.05503,accepted,train,38,6
+107,1,2,862.0,data/110_PLS_1_2.pkl,110,0.08932526,86.37841,accepted,train,31,6
+108,1,1,717.0,data/111_PLS_1_1.pkl,111,2.7301946,104.81699,accepted,test,25,4
+108,1,2,213.0,data/111_PLS_1_2.pkl,111,2.858131,82.75422,accepted,test,40,5
+109,1,1,1708.0,data/112_ADOS_1_1.pkl,112,2.7996716,40.342033,accepted,train,49,21
+109,1,2,1089.0,data/112_ADOS_1_2.pkl,112,6.268729,15.576253,ambiguous,train,30,5
+109,1,4,1708.0,data/112_ADOS_1_4.pkl,112,5.5751495,63.7778,accepted,train,58,31
+110,1,1,1048.0,data/113_PLS_1_1.pkl,113,2.8090034,130.19276,accepted,validation,31,3
+110,1,2,60.0,data/113_PLS_1_2.pkl,113,2.8742855,73.0623,accepted,validation,16,1
+110,1,3,744.0,data/113_PLS_1_3.pkl,113,2.8134544,65.50947,accepted,validation,29,2
+111,1,1,191.0,data/114_PLS_1_1.pkl,114,0.052974664,103.19301,accepted,train,25,4
+111,1,2,1393.0,data/114_PLS_1_2.pkl,114,2.8681092,35.47147,accepted,train,31,5
+112,1,1,751.0,data/115_ADOS_1_1.pkl,115,0.078160584,33.857105,accepted,validation,23,1
+112,1,3,664.0,data/115_ADOS_1_3.pkl,115,39.18628,52.49892,no candidate,validation,34,12
+112,1,4,664.0,data/115_ADOS_1_4.pkl,115,95.21083,113.371666,no candidate,validation,27,8
+112,2,1,487.0,data/115_ADOS_2_1.pkl,115,2.7030482,51.311,accepted,validation,22,5
+112,2,2,933.0,data/115_ADOS_1_2.pkl,115,14.926237,56.74301,no candidate,validation,35,8
+112,2,3,1697.0,data/115_ADOS_2_3.pkl,115,14.6479845,45.251686,no candidate,validation,34,6
+112,2,4,489.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,14,3
+113,1,1,2324.0,data/116_Cognitive_1_1.pkl,116,6.269364,56.524635,accepted,test,78,18
+113,1,2,2191.0,data/116_ADOS_1_2.pkl,116,7.9411564,50.461136,accepted,test,80,35
+114,1,1,807.0,data/117_PLS_1_1.pkl,117,111.80441,164.40356,no candidate,train,20,2
+115,1,1,1627.0,data/118_ADOS_1_1.pkl,118,2.737009,91.015755,accepted,train,61,14
+115,1,2,777.0,data/118_PLS_1_2.pkl,118,0.056064844,35.87625,accepted,train,46,4
+115,1,3,871.0,data/118_ADOS_1_3.pkl,118,0.07139767,58.139603,accepted,train,32,13
+115,1,4,1794.0,data/118_ADOS_1_4.pkl,118,1.9632723,78.622055,accepted,train,42,9
+116,1,1,173.0,data/119_PLS_1_1.pkl,119,12.111428,31.794428,no candidate,test,28,2
+116,1,2,173.0,data/119_PLS_1_2.pkl,119,17.178503,49.889576,no candidate,test,25,2
+117,1,1,1254.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,29,7
+117,1,2,938.0,data/120_PLS_1_2.pkl,120,0.046843823,65.79877,accepted,validation,27,4
+118,1,1,1417.0,data/121_ADOS_1_1.pkl,121,2.826195,22.436049,accepted,train,55,11
+118,1,2,14.0,data/121_PLS_1_2.pkl,121,2.797817,88.5634,accepted,train,57,9
+118,1,3,425.0,data/121_ADOS_1_3.pkl,121,0.08302512,41.03045,accepted,train,20,2
+118,1,4,900.0,data/121_ADOS_1_4.pkl,121,1.8220699,53.21645,accepted,train,28,1
+119,1,1,492.0,data/122_ADOS_1_1.pkl,122,7.950036,83.38121,accepted,train,35,10
+119,1,2,594.0,data/122_ADOS_1_2.pkl,122,14.964028,85.539375,no candidate,train,25,3
+119,1,3,1000.0,data/122_ADOS_1_3.pkl,122,5.6207867,53.737118,accepted,train,26,8
+119,1,4,561.0,data/122_ADOS_1_4.pkl,122,2.8159325,20.111355,accepted,train,28,9
+120,1,1,972.0,data/123_ADOS_1_1.pkl,123,36.310013,39.48994,no candidate,train,26,3
+120,1,3,743.0,data/123_PLS_1_3.pkl,123,2.7538776,70.11145,accepted,train,15,1
+120,2,1,1015.0,data/238_PLS_1_2.pkl,238,66.439255,132.42186,no candidate,train,20,2
+121,1,1,1067.0,data/103_PLS_1_1.pkl,103,53.33704,176.40671,no candidate,validation,27,2
+121,1,2,105.0,data/124_PLS_1_2.pkl,124,0.09420329,38.49698,accepted,validation,19,1
+121,1,3,112.0,data/124_PLS_1_3.pkl,124,2.785299,56.677544,accepted,validation,23,1
+122,1,1,405.0,data/125_PLS_1_1.pkl,125,34.781994,70.82243,no candidate,validation,24,5
+122,1,2,948.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,26,1
+123,1,1,1911.0,data/126_ADOS_1_1.pkl,126,6.576891,26.303503,accepted,train,25,3
+123,1,2,1911.0,data/126_ADOS_1_2.pkl,126,11.687691,61.127407,no candidate,train,36,3
+123,1,4,791.0,data/126_ADOS_1_4.pkl,126,1.9167039,100.09389,accepted,train,22,1
+124,1,2,271.0,data/127_ADOS_1_2.pkl,127,13.990043,45.11381,no candidate,train,19,2
+125,1,1,1946.0,data/128_PLS_1_1.pkl,128,62.06187,130.07219,no candidate,train,42,25
+125,1,2,1429.0,data/128_PLS_1_2.pkl,128,2.8436296,54.292313,accepted,train,32,15
+126,1,1,649.0,data/129_PLS_1_1.pkl,129,0.1115105,41.5542,accepted,train,32,6
+126,1,2,273.0,data/129_PLS_1_2.pkl,129,2.8491497,65.61648,accepted,train,28,6
+127,1,1,269.0,data/130_PLS_1_1.pkl,130,0.07164315,67.08556,accepted,train,20,1
+127,1,2,101.0,data/130_PLS_1_2.pkl,130,0.069002196,57.450226,accepted,train,22,1
+128,1,1,1200.0,data/227_PLS_2_2.pkl,227,93.414375,95.125,no candidate,train,30,6
+128,1,2,1200.0,data/131_PLS_1_2.pkl,131,33.112827,54.999493,no candidate,train,28,4
+128,1,3,1200.0,data/60_ADOS_1_2.pkl,60,60.91581,67.08831,no candidate,train,33,7
+129,1,1,1189.0,data/132_ADOS_1_1.pkl,132,19.624666,46.45201,no candidate,train,26,1
+129,1,2,1360.0,data/132_ADOS_1_2.pkl,132,8.434016,38.73568,no candidate,train,21,3
+130,1,1,171.0,data/58_ADOS_1_2.pkl,58,101.81004,153.18475,no candidate,train,39,21
+130,1,2,1058.0,data/133_PLS_1_2.pkl,133,2.7990067,66.381165,accepted,train,32,4
+131,1,1,642.0,data/134_PLS_1_1.pkl,134,12.00522,62.30981,no candidate,train,27,6
+131,1,2,1849.0,data/134_PLS_1_2.pkl,134,6.5785947,44.434975,accepted,train,33,7
+132,1,1,584.0,data/37_ADOS_2_4.pkl,37,78.08225,106.95517,no candidate,test,49,18
+132,1,2,584.0,data/121_PLS_1_2.pkl,121,39.776817,50.299747,no candidate,test,44,17
+133,1,1,701.0,data/135_ADOS_1_1.pkl,135,2.747026,23.527945,accepted,train,25,4
+133,1,2,796.0,data/135_ADOS_1_2.pkl,135,6.071314,8.909721,ambiguous,train,29,2
+133,1,3,701.0,data/135_ADOS_1_3.pkl,135,2.7040386,44.021496,accepted,train,25,5
+133,1,4,700.0,data/135_ADOS_1_4.pkl,135,3.9733357,42.796696,accepted,train,31,5
+134,1,1,1242.0,data/137_ADOS_1_1.pkl,137,2.603015,2.603015,ambiguous,train,35,6
+134,1,2,1242.0,data/137_ADOS_1_2.pkl,137,2.7298133,2.7298133,ambiguous,train,28,4
+134,1,3,1242.0,data/137_ADOS_1_3.pkl,137,2.763043,2.763043,ambiguous,train,24,3
+135,1,1,880.0,data/138_ADOS_1_1.pkl,138,6.2219524,22.366037,accepted,train,39,3
+135,1,2,4.0,data/138_ADOS_1_2.pkl,138,6.106356,29.973324,accepted,train,31,4
+135,1,4,684.0,data/138_ADOS_1_4.pkl,138,6.2365,36.19348,accepted,train,28,5
+136,1,1,1376.0,data/140_ADOS_1_1.pkl,140,2.5928226,16.36425,accepted,validation,33,2
+136,1,2,2.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,20,2
+136,1,3,125.0,data/140_ADOS_1_3.pkl,140,3.8425171,20.090553,accepted,validation,25,2
+136,1,4,1372.0,data/140_ADOS_1_4.pkl,140,6.330231,31.852793,accepted,validation,27,2
+137,1,1,74.0,data/157_ADOS_1_1.pkl,157,55.58582,63.993877,no candidate,train,29,1
+137,1,2,1881.0,data/173_ADOS_1_2.pkl,173,61.363884,63.49159,no candidate,train,23,1
+138,1,1,1973.0,data/142_ADOS_1_1.pkl,142,2.858012,47.602024,accepted,validation,32,2
+138,1,2,586.0,data/142_ADOS_1_2.pkl,142,5.465017,17.446243,accepted,validation,22,2
+138,1,3,105.0,data/142_ADOS_1_3.pkl,142,8.664273,48.773357,no candidate,validation,38,1
+138,1,4,1066.0,data/142_ADOS_1_4.pkl,142,14.926637,43.539635,no candidate,validation,28,4
+139,1,1,3060.0,data/143_ADOS_1_1.pkl,143,3.7802126,89.58008,accepted,test,39,17
+139,1,2,3238.0,data/143_ADOS_1_2.pkl,143,21.222511,65.250946,no candidate,test,38,17
+139,1,3,3060.0,data/143_ADOS_1_3.pkl,143,2.874558,83.861374,accepted,test,41,17
+139,1,4,3258.0,data/143_ADOS_1_4.pkl,143,3.911505,106.184814,accepted,test,47,29
+140,1,1,1955.0,data/144_ADOS_1_1.pkl,144,8.340347,22.87514,no candidate,train,23,2
+140,1,2,257.0,data/144_ADOS_1_2.pkl,144,5.555236,32.45182,accepted,train,16,2
+140,1,4,3257.0,data/144_ADOS_1_4.pkl,144,8.910771,71.89514,no candidate,train,22,2
+141,1,1,1891.0,data/145_ADOS_1_1.pkl,145,2.6890016,64.4887,accepted,train,40,9
+141,1,2,1891.0,data/145_ADOS_1_2.pkl,145,3.892418,78.93227,accepted,train,26,10
+141,1,3,1596.0,data/145_ADOS_1_3.pkl,145,2.6806579,25.036242,accepted,train,27,10
+141,1,4,1595.0,data/145_ADOS_1_4.pkl,145,5.566412,36.42537,accepted,train,38,12
+142,1,1,751.0,data/146_ADOS_1_1.pkl,146,11.517317,73.07771,no candidate,train,32,9
+142,1,2,54.0,data/146_ADOS_1_2.pkl,146,3.853539,11.696044,accepted,train,29,3
+142,1,3,473.0,data/146_ADOS_1_3.pkl,146,3.8821633,30.91019,accepted,train,23,6
+142,1,4,616.0,data/146_ADOS_1_4.pkl,146,29.190613,88.73592,no candidate,train,41,11
+143,1,1,1258.0,data/148_PLS_1_1.pkl,148,5.4710913,18.596958,accepted,train,31,6
+143,1,3,1342.0,data/148_PLS_1_3.pkl,148,3.86827,30.123102,accepted,train,22,5
+143,1,4,186.0,data/148_PLS_1_4.pkl,148,33.771347,73.49254,no candidate,train,42,10
+144,1,1,58.0,data/149_ADOS_1_1.pkl,149,2.7904532,14.158861,accepted,train,26,3
+144,1,2,123.0,data/149_ADOS_1_2.pkl,149,6.2135644,25.843088,accepted,train,24,3
+144,1,4,3061.0,data/149_ADOS_1_4.pkl,149,3.847437,33.51024,accepted,train,34,3
+145,1,1,169.0,data/150_ADOS_1_1.pkl,150,6.314884,50.30729,accepted,train,20,3
+145,1,2,560.0,data/150_ADOS_1_2.pkl,150,6.22638,31.879414,accepted,train,25,4
+145,1,3,916.0,data/58_ADOS_1_2.pkl,58,52.614956,55.14187,no candidate,train,27,4
+145,1,4,1135.0,data/150_ADOS_1_4.pkl,150,21.79072,44.818783,no candidate,train,20,4
+146,1,1,289.0,data/151_ADOS_1_1.pkl,151,14.121409,40.22176,no candidate,train,20,3
+146,1,2,282.0,data/151_ADOS_1_2.pkl,151,18.705456,56.390175,no candidate,train,29,2
+146,1,3,353.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,23,2
+146,1,4,929.0,data/151_ADOS_1_4.pkl,151,33.618214,73.13841,no candidate,train,24,4
+146,2,1,10.0,data/151_ADOS_2_1.pkl,151,11.449701,37.32513,no candidate,train,27,5
+146,2,2,173.0,data/62_ADOS_1_2.pkl,62,41.22555,47.43415,no candidate,train,30,3
+147,1,1,986.0,data/152_ADOS_1_1.pkl,152,2.636545,17.718994,accepted,train,34,12
+147,1,2,2087.0,data/152_ADOS_1_2.pkl,152,7.1174936,29.385132,accepted,train,21,2
+147,1,3,986.0,data/152_ADOS_1_3.pkl,152,2.6920407,23.06428,accepted,train,39,10
+147,1,4,985.0,data/152_ADOS_1_4.pkl,152,3.8731315,45.377007,accepted,train,37,10
+148,1,1,3563.0,data/153_Cognitive_1_1.pkl,153,17.703785,67.227905,no candidate,test,50,25
+149,1,1,3550.0,data/154_ADOS_1_1.pkl,154,6.154316,184.50404,accepted,train,36,24
+149,1,2,1251.0,data/154_ADOS_1_2.pkl,154,5.523054,20.455448,accepted,train,50,24
+149,1,3,2124.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,42,19
+149,1,4,3092.0,data/154_ADOS_1_4.pkl,154,23.804512,75.42599,no candidate,train,40,9
+150,1,1,455.0,data/155_ADOS_1_1.pkl,155,3.9303238,19.713696,accepted,validation,30,3
+150,1,2,2070.0,data/155_ADOS_1_2.pkl,155,14.139964,24.57777,no candidate,validation,20,3
+150,1,3,2064.0,data/155_ADOS_1_3.pkl,155,20.302986,64.381004,no candidate,validation,18,1
+150,1,4,110.0,data/155_ADOS_1_4.pkl,155,8.459256,33.657497,no candidate,validation,21,2
+151,1,1,468.0,data/158_PLS_1_1.pkl,158,6.1603894,38.81208,accepted,train,53,11
+151,1,2,1268.0,data/158_ADOS_1_2.pkl,158,6.2482023,17.833992,ambiguous,train,55,10
+151,1,3,997.0,data/158_ADOS_1_3.pkl,158,8.863585,56.122116,no candidate,train,57,7
+151,1,4,1403.0,data/158_ADOS_1_4.pkl,158,23.77514,61.525826,no candidate,train,65,14
+152,1,1,2319.0,data/159_ADOS_1_1.pkl,159,2.7910664,88.21773,accepted,train,41,17
+152,1,3,2135.0,data/159_ADOS_1_3.pkl,159,2.8344567,40.933685,accepted,train,29,7
+152,1,4,2318.0,data/159_ADOS_1_4.pkl,159,16.674013,56.975723,no candidate,train,48,27
+153,1,1,2095.0,data/160_PLS_1_1.pkl,160,11.040065,37.573616,no candidate,train,34,5
+153,1,2,1312.0,data/226_ADOS_1_2.pkl,226,25.798288,33.441166,no candidate,train,33,5
+153,1,4,840.0,data/160_PLS_1_4.pkl,160,13.960604,30.880257,no candidate,train,31,5
+154,1,1,886.0,data/162_ADOS_1_1.pkl,162,2.791051,86.42584,accepted,train,34,7
+154,1,2,886.0,data/162_ADOS_1_2.pkl,162,6.09335,52.214897,accepted,train,29,6
+154,1,4,885.0,data/162_ADOS_1_4.pkl,162,6.1698093,39.715843,accepted,train,23,7
+155,1,1,1132.0,data/163_ADOS_1_1.pkl,163,2.7370603,71.65398,accepted,train,34,9
+155,1,2,1132.0,data/163_ADOS_1_2.pkl,163,2.7470188,55.545727,accepted,train,31,9
+155,1,3,1132.0,data/163_ADOS_1_3.pkl,163,3.942877,108.30623,accepted,train,29,7
+155,1,4,1131.0,data/163_ADOS_1_4.pkl,163,6.2224174,74.07276,accepted,train,35,7
+156,1,1,2043.0,data/164_ADOS_1_1.pkl,164,2.640881,25.816925,accepted,test,27,3
+156,1,2,1348.0,data/164_ADOS_1_2.pkl,164,17.043594,47.20848,no candidate,test,36,4
+156,1,3,731.0,data/164_ADOS_1_3.pkl,164,8.783528,21.59333,no candidate,test,38,12
+156,1,4,1020.0,data/164_ADOS_1_4.pkl,164,6.1394253,47.467037,accepted,test,49,29
+157,1,2,1173.0,data/165_ADOS_1_2.pkl,165,16.889038,52.966175,no candidate,train,32,3
+157,1,3,1397.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,24,2
+157,1,4,287.0,data/165_ADOS_1_4.pkl,165,10.098958,25.781204,no candidate,train,24,4
+158,1,1,2528.0,data/167_ADOS_1_1.pkl,167,16.620089,60.305477,no candidate,train,44,16
+158,1,2,115.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,36,7
+158,1,3,1261.0,data/167_ADOS_1_3.pkl,167,9.997917,36.862633,no candidate,train,37,16
+158,1,4,1495.0,data/167_ADOS_1_4.pkl,167,5.431262,22.598295,accepted,train,49,28
+159,1,1,573.0,data/168_ADOS_1_1.pkl,168,15.746218,39.481663,no candidate,train,21,3
+159,1,2,1795.0,data/168_ADOS_1_2.pkl,168,16.946943,26.503244,no candidate,train,33,2
+159,1,4,366.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,34,6
+160,1,1,1341.0,data/170_ADOS_1_1.pkl,170,2.8426714,11.529166,accepted,train,39,3
+160,1,2,664.0,data/170_ADOS_1_2.pkl,170,3.9034626,19.637812,accepted,train,20,1
+160,1,3,1194.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,31,2
+160,1,4,915.0,data/170_ADOS_1_4.pkl,170,15.014092,39.969223,no candidate,train,18,2
+161,1,1,1947.0,data/171_ADOS_1_1.pkl,171,2.691018,19.952005,accepted,train,32,5
+161,1,2,3972.0,data/171_ADOS_1_2.pkl,171,33.56676,111.331024,no candidate,train,25,1
+161,1,3,3045.0,data/171_ADOS_1_3.pkl,171,3.9198759,51.954563,accepted,train,27,5
+162,1,1,1052.0,data/152_ADOS_1_1.pkl,152,21.278856,21.3204,no candidate,train,23,2
+162,1,2,1211.0,data/150_ADOS_1_3.pkl,150,41.89915,48.679684,no candidate,train,21,2
+162,1,3,1266.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,22,2
+162,1,4,1132.0,data/142_ADOS_1_2.pkl,142,41.8696,47.329597,no candidate,train,31,2
+163,1,4,1562.0,data/172_ADOS_1_4.pkl,172,15.043666,30.762817,no candidate,train,23,2
+164,1,1,1728.0,data/173_ADOS_1_1.pkl,173,3.814498,37.97666,accepted,train,22,5
+164,1,2,2606.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,21,1
+164,1,3,2561.0,data/173_ADOS_1_3.pkl,173,4.129588,37.69352,accepted,train,26,6
+164,1,4,2560.0,data/173_ADOS_1_4.pkl,173,3.912856,82.69171,accepted,train,22,6
+165,1,1,854.0,data/122_ADOS_1_1.pkl,122,29.75428,36.832317,no candidate,validation,98,31
+165,1,2,3005.0,data/186_ADOS_1_3.pkl,186,74.02205,85.02862,no candidate,validation,88,24
+165,1,4,1066.0,data/35_ADOS_1_4.pkl,35,35.6474,41.241558,no candidate,validation,176,101
+165,2,1,534.0,data/44_ADOS_2_1.pkl,44,17.644146,19.841532,no candidate,validation,29,8
+165,2,2,259.0,data/211_ADOS_1_2.pkl,211,14.993609,19.985312,no candidate,validation,26,2
+165,2,3,597.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,22,6
+165,2,4,232.0,data/17_ADOS_2_4.pkl,17,33.61515,41.561546,no candidate,validation,47,21
+166,1,1,1894.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,19,2
+166,1,2,2002.0,data/60_ADOS_1_2.pkl,60,44.981396,99.29719,no candidate,train,31,3
+166,1,4,979.0,data/211_ADOS_1_1.pkl,211,82.14888,89.40439,no candidate,train,28,2
+167,1,1,827.0,data/174_ADOS_1_1.pkl,174,6.2531614,20.02595,accepted,train,20,5
+167,1,2,2.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,21,2
+167,1,4,1636.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,28,4
+168,1,3,1096.0,data/177_ADOS_1_3.pkl,177,5.5256376,42.62019,accepted,train,30,1
+168,1,4,1452.0,data/177_ADOS_1_4.pkl,177,44.11494,74.32901,no candidate,train,22,1
+169,1,1,1692.0,data/178_ADOS_1_1.pkl,178,6.1581717,25.387266,accepted,validation,22,3
+169,1,3,2052.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,22,3
+169,1,4,1707.0,data/178_ADOS_1_4.pkl,178,14.226262,39.171047,no candidate,validation,35,6
+170,1,1,2445.0,data/140_ADOS_1_1.pkl,140,67.123146,111.770744,no candidate,train,49,16
+170,1,2,2088.0,data/173_ADOS_1_2.pkl,173,60.59994,95.3878,no candidate,train,28,11
+170,1,3,106.0,data/236_PLS_1_1.pkl,236,69.94103,73.79166,no candidate,train,22,3
+170,1,4,131.0,data/11_ADOS_1_2.pkl,11,53.149357,60.077625,no candidate,train,17,3
+171,1,1,2765.0,data/179_ADOS_1_1.pkl,179,6.380991,33.474033,accepted,train,27,5
+171,1,2,2765.0,data/179_ADOS_1_2.pkl,179,6.226922,28.639631,accepted,train,31,5
+171,1,3,1731.0,data/179_ADOS_1_3.pkl,179,11.5036545,68.87459,no candidate,train,32,4
+172,1,1,1762.0,data/180_ADOS_1_1.pkl,180,5.539867,59.708893,accepted,train,60,8
+172,1,2,1762.0,data/180_ADOS_1_2.pkl,180,5.4739976,59.196842,accepted,train,60,14
+172,1,3,1762.0,data/180_ADOS_1_3.pkl,180,11.385502,114.686264,no candidate,train,65,12
+172,1,4,246.0,data/180_Cognitive_1_4.pkl,180,24.009222,63.430428,no candidate,train,66,15
+172,2,4,1340.0,data/180_Cognitive_2_4.pkl,180,19.65256,60.3719,no candidate,train,31,3
+173,1,3,540.0,data/181_ADOS_1_3.pkl,181,3.8763883,27.515789,accepted,validation,26,3
+173,1,4,2403.0,data/181_ADOS_1_4.pkl,181,13.993012,52.165413,no candidate,validation,22,3
+173,2,1,2952.0,data/181_ADOS_1_1.pkl,181,6.287784,18.646185,ambiguous,validation,45,24
+173,2,2,1745.0,data/181_ADOS_1_2.pkl,181,6.163287,21.845839,accepted,validation,64,36
+173,2,3,2365.0,data/181_ADOS_2_3.pkl,181,53.951935,66.322205,no candidate,validation,44,20
+173,2,4,2264.0,data/181_ADOS_2_4.pkl,181,7.8094535,32.55265,accepted,validation,40,24
+174,1,1,1857.0,data/182_ADOS_1_1.pkl,182,2.6900928,24.931038,accepted,validation,34,8
+174,1,2,1857.0,data/182_ADOS_1_2.pkl,182,2.7741282,42.24878,accepted,validation,29,2
+174,1,3,1857.0,data/182_ADOS_1_3.pkl,182,2.7866685,82.13427,accepted,validation,40,9
+175,1,1,697.0,data/193_ADOS_1_2.pkl,193,41.046623,42.266834,no candidate,train,63,40
+175,1,2,697.0,data/201_ADOS_1_2.pkl,201,57.932133,74.92115,no candidate,train,70,40
+175,1,3,1829.0,data/14_ADOS_1_3.pkl,14,17.621326,22.231153,no candidate,train,73,36
+175,1,4,1656.0,data/11_ADOS_1_3.pkl,11,39.619984,49.96479,no candidate,train,56,31
+176,1,1,1355.0,data/178_ADOS_1_1.pkl,178,22.426867,27.49147,no candidate,train,24,3
+176,1,2,3469.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,31,2
+176,1,4,1295.0,data/162_ADOS_1_4.pkl,162,37.011135,37.334587,no candidate,train,32,6
+177,1,1,3152.0,data/184_PLS_1_1.pkl,184,2.5555115,58.4897,accepted,train,25,2
+177,1,4,3151.0,data/184_PLS_1_4.pkl,184,3.9216132,120.789856,accepted,train,31,2
+178,1,1,525.0,data/186_ADOS_1_1.pkl,186,12.0741205,29.511917,no candidate,train,60,20
+178,1,2,525.0,data/186_ADOS_1_2.pkl,186,26.03142,58.544533,no candidate,train,72,19
+178,1,3,2124.0,data/186_ADOS_1_3.pkl,186,0.052796062,11.93498,accepted,train,34,7
+178,1,4,525.0,data/186_ADOS_1_4.pkl,186,7.1448283,25.481823,accepted,train,47,9
+179,1,1,1001.0,data/187_ADOS_1_1.pkl,187,16.302341,36.269543,no candidate,train,48,17
+179,1,2,40.0,data/187_ADOS_1_2.pkl,187,28.635426,32.538292,no candidate,train,40,12
+179,1,3,724.0,data/187_ADOS_1_3.pkl,187,4.06309,25.160982,accepted,train,40,12
+179,1,4,61.0,data/187_ADOS_1_4.pkl,187,22.344496,57.296783,no candidate,train,33,14
+180,1,1,8.0,data/154_ADOS_1_2.pkl,154,77.00479,101.82551,no candidate,test,46,4
+180,1,2,74.0,data/203_ADOS_1_2.pkl,203,37.759865,69.8001,no candidate,test,35,6
+180,1,3,120.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,24,1
+180,1,4,1287.0,data/177_ADOS_1_4.pkl,177,39.18298,39.187016,no candidate,test,50,24
+180,2,1,760.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,29,1
+180,2,2,168.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,27,2
+180,2,3,376.0,data/102_ADOS_1_3.pkl,102,23.501022,44.351692,no candidate,test,21,1
+180,2,4,1260.0,data/236_PLS_1_2.pkl,236,37.715137,38.459034,no candidate,test,21,1
+181,1,2,327.0,data/99_ADOS_1_1.pkl,99,27.382326,29.648594,no candidate,train,26,2
+182,1,1,1595.0,data/4_ADOS_1_2.pkl,4,86.600624,92.283806,no candidate,train,21,8
+182,1,2,1649.0,data/147_ADOS_1_3.pkl,147,54.600147,57.2366,no candidate,train,28,3
+182,1,3,615.0,data/194_ADOS_1_1.pkl,194,92.92739,106.97668,no candidate,train,26,1
+182,1,4,1747.0,data/221_ADOS_1_1.pkl,221,58.885876,72.52237,no candidate,train,26,1
+183,1,1,212.0,data/196_ADOS_1_1.pkl,196,37.49899,55.222546,no candidate,test,31,8
+183,1,2,647.0,data/168_ADOS_1_2.pkl,168,73.85728,86.86119,no candidate,test,33,9
+183,1,3,346.0,data/13_ADOS_1_2.pkl,13,69.404015,78.83938,no candidate,test,28,7
+183,1,4,1344.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,69,5
+184,1,4,1626.0,data/177_ADOS_1_4.pkl,177,34.74113,45.423996,no candidate,test,40,1
+185,1,1,1782.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,23,1
+185,1,2,252.0,data/38_Cognitive_1_2.pkl,38,22.940247,23.927675,no candidate,test,21,2
+186,1,1,1043.0,data/108_PLS_1_1.pkl,108,35.890614,36.852734,no candidate,test,64,14
+186,1,2,1448.0,data/204_PLS_1_2.pkl,204,54.07716,58.84132,no candidate,test,40,9
+186,1,3,1901.0,data/238_ADOS_1_3.pkl,238,10.595211,25.13027,no candidate,test,25,5
+186,1,4,2287.0,data/65_ADOS_1_4.pkl,65,96.99206,110.51311,no candidate,test,25,4
+187,1,1,2770.0,data/189_ADOS_1_1.pkl,189,14.202145,78.532166,no candidate,train,36,14
+187,1,2,869.0,data/189_ADOS_1_2.pkl,189,2.608004,10.072954,accepted,train,35,5
+187,1,3,869.0,data/189_ADOS_1_3.pkl,189,2.6713681,25.626492,accepted,train,34,12
+187,1,4,869.0,data/189_ADOS_1_4.pkl,189,3.832584,43.632362,accepted,train,38,14
+188,1,1,153.0,data/191_PLS_1_1.pkl,191,0.08287421,23.647776,accepted,train,30,13
+188,1,2,1227.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,41,6
+189,1,1,152.0,data/185_ADOS_1_4.pkl,185,121.2705,128.39757,no candidate,train,53,6
+189,1,3,1419.0,data/114_PLS_1_2.pkl,114,107.71024,109.44444,no candidate,train,26,5
+189,1,4,479.0,data/113_PLS_1_3.pkl,113,45.899845,70.56011,no candidate,train,21,2
+190,1,1,1503.0,data/37_ADOS_1_1.pkl,37,18.03733,18.803902,no candidate,test,25,4
+190,1,2,1304.0,data/10_ADOS_1_2.pkl,10,19.52335,22.3997,no candidate,test,26,6
+190,1,3,407.0,data/63_ADOS_1_2.pkl,63,36.499905,45.78217,no candidate,test,27,7
+190,1,4,246.0,data/46_Cognitive_1_1.pkl,46,32.256107,35.342518,no candidate,test,19,6
+191,1,1,2355.0,data/154_ADOS_1_2.pkl,154,74.20721,91.13621,no candidate,train,20,2
+191,1,2,2355.0,data/33_ADOS_1_4.pkl,33,56.042686,60.279194,no candidate,train,17,3
+191,1,3,978.0,data/12_ADOS_1_2.pkl,12,25.174957,30.10937,no candidate,train,32,1
+191,1,4,124.0,data/29_ADOS_1_4.pkl,29,28.61734,31.659157,no candidate,train,19,1
+192,1,1,1130.0,data/154_ADOS_1_1.pkl,154,20.145342,39.92744,no candidate,validation,65,15
+192,1,2,2070.0,data/42_Cognitive_1_2.pkl,42,52.443993,63.071136,no candidate,validation,68,17
+192,1,3,1005.0,data/109_ADOS_1_4.pkl,109,167.01978,171.48343,no candidate,validation,52,9
+192,1,4,2070.0,data/24_ADOS_1_4.pkl,24,139.56015,148.53592,no candidate,validation,65,16
+193,1,1,1241.0,data/165_ADOS_1_2.pkl,165,54.95807,59.370903,no candidate,train,76,18
+193,1,2,283.0,data/25_PLS_1_1.pkl,25,79.30509,82.59253,no candidate,train,94,21
+193,1,3,1915.0,data/195_Cognitive_1_3.pkl,195,53.81034,54.918236,no candidate,train,57,10
+193,1,4,1784.0,data/99_ADOS_1_4.pkl,99,69.86257,114.32228,no candidate,train,88,19
+193,2,1,538.0,data/139_ADOS_1_4.pkl,139,79.903435,91.89609,no candidate,train,33,7
+193,2,2,47.0,data/61_ADOS_1_3.pkl,61,98.8216,101.883316,no candidate,train,27,3
+193,2,3,2681.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,19,1
+193,2,4,2376.0,data/159_ADOS_1_1.pkl,159,68.01768,76.942345,no candidate,train,24,3
+194,1,1,601.0,data/79_ADOS_1_3.pkl,79,69.340744,79.25204,no candidate,train,76,29
+194,1,2,326.0,data/193_PLS_1_2.pkl,193,32.797916,67.894196,no candidate,train,64,22
+194,1,3,601.0,data/36_ADOS_1_3.pkl,36,51.218597,70.45276,no candidate,train,66,24
+194,1,4,3097.0,data/193_ADOS_1_4.pkl,193,0.13205196,189.32,accepted,train,42,8
+195,1,1,20.0,data/17_ADOS_1_4.pkl,17,85.115,88.884224,no candidate,train,58,6
+195,1,2,1373.0,data/202_ADOS_2_2.pkl,202,17.090582,23.856266,no candidate,train,60,3
+195,1,4,1687.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,24,3
+196,1,1,970.0,data/194_ADOS_1_1.pkl,194,5.5240397,72.566055,accepted,train,21,3
+196,1,4,2350.0,data/194_ADOS_1_4.pkl,194,10.2028265,45.199184,no candidate,train,19,4
+197,1,2,35.0,data/195_Cognitive_1_2.pkl,195,8.329058,20.264578,no candidate,train,29,2
+197,1,3,1873.0,data/195_Cognitive_1_3.pkl,195,2.7550259,23.885807,accepted,train,31,8
+197,1,4,3201.0,data/195_Cognitive_1_4.pkl,195,10.001787,25.774601,no candidate,train,32,16
+198,1,1,1985.0,data/209_PLS_1_1.pkl,209,56.882004,82.74553,no candidate,test,62,21
+198,1,2,1631.0,data/191_PLS_1_2.pkl,191,56.44358,61.816452,no candidate,test,80,22
+198,1,3,180.0,data/49_ADOS_2_2.pkl,49,32.586002,44.16861,no candidate,test,21,3
+198,1,4,1308.0,data/213_ADOS_1_4.pkl,213,23.639864,23.762012,no candidate,test,39,7
+199,1,1,1639.0,data/196_ADOS_1_1.pkl,196,6.245414,22.625908,accepted,train,22,1
+199,1,2,425.0,data/196_ADOS_1_2.pkl,196,2.6932936,28.451155,accepted,train,19,3
+199,1,3,1763.0,data/196_ADOS_1_3.pkl,196,5.5830913,31.92434,accepted,train,16,1
+199,1,4,913.0,data/196_ADOS_1_4.pkl,196,3.9913783,25.794733,accepted,train,29,1
+200,1,1,48.0,data/149_ADOS_1_2.pkl,149,29.667297,43.287323,no candidate,train,63,23
+200,1,2,1532.0,data/207_ADOS_1_1.pkl,207,55.48184,58.8156,no candidate,train,49,7
+200,1,3,397.0,data/4_ADOS_1_2.pkl,4,54.131416,81.9427,no candidate,train,48,5
+200,1,4,1013.0,data/42_Cognitive_1_1.pkl,42,34.526875,40.288605,no candidate,train,61,4
+201,1,1,2069.0,data/178_ADOS_1_4.pkl,178,53.283596,91.87903,no candidate,validation,27,2
+201,1,2,2052.0,data/107_PLS_1_1.pkl,107,88.883446,94.74529,no candidate,validation,20,1
+202,1,1,882.0,data/231_PLS_1_1.pkl,231,146.1151,214.36221,no candidate,train,33,5
+202,1,2,277.0,data/205_PLS_1_2.pkl,205,44.332947,45.943607,no candidate,train,27,2
+203,1,2,1309.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,32,1
+203,1,3,721.0,data/217_ADOS_1_1.pkl,217,61.45666,79.57576,no candidate,validation,17,2
+203,1,4,1249.0,data/158_PLS_1_2.pkl,158,62.20222,69.880196,no candidate,validation,26,1
+203,2,1,1369.0,data/82_ADOS_1_4.pkl,82,60.45645,84.9151,no candidate,validation,32,7
+203,2,2,72.0,data/218_ADOS_1_1.pkl,218,56.540474,60.370937,no candidate,validation,36,4
+203,2,3,1903.0,data/225_ADOS_1_2.pkl,225,46.06814,49.33062,no candidate,validation,23,2
+203,2,4,1060.0,data/116_Cognitive_1_1.pkl,116,43.761078,67.50832,no candidate,validation,23,6
+204,1,2,2214.0,data/171_ADOS_1_2.pkl,171,49.876446,89.74479,no candidate,test,25,2
+204,1,3,2267.0,data/37_ADOS_2_1.pkl,37,136.08646,163.48543,no candidate,test,29,4
+204,1,4,1115.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,36,6
+205,1,1,1072.0,data/197_PLS_1_1.pkl,197,0.064632274,128.1254,accepted,train,56,7
+205,1,2,121.0,data/197_ADOS_1_2.pkl,197,10.118599,29.039877,no candidate,train,27,1
+206,1,1,1485.0,data/150_ADOS_1_1.pkl,150,57.75219,62.052578,no candidate,train,27,1
+206,1,2,744.0,data/221_ADOS_1_1.pkl,221,39.232983,58.122974,no candidate,train,18,1
+206,1,4,431.0,data/10_ADOS_1_3.pkl,10,36.86407,77.41768,no candidate,train,30,2
+207,1,1,535.0,data/10_ADOS_1_1.pkl,10,59.915154,72.09281,no candidate,train,25,1
+207,1,2,1928.0,data/73_ADOS_1_4.pkl,73,48.052395,49.57464,no candidate,train,30,2
+207,1,4,1291.0,data/93_ADOS_1_1.pkl,93,47.530132,56.458393,no candidate,train,26,1
+208,1,3,257.0,data/199_ADOS_1_3.pkl,199,6.0562196,16.262989,ambiguous,train,33,6
+208,1,4,454.0,data/199_ADOS_1_4.pkl,199,2.6877189,27.018595,accepted,train,46,12
+209,1,1,115.0,data/150_ADOS_1_1.pkl,150,52.97101,58.77169,no candidate,train,75,20
+209,1,2,862.0,data/221_ADOS_1_1.pkl,221,69.643005,75.52737,no candidate,train,39,17
+209,1,3,1400.0,data/73_ADOS_1_3.pkl,73,55.116596,71.68017,no candidate,train,19,8
+209,1,4,297.0,data/220_ADOS_1_4.pkl,220,61.459637,65.91139,no candidate,train,25,8
+210,1,1,1017.0,data/149_ADOS_1_4.pkl,149,82.28214,87.97877,no candidate,test,21,5
+211,1,1,818.0,data/205_PLS_1_1.pkl,205,27.162306,32.868618,no candidate,train,56,9
+211,1,2,148.0,data/97_PLS_1_2.pkl,97,49.67271,66.171715,no candidate,train,45,3
+211,1,3,2821.0,data/204_ADOS_1_3.pkl,204,49.424294,83.148476,no candidate,train,22,1
+211,1,4,2834.0,data/143_ADOS_1_3.pkl,143,141.98402,244.4681,no candidate,train,21,1
+211,2,1,1779.0,data/151_ADOS_1_1.pkl,151,69.85735,79.88924,no candidate,train,41,7
+211,2,2,2281.0,data/25_Cognitive_1_2.pkl,25,17.67476,18.757679,no candidate,train,24,7
+211,2,3,123.0,data/109_ADOS_1_3.pkl,109,49.737167,54.31713,no candidate,train,32,6
+212,1,1,48.0,data/41_ADOS_1_2.pkl,41,130.47546,130.7606,no candidate,validation,32,8
+212,1,2,615.0,data/125_PLS_1_2.pkl,125,130.00706,215.18971,no candidate,validation,40,10
+213,1,1,2026.0,data/201_Cognitive_1_1.pkl,201,3.9931242,36.005775,accepted,train,19,1
+213,1,2,1107.0,data/201_ADOS_1_2.pkl,201,0.0738411,33.16683,accepted,train,38,2
+213,1,3,50.0,data/201_Cognitive_1_3.pkl,201,7.9041204,61.50983,accepted,train,27,3
+213,1,4,2004.0,data/201_Cognitive_1_4.pkl,201,23.84262,72.81683,no candidate,train,28,6
+214,1,1,1106.0,data/202_ADOS_1_1.pkl,202,25.170603,137.99738,no candidate,train,49,7
+214,1,2,150.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,25,5
+214,1,4,1680.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,23,1
+214,2,1,1766.0,data/202_ADOS_2_1.pkl,202,16.926645,75.8458,no candidate,train,29,2
+214,2,2,405.0,data/202_ADOS_2_2.pkl,202,2.8285828,47.461754,accepted,train,26,2
+215,1,1,3484.0,data/153_Cognitive_1_1.pkl,153,56.203594,85.5194,no candidate,test,46,10
+215,1,2,1679.0,data/238_ADOS_1_2.pkl,238,120.92479,123.70212,no candidate,test,34,4
+215,1,3,1209.0,data/226_ADOS_1_3.pkl,226,38.078354,46.2151,no candidate,test,24,1
+215,2,1,403.0,data/150_ADOS_1_4.pkl,150,54.90093,57.584812,no candidate,test,28,1
+215,2,3,457.0,data/13_ADOS_1_2.pkl,13,61.02553,66.13857,no candidate,test,35,1
+216,1,1,1198.0,data/207_ADOS_1_4.pkl,207,80.637856,94.95377,no candidate,validation,80,23
+217,1,1,1770.0,data/204_PLS_1_1.pkl,204,21.262241,63.311817,no candidate,train,51,10
+217,1,2,1084.0,data/204_PLS_1_2.pkl,204,9.309034,40.048317,no candidate,train,54,6
+217,1,3,1339.0,data/204_ADOS_1_3.pkl,204,2.6590247,9.875925,accepted,train,25,3
+217,1,4,1339.0,data/204_ADOS_1_4.pkl,204,3.814085,14.013895,accepted,train,22,2
+218,1,1,2947.0,data/205_ADOS_1_1.pkl,205,6.2196665,69.773834,accepted,train,97,38
+218,1,2,2947.0,data/205_ADOS_1_2.pkl,205,2.9343224,23.060703,accepted,train,106,51
+219,1,1,2741.0,data/25_Cognitive_1_1.pkl,25,98.1514,99.80537,no candidate,validation,24,2
+220,1,1,2771.0,data/44_ADOS_1_2.pkl,44,61.06701,63.06507,no candidate,train,23,1
+220,1,2,2701.0,data/35_ADOS_1_1.pkl,35,76.87258,87.491554,no candidate,train,23,3
+220,1,4,19.0,data/73_ADOS_1_4.pkl,73,27.558784,28.639019,no candidate,train,21,4
+221,1,2,2482.0,data/207_ADOS_1_2.pkl,207,0.09701555,44.25358,accepted,train,18,5
+221,1,3,2041.0,data/207_ADOS_1_3.pkl,207,0.09119114,33.335205,accepted,train,23,1
+221,1,4,2723.0,data/207_ADOS_1_4.pkl,207,1.924614,66.29402,accepted,train,29,1
+221,2,1,1613.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,17,1
+221,2,2,2105.0,data/207_ADOS_2_2.pkl,207,13.893092,76.64795,no candidate,train,34,1
+221,2,4,1262.0,data/207_ADOS_2_4.pkl,207,39.086033,51.49097,no candidate,train,21,2
+222,1,1,877.0,data/209_ADOS_1_1.pkl,209,0.0800953,23.655079,accepted,train,43,10
+222,1,2,1867.0,data/209_PLS_1_2.pkl,209,2.7989352,98.33112,accepted,train,32,3
+222,1,3,1763.0,data/221_Cognitive_1_2.pkl,221,85.840836,136.1438,no candidate,train,55,9
+222,1,4,42.0,data/209_ADOS_1_4.pkl,209,0.10212724,45.073383,accepted,train,29,4
+223,1,1,638.0,data/210_ADOS_1_1.pkl,210,6.120847,70.72653,accepted,train,79,53
+223,1,2,1026.0,data/210_ADOS_1_2.pkl,210,10.09126,51.282513,no candidate,train,74,57
+224,1,1,515.0,data/211_ADOS_1_1.pkl,211,28.955816,48.764454,no candidate,train,29,6
+224,1,2,241.0,data/211_ADOS_1_2.pkl,211,5.6440134,17.422215,accepted,train,24,4
+225,1,2,1730.0,data/32_ADOS_1_1.pkl,32,48.98023,51.157494,no candidate,validation,30,1
+226,1,1,1287.0,data/212_ADOS_1_1.pkl,212,4.010735,27.57365,accepted,validation,26,7
+226,1,2,1315.0,data/212_ADOS_1_2.pkl,212,15.342504,22.25441,no candidate,validation,32,8
+226,1,3,1011.0,data/40_ADOS_2_4.pkl,40,98.59004,112.16059,no candidate,validation,31,9
+226,1,4,838.0,data/212_ADOS_1_4.pkl,212,14.940964,82.1591,no candidate,validation,26,4
+227,1,1,29.0,data/165_ADOS_1_3.pkl,165,80.8099,89.45354,no candidate,train,44,3
+227,1,2,126.0,data/56_ADOS_1_3.pkl,56,49.33367,77.11647,no candidate,train,26,2
+227,1,3,483.0,data/22_ADOS_1_1.pkl,22,46.646454,73.886986,no candidate,train,38,12
+227,1,4,436.0,data/221_ADOS_1_2.pkl,221,35.38088,54.62273,no candidate,train,30,9
+227,2,1,1375.0,data/115_ADOS_1_2.pkl,115,60.679245,65.56819,no candidate,train,25,9
+227,2,2,93.0,data/195_Cognitive_1_2.pkl,195,39.594883,44.06767,no candidate,train,44,12
+227,2,3,1573.0,data/145_ADOS_1_2.pkl,145,55.823093,57.335453,no candidate,train,35,13
+227,2,4,1573.0,data/78_ADOS_1_4.pkl,78,61.74531,67.954254,no candidate,train,31,12
+228,1,1,236.0,data/213_PLS_1_1.pkl,213,0.056610875,38.438953,accepted,train,51,12
+228,1,2,1326.0,data/213_PLS_1_2.pkl,213,2.8616805,66.6256,accepted,train,44,11
+228,1,3,1156.0,data/213_ADOS_1_3.pkl,213,1.9680552,74.757164,accepted,train,35,11
+228,1,4,1079.0,data/213_ADOS_1_4.pkl,213,1.9304652,100.343765,accepted,train,29,9
+229,1,4,1254.0,data/214_ADOS_1_4.pkl,214,13.930188,40.04996,no candidate,train,19,2
+230,1,1,755.0,data/215_PLS_1_1.pkl,215,7.4679413,22.829895,accepted,validation,67,12
+230,1,2,755.0,data/215_PLS_1_2.pkl,215,9.28962,20.907978,no candidate,validation,31,7
+230,1,4,390.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,25,4
+231,1,1,1008.0,data/216_ADOS_1_1.pkl,216,11.507165,36.44464,no candidate,train,25,1
+231,1,2,2121.0,data/216_Cognitive_1_2.pkl,216,16.825617,69.951,no candidate,train,17,2
+232,1,1,11.0,data/131_PLS_1_1.pkl,131,30.149746,32.977596,no candidate,validation,58,15
+232,1,2,925.0,data/232_ADOS_1_2.pkl,232,44.206505,47.389008,no candidate,validation,60,14
+232,1,3,925.0,data/232_ADOS_1_3.pkl,232,11.351782,11.824036,no candidate,validation,27,6
+232,1,4,925.0,data/102_ADOS_1_4.pkl,102,18.043703,21.161198,no candidate,validation,31,8
+233,1,2,2030.0,data/77_Cognitive_1_2.pkl,77,19.666098,33.549355,no candidate,test,27,2
+233,1,3,1208.0,data/181_ADOS_1_3.pkl,181,20.457203,25.850756,no candidate,test,24,4
+233,1,4,1569.0,data/11_ADOS_1_4.pkl,11,24.034227,36.182243,no candidate,test,28,6
+233,2,1,1658.0,data/92_ADOS_1_1.pkl,92,64.41966,123.9555,no candidate,test,37,4
+233,2,2,389.0,data/213_ADOS_1_2.pkl,213,47.55203,52.376713,no candidate,test,35,6
+233,2,3,58.0,data/92_PLS_1_2.pkl,92,80.45728,86.68354,no candidate,test,21,4
+233,2,4,28.0,data/126_ADOS_1_4.pkl,126,146.963,163.03334,no candidate,test,35,3
+234,1,1,923.0,data/19_ADOS_1_4.pkl,19,66.561554,67.35549,no candidate,validation,56,11
+234,1,2,1551.0,data/44_ADOS_1_1.pkl,44,59.8243,86.07612,no candidate,validation,31,9
+234,1,3,302.0,data/81_ADOS_1_1.pkl,81,41.68302,50.12561,no candidate,validation,41,5
+234,1,4,588.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,25,2
+235,1,1,945.0,data/108_PLS_1_1.pkl,108,33.352673,35.774067,no candidate,train,56,19
+235,1,2,945.0,data/108_PLS_1_2.pkl,108,31.69523,37.71247,no candidate,train,60,13
+235,1,3,1483.0,data/118_ADOS_1_3.pkl,118,37.15075,57.480453,no candidate,train,26,4
+235,1,4,2791.0,data/232_ADOS_1_4.pkl,232,162.88104,203.2881,no candidate,train,24,2
+235,2,1,1128.0,data/142_ADOS_1_2.pkl,142,22.74874,31.171215,no candidate,train,33,6
+235,2,2,1856.0,data/168_ADOS_1_4.pkl,168,60.24019,60.356255,no candidate,train,35,8
+235,2,3,1856.0,data/109_ADOS_1_1.pkl,109,60.87971,83.776634,no candidate,train,41,14
+235,2,4,1211.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,30,6
+236,1,1,545.0,data/217_PLS_1_1.pkl,217,0.09700342,97.07136,accepted,train,44,8
+236,1,2,262.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,51,4
+236,1,3,361.0,data/217_ADOS_1_3.pkl,217,5.900098,60.723972,accepted,train,24,1
+236,1,4,1479.0,data/217_ADOS_1_4.pkl,217,5.3069997,119.79238,accepted,train,30,1
+237,1,1,306.0,data/75_PLS_1_1.pkl,75,26.555405,26.698719,no candidate,test,56,12
+237,1,2,962.0,data/108_PLS_1_2.pkl,108,50.03128,52.85913,no candidate,test,53,8
+237,1,3,633.0,data/94_PLS_1_3.pkl,94,31.419199,38.312008,no candidate,test,32,5
+238,1,2,2147.0,data/182_ADOS_1_2.pkl,182,29.514185,33.547005,no candidate,train,29,1
+239,1,1,1840.0,data/228_ADOS_1_1.pkl,228,49.702312,54.543697,no candidate,train,25,1
+239,1,2,464.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,23,2
+239,1,3,1308.0,data/80_ADOS_1_3.pkl,80,44.510124,70.631096,no candidate,train,24,2
+239,1,4,6.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,34,2
+240,1,1,1183.0,data/218_ADOS_1_1.pkl,218,23.33956,86.34605,no candidate,validation,32,14
+240,1,2,18.0,data/218_ADOS_1_2.pkl,218,5.5835485,24.90084,accepted,validation,52,28
+240,1,3,18.0,data/218_ADOS_1_3.pkl,218,7.946671,50.21637,accepted,validation,41,17
+240,1,4,18.0,data/218_ADOS_1_4.pkl,218,7.952902,67.77978,accepted,validation,63,32
+241,1,1,100.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,32,8
+241,1,2,522.0,data/210_ADOS_1_2.pkl,210,53.79577,57.411762,no candidate,test,28,4
+241,1,3,1486.0,data/70_ADOS_1_3.pkl,70,88.81258,111.23379,no candidate,test,25,2
+241,1,4,255.0,data/142_ADOS_1_4.pkl,142,70.536415,74.32258,no candidate,test,56,17
+242,1,1,1050.0,data/219_PLS_1_1.pkl,219,22.528208,47.470234,no candidate,train,22,2
+243,1,1,858.0,data/220_ADOS_1_1.pkl,220,3.8503995,89.23799,accepted,train,46,25
+243,1,2,913.0,data/220_ADOS_1_2.pkl,220,6.3047104,45.02983,accepted,train,50,23
+243,1,3,1740.0,data/220_ADOS_1_3.pkl,220,16.188568,77.250175,no candidate,train,44,23
+243,1,4,2005.0,data/220_ADOS_1_4.pkl,220,21.269264,53.401882,no candidate,train,57,30
+244,1,1,49.0,data/161_ADOS_1_2.pkl,161,74.677124,80.94363,no candidate,train,53,4
+244,1,2,1977.0,data/221_ADOS_1_2.pkl,221,5.7010517,38.927242,accepted,train,50,13
+245,1,1,1640.0,data/222_Cognitive_1_1.pkl,222,25.289934,97.0541,no candidate,train,42,9
+245,1,2,1518.0,data/222_ADOS_1_2.pkl,222,5.6460047,12.562731,ambiguous,train,21,2
+245,1,4,1641.0,data/222_ADOS_1_4.pkl,222,15.0522375,43.672188,no candidate,train,31,3
+246,1,1,104.0,data/223_ADOS_1_1.pkl,223,0.10220878,48.26169,accepted,validation,32,1
+246,1,2,450.0,data/223_ADOS_1_2.pkl,223,2.8229883,58.324787,accepted,validation,25,1
+246,1,3,726.0,data/223_ADOS_1_3.pkl,223,0.08928911,128.95613,accepted,validation,26,2
+246,1,4,1082.0,data/223_ADOS_1_4.pkl,223,0.1708327,118.600075,accepted,validation,26,2
+247,1,1,637.0,data/25_Cognitive_1_1.pkl,25,42.559643,47.896137,no candidate,test,43,9
+248,1,1,-1.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,36,7
+248,1,2,1492.0,data/224_ADOS_1_2.pkl,224,3.3567593,22.478195,accepted,train,28,1
+248,1,4,119.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,22,1
+249,1,1,1699.0,data/225_ADOS_1_1.pkl,225,16.754166,33.079,no candidate,train,34,8
+249,1,2,1166.0,data/225_ADOS_1_2.pkl,225,5.569191,19.559973,accepted,train,22,2
+250,1,1,1030.0,data/233_ADOS_1_2.pkl,233,47.913548,55.56602,no candidate,train,47,14
+250,1,2,1030.0,data/54_ADOS_1_2.pkl,54,25.535915,30.088284,no candidate,train,44,13
+250,1,3,1030.0,data/118_PLS_1_2.pkl,118,87.811615,112.49592,no candidate,train,25,12
+250,1,4,845.0,data/73_ADOS_1_4.pkl,73,67.00207,71.24981,no candidate,train,24,2
+251,1,1,20.0,data/226_ADOS_1_1.pkl,226,5.528129,22.554117,accepted,validation,77,14
+251,1,2,29.0,data/226_ADOS_1_2.pkl,226,16.9364,39.89872,no candidate,validation,66,23
+251,1,3,1048.0,data/226_ADOS_1_3.pkl,226,47.784897,106.38056,no candidate,validation,26,4
+251,1,4,105.0,data/226_ADOS_1_4.pkl,226,6.261208,73.56077,accepted,validation,21,2
+252,1,1,2652.0,data/193_ADOS_1_1.pkl,193,44.71534,55.915146,no candidate,train,29,7
+252,1,2,1651.0,data/187_ADOS_1_4.pkl,187,42.325462,61.84233,no candidate,train,41,14
+252,1,3,2743.0,data/193_ADOS_1_3.pkl,193,27.18744,27.266014,no candidate,train,37,13
+252,1,4,1555.0,data/141_ADOS_1_2.pkl,141,107.96916,134.62936,no candidate,train,34,14
+253,1,1,2437.0,data/191_PLS_1_2.pkl,191,83.52898,132.05412,no candidate,train,56,15
+253,1,2,1624.0,data/134_PLS_1_2.pkl,134,37.559704,62.188354,no candidate,train,36,7
+253,1,3,2437.0,data/191_PLS_1_1.pkl,191,133.11337,154.69939,no candidate,train,59,9
+253,1,4,826.0,data/193_ADOS_1_4.pkl,193,52.48096,56.56726,no candidate,train,26,1
+254,1,1,413.0,data/52_ADOS_2_1.pkl,52,39.495346,41.910194,no candidate,validation,31,2
+254,1,4,632.0,data/100_ADOS_1_3.pkl,100,32.632122,50.14339,no candidate,validation,20,2
+255,1,1,151.0,data/227_PLS_1_1.pkl,227,5.953135,72.18382,accepted,train,44,4
+255,1,2,1.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,55,5
+255,1,3,1056.0,data/227_ADOS_1_3.pkl,227,19.755959,94.482895,no candidate,train,24,3
+255,2,1,3012.0,data/227_PLS_2_1.pkl,227,2.74111,86.10225,accepted,train,29,6
+255,2,2,3012.0,data/227_PLS_2_2.pkl,227,2.804462,32.580357,accepted,train,24,4
+255,2,3,3012.0,data/227_PLS_1_3.pkl,227,2.8788066,86.07023,accepted,train,32,3
+256,1,1,2242.0,data/228_ADOS_1_1.pkl,228,25.214724,61.53648,no candidate,validation,25,2
+257,1,1,768.0,data/235_ADOS_1_2.pkl,235,120.49326,130.19374,no candidate,train,47,3
+257,1,2,876.0,data/110_PLS_1_2.pkl,110,66.368004,91.42506,no candidate,train,30,1
+257,1,4,737.0,data/90_ADOS_1_4.pkl,90,86.77611,122.78621,no candidate,train,22,2
+258,1,1,1145.0,data/164_ADOS_1_3.pkl,164,42.053165,44.163742,no candidate,train,34,6
+259,1,1,1030.0,data/217_ADOS_1_4.pkl,217,63.56807,64.837456,no candidate,train,26,6
+259,1,2,924.0,data/203_ADOS_1_2.pkl,203,50.25601,55.923172,no candidate,train,28,4
+259,1,3,1748.0,data/85_ADOS_1_4.pkl,85,41.563828,53.295834,no candidate,train,36,9
+259,1,4,1310.0,data/217_ADOS_1_1.pkl,217,64.507675,78.235016,no candidate,train,30,3
+259,2,1,869.0,data/201_Cognitive_1_2.pkl,201,59.55166,62.661316,no candidate,train,26,3
+259,2,3,107.0,data/220_ADOS_1_4.pkl,220,21.767437,40.62487,no candidate,train,23,4
+259,2,4,907.0,data/215_PLS_1_1.pkl,215,71.56407,88.27706,no candidate,train,32,4
+260,1,1,817.0,data/229_PLS_1_1.pkl,229,9.202065,50.123077,no candidate,train,26,3
+261,1,1,994.0,data/230_ADOS_1_1.pkl,230,16.901022,39.343296,no candidate,train,38,18
+261,1,2,1082.0,data/230_ADOS_1_2.pkl,230,13.893909,29.274273,no candidate,train,32,20
+261,1,3,1462.0,data/230_ADOS_1_3.pkl,230,4.0544667,75.51823,accepted,train,41,14
+261,1,4,1307.0,data/230_ADOS_1_4.pkl,230,8.348996,35.702667,no candidate,train,37,10
+262,1,1,1253.0,data/232_PLS_1_1.pkl,232,17.893314,39.324734,no candidate,train,30,7
+262,1,2,1036.0,data/108_PLS_1_2.pkl,108,25.023294,30.97968,no candidate,train,33,3
+262,1,3,1253.0,data/209_PLS_1_3.pkl,209,55.55549,64.82336,no candidate,train,26,6
+263,1,1,1102.0,data/231_ADOS_1_1.pkl,231,2.809828,48.699883,accepted,train,56,9
+263,1,2,299.0,data/231_PLS_1_2.pkl,231,17.88064,70.24365,no candidate,train,27,4
+263,1,3,389.0,data/231_ADOS_1_3.pkl,231,1.8833351,104.961914,accepted,train,35,6
+263,1,4,814.0,data/231_ADOS_1_4.pkl,231,1.876035,44.49355,accepted,train,31,6
+264,1,1,522.0,data/232_ADOS_1_1.pkl,232,14.595582,29.391409,no candidate,train,73,18
+264,1,2,522.0,data/232_ADOS_1_2.pkl,232,21.72244,67.13048,no candidate,train,53,12
+264,1,3,84.0,data/232_ADOS_1_3.pkl,232,2.686873,23.564667,accepted,train,27,7
+264,1,4,1172.0,data/232_ADOS_1_4.pkl,232,8.0397,18.503738,no candidate,train,41,12
+265,1,1,2199.0,data/233_ADOS_1_1.pkl,233,2.750482,73.21334,accepted,validation,33,4
+265,1,2,634.0,data/233_ADOS_1_2.pkl,233,0.06273644,25.066553,accepted,validation,35,4
+265,1,3,1047.0,data/233_ADOS_1_3.pkl,233,0.06865243,36.11835,accepted,validation,23,4
+265,1,4,1665.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,24,2
+266,1,1,1693.0,data/234_ADOS_1_1.pkl,234,0.036362126,25.419823,accepted,train,29,4
+266,1,2,269.0,data/234_ADOS_1_2.pkl,234,27.99731,58.763256,no candidate,train,26,3
+266,1,3,269.0,data/234_ADOS_1_3.pkl,234,51.56533,89.03215,no candidate,train,23,4
+266,1,4,269.0,data/234_ADOS_1_4.pkl,234,47.1731,150.32776,no candidate,train,29,4
+267,1,1,1707.0,data/154_ADOS_1_1.pkl,154,43.03271,47.697144,no candidate,train,25,3
+267,1,2,112.0,data/77_Cognitive_1_3.pkl,77,35.318203,44.721004,no candidate,train,21,2
+267,1,3,1834.0,data/191_PLS_1_1.pkl,191,62.02365,73.63437,no candidate,train,28,3
+268,1,1,1751.0,data/235_PLS_1_1.pkl,235,2.8291132,77.0029,accepted,validation,64,7
+268,1,2,1596.0,data/235_PLS_1_2.pkl,235,78.80056,103.17826,no candidate,validation,59,5
+268,1,3,1990.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,21,2
+268,1,4,2531.0,data/235_ADOS_1_4.pkl,235,1.9199847,169.42284,accepted,validation,36,5
+269,1,1,535.0,data/236_PLS_1_1.pkl,236,20.774822,39.991497,no candidate,train,40,11
+269,1,2,1614.0,data/236_PLS_1_2.pkl,236,2.8945277,78.242455,accepted,train,22,2
+269,1,3,1515.0,data/236_ADOS_1_3.pkl,236,3.902037,9.653045,ambiguous,train,28,6
+269,1,4,1515.0,data/236_ADOS_1_4.pkl,236,6.030551,14.034076,ambiguous,train,32,6
+270,1,1,1175.0,data/21_ADOS_2_4.pkl,21,76.6414,79.35149,no candidate,test,71,27
+270,1,2,271.0,data/110_PLS_1_2.pkl,110,105.47978,118.74058,no candidate,test,48,15
+270,1,3,1175.0,data/14_ADOS_1_3.pkl,14,54.473656,75.420456,no candidate,test,42,20
+270,1,4,1175.0,data/5_ADOS_1_3.pkl,5,69.14848,72.972,no candidate,test,41,18
+271,1,1,2560.0,data/237_ADOS_1_1.pkl,237,24.486767,87.287895,no candidate,validation,31,2
+272,1,1,1490.0,data/23_ADOS_1_3.pkl,23,36.0277,41.47499,no candidate,train,69,7
+272,1,2,1490.0,data/116_ADOS_1_1.pkl,116,67.24273,72.41104,no candidate,train,43,9
+272,1,3,1490.0,data/40_ADOS_2_3.pkl,40,37.451843,40.201138,no candidate,train,28,8
+272,1,4,1490.0,data/44_ADOS_1_3.pkl,44,139.09496,153.39261,no candidate,train,34,8
+273,1,1,2542.0,data/183_ADOS_1_4.pkl,183,24.491056,50.06953,no candidate,train,57,10
+273,1,2,2542.0,data/227_PLS_2_1.pkl,227,75.70042,93.6225,no candidate,train,51,8
+273,1,3,1144.0,data/13_ADOS_1_1.pkl,13,42.127285,43.34433,no candidate,train,33,9
+273,1,4,1251.0,data/238_ADOS_1_4.pkl,238,52.63079,75.899124,no candidate,train,29,6
+274,1,1,490.0,data/150_ADOS_1_3.pkl,150,69.49556,71.02088,no candidate,train,21,2
+274,1,2,1029.0,data/118_PLS_1_2.pkl,118,69.68101,71.2302,no candidate,train,20,2
+275,1,2,957.0,data/239_ADOS_1_2.pkl,239,6.4096823,47.58118,accepted,train,25,3
+276,1,1,1629.0,data/78_PLS_1_3.pkl,78,94.6259,111.40182,no candidate,train,36,8
+276,1,2,52.0,data/205_PLS_1_2.pkl,205,29.412647,29.939192,no candidate,train,29,5
+276,1,3,1655.0,data/220_ADOS_1_1.pkl,220,29.64691,58.91625,no candidate,train,30,5
+277,1,1,1123.0,data/63_ADOS_1_3.pkl,63,93.53358,97.63028,no candidate,train,37,4
+277,1,2,1123.0,data/50_ADOS_1_3.pkl,50,70.9015,86.13364,no candidate,train,27,2
+277,1,3,1123.0,data/28_ADOS_1_1.pkl,28,143.65593,157.8077,no candidate,train,28,4
+278,1,1,1448.0,data/202_ADOS_1_1.pkl,202,102.87587,103.48066,no candidate,train,31,8
+278,1,2,1319.0,data/32_ADOS_1_3.pkl,32,57.151646,73.03428,no candidate,train,21,10
+278,1,3,1448.0,data/40_ADOS_1_2.pkl,40,87.03548,90.948456,no candidate,train,31,8
+279,1,1,1846.0,data/30_ADOS_1_3.pkl,30,63.993343,85.60481,no candidate,train,25,4
+280,1,1,993.0,data/240_PLS_1_1.pkl,240,2.9000828,45.816208,accepted,train,38,5
+280,1,2,1215.0,data/240_PLS_1_2.pkl,240,0.057234213,56.597836,accepted,train,28,4
+281,1,2,167.0,data/241_ADOS_1_2.pkl,241,19.54492,55.535213,no candidate,train,19,1
+281,1,3,1287.0,data/241_ADOS_1_3.pkl,241,11.4811325,123.3948,no candidate,train,25,1
+281,1,4,1476.0,data/241_ADOS_1_4.pkl,241,2.8455994,21.319746,accepted,train,44,14
+282,1,1,868.0,data/122_ADOS_1_1.pkl,122,35.20111,41.524788,no candidate,test,27,4
+282,1,2,835.0,data/70_ADOS_2_2.pkl,70,23.965397,28.358208,no candidate,test,32,2
+282,1,3,868.0,data/108_PLS_1_2.pkl,108,46.524773,50.617744,no candidate,test,31,8
+282,1,4,868.0,data/4_ADOS_1_2.pkl,4,98.74752,100.63688,no candidate,test,36,10
+283,1,1,1201.0,data/2_ADOS_1_1.pkl,2,11.114507,67.2237,no candidate,validation,55,16
+283,1,2,1326.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,59,14
+283,1,3,14.0,data/2_ADOS_1_3.pkl,2,3.3155048,50.5588,accepted,validation,40,11
+283,1,4,713.0,data/2_ADOS_1_4.pkl,2,22.302233,65.993866,no candidate,validation,47,6
+284,1,1,285.0,data/4_ADOS_1_1.pkl,4,2.8176508,15.792471,accepted,train,55,20
+284,1,2,281.0,data/4_ADOS_1_2.pkl,4,5.552078,36.346786,accepted,train,47,12
+284,1,3,282.0,data/4_ADOS_1_3.pkl,4,3.983325,47.475986,accepted,train,50,12
+284,1,4,285.0,data/4_ADOS_1_4.pkl,4,14.021127,57.53444,no candidate,train,55,13
+285,1,1,970.0,data/21_ADOS_1_2.pkl,21,113.42523,114.316475,no candidate,train,51,10
+285,1,2,985.0,data/227_ADOS_1_2.pkl,227,46.120937,53.57653,no candidate,train,52,12
+285,1,3,970.0,data/6_ADOS_1_3.pkl,6,89.59081,117.0037,no candidate,train,54,12
+285,1,4,705.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,50,10
+286,1,1,1443.0,data/8_ADOS_1_1.pkl,8,47.551975,68.45017,no candidate,test,53,11
+286,1,2,990.0,data/8_ADOS_1_2.pkl,8,16.571508,85.247475,no candidate,test,44,7
+286,1,3,60.0,data/8_ADOS_1_3.pkl,8,16.775126,53.859653,no candidate,test,1,1
+286,1,4,565.0,data/8_ADOS_1_4.pkl,8,53.22435,108.299484,no candidate,test,57,8
+287,1,1,2.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,1,1
+287,1,2,2.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,2,2
+287,1,3,2.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,1,1
+287,1,4,2.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,2,2
+288,1,1,695.0,data/14_ADOS_1_1.pkl,14,0.042048734,35.322414,accepted,train,57,15
+288,1,2,695.0,data/14_ADOS_1_2.pkl,14,0.051876318,63.62241,accepted,train,8,8
+288,1,3,677.0,data/14_ADOS_1_3.pkl,14,0.056716707,16.868376,accepted,train,45,6
+288,1,4,900.0,data/14_ADOS_1_4.pkl,14,0.041188035,31.411623,accepted,train,58,8
+288,2,1,133.0,data/14_ADOS_2_1.pkl,14,30.955498,72.679344,no candidate,train,38,2
+288,2,2,1429.0,data/14_ADOS_2_2.pkl,14,2.8130188,64.68705,accepted,train,41,3
+288,2,3,2234.0,data/14_ADOS_2_3.pkl,14,6.14324,53.345646,accepted,train,42,4
+289,1,2,1532.0,data/19_ADOS_1_2.pkl,19,13.900892,45.74306,no candidate,train,2,2
+289,1,3,1534.0,data/19_ADOS_1_3.pkl,19,11.4987,53.09993,no candidate,train,1,1
+289,1,4,1224.0,data/19_ADOS_1_4.pkl,19,8.867717,62.911407,no candidate,train,1,1
+290,1,2,1489.0,data/23_ADOS_1_2.pkl,23,2.8303657,18.27527,accepted,train,1,1
+291,1,1,1099.0,data/65_ADOS_1_1.pkl,65,20.190624,45.087444,no candidate,train,45,9
+291,1,2,605.0,data/65_ADOS_1_2.pkl,65,8.802288,42.562283,no candidate,train,62,13
+291,1,3,1396.0,data/65_ADOS_1_3.pkl,65,8.287131,25.581635,no candidate,train,50,19
+291,1,4,1590.0,data/65_ADOS_1_4.pkl,65,36.281536,73.00262,no candidate,train,60,12
+292,1,1,1743.0,data/155_ADOS_1_1.pkl,155,25.697897,44.79853,no candidate,train,56,18
+292,1,4,271.0,data/72_PLS_1_2.pkl,72,67.475395,69.34448,no candidate,train,53,12
+293,1,1,715.0,data/136_ADOS_1_1.pkl,136,51.87073,66.643555,no candidate,train,67,26
+293,1,2,715.0,data/165_ADOS_1_3.pkl,165,33.782337,44.949917,no candidate,train,55,20
+293,1,3,715.0,data/136_ADOS_1_3.pkl,136,78.694984,80.63262,no candidate,train,62,17
+293,1,4,1009.0,data/136_ADOS_1_4.pkl,136,11.123996,31.778326,no candidate,train,46,18
+294,1,1,1453.0,data/134_PLS_1_2.pkl,134,48.73776,56.63353,no candidate,train,44,0
+294,1,3,2682.0,data/186_ADOS_1_3.pkl,186,31.846687,37.14922,no candidate,train,37,0
+294,1,4,2255.0,data/189_ADOS_1_3.pkl,189,39.55541,43.082672,no candidate,train,43,0
+295,1,3,981.0,data/139_ADOS_1_3.pkl,139,11.235202,76.03876,no candidate,train,48,3
+295,1,4,115.0,data/139_ADOS_1_4.pkl,139,12.472061,71.54118,no candidate,train,45,4
+296,1,1,1766.0,data/141_ADOS_1_1.pkl,141,53.720688,142.41576,no candidate,test,44,6
+296,1,2,618.0,data/141_ADOS_1_2.pkl,141,3.952043,25.40791,accepted,test,36,6
+296,1,3,1074.0,data/141_ADOS_1_3.pkl,141,3.9661286,25.706774,accepted,test,50,10
+296,1,4,1766.0,data/141_ADOS_1_4.pkl,141,86.14589,125.0882,no candidate,test,40,6
+297,1,1,438.0,data/147_ADOS_1_1.pkl,147,6.2113013,40.036156,accepted,test,40,2
+297,1,3,1501.0,data/147_ADOS_1_3.pkl,147,6.245448,27.25513,accepted,test,31,1
+297,1,4,1333.0,data/147_ADOS_1_4.pkl,147,6.112633,23.78637,accepted,test,48,3
+298,1,1,3497.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,45,12
+298,1,2,469.0,data/156_ADOS_1_2.pkl,156,6.2373004,45.037376,accepted,train,66,32
+298,1,3,1963.0,data/156_ADOS_1_3.pkl,156,2.7572038,56.078354,accepted,train,31,0
+298,1,4,14.0,data/156_ADOS_1_4.pkl,156,21.843216,78.01726,no candidate,train,53,9
+299,1,1,979.0,data/157_ADOS_1_1.pkl,157,8.261879,66.59978,no candidate,train,55,13
+299,1,2,3438.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,54,7
+299,1,3,1639.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,48,5
+299,1,4,3717.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,30,0
+300,1,1,123.0,data/100_ADOS_1_3.pkl,100,,,no candidate,train,85,40
+300,1,2,557.0,data/44_PLS_1_2.pkl,44,23.889055,25.208029,no candidate,train,62,26
+300,1,3,979.0,data/4_ADOS_1_3.pkl,4,47.646515,48.23327,no candidate,train,72,37
+300,1,4,542.0,data/212_ADOS_1_2.pkl,212,75.492546,95.45462,no candidate,train,85,47
+301,1,1,1812.0,data/161_ADOS_1_1.pkl,161,7.909055,61.77665,accepted,validation,57,11
+301,1,2,784.0,data/161_ADOS_1_2.pkl,161,2.7055397,14.237265,accepted,validation,48,12
+301,1,3,13.0,data/161_ADOS_1_3.pkl,161,39.689217,160.9246,no candidate,validation,60,3
+301,1,4,1645.0,data/161_ADOS_1_4.pkl,161,11.771911,42.753353,no candidate,validation,56,12
+302,1,1,146.0,data/166_ADOS_1_1.pkl,166,13.978024,37.152634,no candidate,train,52,11
+302,1,3,218.0,data/166_ADOS_1_3.pkl,166,23.77177,42.67497,no candidate,train,49,10
+302,1,4,974.0,data/166_ADOS_1_4.pkl,166,22.511475,53.322365,no candidate,train,47,8
+303,1,1,1240.0,data/169_ADOS_1_1.pkl,169,15.054346,25.706264,no candidate,test,61,17
+303,1,3,1751.0,data/169_ADOS_1_3.pkl,169,6.1238995,33.05731,accepted,test,47,14
+303,2,1,1192.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,53,2
+303,2,2,871.0,data/169_ADOS_1_2.pkl,169,11.106097,31.063644,no candidate,test,42,3
+303,2,4,1097.0,data/169_ADOS_1_4.pkl,169,41.88233,81.23589,no candidate,test,52,8
+304,1,1,2048.0,data/175_ADOS_1_1.pkl,175,12.626455,68.82812,no candidate,test,43,12
+304,1,3,1150.0,data/175_ADOS_1_3.pkl,175,8.387002,45.419693,no candidate,test,62,13
+304,1,4,1180.0,data/175_ADOS_1_4.pkl,175,13.989394,68.07282,no candidate,test,41,12
+305,1,1,508.0,data/192_ADOS_1_1.pkl,192,68.88151,70.731705,no candidate,train,42,13
+305,1,2,1524.0,data/149_ADOS_1_2.pkl,149,59.247097,64.30156,no candidate,train,58,14
+305,1,3,392.0,data/235_ADOS_1_2.pkl,235,51.212418,130.01973,no candidate,train,42,9
+306,1,1,419.0,data/83_ADOS_1_1.pkl,83,84.45401,85.70124,no candidate,validation,56,11
+306,1,2,468.0,data/97_PLS_1_1.pkl,97,50.90933,58.808086,no candidate,validation,60,17
+306,1,3,296.0,data/100_ADOS_1_3.pkl,100,,,no candidate,validation,62,13
+306,1,4,468.0,data/188_ADOS_1_4.pkl,188,49.5763,76.02648,no candidate,validation,41,5
+307,1,1,534.0,data/176_ADOS_1_1.pkl,176,6.276986,11.141156,ambiguous,test,67,33
+307,1,3,584.0,data/176_ADOS_1_3.pkl,176,11.135105,25.768293,no candidate,test,65,16
+308,1,1,49.0,data/37_ADOS_2_1.pkl,37,18.815441,19.625944,no candidate,validation,64,15
+308,1,3,49.0,data/49_ADOS_1_3.pkl,49,31.295046,31.803944,no candidate,validation,50,11
+308,1,4,49.0,data/165_ADOS_1_4.pkl,165,47.650696,48.813625,no candidate,validation,37,9
+309,1,1,1222.0,data/6_ADOS_1_1.pkl,6,22.539225,25.216343,no candidate,train,75,33
+309,1,2,1654.0,data/121_ADOS_1_4.pkl,121,40.842728,89.2463,no candidate,train,53,17
+309,1,3,1651.0,data/135_ADOS_1_3.pkl,135,36.82358,38.043324,no candidate,train,85,49
+309,1,4,1654.0,data/47_ADOS_1_4.pkl,47,65.31539,71.78767,no candidate,train,95,50
+310,1,1,2631.0,data/183_ADOS_1_1.pkl,183,7.894832,67.00319,accepted,test,44,3
+310,1,2,857.0,data/183_ADOS_1_2.pkl,183,5.518081,17.612194,accepted,test,32,1
+310,1,4,80.0,data/183_ADOS_1_4.pkl,183,5.7023168,30.969488,accepted,test,44,1
+311,1,1,47.0,data/185_ADOS_1_1.pkl,185,2.7410984,47.495445,accepted,test,42,2
+311,1,2,295.0,data/185_ADOS_1_2.pkl,185,5.4999576,36.308346,accepted,test,55,21
+311,1,3,27.0,data/185_ADOS_1_3.pkl,185,2.7260153,51.240097,accepted,test,7,7
+312,1,1,779.0,data/3_PLS_1_1.pkl,3,12.414789,17.545263,no candidate,train,3,3
+312,1,4,779.0,data/169_ADOS_1_4.pkl,169,103.780045,113.48136,no candidate,train,3,3
+312,2,1,1664.0,data/14_ADOS_1_1.pkl,14,29.48069,40.09852,no candidate,train,32,32
+312,2,2,1664.0,data/14_ADOS_1_2.pkl,14,66.733345,100.85506,no candidate,train,32,32
+312,2,3,976.0,data/232_ADOS_1_3.pkl,232,30.335768,32.503304,no candidate,train,5,5
+312,2,4,1664.0,data/14_ADOS_1_4.pkl,14,21.527983,28.140167,no candidate,train,25,25
+313,1,1,250.0,data/63_ADOS_1_1.pkl,63,20.129198,38.97016,no candidate,train,2,2
+313,1,2,2440.0,data/184_PLS_1_4.pkl,184,82.211365,85.45469,no candidate,train,3,3
+313,1,3,1773.0,data/46_PLS_1_2.pkl,46,27.043497,33.635498,no candidate,train,11,11
+313,1,4,1773.0,data/206_ADOS_2_4.pkl,206,65.83126,72.00754,no candidate,train,12,12
+313,2,1,1812.0,data/31_ADOS_1_2.pkl,31,39.650665,53.71957,no candidate,train,15,15
+313,2,2,407.0,data/80_ADOS_1_1.pkl,80,51.286083,57.888245,no candidate,train,6,6
+313,2,3,861.0,data/32_PLS_1_2.pkl,32,47.598206,51.194603,no candidate,train,3,3
+313,2,4,1813.0,data/121_ADOS_1_1.pkl,121,31.428537,35.444492,no candidate,train,14,14
+314,1,1,1452.0,data/236_ADOS_1_1.pkl,236,23.073305,31.829197,no candidate,train,8,8
+314,1,2,1482.0,data/207_ADOS_1_2.pkl,207,41.740444,56.38794,no candidate,train,12,12
+315,1,1,661.0,data/188_ADOS_1_1.pkl,188,5.4189916,42.26546,accepted,train(short only),1,1
+315,1,2,779.0,data/188_ADOS_1_2.pkl,188,23.984741,39.88745,no candidate,train(short only),1,1
+315,1,4,1389.0,data/188_ADOS_1_4.pkl,188,11.498618,37.036003,no candidate,train(short only),1,1
+316,1,1,716.0,data/80_ADOS_1_1.pkl,80,59.894287,64.2042,no candidate,test,18,18
+316,1,2,54.0,data/207_ADOS_2_4.pkl,207,43.079437,46.22042,no candidate,test,9,9
+316,1,3,201.0,data/150_ADOS_1_3.pkl,150,71.38999,90.4328,no candidate,test,17,17
+317,1,1,771.0,data/37_ADOS_2_1.pkl,37,20.307976,42.517475,no candidate,train,4,4
+317,1,2,891.0,data/149_ADOS_1_2.pkl,149,19.622192,22.94307,no candidate,train,5,5
+317,1,3,891.0,data/207_ADOS_1_4.pkl,207,53.451294,59.29082,no candidate,train,8,8
+317,1,4,891.0,data/29_ADOS_1_4.pkl,29,57.518055,76.2723,no candidate,train,7,7
+317,2,1,1343.0,data/175_ADOS_1_1.pkl,175,8.755309,19.643791,no candidate,train,1,1
+317,2,4,1343.0,data/41_ADOS_2_4.pkl,41,24.863182,32.741913,no candidate,train,1,1
+318,1,1,1458.0,data/235_ADOS_1_3.pkl,235,51.064236,56.475433,no candidate,train(short only),7,7
+318,1,2,925.0,data/109_ADOS_1_2.pkl,109,51.532207,65.261314,no candidate,train(short only),6,6
+318,1,3,1458.0,data/210_ADOS_1_2.pkl,210,50.955635,52.703842,no candidate,train(short only),10,10
+318,1,4,1458.0,data/94_PLS_1_2.pkl,94,58.614677,72.092575,no candidate,train(short only),6,6
+319,1,1,629.0,data/190_ADOS_1_1.pkl,190,3.9498777,39.63731,accepted,train,10,10
+319,1,2,1657.0,data/190_ADOS_1_2.pkl,190,8.35634,45.501434,no candidate,train,19,19
+319,1,3,649.0,data/190_ADOS_1_3.pkl,190,5.8527164,40.64368,accepted,train,2,2
+319,1,4,180.0,data/190_ADOS_1_4.pkl,190,5.6200356,53.71909,accepted,train,3,3
+320,1,1,1851.0,data/213_ADOS_1_2.pkl,213,46.19206,53.09708,no candidate,test,10,10
+320,1,2,625.0,data/44_PLS_1_3.pkl,44,55.078545,71.58535,no candidate,test,6,6
+320,1,3,635.0,data/100_ADOS_1_3.pkl,100,,,no candidate,test,7,7
+320,1,4,604.0,data/122_ADOS_1_4.pkl,122,47.521004,50.89293,no candidate,test,9,9
+321,1,1,458.0,data/192_ADOS_1_1.pkl,192,3.897807,74.903824,accepted,train,1,1
+321,1,2,217.0,data/192_ADOS_1_2.pkl,192,2.7063758,47.57118,accepted,train,2,2
+321,1,3,731.0,data/192_ADOS_1_3.pkl,192,4.0058374,42.46685,accepted,train,1,1
+321,1,4,910.0,data/192_ADOS_1_4.pkl,192,21.81244,41.1925,no candidate,train,1,1
+321,2,1,1244.0,data/157_ADOS_1_2.pkl,157,90.124115,92.77575,no candidate,train,15,15
+321,2,2,1241.0,data/202_ADOS_1_4.pkl,202,116.18178,126.99079,no candidate,train,8,8
+321,2,3,1244.0,data/9_ADOS_1_1.pkl,9,171.4678,183.19568,no candidate,train,11,11
+322,1,1,637.0,data/194_ADOS_1_1.pkl,194,5.540036,94.83757,accepted,validation,12,12
+322,1,2,1546.0,data/82_ADOS_1_3.pkl,82,45.44142,49.69789,no candidate,validation,2,2
+322,1,4,1546.0,data/33_ADOS_1_4.pkl,33,82.491486,90.208435,no candidate,validation,5,5
+322,2,1,1166.0,data/149_ADOS_1_1.pkl,149,46.28166,52.883167,no candidate,validation,11,11
+322,2,2,44.0,data/175_ADOS_1_3.pkl,175,46.415092,47.575108,no candidate,validation,4,4
+322,2,3,981.0,data/48_ADOS_1_3.pkl,48,50.633636,55.871025,no candidate,validation,6,6
+322,2,4,1166.0,data/157_ADOS_1_2.pkl,157,103.88148,114.10319,no candidate,validation,10,10
+323,1,1,602.0,data/185_ADOS_1_1.pkl,185,32.74048,44.810955,no candidate,train(short only),2,2
+323,1,2,564.0,data/12_ADOS_1_3.pkl,12,39.065784,56.588333,no candidate,train(short only),2,2
+323,1,4,602.0,data/4_ADOS_1_4.pkl,4,51.986652,66.323746,no candidate,train(short only),2,2
+324,1,1,1139.0,data/198_ADOS_1_1.pkl,198,6.4270554,25.030695,accepted,validation,4,4
+324,1,2,768.0,data/198_ADOS_1_2.pkl,198,15.00081,52.170647,no candidate,validation,3,3
+324,1,3,555.0,data/198_ADOS_1_3.pkl,198,13.940535,44.109566,no candidate,validation,4,4
+325,1,1,1446.0,data/200_ADOS_1_1.pkl,200,2.765586,46.925674,accepted,validation,6,6
+325,1,2,881.0,data/200_ADOS_1_2.pkl,200,21.1397,64.88519,no candidate,validation,4,4
+325,1,3,1957.0,data/200_ADOS_1_3.pkl,200,11.186073,36.6241,no candidate,validation,4,4
+326,1,1,750.0,data/203_ADOS_1_1.pkl,203,99.8259,105.441216,no candidate,train,16,16
+326,1,2,750.0,data/203_ADOS_1_2.pkl,203,20.1193,45.028507,no candidate,train,10,10
+326,1,3,1978.0,data/203_ADOS_1_3.pkl,203,2.8668926,20.373276,accepted,train,7,7
+326,1,4,750.0,data/203_ADOS_1_4.pkl,203,44.19288,57.412178,no candidate,train,21,21
+327,1,1,1233.0,data/206_ADOS_1_1.pkl,206,0.048218917,14.924539,accepted,train,3,3
+327,1,2,1233.0,data/206_ADOS_1_2.pkl,206,0.060038704,31.35059,accepted,train,2,2
+327,1,3,349.0,data/206_ADOS_1_3.pkl,206,1.8749967,38.151966,accepted,train,1,1
+327,1,4,349.0,data/206_ADOS_1_4.pkl,206,1.9330657,89.46831,accepted,train,1,1
+327,2,3,1805.0,data/206_ADOS_2_3.pkl,206,6.185212,41.368706,accepted,train,5,5
+327,2,4,1805.0,data/206_ADOS_2_4.pkl,206,9.951389,56.236298,no candidate,train,5,5
+327,3,2,153.0,data/206_ADOS_2_2.pkl,206,3.8184986,67.501274,accepted,train,1,1
+327,3,4,148.0,data/206_ADOS_3_4.pkl,206,8.373379,64.27228,no candidate,train,2,2
+328,1,2,751.0,data/208_ADOS_1_2.pkl,208,0.096159436,18.53191,accepted,train,2,2
+328,1,3,686.0,data/208_ADOS_1_3.pkl,208,0.06402339,41.259697,accepted,train,2,2
+328,1,4,1082.0,data/208_ADOS_1_4.pkl,208,0.13110432,64.833664,accepted,train,1,1
+328,2,4,1323.0,data/208_ADOS_2_4.pkl,208,6.0698276,60.35803,accepted,train,2,2
+329,1,1,1820.0,data/233_ADOS_1_2.pkl,233,21.338762,42.525845,no candidate,validation,12,12
+329,1,2,1310.0,data/88_ADOS_1_2.pkl,88,91.75779,100.84036,no candidate,validation,10,10
+329,1,3,1542.0,data/107_ADOS_1_3.pkl,107,18.126677,19.406576,no candidate,validation,1,1
+329,1,4,1034.0,data/118_ADOS_1_4.pkl,118,22.764011,38.559566,no candidate,validation,6,6

@@ -1,0 +1,81 @@
+# Protocol v7: the AWS round. CompactCTRGCN in both planted worlds with remedies, and the real
+# full-split cells, all under the length-controlled protocol, three seeds. Frozen before any
+# v7 cell is trained. Commit in REGISTRY.md. Definitions are those of v6.
+
+inherits: pilot_asdpose_v6.yaml
+
+length_protocol: >
+  As frozen in v6. Every v7 cell: training and validation segments shorter than 200 frames are
+  excluded, training uses a random 200-frame crop without tiling, test uses the centre window of
+  the test segments of at least 200 frames (3,834 of 4,751 on the full split; the host test count
+  is reported by the analysis). Lengths are never an input.
+
+model: >
+  CompactCTRGCN, fast configuration (25 epochs, batch 128, mixed precision), v1 train
+  settings otherwise; input normalization image; natural class prior
+seeds: "0, 1, 2 for every cell; world seed 0 for training masks unless stated"
+
+cells:
+  host_runs_mid:                       # planted host, missing runs, mid, worlds S and I
+    cells: [A_none, A_velocity, A_dropout, A_both, B_coorddrop]
+    worlds: [S, I]
+    runs: 30
+  host_runs_low:
+    cells: [A_none]
+    worlds: [S, I]
+    runs: 6
+  host_whole_mid:                      # whole-joint operator
+    cells: [A_none, A_dropout, B_coorddrop]
+    worlds: [S, I]
+    runs: 18
+  host_mask_realizations:
+    cells: [A_none]
+    worlds: [S]
+    world_seeds: [1, 2]
+    seeds: [0]
+    runs: 2
+  real_full_split:                     # natural cue present, no planting in training
+    cells: [A_none, A_velocity, A_dropout, A_both, B_coorddrop]
+    runs: 15
+  total_runs: 71
+  expected_cost: about 16 A10G-hours; USD 20 on-demand, about USD 10 spot; cap USD 100
+
+scoring_after_training:              # on the instance, then pulled; or locally if cheaper
+  host_models: >
+    clean, S and I test planting with the training operator (mid or low as trained),
+    three test-mask seeds [2000, 3000, 4000]; plus the v6 grid (zero, gapfill, conflow
+    x S, I, Sp at mid) on the A_none cells of both worlds
+  real_models: >
+    the v6 grid on the full test split of at least 200 frames; invariance-trained
+    reference = the host A_none World I cells of this round under the zero operator
+  length_recoverability: >
+    for every real model, Spearman of score with original length within
+    each class, and ridge regression of length from penultimate features (child-grouped
+    CV R^2); threshold fixed here: |Spearman| < 0.10 in both classes counts as "length
+    not exploited"
+
+criteria:
+  P1_validation_on_compact_length_protocol:
+    pass_if: >
+      SE(A_none, runs, mid) > 0 with CI excluding 0; SE(mid) - SE(low) > 0 with CI
+      excluding 0; the World I A_none cells read R with CI containing 0 under zero at both
+      strengths; SE range over the three test masks smaller than the CI half-width
+  P2_remedy_interaction:
+    report: >
+      for each remedy, gain_S - gain_I (clean AUC) with CI, and the change in R(f_S) with
+      CI, for both operators; the paper reports the table; no pass rule
+  P3_real_cells:
+    report: >
+      R per operator with raw AUCs for every cell, paired contrasts against A_none, the
+      invariance-trained reference beside them; three seeds; no single-model p-values
+  P4_length:
+    pass_if: >
+      every real cell meets the recoverability threshold above; otherwise the length cue
+      is reported as present and the affected contrasts are flagged
+  P5_equivalence:
+    statistic: AUC_clean(f_S) - AUC_clean(f_I) for A_none, Compact, mid
+    pass_if: 95% CI inside [-0.02, +0.02]
+
+queue_file: >
+  aws/queue_v7.txt (one line per run; order: host_runs_mid, real_full_split,
+  host_whole_mid, host_runs_low, host_mask_realizations)

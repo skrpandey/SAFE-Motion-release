@@ -1,0 +1,4 @@
+analysis,world,n_segments,n_children,mean_frac_zero_accel,mean_frac_zero_vel,mean_slope_transitions_per_joint,mean_frac_never_observed,mean_mean_abs_accel,mean_mean_abs_vel,severity_r2_ridge_oof,severity_r2_gb_oof,severity_corr_zero_accel,label_auc_lr,label_auc_lr_lo,label_auc_lr_hi,label_auc_gb,label_auc_gb_lo,label_auc_gb_hi
+post hoc,clean,1966,40,0.1933,0.1691,6.3472,0.1132,2.1682,1.6475,,,,0.627,0.573,0.685,0.643,0.598,0.687
+post hoc,S,1966,40,0.2549,0.1815,17.9367,0.1176,1.5392,1.3343,0.762,0.785,0.341,0.752,0.717,0.784,0.727,0.693,0.757
+post hoc,I,1966,40,0.2547,0.1814,17.9584,0.1175,1.5135,1.3171,0.738,0.757,0.289,0.595,0.544,0.648,0.603,0.561,0.643

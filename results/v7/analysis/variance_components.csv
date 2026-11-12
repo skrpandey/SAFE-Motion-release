@@ -1,0 +1,7 @@
+# post hoc: spread of the conditional MWI over seeds (index-paired), masks and identifier resamples
+cell,MWI,sd_seed_ddof1,sd_mask_ddof1,sd_bootstrap,seed_level_points
+"missing runs, mid",+0.751,0.107,0.006,0.053,+0.858; +0.644; +0.752
+"missing runs, low",+0.381,0.051,0.125,0.046,+0.343; +0.439; +0.362
+"whole-joint absence, mid",+0.473,0.046,0.056,0.036,+0.440; +0.453; +0.525
+"frozen frames, mid",+0.361,0.020,0.057,0.040,+0.338; +0.372; +0.373
+"arm confidence, mid",+0.550,0.048,0.019,0.034,+0.508; +0.602; +0.541

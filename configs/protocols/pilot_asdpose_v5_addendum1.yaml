@@ -1,0 +1,25 @@
+# Addendum 1 to pilot_asdpose_v5.yaml, frozen before the models named here are scored.
+# Reason: under v5, the cue-free reference D_qcsym_none (trained on well-tracked segments only,
+# so never exposed to heavy missingness) shows R > 0 on the real test split, so H10 fails as
+# frozen. The planted-world zero point (v3/v4) came from models trained WITH label-independent
+# degradation, which learn to ignore it. This addendum scores those models on the real test split
+# under the v5 intervention to tell the two readings apart.
+
+models_added:                      # this repo, cache/, trained on the QC host in v3 and v4
+  tcn_v3_I: pilot_v3_mid_I_A_none_s{0,1,2}      # TinyTCN, World I at mid (degradation-invariant, cue-free)
+  tcn_v3_S: pilot_v3_mid_S_A_none_s{0,1,2}      # TinyTCN, World S at mid (learned the planted cue)
+  compact_v4_I: pilot_v4_compact_runs_mid_I_A_none_s{0,1,2}
+  compact_v4_S: pilot_v4_compact_runs_mid_S_A_none_s{0,1,2}
+scoring: identical to v5 (same masks, seed 2000, nine conditions, full test split)
+
+criteria:
+  H10b_invariant_zero_point:
+    pass_if: tcn_v3_I and compact_v4_I both have R (runs, mid, full test) with CI containing 0,
+             AND tcn_v3_S and compact_v4_S both have R > 0 with CI excluding 0
+    meaning: >
+      R is zero for a model that learned to ignore degradation and positive for a model that
+      learned to use it, on the real test split as on the planted host. D_qcsym_none's positive R
+      then reads as an untrained response to degradation (degraded input scored as the class that
+      degradation resembles), which is tracking-quality dependence at deployment even though no
+      cue was learned. H10 stays a FAIL as frozen; its interpretation changes.
+  descriptive: the I-trained models' R on the whole mechanism and on the QC-sym subset

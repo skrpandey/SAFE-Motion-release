@@ -1,0 +1,108 @@
+# Protocol v10: identification control, real-data reference, mask stability. Written from
+# docs/reviews/2026-11-02_disposition.md §3.1 (external review CRITICAL 1, MAJOR 5, CRITICAL 2).
+# Frozen before any v10 run. Commit in REGISTRY.md. Definitions are those of v6 to v8 (operators,
+# worlds, severities, R, SE, length-controlled protocol, margins) unless restated here.
+
+frozen: true
+frozen_date: 2026-11-02
+frozen_commit: "422da37"
+purpose: >
+  (A) Measure the part of the ASDPose shortcut effect that does not come from a quality cue:
+  the SE of a model whose input cannot carry the cue. (B) Give the real ASDPose cells a matched
+  reference by retraining them with label-independent degradation on top of the natural
+  failures. (C) Measure how much the v9 shortcut effects move with the test-mask realization.
+depends_on: [pilot_asdpose_v6.yaml, pilot_asdpose_v7.yaml, pilot_asdpose_v8.yaml, replication_v9.yaml]
+inherits: pilot_asdpose_v8.yaml
+
+# ------------------------------------------------------------------ A. quality-blind control
+quality_blind:
+  cell: A_blind
+  definition: >
+    CompactCTRGCN with a fixed input transform that removes the cue: on every input segment,
+    training and test alike, joint-frames with confidence below 0.3 or coordinates equal to
+    zero are treated as missing, their coordinates are linearly interpolated across frames per
+    joint (the v6 gapfill rule; leading and trailing gaps copy the nearest observed frame), and
+    the confidence channel is dropped (confidence=False in the loader). The transform is part
+    of the model, applied after any test-time intervention, so the model sees motion only.
+  what_it_measures: >
+    the model can still respond to label-tied degradation through the motion evidence that
+    interpolation removes or distorts, and f_S and f_I can still learn different motion
+    representations; neither path uses the quality cue. SE(A_blind) is therefore the
+    information-loss and representation component of the contrast. The standard cell's SE
+    minus it is the cue-attributable part (point estimate; both intervals reported).
+  host: ASDPose host of v7 (length protocol, 40 test children, 1,966 host test segments)
+  mechanisms: [runs, whole]          # frozen frames cannot be blinded by interpolation; armruns
+                                     # plants no information loss, so its blind SE is zero by construction
+  strength: mid
+  worlds: [S, I]
+  seeds: [0, 1, 2]
+  model_and_training: as v7 (25 epochs, batch 128, AMP, image normalization, best val epoch)
+  scoring: >
+    as v7 matched scoring: own operator, worlds S and I, test mask seeds [2000, 3000, 4000];
+    plus gapfill at mid (expected to read near zero for a blind model, a check of the transform)
+  runs: 12
+  pass_rule:
+    A1_cue_attributable: >
+      for each mechanism, SE(A_blind) with its interval; SE(A_none) is the v7 value. The paper
+      reports SE as cue-attributable for that mechanism only if the upper end of the
+      SE(A_blind) interval is below 0.5 x SE(A_none) (0.378 for runs, 0.242 for whole).
+      Otherwise SE is reported as a mixed quantity and the information-loss share
+      SE(A_blind) / SE(A_none) is stated with its interval (paired ratio on the shared
+      resamples, clipped at [0, 2]).
+    A2_transform_check: >
+      the blind model's response to gapfill at mid has an interval containing zero (its input
+      is already gapfilled, so gapfill should change nothing beyond interpolation differences)
+
+# ------------------------------------------------------------------ B. real-data World I
+real_world_I:
+  definition: >
+    the five real cells of v7 (A_none, A_velocity, A_dropout, A_both, B_coorddrop) retrained on
+    the full ASDPose training split (length protocol) with missing-runs degradation at mid
+    strength planted in World I, that is with severities drawn independently of the label from
+    the same mixture as v7, applied on top of the natural tracking failures of each segment.
+    Mask seed 0, same deterministic per-segment masks as v7 World I. Three seeds.
+  what_it_measures: >
+    a model that has seen the planted degradation uncorrelated with the label, on the real
+    data, with the natural cue still present in its training set. Its response to the
+    missing-runs intervention on the real test split is the real-data reference for that cell.
+    The v7 real cell's response minus this reference is the part of the response that training
+    on the natural data without the planted degradation adds. It is not a measurement of
+    reliance on the natural cue (the reference model has also seen the natural cue); it says
+    whether the real models' responses exceed those of models made invariant to the operator.
+  scoring: >
+    real test split (3,834 segments) under missing runs at mid, worlds S and I, mask seed 2000
+    (as the v7 real grid), plus the other three operators at mid for the crossed reading, plus
+    gapfill; three test-mask seeds for the own operator
+  runs: 15
+  pass_rule: none; report per cell the response of the v7 real model, the response of its
+    World I counterpart, their paired difference with interval, and the clean AUCs of both
+  wording: >
+    "response relative to a real-data invariance reference"; no sentence may say the real
+    models rely on tracking quality unless the paired difference excludes zero for that cell
+    and the Section A reading supports a cue interpretation for that operator
+
+# ------------------------------------------------------------------ C. mask stability on v9
+mask_stability_v9:
+  definition: >
+    every A_none planted checkpoint of v9 (both hosts, both worlds, every mechanism and
+    strength, three seeds, every fold) scored on its fold's test subjects under its own
+    operator for test-mask seeds [2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000];
+    the three v9 seeds are included so the v9 values are reproduced exactly
+  statistics: >
+    per host and mechanism: SE for each mask seed (pooled out of fold, subject bootstrap as v9);
+    SE_mean, the mean over the ten masks, with a subject-bootstrap interval in which the mask
+    mean is taken inside each resample; the between-mask standard deviation of SE; the same for
+    R(f_S) and R(f_I) separately; the share of the single-mask SE variance that is mask
+    variance against seed and subject variance (one-way decomposition on the pooled scores)
+  checkpoints: about 342 (MMASD 150, UTD-MHAD 192); scoring only, no training
+  pass_rule: none. This part cannot change a v9 verdict. It is reported as a stability
+    analysis beside the v9 tables, with the sentence it supports fixed here, "SE on hosts of
+    this size moves by X between mask realizations; the v9 verdicts were made on one"
+
+# ------------------------------------------------------------------ run
+instance: one on-demand g5.2xlarge as v7 and v9, runtime guard 30 h, local mirror on
+expected_cost: >
+  27 Compact runs at about 7 min on the full split and about 4 min on the host, 2.5 to 3 h;
+  scoring of 342 checkpoints x 10 masks, 1 to 2 h; total under 6 h, about USD 8
+analysis: experiments/analyze_v10.py, smoke-tested on CPU before launch (outputs deleted)
+no_reruns: no v7, v8 or v9 cell is retrained; the v9 verdicts and the v7 tables stand
