@@ -1,0 +1,12 @@
+# R22: natural arm joint-frame patterns (six COCO-17 arm joints, whole segments) by class. Pattern planted by the operator:
+# 0 < confidence < 0.3 with nonzero coordinates (x or y nonzero). Missing joint: confidence 0, x = y = 0.
+# pattern_run_*: lengths of runs of consecutive frames of one joint in that pattern. Script: r22_natural_rate.py
+population,class,segments,arm_joint_frames,share_conf_between_0_and_0.3_nonzero_xy,share_conf_0_zero_xy,share_conf_0_nonzero_xy,share_conf_between_0_and_0.3_zero_xy,share_conf_at_least_0.3_zero_xy,share_conf_below_0.3,share_conf_0,pattern_runs,pattern_run_mean,pattern_run_median,pattern_run_p90,share_segments_with_pattern,pattern_share_of_conf_below_0.3
+"development host (QC-passing, >=200 frames)",non-SMM,8410,19429968,0.068269,0.062055,0.000000,0.000000,0.000000,0.130324,0.062055,276947,4.789581,2.000000,10.000000,0.931510,0.523838
+"development host (QC-passing, >=200 frames)",SMM,4162,9136200,0.060557,0.055440,0.000000,0.000000,0.000000,0.115997,0.055440,138963,3.981340,2.000000,8.000000,0.932244,0.522056
+"test host (QC-passing, >=200 frames)",non-SMM,1370,3141276,0.066478,0.055498,0.000000,0.000000,0.000000,0.121976,0.055498,41425,5.041062,2.000000,11.000000,0.916788,0.545010
+"test host (QC-passing, >=200 frames)",SMM,596,1585464,0.058129,0.055931,0.000000,0.000000,0.000000,0.114059,0.055931,22532,4.090227,2.000000,9.000000,0.926174,0.509636
+"development, all length-controlled (QC-failing included)",non-SMM,20397,46909104,0.067407,0.374434,0.000000,0.000000,0.000000,0.441840,0.374434,701537,4.507233,2.000000,9.000000,0.859293,0.152559
+"development, all length-controlled (QC-failing included)",SMM,5996,13096158,0.071764,0.143384,0.000000,0.000000,0.000000,0.215148,0.143384,235406,3.992405,2.000000,8.000000,0.948799,0.333558
+"test, all length-controlled (QC-failing included)",non-SMM,3048,7022052,0.069403,0.343891,0.000000,0.000000,0.000000,0.413294,0.343891,103754,4.697197,2.000000,10.000000,0.860236,0.167927
+"test, all length-controlled (QC-failing included)",SMM,786,2022624,0.068587,0.122740,0.000000,0.000000,0.000000,0.191326,0.122740,34543,4.016009,2.000000,9.000000,0.938931,0.358480

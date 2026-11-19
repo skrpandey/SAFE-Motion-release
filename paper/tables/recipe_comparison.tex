@@ -1,0 +1,59 @@
+\textit{(a) Model sets (three seeds per condition; per-fit, per-mask AUROC transformed, then averaged)}\\[2pt]
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ & Combined recipe & No remedy, published & No remedy, local refit \\
+Quantity & (local GPU) & (primary comparator) & (sensitivity comparator) \\
+\midrule
+Mean AUROC $(S,S)$ & 0.8980 & 0.8523 & 0.8546 \\
+Mean AUROC $(S,I)$ & 0.8256 & 0.7565 & 0.7591 \\
+Mean AUROC $(I,S)$ & 0.8861 & 0.8092 & 0.8102 \\
+Mean AUROC $(I,I)$ & 0.8830 & 0.8041 & 0.8071 \\
+Response \R{}$(f_S)$, logit & +0.618 [+0.531, +0.718] & +0.619 [+0.544, +0.707] & +0.624 [+0.543, +0.713] \\
+Response \R{}$(f_I)$, logit & +0.030 [+0.009, +0.056] & +0.032 [+0.002, +0.065] & +0.019 [$-$0.011, +0.049] \\
+TTI, logit & +0.588 [+0.506, +0.686] & +0.587 [+0.520, +0.667] & +0.605 [+0.537, +0.683] \\
+TTI, raw AUROC & +0.069 [+0.054, +0.088] & +0.091 [+0.072, +0.113] & +0.093 [+0.073, +0.113] \\
+Clean AUROC, Condition S & 0.861 [0.825, 0.888] & 0.802 [0.753, 0.844] & 0.807 [0.761, 0.845] \\
+Clean AUROC, Condition I & 0.884 [0.849, 0.912] & 0.814 [0.768, 0.854] & 0.814 [0.768, 0.854] \\
+Clean AUROC, S $-$ I & $-$0.024 [$-$0.035, $-$0.013] & $-$0.013 [$-$0.027, +0.001] & $-$0.007 [$-$0.023, +0.009] \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{(b) Paired changes in TTI (``published'' is the published no-remedy cell); the second interval of each scale also resamples seeds and masks}\\[2pt]
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Contrast & $\Delta$TTI, logit & seeds and masks & $\Delta$TTI, raw AUROC & seeds and masks \\
+\midrule
+Recipe $-$ published (primary) & +0.001 [$-$0.059, +0.062] & [$-$0.118, +0.115] & $-$0.022 [$-$0.031, $-$0.014] & [$-$0.053, +0.003] \\
+Recipe $-$ local refit (sensitivity) & $-$0.017 [$-$0.078, +0.040] & [$-$0.125, +0.084] & $-$0.023 [$-$0.033, $-$0.016] & [$-$0.054, +0.001] \\
+Local refit $-$ published (descriptive) & +0.018 [$-$0.012, +0.049] & & +0.002 [$-$0.002, +0.006] & \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{(c) Paired changes in clean AUROC}\\[2pt]
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Contrast & Condition S & Condition I \\
+\midrule
+Recipe $-$ published & +0.059 [+0.036, +0.084] & +0.070 [+0.046, +0.097] \\
+Recipe $-$ local refit & +0.054 [+0.034, +0.075] & +0.070 [+0.047, +0.095] \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{(d) Gates and decisions under the rules fixed in the protocol}\\[2pt]
+\begin{tabularx}{\linewidth}{@{}L{1.05}L{1.2}L{0.75}@{}}
+\toprule
+Rule & Observed & Decision \\
+\midrule
+Invariance gate (before the fits) & $x$, $y$, velocity channels: maximum difference 0 in the checked cases & pass \\
+Clean-performance gate (test-set interpretation gate) & Condition I mean clean test AUROC 0.884 ($\geq 0.75$) & pass \\
+Primary rule: reduction on both scales & logit interval includes zero; raw interval below zero & Reduction criterion not met \\
+Sensitivity: the same rule against the local refit & logit interval includes zero; raw interval below zero & Reduction criterion not met \\
+Clean AUROC preserved within $\pm 0.02$ & both changes above $+0.02$ & not met: clean AUROC rose \\
+Reference response within $\pm 0.05$, recipe & +0.030 [+0.009, +0.056] & equivalence not established \\
+Clean AUROC S $-$ I within $\pm 0.02$, recipe & $-$0.024 [$-$0.035, $-$0.013] & equivalence not established \\
+Largest logit reduction not excluded (primary) & 0.059 conditional; 0.118 with seeds and masks resampled & \\
+\bottomrule
+\end{tabularx}

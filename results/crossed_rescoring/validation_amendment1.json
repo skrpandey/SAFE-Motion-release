@@ -1,0 +1,47 @@
+{
+ "fit": "v7_I_w0_whole_mid_A_none_s0",
+ "checkpoint": "results/aws/repair_v14/cache/clean/pilot_v7_I_w0_whole_mid_A_none_s0.pt",
+ "checkpoint_sha256_16": "4ee08ae28e3c7e5a",
+ "stored_file": "results/aws/repair_v14/results/clean/v7/scores/v7_I_w0_whole_mid_A_none_s0.csv",
+ "rule": "conf",
+ "device": "cuda",
+ "device_name": "Quadro RTX 4000",
+ "torch": "2.5.1",
+ "protocol_commit": "40034c5",
+ "amendment": 1,
+ "tolerance": {
+  "max_abs_diff": 0.005,
+  "auroc_diff": 0.001,
+  "response_logit_diff": 0.002
+ },
+ "gpu_minutes": 0.22,
+ "columns": {
+  "clean": {
+   "max_abs_diff": 0.00037297559356685994,
+   "n_rows_differing": 1960,
+   "auroc_new": 0.7978886004017048,
+   "auroc_stored": 0.7978830892078578,
+   "auroc_diff": 5.511193847063112e-06
+  },
+  "armruns_S_mid_m2000": {
+   "max_abs_diff": 0.00036000427627558285,
+   "n_rows_differing": 1961,
+   "auroc_new": 0.750023269485132,
+   "auroc_stored": 0.7500496007446236,
+   "auroc_diff": 2.6331259491585435e-05
+  },
+  "armruns_I_mid_m2000": {
+   "max_abs_diff": 0.0004319817428588557,
+   "n_rows_differing": 1962,
+   "auroc_new": 0.7519828050751972,
+   "auroc_stored": 0.751983417430069,
+   "auroc_diff": 6.123548718095506e-07
+  }
+ },
+ "response_logit": {
+  "new": -0.0104789835217165,
+  "stored": -0.010341819815500752,
+  "diff": 0.00013716370621574825
+ },
+ "pass": true
+}

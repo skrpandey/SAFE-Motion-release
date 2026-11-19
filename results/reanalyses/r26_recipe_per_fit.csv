@@ -1,0 +1,20 @@
+# per-fit record of protocol v20 and of the published no-remedy cell; stored training logs and per-segment scores only
+model_set,fit,condition,seed,gpu,torch,code_commit,code_dirty,train_recipe,valid_rule,velocity,joint_dropout,epoch_budget,selected_epoch_clean,selection_changed_by_cleaning,val_auroc_clean,clean_test_auroc,train_minutes
+A_none_v15conf,v15conf_S_w0_armruns_mid_A_none_s0,S,0,NVIDIA A10G,2.5.1+cu118,a5b0575,,v15,coords,False,0.000000,25,24,True,0.845673,0.815103,6.80
+A_none_v15conf,v15conf_S_w0_armruns_mid_A_none_s1,S,1,NVIDIA A10G,2.5.1+cu118,a5b0575,,v15,coords,False,0.000000,25,18,False,0.845374,0.799911,6.80
+A_none_v15conf,v15conf_S_w0_armruns_mid_A_none_s2,S,2,NVIDIA A10G,2.5.1+cu118,a5b0575,,v15,coords,False,0.000000,25,16,False,0.837865,0.789499,6.80
+A_none_v15conf,v15conf_I_w0_armruns_mid_A_none_s0,I,0,NVIDIA A10G,2.5.1+cu118,a5b0575,,v15,coords,False,0.000000,25,15,False,0.813749,0.808753,6.80
+A_none_v15conf,v15conf_I_w0_armruns_mid_A_none_s1,I,1,NVIDIA A10G,2.5.1+cu118,a5b0575,,v15,coords,False,0.000000,25,25,False,0.809963,0.820846,6.80
+A_none_v15conf,v15conf_I_w0_armruns_mid_A_none_s2,I,2,NVIDIA A10G,2.5.1+cu118,a5b0575,,v15,coords,False,0.000000,25,19,False,0.803680,0.812872,6.80
+A_both,v20_S_w0_armruns_mid_A_both_s0,S,0,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,True,0.150000,25,24,False,0.936869,0.918593,12.40
+A_both,v20_S_w0_armruns_mid_A_both_s1,S,1,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,True,0.150000,25,24,False,0.867314,0.822922,12.58
+A_both,v20_S_w0_armruns_mid_A_both_s2,S,2,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,True,0.150000,25,23,False,0.868654,0.840448,12.55
+A_both,v20_I_w0_armruns_mid_A_both_s0,I,0,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,True,0.150000,25,24,False,0.927213,0.925954,12.55
+A_both,v20_I_w0_armruns_mid_A_both_s1,I,1,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,True,0.150000,25,24,False,0.835909,0.833471,12.56
+A_both,v20_I_w0_armruns_mid_A_both_s2,I,2,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,True,0.150000,25,25,False,0.897531,0.893174,12.54
+A_none_local,v20_S_w0_armruns_mid_A_none_s0,S,0,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,False,0.000000,25,22,False,0.845976,0.815662,12.36
+A_none_local,v20_S_w0_armruns_mid_A_none_s1,S,1,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,False,0.000000,25,18,False,0.847700,0.806503,12.43
+A_none_local,v20_S_w0_armruns_mid_A_none_s2,S,2,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,False,0.000000,25,22,False,0.839576,0.798100,12.42
+A_none_local,v20_I_w0_armruns_mid_A_none_s0,I,0,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,False,0.000000,25,18,False,0.820074,0.811316,12.43
+A_none_local,v20_I_w0_armruns_mid_A_none_s1,I,1,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,False,0.000000,25,18,False,0.811993,0.820016,12.42
+A_none_local,v20_I_w0_armruns_mid_A_none_s2,I,2,Quadro RTX 4000,2.5.1,7677893,True,v15,coords,False,0.000000,25,18,False,0.805069,0.810357,12.40

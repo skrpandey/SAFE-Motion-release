@@ -1,0 +1,56 @@
+{
+ "train_host_rows": 9859,
+ "validation_host_rows": 2713,
+ "development_host_rows": 12572,
+ "excluded_identifiers": [
+  322
+ ],
+ "alias_validation_rows": 11,
+ "alias_validation_rows_by_class": {
+  "SMM": 11,
+  "non-SMM": 0
+ },
+ "alias_rows_in_training": 0,
+ "train_rows_of_identifier_196_same_person": 16,
+ "validation_rows_after_removal": 2702,
+ "stored_training_logs": 218,
+ "host_fit_logs": 188,
+ "host_fit_logs_val_rows": [
+  [
+   2713,
+   2702
+  ]
+ ],
+ "fits_whose_selected_epoch_differs_under_original_rule": [
+  "v10_I_w0_whole_mid_A_blind_s2",
+  "v10_real_I_A_both_s0",
+  "v12_S_w0_frozen_mid_C_adversarial_s2",
+  "v15conf_S_w0_armruns_mid_A_none_s0",
+  "v16_I_w0_armruns_mid_A_none_s6",
+  "v7_I_w0_whole_mid_A_none_s0",
+  "v7_S_w0_runs_low_A_none_s1",
+  "v7_S_w0_runs_mid_A_both_s2",
+  "v7_S_w0_runs_mid_B_coorddrop_s0",
+  "v7_S_w1_runs_mid_A_none_s0",
+  "v7_real_A_velocity_s2",
+  "v8_I_w0_armruns_mid_A_dropout_s0",
+  "v8_I_w0_armruns_mid_A_dropout_s1",
+  "v8_S_w0_armruns_mid_A_dropout_s0"
+ ],
+ "confidence_only_headline_fits_changed": {
+  "v15conf_S_w0_armruns_mid_A_none_s0": {
+   "n_val_rows": 2713,
+   "n_val_rows_clean": 2702,
+   "selection_changed": true,
+   "selected_epoch_orig": 25,
+   "selected_epoch_clean": 24
+  },
+  "v16_I_w0_armruns_mid_A_none_s6": {
+   "n_val_rows": 2713,
+   "n_val_rows_clean": 2702,
+   "selection_changed": true,
+   "selected_epoch_orig": 18,
+   "selected_epoch_clean": 23
+  }
+ }
+}

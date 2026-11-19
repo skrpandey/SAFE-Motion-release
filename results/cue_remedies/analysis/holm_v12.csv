@@ -1,0 +1,8 @@
+# post hoc multiplicity sensitivity: p by percentile-interval inversion of the paired cluster bootstrap, conditional on fitted models and masks; Holm within the family and scale
+family,mechanism,cell,logit,raw,p_logit,p_raw,nominal_lowers,p_logit_holm,p_raw_holm,nominal_excludes_zero_logit,nominal_excludes_zero_raw,holm_excludes_zero_logit,holm_excludes_zero_raw,holm_both_scales
+remedies aimed at the cue (6),runs,C_groupdro,"-0.2973 [-0.3566, -0.2313]","-0.0510 [-0.0633, -0.0394]",0.001,0.001,True,0.006,0.006,True,True,True,True,True
+remedies aimed at the cue (6),runs,C_adversarial,"+0.0173 [-0.0441, +0.0704]","+0.0180 [+0.0052, +0.0306]",0.6027,0.01,False,0.6027,0.03,False,True,False,True,False
+remedies aimed at the cue (6),runs,C_augment,"-0.0292 [-0.0749, +0.0092]","-0.0091 [-0.0182, -0.0016]",0.1309,0.021,False,0.39269999999999994,0.042,False,True,False,True,False
+remedies aimed at the cue (6),frozen,C_groupdro,"-0.2476 [-0.3057, -0.1887]","-0.0382 [-0.0461, -0.0290]",0.001,0.001,True,0.006,0.006,True,True,True,True,True
+remedies aimed at the cue (6),frozen,C_adversarial,"-0.0689 [-0.1202, -0.0228]","-0.0108 [-0.0185, -0.0041]",0.004,0.001,True,0.016,0.006,True,True,True,True,True
+remedies aimed at the cue (6),frozen,C_augment,"-0.0307 [-0.0831, +0.0128]","-0.0062 [-0.0131, +0.0007]",0.1829,0.079,False,0.39269999999999994,0.079,False,False,False,False,False

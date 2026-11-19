@@ -1,0 +1,186 @@
+f1,child,nchild,ngroups,ass,split
+1,1,1,1,['PLS_1'],train
+2,3,1,3,['PLS_1'],train
+3,5,1,1,['ADOS_1'],test
+5,7,1,1,['ADOS_1'],train
+7,11,1,4,['ADOS_1'],train
+9,13,1,3,"['ADOS_1', 'PLS_1']",train
+10,15,1,2,['ADOS_1'],train
+12,17,1,3,['ADOS_2'],train
+13,18,1,3,['ADOS_1'],train
+14,20,1,1,['PLS_1'],train
+15,21,1,4,"['ADOS_1', 'ADOS_2']",train
+16,22,1,2,['PLS_1'],train
+17,24,1,1,['ADOS_1'],train
+18,25,1,2,"['Cognitive_1', 'PLS_1']",train
+19,26,1,2,['ADOS_1'],train
+21,28,1,3,['ADOS_1'],test
+22,29,1,1,['ADOS_1'],train
+23,30,1,2,['ADOS_1'],train
+24,31,1,2,['ADOS_1'],train
+25,32,1,3,['ADOS_1'],train
+28,35,1,1,['ADOS_1'],train
+30,37,1,2,['ADOS_1'],test
+31,38,1,1,['Cognitive_1'],train
+32,39,1,2,['ADOS_1'],train
+33,40,1,6,"['ADOS_1', 'ADOS_2']",train
+34,41,1,3,"['ADOS_1', 'ADOS_2']",train
+35,42,1,2,['Cognitive_1'],train
+36,43,1,3,['Cognitive_1'],train
+37,44,1,4,"['ADOS_1', 'ADOS_2']",train
+38,45,1,2,['ADOS_1'],train
+39,46,1,1,['Cognitive_1'],train
+40,47,1,1,['ADOS_1'],train
+42,49,1,1,['ADOS_1'],train
+44,51,1,1,['PLS_1'],train
+45,52,1,1,['ADOS_2'],train
+46,53,1,1,['Cognitive_1'],train
+47,54,1,2,['ADOS_1'],train
+48,55,1,1,['ADOS_1'],train
+49,56,1,1,['ADOS_1'],train
+51,58,1,1,['ADOS_1'],train
+52,59,1,3,['ADOS_1'],train
+53,60,1,1,['ADOS_1'],train
+54,61,1,2,['ADOS_1'],train
+55,62,1,2,['ADOS_1'],train
+56,63,1,2,['ADOS_1'],train
+59,67,1,1,['ADOS_1'],test
+61,69,1,1,['ADOS_1'],test
+62,70,1,2,"['ADOS_1', 'ADOS_2']",train
+63,71,1,1,['ADOS_1'],train
+64,72,1,1,['PLS_1'],train
+65,73,1,3,['ADOS_1'],train
+66,74,1,1,['ADOS_1'],test
+69,77,1,2,['Cognitive_1'],train
+71,79,1,1,['ADOS_1'],train
+72,80,1,1,['ADOS_1'],train
+73,81,1,1,['ADOS_1'],train
+75,83,1,2,['ADOS_1'],train
+77,85,1,3,['ADOS_1'],train
+78,86,1,2,['PLS_1'],train
+79,87,1,1,['ADOS_1'],train
+81,88,1,3,['ADOS_1'],train
+84,90,1,2,['ADOS_1'],train
+88,94,1,3,['PLS_1'],train
+93,97,1,1,['PLS_1'],train
+94,98,1,2,['ADOS_1'],train
+95,99,1,4,['ADOS_1'],train
+96,100,1,2,['ADOS_1'],train
+97,101,1,3,['ADOS_1'],train
+98,102,1,4,"['ADOS_1', 'PLS_1']",train
+99,103,1,1,['PLS_1'],train
+100,104,1,4,['ADOS_1'],train
+101,105,1,2,['PLS_1'],train
+103,107,1,1,['ADOS_1'],train
+105,108,1,3,"['ADOS_1', 'PLS_1']",train
+106,109,1,4,['ADOS_1'],train
+107,110,1,2,['PLS_1'],train
+108,111,1,2,['PLS_1'],test
+109,112,1,2,['ADOS_1'],train
+110,113,1,3,['PLS_1'],train
+111,114,1,2,['PLS_1'],train
+112,115,1,2,"['ADOS_1', 'ADOS_2']",train
+113,116,1,2,"['ADOS_1', 'Cognitive_1']",test
+115,118,1,4,"['ADOS_1', 'PLS_1']",train
+117,120,1,1,['PLS_1'],train
+118,121,1,4,"['ADOS_1', 'PLS_1']",train
+119,122,1,3,['ADOS_1'],train
+120,123,1,1,['PLS_1'],train
+121,124,1,2,['PLS_1'],train
+123,126,1,2,['ADOS_1'],train
+125,128,1,1,['PLS_1'],train
+126,129,1,2,['PLS_1'],train
+127,130,1,2,['PLS_1'],train
+130,133,1,1,['PLS_1'],train
+131,134,1,1,['PLS_1'],train
+133,135,1,3,['ADOS_1'],train
+135,138,1,3,['ADOS_1'],train
+136,140,1,3,['ADOS_1'],train
+138,142,1,2,['ADOS_1'],train
+139,143,1,3,['ADOS_1'],test
+140,144,1,1,['ADOS_1'],train
+141,145,1,4,['ADOS_1'],train
+142,146,1,2,['ADOS_1'],train
+143,148,1,2,['PLS_1'],train
+144,149,1,3,['ADOS_1'],train
+145,150,1,2,['ADOS_1'],train
+147,152,1,4,['ADOS_1'],train
+149,154,1,2,['ADOS_1'],train
+150,155,1,1,['ADOS_1'],train
+151,158,1,1,['PLS_1'],train
+152,159,1,2,['ADOS_1'],train
+154,162,1,3,['ADOS_1'],train
+155,163,1,4,['ADOS_1'],train
+156,164,1,2,['ADOS_1'],test
+158,167,1,1,['ADOS_1'],train
+160,170,1,2,['ADOS_1'],train
+161,171,1,2,['ADOS_1'],train
+164,173,1,3,['ADOS_1'],train
+167,174,1,1,['ADOS_1'],train
+168,177,1,1,['ADOS_1'],train
+169,178,1,1,['ADOS_1'],train
+171,179,1,2,['ADOS_1'],train
+172,180,1,2,['ADOS_1'],train
+173,181,1,3,"['ADOS_1', 'ADOS_2']",train
+174,182,1,3,['ADOS_1'],train
+177,184,1,2,['PLS_1'],train
+178,186,1,2,['ADOS_1'],train
+179,187,1,1,['ADOS_1'],train
+187,189,1,3,['ADOS_1'],train
+188,191,1,1,['PLS_1'],train
+194,193,1,1,['ADOS_1'],train
+196,194,1,1,['ADOS_1'],train
+197,195,1,1,['Cognitive_1'],train
+199,196,1,4,['ADOS_1'],train
+205,197,1,1,['PLS_1'],train
+208,199,1,1,['ADOS_1'],train
+213,201,1,3,"['ADOS_1', 'Cognitive_1']",train
+214,202,1,1,['ADOS_2'],train
+217,204,1,2,['ADOS_1'],train
+218,205,1,2,['ADOS_1'],train
+221,207,1,3,['ADOS_1'],train
+222,209,1,3,"['ADOS_1', 'PLS_1']",train
+223,210,1,1,['ADOS_1'],train
+224,211,1,1,['ADOS_1'],train
+226,212,1,1,['ADOS_1'],train
+228,213,1,4,"['ADOS_1', 'PLS_1']",train
+230,215,1,1,['PLS_1'],train
+236,217,1,3,"['ADOS_1', 'PLS_1']",train
+240,218,1,3,['ADOS_1'],train
+243,220,1,2,['ADOS_1'],train
+244,221,1,1,['ADOS_1'],train
+246,223,1,4,['ADOS_1'],train
+248,224,1,1,['ADOS_1'],train
+249,225,1,1,['ADOS_1'],train
+251,226,1,2,['ADOS_1'],train
+255,227,1,4,"['PLS_1', 'PLS_2']",train
+261,230,1,1,['ADOS_1'],train
+263,231,1,3,['ADOS_1'],train
+264,232,1,1,['ADOS_1'],train
+265,233,1,3,['ADOS_1'],train
+266,234,1,1,['ADOS_1'],train
+268,235,1,2,"['ADOS_1', 'PLS_1']",train
+269,236,1,1,['PLS_1'],train
+275,239,1,1,['ADOS_1'],train
+280,240,1,2,['PLS_1'],train
+281,241,1,1,['ADOS_1'],train
+283,2,1,1,['ADOS_1'],train
+284,4,1,3,['ADOS_1'],train
+288,14,1,6,"['ADOS_1', 'ADOS_2']",train
+290,23,1,1,['ADOS_1'],train
+296,141,1,2,['ADOS_1'],test
+297,147,1,3,['ADOS_1'],test
+298,156,1,2,['ADOS_1'],train
+301,161,1,2,['ADOS_1'],train
+303,169,1,1,['ADOS_1'],test
+310,183,1,3,['ADOS_1'],test
+311,185,1,3,['ADOS_1'],test
+315,188,1,1,['ADOS_1'],train
+319,190,1,3,['ADOS_1'],train
+321,192,1,3,['ADOS_1'],train
+322,194,1,1,['ADOS_1'],train
+324,198,1,1,['ADOS_1'],train
+325,200,1,1,['ADOS_1'],train
+326,203,1,1,['ADOS_1'],train
+327,206,1,6,"['ADOS_1', 'ADOS_2']",train
+328,208,1,4,"['ADOS_1', 'ADOS_2']",train

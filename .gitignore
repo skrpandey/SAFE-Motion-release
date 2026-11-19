@@ -1,0 +1,11 @@
+# Data, caches, checkpoints and training outputs are not part of the repository
+/cache/
+/data/
+/results/fits/
+*.pt
+*.pth
+*.pkl
+*.npz
+*.npy
+__pycache__/
+*.pyc

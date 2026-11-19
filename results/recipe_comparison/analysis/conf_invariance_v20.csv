@@ -1,0 +1,19 @@
+cell,valid_rule,mask_seed,path,comparison,n_segments,max_abs_diff_xy_velocity,segments_with_any_diff,conf_channel_segments_with_diff
+A_both,coords,2000,evaluation (centre crop),S vs I,1966,0.000e+00,0,1966
+A_both,coords,2000,evaluation (centre crop),S vs clean,1966,0.000e+00,0,1959
+A_both,coords,2000,evaluation (centre crop),I vs clean,1966,0.000e+00,0,1958
+A_both,coords,2000,"training (matched crops, flips, dropout; seed 0)",S vs I,1966,0.000e+00,0,1966
+A_both,coords,2000,"training (matched crops, flips, dropout; seed 0)",S vs clean,1966,0.000e+00,0,1955
+A_both,coords,2000,"training (matched crops, flips, dropout; seed 0)",I vs clean,1966,0.000e+00,0,1951
+A_both,coords,3000,evaluation (centre crop),S vs I,1966,0.000e+00,0,1966
+A_both,coords,3000,evaluation (centre crop),S vs clean,1966,0.000e+00,0,1958
+A_both,coords,3000,evaluation (centre crop),I vs clean,1966,0.000e+00,0,1959
+A_both,coords,3000,"training (matched crops, flips, dropout; seed 0)",S vs I,1966,0.000e+00,0,1966
+A_both,coords,3000,"training (matched crops, flips, dropout; seed 0)",S vs clean,1966,0.000e+00,0,1954
+A_both,coords,3000,"training (matched crops, flips, dropout; seed 0)",I vs clean,1966,0.000e+00,0,1957
+A_both,coords,4000,evaluation (centre crop),S vs I,1966,0.000e+00,0,1966
+A_both,coords,4000,evaluation (centre crop),S vs clean,1966,0.000e+00,0,1958
+A_both,coords,4000,evaluation (centre crop),I vs clean,1966,0.000e+00,0,1959
+A_both,coords,4000,"training (matched crops, flips, dropout; seed 0)",S vs I,1966,0.000e+00,0,1966
+A_both,coords,4000,"training (matched crops, flips, dropout; seed 0)",S vs clean,1966,0.000e+00,0,1955
+A_both,coords,4000,"training (matched crops, flips, dropout; seed 0)",I vs clean,1966,0.000e+00,0,1955

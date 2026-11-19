@@ -1,0 +1,16 @@
+# R24 extra: length grid and frame-rate field by class. share_length_*: segment lengths (frames) on a 25-frame grid or on a
+# 30-frame grid (30k or 30k+1). share_fps_field_*: the per-segment fps value of the release annotations (dataset.pkl
+# 'fps', copied to the SAFE-SMM cache index as fps_unreliable)
+population,partition,class,segments,share_length_multiple_of_25,share_length_30k_or_30k_plus_1,share_fps_field_25,share_fps_field_30,identifiers_with_fps_30
+all segments,development,non-SMM,24967,0.673529,0.172588,1.000000,0.000000,0
+all segments,development,SMM,7210,0.210957,0.814979,0.200416,0.799584,252
+all segments,test,non-SMM,3694,0.695181,0.165945,1.000000,0.000000,0
+all segments,test,SMM,1057,0.299905,0.726585,0.285714,0.714286,30
+length-controlled (>= 200 frames),development,non-SMM,20397,0.665294,0.145659,1.000000,0.000000,0
+length-controlled (>= 200 frames),development,SMM,5996,0.141428,0.886925,0.104403,0.895597,250
+length-controlled (>= 200 frames),test,non-SMM,3048,0.685367,0.138780,1.000000,0.000000,0
+length-controlled (>= 200 frames),test,SMM,786,0.155216,0.865140,0.110687,0.889313,29
+"planted host (QC-passing, >= 200 frames)",development,non-SMM,8410,0.650297,0.145184,1.000000,0.000000,0
+"planted host (QC-passing, >= 200 frames)",development,SMM,4162,0.140317,0.888996,0.098510,0.901490,240
+"planted host (QC-passing, >= 200 frames)",test,non-SMM,1370,0.685401,0.137226,1.000000,0.000000,0
+"planted host (QC-passing, >= 200 frames)",test,SMM,596,0.151007,0.872483,0.105705,0.894295,28

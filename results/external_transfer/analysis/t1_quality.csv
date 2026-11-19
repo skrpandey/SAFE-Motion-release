@@ -1,0 +1,4 @@
+classifier,auc,ci_lo,ci_hi,null_mean,null_p95,perm_p,asdpose_standard_reference
+asdpose_fit_lr,0.5349,0.4894,0.5787,,,,0.7140
+within_set_lr,0.5571,0.4998,0.6164,0.5008,0.5595,0.0796,0.7140
+within_set_gb,0.5605,0.5081,0.6118,0.5057,0.5538,0.0348,0.7140

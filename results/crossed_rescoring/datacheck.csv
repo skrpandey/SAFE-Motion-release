@@ -1,0 +1,29 @@
+split,operator,policy_or_world,mask_seed,n_segments,n_joint_frames,conf_pos_coords_zero,conf_zero_coords_nonzero,segments_with_disagreement
+development,clean,-,-,12572,80937476,0,0,0
+development,runs,I,0 (training assignment),12572,80937476,0,0,0
+development,runs,S,0 (training assignment),12572,80937476,0,0,0
+development,whole,I,0 (training assignment),12572,80937476,0,0,0
+development,whole,S,0 (training assignment),12572,80937476,0,0,0
+development,frozen,I,0 (training assignment),12572,80937476,0,0,0
+development,frozen,S,0 (training assignment),12572,80937476,0,0,0
+test,clean,-,-,1966,13392430,0,0,0
+test,runs,S,2000,1966,13392430,0,0,0
+test,runs,S,3000,1966,13392430,0,0,0
+test,runs,S,4000,1966,13392430,0,0,0
+test,runs,I,2000,1966,13392430,0,0,0
+test,runs,I,3000,1966,13392430,0,0,0
+test,runs,I,4000,1966,13392430,0,0,0
+test,whole,S,2000,1966,13392430,0,0,0
+test,whole,S,3000,1966,13392430,0,0,0
+test,whole,S,4000,1966,13392430,0,0,0
+test,whole,I,2000,1966,13392430,0,0,0
+test,whole,I,3000,1966,13392430,0,0,0
+test,whole,I,4000,1966,13392430,0,0,0
+test,frozen,S,2000,1966,13392430,0,0,0
+test,frozen,S,3000,1966,13392430,0,0,0
+test,frozen,S,4000,1966,13392430,0,0,0
+test,frozen,I,2000,1966,13392430,0,0,0
+test,frozen,I,3000,1966,13392430,0,0,0
+test,frozen,I,4000,1966,13392430,0,0,0
+test,armruns (control),S,2000,1966,13392430,75001,0,1484
+test,armruns (control),I,2000,1966,13392430,78040,0,1464

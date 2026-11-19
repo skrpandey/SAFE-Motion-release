@@ -1,0 +1,80 @@
+[
+ {
+  "name": "v13_I_w0_armruns_mid_A_none_s0",
+  "path": "cache/repair_v14/clean/pilot_v13_I_w0_armruns_mid_A_none_s0.pt",
+  "proto": "v13",
+  "arch": "compact",
+  "world": "I",
+  "world_seed": 0,
+  "mechanism": "armruns",
+  "strength": "mid",
+  "cell": "A_none",
+  "seed": 0,
+  "valid_rule": "coords"
+ },
+ {
+  "name": "v13_I_w0_armruns_mid_A_none_s1",
+  "path": "cache/repair_v14/clean/pilot_v13_I_w0_armruns_mid_A_none_s1.pt",
+  "proto": "v13",
+  "arch": "compact",
+  "world": "I",
+  "world_seed": 0,
+  "mechanism": "armruns",
+  "strength": "mid",
+  "cell": "A_none",
+  "seed": 1,
+  "valid_rule": "coords"
+ },
+ {
+  "name": "v13_I_w0_armruns_mid_A_none_s2",
+  "path": "cache/repair_v14/clean/pilot_v13_I_w0_armruns_mid_A_none_s2.pt",
+  "proto": "v13",
+  "arch": "compact",
+  "world": "I",
+  "world_seed": 0,
+  "mechanism": "armruns",
+  "strength": "mid",
+  "cell": "A_none",
+  "seed": 2,
+  "valid_rule": "coords"
+ },
+ {
+  "name": "v13_S_w0_armruns_mid_A_none_s0",
+  "path": "cache/repair_v14/clean/pilot_v13_S_w0_armruns_mid_A_none_s0.pt",
+  "proto": "v13",
+  "arch": "compact",
+  "world": "S",
+  "world_seed": 0,
+  "mechanism": "armruns",
+  "strength": "mid",
+  "cell": "A_none",
+  "seed": 0,
+  "valid_rule": "coords"
+ },
+ {
+  "name": "v13_S_w0_armruns_mid_A_none_s1",
+  "path": "cache/repair_v14/clean/pilot_v13_S_w0_armruns_mid_A_none_s1.pt",
+  "proto": "v13",
+  "arch": "compact",
+  "world": "S",
+  "world_seed": 0,
+  "mechanism": "armruns",
+  "strength": "mid",
+  "cell": "A_none",
+  "seed": 1,
+  "valid_rule": "coords"
+ },
+ {
+  "name": "v13_S_w0_armruns_mid_A_none_s2",
+  "path": "cache/repair_v14/clean/pilot_v13_S_w0_armruns_mid_A_none_s2.pt",
+  "proto": "v13",
+  "arch": "compact",
+  "world": "S",
+  "world_seed": 0,
+  "mechanism": "armruns",
+  "strength": "mid",
+  "cell": "A_none",
+  "seed": 2,
+  "valid_rule": "coords"
+ }
+]

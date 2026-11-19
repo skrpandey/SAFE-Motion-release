@@ -1,0 +1,32 @@
+item,value,note
+"external AUROC range, all 25 groups",0.500 to 0.650,"min abl_velocity_v3norm, max v1"
+"external AUROC range, excluding velocity-only v3-norm ablation and the two permuted controls",0.564 to 0.650,"min v3_noconf_family, max v1; 22 groups"
+positives per category,armflapping 41; handaction 9; headbanging 33; spinning 44,negatives 423
+"head-banging AUROC, ours_v10_A_both","0.510 [0.391, 0.620]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, ours_v10_A_dropout","0.556 [0.433, 0.671]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, ours_v10_A_none","0.572 [0.463, 0.675]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, ours_v10_A_velocity","0.550 [0.438, 0.661]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, ours_v10_B_coorddrop","0.547 [0.434, 0.651]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, ours_v7_A_both","0.486 [0.387, 0.580]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, ours_v7_A_dropout","0.493 [0.389, 0.590]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, ours_v7_A_none","0.559 [0.455, 0.660]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, ours_v7_A_velocity","0.494 [0.386, 0.596]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, ours_v7_B_coorddrop","0.568 [0.460, 0.669]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, abl_dropout","0.499 [0.393, 0.602]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, abl_dropout_v3norm","0.506 [0.391, 0.610]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, abl_velocity","0.479 [0.376, 0.584]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, abl_velocity_v3norm","0.450 [0.333, 0.562]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, v1","0.513 [0.398, 0.622]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, v2_family","0.482 [0.382, 0.577]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, v3","0.502 [0.401, 0.602]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, permuted_v1","0.413 [0.307, 0.516]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, permuted_v2","0.610 [0.494, 0.730]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, v3_noconf_family","0.509 [0.414, 0.597]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, agcn_base","0.496 [0.386, 0.597]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, agcn_remedies","0.433 [0.332, 0.529]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, base_no_remedies","0.544 [0.423, 0.662]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, stgcn_base","0.468 [0.338, 0.592]",33 head-banging positives against all 423 negatives
+"head-banging AUROC, stgcn_remedies","0.436 [0.337, 0.537]",33 head-banging positives against all 423 negatives
+"arm-confidence reference R(f_I), mask mean, four decimals","+0.032502 [+0.000281, +0.066623]",groups_masks.csv
+arm-confidence R_I_ci from effects_masks,"+0.032502 [+0.000281, +0.066623]",
+one-seed training-mask realization cells (exceptions to three seeds),v7_S_w1_runs_mid_A_none_s0; v7_S_w2_runs_mid_A_none_s0,"World S missing runs mid, training-mask seeds 1 and 2, seed 0 only"

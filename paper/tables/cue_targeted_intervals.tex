@@ -1,0 +1,13 @@
+\begin{tabular}{@{}llccc@{}}
+\toprule
+Operator & Method & TTI, logit & TTI, raw AUROC & $\Delta$TTI, raw AUROC \\
+\midrule
+missing runs & Group DRO & +0.454 [+0.361, +0.564] & +0.080 [+0.066, +0.096] & $-$0.051 [$-$0.063, $-$0.039] \\
+ & adversarial head & +0.769 [+0.669, +0.880] & +0.149 [+0.131, +0.168] & +0.018 [+0.005, +0.031] \\
+ & operator augmentation & +0.722 [+0.624, +0.828] & +0.122 [+0.105, +0.141] & $-$0.009 [$-$0.018, $-$0.002] \\
+\addlinespace
+frozen frames & Group DRO & +0.113 [+0.080, +0.153] & +0.020 [+0.014, +0.026] & $-$0.038 [$-$0.046, $-$0.029] \\
+ & adversarial head & +0.292 [+0.222, +0.360] & +0.047 [+0.037, +0.055] & $-$0.011 [$-$0.018, $-$0.004] \\
+ & operator augmentation & +0.330 [+0.273, +0.384] & +0.051 [+0.042, +0.060] & $-$0.006 [$-$0.013, +0.001] \\
+\bottomrule
+\end{tabular}

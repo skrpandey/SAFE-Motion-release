@@ -1,0 +1,20 @@
+extractor,classifier,auc,ci_lo,ci_hi,perm_p,null_p95
+mediapipe,asdpose_fit_lr,0.3846,0.3370,0.4342,,
+mediapipe,within_set_lr,0.6984,0.6487,0.7477,0.0050,0.6568
+mediapipe,within_set_gb,0.7153,0.6690,0.7606,0.0050,0.5740
+rtmpose,stat q_lowconf class 0,,0.2053,0.2799,,
+rtmpose,stat q_lowconf class 1,,0.1541,0.2479,,
+mediapipe,stat q_lowconf class 0,,0.2291,0.2770,,
+mediapipe,stat q_lowconf class 1,,0.2865,0.3544,,
+rtmpose,stat q_missing class 0,,0.0000,0.0826,,
+rtmpose,stat q_missing class 1,,0.0000,0.0443,,
+mediapipe,stat q_missing class 0,,0.0000,0.0980,,
+mediapipe,stat q_missing class 1,,0.0350,0.1626,,
+rtmpose,stat q_frozen class 0,,0.0553,0.2110,,
+rtmpose,stat q_frozen class 1,,0.0151,0.2060,,
+mediapipe,stat q_frozen class 0,,0.0000,0.0897,,
+mediapipe,stat q_frozen class 1,,0.0151,0.1303,,
+rtmpose,stat q_arm_lowconf class 0,,0.1200,0.2343,,
+rtmpose,stat q_arm_lowconf class 1,,0.0692,0.2078,,
+mediapipe,stat q_arm_lowconf class 0,,0.1650,0.2273,,
+mediapipe,stat q_arm_lowconf class 1,,0.3058,0.3442,,

@@ -1,0 +1,10 @@
+{
+ "hgb_length_only_fit_dev_all_test_all": 0.9035256999639908,
+ "hgb_length_only_fit_dev_ge200_test_ge200": 0.9469893911161869,
+ "rank_auroc_length_for_smm_dev_all": 0.40092862939690654,
+ "rank_auroc_length_for_smm_test_all": 0.3754956386868885,
+ "recording_groups": 1116,
+ "recording_groups_smm30_and_nonsmm25": 931,
+ "recording_groups_smm_at_both_25_and_30": 0,
+ "recording_groups_nonsmm_at_30": 0
+}

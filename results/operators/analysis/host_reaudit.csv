@@ -1,0 +1,5 @@
+analysis,split,classifier,n_segments,n_children,auc,ci_lo,ci_hi,note
+post hoc,host validation,logistic regression,2713,57,0.5379,0.4948,0.5985,fit on host training children; four natural tracking statistics; final 200-frame host
+post hoc,host validation,gradient boosting,2713,57,0.5533,0.5259,0.5851,fit on host training children; four natural tracking statistics; final 200-frame host
+post hoc,host test,logistic regression,1966,40,0.5367,0.4976,0.5737,fit on host training children; four natural tracking statistics; final 200-frame host
+post hoc,host test,gradient boosting,1966,40,0.5643,0.5284,0.5991,fit on host training children; four natural tracking statistics; final 200-frame host

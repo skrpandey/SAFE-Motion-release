@@ -1,0 +1,114 @@
+# Publication export of an internally retained frozen protocol (freeze commit below). Administrative
+# notes and metadata were edited for publication; the scientific settings, analysis rules and the
+# timing of specification relative to fitting are unchanged.
+# Protocol v19: Experiment A, verified-person development and test split (confidence-only, no remedy).
+# Added on 2026-11-18, after earlier results had been examined, as a separate check. Frozen and committed
+# before any fit under it is trained or scored. Definitions (host, operator, worlds/conditions, severities,
+# R, TTI (= MWI), mask-mean statistics, length protocol, recipe v15) are those of v13, v15conf and v16
+# unless restated here.
+#
+# Question: does the confidence-only interaction remain when development and test persons are
+# verified to be distinct? Development uses only the 170 development identifiers that the identity
+# audit (results/identity_audit/DECISION.md) matched to released recordings (169 persons), split
+# into optimization training and validation BY PERSON; unmatched identifiers are excluded from
+# development. Evaluation uses only the 18 test identifiers matched to 18 distinct persons, none of
+# whom is a development person. This is a different (smaller) training cohort: its TTI is not a
+# controlled estimate of the effect of removing leakage. Either outcome is reported.
+
+frozen: true
+frozen_date: 2026-11-18
+frozen_commit: "5f31efa"
+status: check added after earlier results had been examined; within-project prespecification only
+inherits: confonly_extension.yaml   # cell A_none (CompactCTRGCN, coords rule), recipe v15
+
+cells:
+  A_none:
+    method: no remedy, as v16 A_none (CompactCTRGCN, c_in 3, coords valid rule, corrected loader)
+mechanism: armruns
+strength: mid
+worlds: [S, I]
+world_seed: 0
+seeds: [0, 1, 2]
+runs: "1 cell x 2 worlds x 3 seeds = 6"
+model_and_training: as v16 A_none (25 epochs, batch 128, AMP, AdamW 1e-3 / 1e-4, cosine, image
+  normalisation, horizontal flip), SM_TRAIN_RECIPE=v15
+command: >
+  SM_TRAIN_RECIPE=v15 python experiments/train_asdpose.py --proto v19 --amp --batch-size 128
+  --epochs 25 --workers 6 --mechanism armruns --strength mid --repair-protocol
+  configs/protocols/mapped_persons.yaml --arch compact --cell A_none --world {S,I} --seed {0,1,2}
+
+# ------------------------------------------------------------------ data
+person_split:
+  rule: >
+    Length-controlled rows (n_frames >= 200) of the release training partition whose identifier is
+    a key of dev_identifiers. Persons = sorted unique values of dev_identifiers over those rows.
+    Validation persons = numpy RandomState(seed).choice(persons, int(len(persons) * val_fraction),
+    replace=False); every row of a validation person goes to validation, all others to optimization
+    training. Then the QC host filter (both classes) is applied to both, as in the planted host.
+    The training-mask mixture weight of Condition I is the SMM share of these training plus
+    validation rows (planted.build_masks), as in every planted protocol.
+  val_fraction: 0.2
+  seed: 0
+  dev_identifiers: {1: 1, 2: 3, 5: 7, 7: 11, 9: 13, 10: 15, 12: 17, 13: 18, 14: 20, 15: 21, 16: 22, 17: 24, 18: 25, 19: 26,
+  22: 29, 23: 30, 24: 31, 25: 32, 28: 35, 31: 38, 32: 39, 33: 40, 34: 41, 35: 42, 36: 43, 37: 44, 38: 45,
+  39: 46, 40: 47, 42: 49, 44: 51, 45: 52, 46: 53, 47: 54, 48: 55, 49: 56, 51: 58, 52: 59, 53: 60, 54: 61,
+  55: 62, 56: 63, 62: 70, 63: 71, 64: 72, 65: 73, 69: 77, 71: 79, 72: 80, 73: 81, 75: 83, 77: 85, 78: 86,
+  79: 87, 81: 88, 84: 90, 88: 94, 93: 97, 94: 98, 95: 99, 96: 100, 97: 101, 98: 102, 99: 103, 100: 104,
+  101: 105, 103: 107, 105: 108, 106: 109, 107: 110, 109: 112, 110: 113, 111: 114, 112: 115, 115: 118,
+  117: 120, 118: 121, 119: 122, 120: 123, 121: 124, 123: 126, 125: 128, 126: 129, 127: 130, 130: 133,
+  131: 134, 133: 135, 135: 138, 136: 140, 138: 142, 140: 144, 141: 145, 142: 146, 143: 148, 144: 149,
+  145: 150, 147: 152, 149: 154, 150: 155, 151: 158, 152: 159, 154: 162, 155: 163, 158: 167, 160: 170,
+  161: 171, 164: 173, 167: 174, 168: 177, 169: 178, 171: 179, 172: 180, 173: 181, 174: 182, 177: 184,
+  178: 186, 179: 187, 187: 189, 188: 191, 194: 193, 196: 194, 197: 195, 199: 196, 205: 197, 208: 199,
+  213: 201, 214: 202, 217: 204, 218: 205, 221: 207, 222: 209, 223: 210, 224: 211, 226: 212, 228: 213,
+  230: 215, 236: 217, 240: 218, 243: 220, 244: 221, 246: 223, 248: 224, 249: 225, 251: 226, 255: 227,
+  261: 230, 263: 231, 264: 232, 265: 233, 266: 234, 268: 235, 269: 236, 275: 239, 280: 240, 281: 241,
+  283: 2, 284: 4, 288: 14, 290: 23, 298: 156, 301: 161, 315: 188, 319: 190, 321: 192, 322: 194, 324: 198,
+  325: 200, 326: 203, 327: 206, 328: 208}
+  test_identifiers: {3: 5, 21: 28, 30: 37, 59: 67, 61: 69, 66: 74, 68: 76, 108: 111, 113: 116, 116: 119, 139: 143, 156: 164,
+  296: 141, 297: 147, 303: 169, 304: 175, 310: 183, 311: 185}
+  check: no person of test_identifiers is a value of dev_identifiers (asserted by the trainer)
+val_exclude_ids: []
+val_exclude_rule: none needed; the split is by person, so no person is in both training and validation
+
+selection:
+  metric: validation AUROC, first epoch reaching the maximum (unchanged); every epoch state stored
+outputs:
+  epoch_dir: results/mapped_persons/epochs
+  cache_root: cache/v19
+  scores: results/mapped_persons/clean (experiments/score_confonly_corrected.py --proto v19 --cache-dir cache/v19/clean)
+  analysis: results/mapped_persons/analysis (experiments/analyze_mapped_persons.py)
+note: protocol v19, Experiment A (verified-person split), confidence-only no remedy
+
+# ------------------------------------------------------------------ scoring
+scoring: >
+  As v16: every checkpoint is scored on all 1,966 host test rows (clean; armruns at mid in policies
+  S and I with test mask seeds 2000, 3000, 4000; the other operators at mask 2000). Test masks are
+  built on all host test rows exactly as in v15conf and v16, so the 18-person rows carry the same
+  planted inputs as in the published comparison. The analysis uses only the rows of the 18
+  test_identifiers (866 rows, 223 SMM).
+
+# ------------------------------------------------------------------ gate and analysis
+gate:
+  G19_clean: mean clean AUROC of the three Condition I models on the 18-person rows >= 0.75. Reported
+    either way; if it fails, P19_1 is reported but not interpreted as a cue-specific interaction.
+primary:
+  P19_1: TTI on the logit scale (mean over seeds and the three masks of per-model R = logit AUROC(S)
+    - logit AUROC(I), Condition S minus Condition I, seeds averaged inside resamples) with the 95%
+    percentile interval from 2,000 resamples of the 18 test persons (RowSet of analyze_operators, seed 0);
+    raw scale likewise. Passes iff both intervals lie above zero.
+reported:
+  - the four condition-by-policy mean AUROCs, R(f_S), R(f_I) with intervals, clean AUROC per condition
+    and clean S - I with interval
+  - R(f_I) against the +-0.05 reference-equivalence margin (interval inside the margin)
+  - seed-and-mask sensitivity interval for TTI (as v16)
+  - per-seed and per-mask TTI
+descriptive:
+  D19_2: the published corrected three-seed cell (v15conf A_none, full development cohort) scored on
+    the same 18-person rows (its published value is +0.595 [+0.500, +0.719]); TTI(v19) minus
+    TTI(v15conf) on shared resamples. Different training cohorts, so descriptive only and not a leakage
+    effect.
+compute:
+  where: local Quadro RTX 4000; no AWS
+  stop_rule: stop before any fit that would take the local GPU ledger above 12.0 h; report what ran
+  ledger: results/gpu_ledger.csv, one row per fit (train minutes from train_log.json) and one for scoring

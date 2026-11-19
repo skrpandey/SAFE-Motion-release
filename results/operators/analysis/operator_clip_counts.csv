@@ -1,0 +1,21 @@
+strength,world,split,mask_seed,n_draws,max_eps,n_above_0.95_cap,n_above_15/16 (L=15 clipped),"n_above_20/21 (L=20, unreachable after cap)"
+mid,S,train,0,9859,0.9172,0,0,0
+mid,S,validation,0,2713,0.8953,0,0,0
+mid,S,test,2000,1966,0.9101,0,0,0
+mid,S,test,3000,1966,0.8663,0,0,0
+mid,S,test,4000,1966,0.8739,0,0,0
+mid,I,train,0,9859,0.9216,0,0,0
+mid,I,validation,0,2713,0.9531,1,1,1
+mid,I,test,2000,1966,0.9159,0,0,0
+mid,I,test,3000,1966,0.8863,0,0,0
+mid,I,test,4000,1966,0.9094,0,0,0
+low,S,train,0,9859,0.9367,0,0,0
+low,S,validation,0,2713,0.8678,0,0,0
+low,S,test,2000,1966,0.913,0,0,0
+low,S,test,3000,1966,0.9289,0,0,0
+low,S,test,4000,1966,0.8818,0,0,0
+low,I,train,0,9859,0.9364,0,0,0
+low,I,validation,0,2713,0.9436,0,1,0
+low,I,test,2000,1966,0.8512,0,0,0
+low,I,test,3000,1966,0.8879,0,0,0
+low,I,test,4000,1966,0.8908,0,0,0

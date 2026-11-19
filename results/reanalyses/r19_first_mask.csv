@@ -1,0 +1,11 @@
+# R19: confidence-only MWI with the first test mask only (2000, the pre-specified single-mask estimate of the
+# main-experiment cells) next to the post hoc mean over three masks; 95% identifier-clustered intervals
+cell,masks,mwi_logit,mwi_raw,R_fS,R_fI
+hist3,mask 2000 only (first test mask),"+0.530 [+0.438, +0.641]","+0.083 [+0.063, +0.107]","+0.593 [+0.495, +0.707]","+0.063 [+0.028, +0.099]"
+hist3,mean over masks 2000/3000/4000,"+0.550 [+0.489, +0.618]","+0.085 [+0.068, +0.104]","+0.606 [+0.530, +0.684]","+0.056 [+0.029, +0.082]"
+hist3,mask 3000 only,"+0.552 [+0.450, +0.658]","+0.083 [+0.064, +0.105]",,
+hist3,mask 4000 only,"+0.568 [+0.458, +0.696]","+0.088 [+0.064, +0.115]",,
+corr3,mask 2000 only (first test mask),"+0.554 [+0.468, +0.665]","+0.087 [+0.067, +0.113]","+0.587 [+0.489, +0.707]","+0.033 [-0.012, +0.085]"
+corr3,mean over masks 2000/3000/4000,"+0.587 [+0.520, +0.667]","+0.091 [+0.072, +0.113]","+0.619 [+0.544, +0.707]","+0.032 [+0.002, +0.065]"
+corr3,mask 3000 only,"+0.605 [+0.493, +0.733]","+0.091 [+0.068, +0.117]",,
+corr3,mask 4000 only,"+0.602 [+0.480, +0.745]","+0.094 [+0.069, +0.125]",,

@@ -1,0 +1,245 @@
+# Publication export of an internally retained frozen protocol (freeze commit below). Administrative
+# notes and metadata were edited for publication; the scientific settings, analysis rules and the
+# timing of specification relative to fitting are unchanged.
+# Protocol v18: like-for-like crossed reading for the confidence-only cell by rescoring existing
+# checkpoints, without training. Written on 2026-11-16, after the original analyses.
+# The crossed-reading check of Table 7 compares the
+# World S confidence-only response under arm-confidence planting with the responses of World I
+# references trained against other operators; those references were scored under the first
+# validity rule (confidence > 0), under which arm-confidence planting can move the encoded
+# coordinates, while the confidence-only models use the corrected rule (x or y nonzero). This
+# protocol rescores the same reference fits under the corrected rule. Frozen and committed before
+# any of the nine reference fits is scored under it; the commit hash is recorded in this file by
+# the following commit. Definitions (host, operators, worlds, policies, R, selection repair) are
+# those of operators and operators_addendum, confonly_historical and selection_repair unless restated.
+
+frozen: true
+frozen_date: 2026-11-16
+frozen_commit: "735b977"        # commit that froze this file; this line was added by the following commit
+status: within-project prespecification; post hoc in the study's sequence, frozen before scoring
+purpose: >
+  Make the crossed-reading check of the confidence-only cell comparable: score the World I
+  references trained against missing runs, whole-joint absence and frozen frames with the
+  corrected validity rule, so that the World S confidence-only response and the reference
+  responses under arm-confidence planting are formed from inputs encoded by the same rule.
+  Scoring only; no fit is trained, retrained or reselected.
+depends_on: [operators.yaml, operators_addendum.yaml, confonly_historical.yaml, selection_repair.yaml]
+inherits: confonly_historical.yaml
+
+# ------------------------------------------------------------------ premise (checked before freezing)
+data_check:
+  question: >
+    Do the two validity rules give identical encoded inputs for the data on which the references
+    were trained and selected, and on the test segments, clean and under the operators they were
+    trained against? The rules disagree on a joint-frame only if confidence > 0 with x = y = 0,
+    or confidence <= 0 with x or y nonzero.
+  code: experiments/rescore_crossed.py datacheck (CPU, no model)
+  output: results/crossed_rescoring/datacheck.csv
+  scope: >
+    full raw segments after the operator (a superset of every training crop and of the evaluation
+    window); host development rows (12,572: optimization and internal validation, the rows passed
+    to build_masks by train_asdpose.py) clean and under missing runs, whole-joint absence and
+    frozen frames at mid strength with the training assignment (world seed 0) of World I and of
+    World S; host test rows (1,966) clean and under the same three operators, policies S and I,
+    test masks 2000, 3000, 4000; arm-confidence planting on the test rows (policies S and I, mask
+    2000) as a positive control of the counter
+  result: >
+    zero disagreeing joint-frames in every clean, missing-run, whole-joint and frozen-frame
+    condition (development 80,937,476 joint-frames per condition; test 13,392,430). Positive
+    control: arm-confidence planting gives 75,001 (policy S) and 78,040 (policy I) joint-frames
+    with confidence > 0 and zero coordinates, in 1,484 and 1,464 of 1,966 test segments. The
+    references were therefore trained, selected and clean-scored on inputs that are identical under
+    both rules, and the rules differ for them only where arm-confidence planting raises the
+    confidence of zero-coordinate joint-frames. Scoring them with the corrected rule is a
+    like-for-like check.
+
+# ------------------------------------------------------------------ models
+checkpoints_root: results/aws/repair_v14/cache/clean     # cleaned selection of selection_repair (ID 322 excluded)
+references:
+  description: >
+    World I no-remedy CompactCTRGCN fits, mid strength, world seed 0, historical (legacy) loader
+    recipe, first validity rule in training, cleaned model selection, three seeds per operator.
+    Their checkpoints carry no valid_rule field (score_operators.build reads "conf").
+  fits:
+    # name: [checkpoint file, cleaned-selection epoch, sha256 of the checkpoint (first 16 hex)]
+    v7_I_w0_runs_mid_A_none_s0:     [pilot_v7_I_w0_runs_mid_A_none_s0.pt,     18, 0c533e549c5800db]
+    v7_I_w0_runs_mid_A_none_s1:     [pilot_v7_I_w0_runs_mid_A_none_s1.pt,     23, 1f9d0d272d4960da]
+    v7_I_w0_runs_mid_A_none_s2:     [pilot_v7_I_w0_runs_mid_A_none_s2.pt,     19, fa966647487fac66]
+    v7_I_w0_whole_mid_A_none_s0:    [pilot_v7_I_w0_whole_mid_A_none_s0.pt,    14, 4ee08ae28e3c7e5a]   # cleaned 14, original 18
+    v7_I_w0_whole_mid_A_none_s1:    [pilot_v7_I_w0_whole_mid_A_none_s1.pt,    23, 8db1b0f8db8992f4]
+    v7_I_w0_whole_mid_A_none_s2:    [pilot_v7_I_w0_whole_mid_A_none_s2.pt,    24, fdbd5e495694998d]
+    v8_I_w0_frozen_mid_A_none_s0:   [pilot_v8_I_w0_frozen_mid_A_none_s0.pt,   22, a07e1a5f62825cbd]
+    v8_I_w0_frozen_mid_A_none_s1:   [pilot_v8_I_w0_frozen_mid_A_none_s1.pt,   20, 11515de42e00578b]
+    v8_I_w0_frozen_mid_A_none_s2:   [pilot_v8_I_w0_frozen_mid_A_none_s2.pt,   24, f32f55412922cac5]
+  published_scores: >
+    results/aws/repair_v14/results/clean/v7/scores/<name>.csv (first rule; byte-identical to
+    build/release_v17_clean/results/operators/scores, the files behind Table 7)
+world_S_models:
+  description: >
+    the historical-recipe corrected-rule confidence-only World S fits of protocol v13 (arm
+    confidence, mid, world seed 0, cleaned selection, which equals the original selection for
+    these fits); not rescored: their stored corrected-rule score files are used, the same files
+    behind the World S arm-confidence row of Table 7
+  fits:
+    v13_S_w0_armruns_mid_A_none_s0: [pilot_v13_S_w0_armruns_mid_A_none_s0.pt, 22, 976aabd7cfd8de4c]
+    v13_S_w0_armruns_mid_A_none_s1: [pilot_v13_S_w0_armruns_mid_A_none_s1.pt, 18, 0436d5d81e0b3417]
+    v13_S_w0_armruns_mid_A_none_s2: [pilot_v13_S_w0_armruns_mid_A_none_s2.pt, 24, 7b5a72ffb19416e3]
+  scores: results/aws/repair_v14/results/clean/v13/scores/<name>.csv
+
+# ------------------------------------------------------------------ test inputs
+test_inputs:
+  rows: >
+    host test segments as in the published scoring (score_operators.py): test split, at least 200
+    frames, frozen SAFE-SMM QC (frozen-frame < 0.10, arm low-confidence < 0.30); 1,966 segments,
+    40 identifiers, in the order of the stored score files
+  conditions: >
+    clean; arm-confidence planting (operator confscale, strength mid) under test policy S and
+    test policy I with test masks 2000, 3000, 4000 (planted.build_masks on the host test rows, as
+    in score_confonly_historical.py and score_confonly_corrected.py); 7 score columns per fit
+  rule: >
+    corrected validity rule (valid joint-frame = x or y nonzero) for the primary scoring. The only
+    change from the published scoring is this one preprocessing field; the evaluation path is
+    otherwise the published one (score_operators.build and score_operators.run: centre crop of 200 frames, image
+    normalisation, no flip, channels x, y, confidence, softmax probability of the SMM class).
+  first_rule_rescoring: >
+    after the validation gate, the same nine fits are also scored under the first rule on the
+    same seven columns (descriptive). Their mask-2000 and clean columns are compared with the
+    stored files (an extension of the validation to all nine fits, reported), and their masks 3000
+    and 4000 give the first-rule mask mean, which the published files do not contain.
+  invariance: >
+    the references use the no-remedy preprocessing path (no velocity, image normalisation,
+    confidence channel), the path covered by the v13 invariance gate (corrected rule, all 1,966
+    host test segments, masks 2000/3000/4000, maximum x,y difference 0 among clean, S and I)
+code:
+  script: experiments/rescore_crossed.py (steps datacheck, validate, score --rule coords|conf, analyze)
+  script_sha256_16_at_freeze: 75b6bd73855beaf1
+  imports_unchanged: >
+    score_operators.build, score_operators.run, planted.build_masks, asdpose.SegmentDataset; analyze_operators.RowSet,
+    load_scores, align, logit, verdict. No existing file is edited. The script refuses to score
+    before this file is committed and unmodified, refuses the corrected-rule run unless the
+    validation has passed, and never overwrites a file.
+  smoke_before_freeze: >
+    the analysis step was run on the stored first-rule files with stand-in mask columns (outputs in
+    the session scratch directory, not kept) and reproduced Table 7 exactly (World S +0.5933
+    [+0.4952, +0.7070]; references +0.0931, -0.0167, +0.0243 with the published intervals); the
+    scoring path was run on CPU on 25 host test rows with an unrelated checkpoint
+    (v7_I_w0_runs_low_A_none_s0), outputs discarded. None of the nine reference fits was scored
+    under either rule with this code before this commit.
+outputs:
+  root: results/crossed_rescoring
+  validation: results/crossed_rescoring/validation/, results/crossed_rescoring/validation.json
+  scores: results/crossed_rescoring/scores_coords/ (primary), results/crossed_rescoring/scores_conf/ (descriptive)
+  analysis: results/crossed_rescoring/analysis/{responses.csv,differences.csv,criteria.json}
+  report: internal report (not distributed)
+
+# ------------------------------------------------------------------ quantities
+quantities:
+  response: >
+    R(f) = logit AUROC(policy S) - logit AUROC(policy I) under arm-confidence planting at mid
+    (primary scale), and the raw AUROC difference; per fit, then averaged over the three seeds of
+    a group inside each resample
+  masks: first test mask (2000) and the mask mean (2000, 3000, 4000; averaged inside each resample)
+  resampling: >
+    2,000 identifier-clustered paired resamples (metrics.cluster_bootstrap_indices on the subject
+    identifier, seed 0; analyze_operators.RowSet), shared by every model and condition, the resamples
+    used for Table 7; 95% percentile intervals; point estimate from the full sample
+  reported_per_reference: >
+    R under arm-confidence planting, first mask and mask mean, logit and raw: first rule as
+    published (first mask only), first rule rescored, corrected rule; seed SD; the paired
+    rule change (corrected minus first, same fits) as a descriptive quantity
+  world_S: R of the three v13 World S fits, first mask and mask mean, logit and raw
+
+# ------------------------------------------------------------------ pre-specified rule
+comparison_rule:
+  V18_rule: >
+    For each reference group r (missing runs, whole-joint absence, frozen frames): D_r =
+    R(World S confidence-only, v13) - R(r, corrected rule) under arm-confidence planting at test
+    mask 2000, logit scale, paired on the shared resamples. The crossed reading passes if the 95%
+    interval of every D_r (three of three) lies above zero (lower limit > 0); it fails otherwise.
+    One family of three intervals, no multiplicity adjustment, no margin.
+  secondary: >
+    D_r on the raw AUROC scale at mask 2000 (reported beside the verdict; if its reading differs
+    from the logit verdict, the report says so; it does not change the verdict) and D_r on the mask
+    mean, both scales (descriptive). The same differences against the first-rule responses are
+    shown for comparison with the published descriptive reading.
+  scope_of_reading: >
+    A pass means that the World S confidence-only response exceeds the responses of references
+    trained against other operators when every model is scored with the corrected rule. It does not
+    establish equal non-cue responses (the identifying assumption of the matched-world
+    interaction), and these references differ from the World S models in training operator.
+
+# ------------------------------------------------------------------ gates
+gates:
+  V18_validation: >
+    Before the corrected-rule run: fit v7_I_w0_whole_mid_A_none_s0 (chosen because its cleaned
+    selection, epoch 14, differs from the original selection, epoch 18, so the check also
+    confirms that the cleaned checkpoint is the one scored) is scored with this pipeline under
+    the first rule on the columns clean, armruns_S_mid_m2000 and armruns_I_mid_m2000 and compared
+    with its stored score file. Pass: the maximum absolute per-segment difference is at most 1e-4
+    on the probability scale (the files hold six decimals) and each AUROC agrees within 1e-4.
+    If it fails, nothing further is scored, and the failure is reported.
+  V18_consistency: >
+    Reported, not gating: for every fit, the clean column under the corrected rule equals the
+    clean column under the first rule (identical inputs by the data check), and the first-rule
+    mask-2000 columns reproduce the stored files.
+
+# ------------------------------------------------------------------ reporting
+reporting_rules: >
+  The result is reported whichever way it falls, including a fail of V18_rule or of the
+  validation. No fit is retrained, reselected or rescored to move an interval. The per-reference
+  responses under both rules, the paired differences with intervals and the verdict are written
+  to a report. Whether rows of Table 7 are replaced and how the manuscript words the result is
+  decided after reading the report; the manuscript must label this rescoring as performed after
+  the original analyses.
+
+# ------------------------------------------------------------------ compute
+compute: >
+  Local GPU (Quadro RTX 4000), scoring only: one validation fit (3 columns) and 9 fits x 7 columns
+  under each rule; projected under 0.5 GPU-hours, recorded in results/gpu_ledger.csv (ledger
+  10.17 h before this protocol; local cap 10 to 12 h). No AWS.
+
+# ================================================================== amendment 1 (2026-11-16)
+# Added after the first validation attempt failed and before any corrected-rule score was produced.
+# The text above is unchanged; where it conflicts with this section, this section governs.
+amendment_1:
+  date: 2026-11-16
+  amendment_commit: "23d438e"     # commit that added this section; this line was added by the following commit
+  reason: >
+    The stored first-rule score files behind Table 7 were produced on an AWS A10G (Ampere), where
+    cuDNN runs convolutions in TF32 by default. The local Quadro RTX 4000 (Turing) cannot use TF32
+    and computes in full FP32, so per-segment agreement at 1e-4 is not attainable on this device.
+    The 1e-4 tolerance of V18_validation was set without regard to the device that produced the
+    stored files; the project's earlier cross-device reproduction (protocol v10, part C) used 5e-3.
+  first_attempt_on_record: >
+    results/crossed_rescoring/validation.json and results/crossed_rescoring/validation/ (kept, not
+    overwritten): fit v7_I_w0_whole_mid_A_none_s0, first rule, local GPU; maximum absolute
+    per-segment difference 3.73e-4 (clean), 3.60e-4 (policy S, mask 2000), 4.32e-4 (policy I,
+    mask 2000), against 1e-4: FAIL; AUROC differences at most 2.6e-5; logit response of the fit
+    -0.01048 against -0.01034 stored (difference 1.4e-4). Per the frozen gate, nothing further was
+    scored.
+  thresholds_chosen_after_seeing_first_attempt: >
+    yes; the new tolerances below were chosen with the first attempt's numbers known. They are
+    the project's cross-device tolerance (5e-3) and bounds on the two quantities the analysis uses
+    (AUROC, response), each one order of magnitude or more below the half-width of the published
+    intervals (about 0.07 to 0.11 logit for R).
+  new_validation_rule: >
+    V18_validation (amended): the same fit (v7_I_w0_whole_mid_A_none_s0, cleaned selection) is
+    scored again under the first rule on the same columns (clean, armruns_S_mid_m2000,
+    armruns_I_mid_m2000) and compared with its stored file. Pass only if all three hold:
+    (a) maximum absolute per-segment difference at most 5e-3 on the probability scale in each of
+    the three conditions; (b) AUROC difference at most 1e-3 in each of the three conditions;
+    (c) difference of the fit's logit response R (logit AUROC policy S minus logit AUROC policy I,
+    mask 2000) at most 2e-3. If it fails, nothing further is scored and the failure is reported.
+  outputs: results/crossed_rescoring/validation_amendment1.json and results/crossed_rescoring/validation_amendment1/
+  no_corrected_rule_scores_yet: >
+    When this amendment was written, no corrected-rule score of any of the nine reference fits had
+    been produced, and no first-rule score of any reference fit other than the validation fit.
+  unchanged: >
+    models, checkpoints, test inputs, the corrected-rule and first-rule scoring, the quantities,
+    V18_rule (logit, mask 2000, all three intervals above zero), the secondary readings,
+    V18_consistency and the reporting rules.
+  code_change: >
+    experiments/rescore_crossed.py: the validate step takes --amendment 1 (default), writes
+    to the new output paths and applies the amended conditions; the score step requires
+    validation_amendment1.json with pass true. Scoring and analysis code unchanged. Script sha256
+    (first 16 hex) at this amendment: 0e34c7c12784089f (at the original freeze: 75b6bd73855beaf1).

@@ -1,0 +1,4 @@
+set,n_models,min,max,mean,sd,max_abs
+v7_real (length protocol),15,-0.0228,0.0392,0.0003,0.0196,0.0392
+v10_real_I (length protocol),15,-0.045,-0.0107,-0.0297,0.0105,0.045
+v7 World I host A_none on the full split,0,,,,,"not available: host models were scored on the host test split only (1,966 rows)"

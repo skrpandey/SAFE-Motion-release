@@ -1,0 +1,25 @@
+contrast,point,ci_lo,ci_hi,verdict,group_a,group_b,scale
+v3 - v1,-0.0813,-0.1337,-0.0252,differs_from_zero,v3,v1,raw AUC
+v3 - v1,-0.3422,-0.5723,-0.1061,differs_from_zero,v3,v1,logit AUC
+v3 - base_no_remedies,-0.0401,-0.0854,0.0070,undetermined,v3,base_no_remedies,raw AUC
+v3 - base_no_remedies,-0.1657,-0.3597,0.0283,undetermined,v3,base_no_remedies,logit AUC
+v2_family - v1,-0.0689,-0.1128,-0.0252,differs_from_zero,v2_family,v1,raw AUC
+v2_family - v1,-0.2916,-0.4872,-0.1050,differs_from_zero,v2_family,v1,logit AUC
+ours_v7 A_velocity - A_none,-0.0625,-0.0922,-0.0344,differs_from_zero,ours_v7_A_velocity,ours_v7_A_none,raw AUC
+ours_v7 A_velocity - A_none,-0.2631,-0.3925,-0.1444,differs_from_zero,ours_v7_A_velocity,ours_v7_A_none,logit AUC
+ours_v7 A_dropout - A_none,-0.0161,-0.0360,0.0031,undetermined,ours_v7_A_dropout,ours_v7_A_none,raw AUC
+ours_v7 A_dropout - A_none,-0.0693,-0.1560,0.0133,undetermined,ours_v7_A_dropout,ours_v7_A_none,logit AUC
+ours_v7 A_both - A_none,-0.0627,-0.0951,-0.0294,differs_from_zero,ours_v7_A_both,ours_v7_A_none,raw AUC
+ours_v7 A_both - A_none,-0.2639,-0.4035,-0.1228,differs_from_zero,ours_v7_A_both,ours_v7_A_none,logit AUC
+ours_v7 B_coorddrop - A_none,-0.0127,-0.0297,0.0040,undetermined,ours_v7_B_coorddrop,ours_v7_A_none,raw AUC
+ours_v7 B_coorddrop - A_none,-0.0549,-0.1282,0.0175,undetermined,ours_v7_B_coorddrop,ours_v7_A_none,logit AUC
+ours_v7 A_none - ours_v10 A_none,0.0008,-0.0243,0.0229,undetermined,ours_v7_A_none,ours_v10_A_none,raw AUC
+ours_v7 A_none - ours_v10 A_none,0.0034,-0.1046,0.1010,undetermined,ours_v7_A_none,ours_v10_A_none,logit AUC
+ours_v7 A_velocity - ours_v10 A_velocity,-0.0316,-0.0568,-0.0061,differs_from_zero,ours_v7_A_velocity,ours_v10_A_velocity,raw AUC
+ours_v7 A_velocity - ours_v10 A_velocity,-0.1311,-0.2347,-0.0256,differs_from_zero,ours_v7_A_velocity,ours_v10_A_velocity,logit AUC
+ours_v7 A_dropout - ours_v10 A_dropout,-0.0136,-0.0375,0.0103,undetermined,ours_v7_A_dropout,ours_v10_A_dropout,raw AUC
+ours_v7 A_dropout - ours_v10 A_dropout,-0.0585,-0.1609,0.0446,undetermined,ours_v7_A_dropout,ours_v10_A_dropout,logit AUC
+ours_v7 A_both - ours_v10 A_both,-0.0284,-0.0567,0.0014,undetermined,ours_v7_A_both,ours_v10_A_both,raw AUC
+ours_v7 A_both - ours_v10 A_both,-0.1178,-0.2374,0.0058,undetermined,ours_v7_A_both,ours_v10_A_both,logit AUC
+ours_v7 B_coorddrop - ours_v10 B_coorddrop,-0.0075,-0.0262,0.0114,undetermined,ours_v7_B_coorddrop,ours_v10_B_coorddrop,raw AUC
+ours_v7 B_coorddrop - ours_v10 B_coorddrop,-0.0321,-0.1125,0.0500,undetermined,ours_v7_B_coorddrop,ours_v10_B_coorddrop,logit AUC

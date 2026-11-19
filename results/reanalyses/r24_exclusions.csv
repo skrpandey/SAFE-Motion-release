@@ -1,0 +1,20 @@
+# R24: segments removed by the 200-frame rule (n_frames < 200), by release partition and class, SAFE-SMM cache index
+# (36,928 segments); median segment length (frames); last row per block: AUROC of the frame count for the SMM label
+# (above 0.5 = SMM longer), in the 'median_frames' column for all segments and in 'median_frames_kept' after the rule
+population,partition,class,segments,removed_lt_200_frames,share_removed,kept,median_frames,median_frames_kept,identifiers
+all segments,development (289 identifiers),non-SMM,24967,4570,0.183042,20397,326.000000,375.000000,270
+all segments,development (289 identifiers),SMM,7210,1214,0.168377,5996,241.000000,271.000000,288
+all segments,development (289 identifiers),both,32177,5784,0.179756,26393,301.000000,350.000000,289
+all segments,development (289 identifiers),AUROC of length for SMM (longer = SMM),32177,,,,0.400929,0.341657,
+all segments,test (40 identifiers),non-SMM,3694,646,0.174878,3048,350.000000,375.000000,38
+all segments,test (40 identifiers),SMM,1057,271,0.256386,786,241.000000,271.000000,40
+all segments,test (40 identifiers),both,4751,917,0.193012,3834,301.000000,355.500000,40
+all segments,test (40 identifiers),AUROC of length for SMM (longer = SMM),4751,,,,0.375496,0.370317,
+QC-passing segments,development (289 identifiers),non-SMM,10326,1916,0.185551,8410,326.000000,375.000000,270
+QC-passing segments,development (289 identifiers),SMM,5004,842,0.168265,4162,241.000000,271.000000,277
+QC-passing segments,development (289 identifiers),both,15330,2758,0.179909,12572,300.000000,350.000000,287
+QC-passing segments,development (289 identifiers),AUROC of length for SMM (longer = SMM),15330,,,,0.404265,0.344312,
+QC-passing segments,test (40 identifiers),non-SMM,1648,278,0.168689,1370,350.000000,375.000000,38
+QC-passing segments,test (40 identifiers),SMM,792,196,0.247475,596,241.000000,300.000000,39
+QC-passing segments,test (40 identifiers),both,2440,474,0.194262,1966,300.000000,350.000000,40
+QC-passing segments,test (40 identifiers),AUROC of length for SMM (longer = SMM),2440,,,,0.387407,0.388392,

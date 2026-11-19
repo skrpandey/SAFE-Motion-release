@@ -1,0 +1,27 @@
+proto,mechanism,strength,contrast,point,ci_lo,ci_hi,verdict,R_S,R_I,R_I_ci,R_I_verdict,sd_seeds_S,sd_seeds_I,mask_range
+v7,runs,mid,SE(A_none),0.7563,0.6178,0.9202,differs_from_zero,0.7772,0.0210,"(-0.053396361356352104, 0.09664748417694081)",undetermined,0.1008,0.0564,0.0109
+v7,runs,mid,SE(A_velocity) - SE(A_none),0.0730,-0.0209,0.1628,undetermined,0.8202,-0.0090,,,,,
+v7,runs,mid,interaction(A_velocity) gain_S - gain_I (clean AUC),-0.0080,-0.0252,0.0108,undetermined,,,,,,,
+v7,runs,mid,SE(A_dropout) - SE(A_none),0.0922,0.0001,0.1780,differs_from_zero,0.7450,-0.1035,,,,,
+v7,runs,mid,interaction(A_dropout) gain_S - gain_I (clean AUC),0.0062,-0.0111,0.0264,undetermined,,,,,,,
+v7,runs,mid,SE(A_both) - SE(A_none),0.0637,-0.0152,0.1342,undetermined,0.7660,-0.0540,,,,,
+v7,runs,mid,interaction(A_both) gain_S - gain_I (clean AUC),-0.0135,-0.0344,0.0080,undetermined,,,,,,,
+v7,runs,mid,SE(B_coorddrop) - SE(A_none),0.1169,0.0404,0.1920,differs_from_zero,0.8138,-0.0594,,,,,
+v7,runs,mid,interaction(B_coorddrop) gain_S - gain_I (clean AUC),0.0016,-0.0198,0.0282,undetermined,,,,,,,
+v7,runs,mid,"AUC_clean(f_S) - AUC_clean(f_I), A_none",-0.0042,-0.0230,0.0136,undetermined,,,,,,,
+v7,runs,low,SE(A_none),0.2368,0.1243,0.3500,differs_from_zero,0.2525,0.0157,"(-0.062315938354074736, 0.0768015870582504)",undetermined,0.0301,0.0392,0.2276
+v7,runs,low,"AUC_clean(f_S) - AUC_clean(f_I), A_none",0.0019,-0.0149,0.0207,undetermined,,,,,,,
+v7,whole,mid,SE(A_none),0.4566,0.3302,0.5882,differs_from_zero,0.4779,0.0213,"(-0.06600430344088416, 0.12171557159117063)",undetermined,0.0251,0.0221,0.1086
+v7,whole,mid,SE(A_dropout) - SE(A_none),-0.0021,-0.0744,0.0727,undetermined,0.4059,-0.0486,,,,,
+v7,whole,mid,interaction(A_dropout) gain_S - gain_I (clean AUC),-0.0007,-0.0171,0.0131,within_margin,,,,,,,
+v7,whole,mid,SE(B_coorddrop) - SE(A_none),0.0582,-0.0307,0.1349,undetermined,0.5081,-0.0067,,,,,
+v7,whole,mid,interaction(B_coorddrop) gain_S - gain_I (clean AUC),0.0057,-0.0074,0.0190,within_margin,,,,,,,
+v7,whole,mid,"AUC_clean(f_S) - AUC_clean(f_I), A_none",-0.0031,-0.0240,0.0187,undetermined,,,,,,,
+v8,frozen,mid,SE(A_none),0.3758,0.2586,0.5034,differs_from_zero,0.3726,-0.0032,"(-0.05116311684890134, 0.04520905806117001)",undetermined,0.0364,0.0388,0.1111
+v8,frozen,mid,SE(A_dropout) - SE(A_none),0.0979,0.0384,0.1606,differs_from_zero,0.4510,-0.0227,,,,,
+v8,frozen,mid,interaction(A_dropout) gain_S - gain_I (clean AUC),-0.0119,-0.0301,0.0042,undetermined,,,,,,,
+v8,frozen,mid,"AUC_clean(f_S) - AUC_clean(f_I), A_none",0.0237,0.0095,0.0415,differs_from_zero,,,,,,,
+v8,armruns,mid,SE(A_none),0.5817,0.4818,0.6921,differs_from_zero,0.6331,0.0515,"(0.013206001776824062, 0.09684650145733603)",differs_from_zero,0.0600,0.0169,0.0492
+v8,armruns,mid,SE(A_dropout) - SE(A_none),0.0697,0.0103,0.1223,differs_from_zero,0.6946,0.0433,,,,,
+v8,armruns,mid,interaction(A_dropout) gain_S - gain_I (clean AUC),-0.0131,-0.0305,0.0044,undetermined,,,,,,,
+v8,armruns,mid,"AUC_clean(f_S) - AUC_clean(f_I), A_none",-0.0012,-0.0146,0.0127,within_margin,,,,,,,

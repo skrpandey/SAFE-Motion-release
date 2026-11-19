@@ -1,0 +1,9 @@
+# R20(a) diagnostic: cue-only AUROC (non-SMM degraded more) of the planted severity and of the planted arm
+# low-confidence fraction of the scored window, unstratified and within severity strata (mean over 3 masks)
+policy,strata,auroc_minus_eps_unstratified,auroc_minus_eps_within_strata,auroc_planted_window_stat_unstratified,auroc_planted_window_stat_within_strata
+S,10 strata,0.744802,0.536149,0.721424,0.539349
+S,5 strata,0.744802,0.549371,0.721424,0.548372
+S,20 strata,0.744802,0.518170,0.721424,0.532393
+I,10 strata,0.496780,0.494130,0.511998,0.524706
+I,5 strata,0.496780,0.495766,0.511998,0.523504
+I,20 strata,0.496780,0.498025,0.511998,0.528875

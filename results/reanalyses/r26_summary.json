@@ -1,0 +1,44 @@
+{
+ "A_none_v15conf": {
+  "label": "no remedy, published (v15conf A_none)",
+  "n_fits": 6,
+  "selected_epochs": [
+   15,
+   16,
+   18,
+   19,
+   24,
+   25
+  ],
+  "clean_test_auroc_min": 0.789499,
+  "clean_test_auroc_max": 0.820846
+ },
+ "A_both": {
+  "label": "recipe (v20 A_both)",
+  "n_fits": 6,
+  "selected_epochs": [
+   23,
+   24,
+   24,
+   24,
+   24,
+   25
+  ],
+  "clean_test_auroc_min": 0.822922,
+  "clean_test_auroc_max": 0.925954
+ },
+ "A_none_local": {
+  "label": "no remedy, local refit (v20 A_none)",
+  "n_fits": 6,
+  "selected_epochs": [
+   18,
+   18,
+   18,
+   18,
+   22,
+   22
+  ],
+  "clean_test_auroc_min": 0.7981,
+  "clean_test_auroc_max": 0.820016
+ }
+}

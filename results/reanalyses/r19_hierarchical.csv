@@ -1,0 +1,10 @@
+# R19: corrected-recipe no-remedy confidence-only MWI over four training assignments (assignment 0 = v15conf A_none
+# seeds 0-2, assignments 1-3 = v17 A_none seeds 0-2); point = mean of the four assignment MWIs; 95% percentile
+# intervals from 2,000 replicates, RNG seed 20261116; identifier resamples = RowSet seed 0 (shared)
+procedure,point_logit,lo_logit,hi_logit,draw_sd_logit,share_draws_le_0_logit,point_raw,lo_raw,hi_raw,draw_sd_raw,share_draws_le_0_raw
+"identifiers only (fits, masks and assignments fixed)",0.627394,0.557034,0.707292,0.037398,0.000000,0.096401,0.078288,0.117618,0.010088,0.000000
+"identifiers, masks and seeds (assignments fixed)",0.627394,0.540181,0.735669,0.049169,0.000000,0.096401,0.076928,0.119398,0.011187,0.000000
+"assignments, seeds and masks (identifiers fixed)",0.627394,0.564868,0.686488,0.030545,0.000000,0.096401,0.087054,0.105730,0.004722,0.000000
+"all four levels: assignments, seeds, masks, identifiers",0.627394,0.527291,0.757927,0.057531,0.000000,0.096401,0.075549,0.123145,0.012134,0.000000
+"t interval over the four assignment MWIs, df 3 (logit)",0.627394,0.532928,0.721861,,,,,,,
+"t interval over the four assignment MWIs, df 3 (raw)",,,,,,0.096401,0.081566,0.111236,,

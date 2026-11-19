@@ -1,0 +1,13 @@
+mechanism,operator,valid_rule,path,comparison,n_segments,max_abs_diff_xy,segments_with_any_xy_diff,conf_channel_max_abs_diff
+armruns,confscale,coords,standard (A_none),S vs I,200,0.000e+00,0,7.022e-01
+armruns,confscale,coords,standard (A_none),S vs clean,200,0.000e+00,0,7.022e-01
+armruns,confscale,coords,standard (A_none),I vs clean,200,0.000e+00,0,6.971e-01
+armruns,confscale,coords,quality-blind,S vs I,200,1.209e+00,200,n/a (dropped)
+armruns,confscale,coords,quality-blind,S vs clean,200,1.167e+00,199,n/a (dropped)
+armruns,confscale,coords,quality-blind,I vs clean,200,1.205e+00,199,n/a (dropped)
+runs,zero,coords,standard (A_none),S vs I,200,1.078e+00,200,1.011e+00
+runs,zero,coords,standard (A_none),S vs clean,200,1.071e+00,199,1.007e+00
+runs,zero,coords,standard (A_none),I vs clean,200,1.078e+00,200,1.011e+00
+runs,zero,coords,quality-blind,S vs I,200,9.753e-01,200,n/a (dropped)
+runs,zero,coords,quality-blind,S vs clean,200,1.009e+00,198,n/a (dropped)
+runs,zero,coords,quality-blind,I vs clean,200,1.004e+00,200,n/a (dropped)

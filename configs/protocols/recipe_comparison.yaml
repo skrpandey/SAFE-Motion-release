@@ -1,0 +1,119 @@
+# Publication export of an internally retained frozen protocol (freeze commit below). Administrative
+# notes and metadata were edited for publication; the scientific settings, analysis rules and the
+# timing of specification relative to fitting are unchanged.
+# Protocol v20: the published velocity plus whole-joint-dropout recipe in the primary confidence-only
+# cell. Added on 2026-11-18, after earlier results had been examined: the recipe had been tested only
+# on destructive operators with the historical loader, plus one confidence-rule contrast. Frozen and
+# committed before any fit under it is trained or scored.
+# Definitions (host, operator, conditions (= worlds), severities, R, TTI (= MWI), mask-mean
+# statistics, length protocol, recipe v15, cleaned selection) are those of v13, v15conf and v16
+# unless restated here. Either outcome is reported, including a null, adverse or failed result.
+
+frozen: true
+frozen_date: 2026-11-18
+frozen_commit: "33d72fb"
+status: addition after earlier results had been examined; within-project prespecification only
+inherits: confonly_primary.yaml     # primary cell: coords rule, recipe v15, armruns mid, assignment 0
+
+question: >
+  Does the SAFE-SMM input recipe (frame-difference velocity inputs and whole-joint dropout at rate
+  0.15, cell A_both of pilot_2.yaml) change the confidence-only training-by-test
+  interaction of the primary cell?
+
+cells:
+  A_both:
+    method: velocity true, joint_dropout 0.15, coord_dropout 0.0, pool full (pilot_2.yaml
+      A_both), CompactCTRGCN with c_in 5 (x, y, vx, vy, confidence), valid_rule coords
+    role: the recipe arm (six fits; phase 1)
+  A_none:
+    method: no remedy, as v15conf / v16 A_none (CompactCTRGCN, c_in 3, valid_rule coords)
+    role: hardware-matched refit of the baseline on the local GPU (six fits; phase 2, sensitivity only)
+mechanism: armruns
+strength: mid
+worlds: [S, I]
+world_seed: 0
+seeds: [0, 1, 2]
+runs: "phase 1: A_both, 2 worlds x 3 seeds = 6; phase 2: A_none, 2 worlds x 3 seeds = 6"
+model_and_training: as v15conf (25 epochs, batch 128, AMP, AdamW 1e-3 / 1e-4, cosine schedule, image
+  normalisation, horizontal flip), SM_TRAIN_RECIPE=v15
+command: >
+  SM_TRAIN_RECIPE=v15 python experiments/train_asdpose.py --proto v20 --amp --batch-size 128
+  --epochs 25 --workers 6 --mechanism armruns --strength mid --repair-protocol
+  configs/protocols/recipe_comparison.yaml --arch compact --cell {A_both,A_none} --world {S,I}
+  --seed {0,1,2}
+
+selection:
+  metric: validation AUROC, first epoch reaching the maximum; every epoch state stored
+  cleaned: validation rows without val_exclude_ids; PRIMARY (as v15conf)
+val_exclude_ids: [322]
+val_exclude_rule: validation rows of any person already used for optimization (selection_repair)
+outputs:
+  epoch_dir: results/recipe_comparison/epochs
+  cache_root: cache/v20
+  scores: results/recipe_comparison/clean (experiments/score_confonly_corrected.py --proto v20 --cache-dir cache/v20/clean)
+  analysis: results/recipe_comparison/analysis (experiments/analyze_recipe_comparison.py)
+note: protocol v20, velocity plus whole-joint-dropout recipe under confidence-only planting
+
+# ------------------------------------------------------------------ comparator
+comparator:
+  primary: >
+    The published no-remedy primary cell: v15conf A_none, seeds 0-2, both conditions
+    (results/aws/v15conf/results/clean; TTI +0.587 [+0.520, +0.667]). It was trained on an NVIDIA
+    A10G with the same code path, recipe and library versions (torch 2.5.1, CUDA 11.8); the v20 fits
+    run on a local Quadro RTX 4000. The device difference is disclosed with the result.
+  sensitivity: >
+    Phase 2 refits the no-remedy cell on the local GPU (v20 A_none), so that both arms share device
+    and software. It does not replace the published primary cell.
+
+# ------------------------------------------------------------------ gates
+gates:
+  G20_invariance: >
+    Before any fit: for all 1,966 host test segments, test masks 2000, 3000 and 4000, and the
+    evaluation and training paths of the A_both preprocessing (matched crops, flips and dropout
+    draws), the x, y and velocity channels of the clean, policy S and policy I inputs are identical
+    (maximum absolute difference exactly 0). experiments/check_conf_invariance_recipe.py; a failure
+    stops the experiment.
+  G20_clean: >
+    Mean clean test AUROC of the three Condition I A_both models at least 0.75 (a test-set
+    decision, as in every earlier protocol). Reported either way; if it fails, P20_1 is reported but
+    not interpreted.
+
+# ------------------------------------------------------------------ analysis
+scoring: >
+  As v15conf and v16: every checkpoint on all 1,966 host test rows (clean; armruns at mid under
+  policies S and I with test mask seeds 2000, 3000, 4000; the other operators at mask 2000).
+inference: >
+  AUROC per fitted model and test mask inside each of 2,000 identifier-clustered resamples of the 40
+  test identifiers (RowSet of analyze_operators, seed 0, shared across cells), transformed (logit) or not
+  (raw), then averaged over masks and seeds. Intervals are 95% percentile intervals, conditional on
+  fits and masks unless stated.
+primary:
+  P20_1: >
+    dTTI = TTI(A_both) - TTI(A_none, v15conf) on the mask mean, logit and raw scales, paired on
+    shared resamples. Verdict by the rule of the article: "lowers TTI" iff both intervals lie below
+    zero; "raises TTI" iff both lie above zero; otherwise "no detected change". The lower end of the
+    logit interval is reported as the largest reduction the interval does not exclude.
+  P20_2: >
+    Clean-AUROC change of A_both against A_none (v15conf) in each condition; preservation iff both
+    intervals lie inside +-0.02.
+reported:
+  - the four condition-by-policy mean AUROCs of A_both on both scales, R(f_S), R(f_I), TTI on both
+    scales with intervals, clean AUROC per condition, clean S - I
+  - R(f_I) against the +-0.05 margin
+  - seed-and-mask sensitivity interval for dTTI on both scales (crossed resampling of fitted seeds
+    and test masks, as v15conf P15_4); a verdict that passes the conditional rule while this interval
+    includes zero is labelled nominal, as in the article
+  - per-seed TTI of A_both
+sensitivity:
+  D20_3: >
+    With the phase-2 fits: dTTI = TTI(A_both) - TTI(A_none, v20 local refit), same statistics; and
+    TTI(A_none, v20 local) - TTI(A_none, v15conf) as a descriptive measure of rerun and device
+    variation. If the P20_1 verdict differs between the two baselines, both are reported and the
+    primary verdict stands with that disagreement stated.
+not_in_scope: velocity alone, dropout alone, coordinate dropout, Group DRO with the recipe, ST-GCN,
+  regenerated assignments, the mapped-person cohort
+compute:
+  where: local Quadro RTX 4000; the 12.0 h local-GPU stop rule of protocol v19 does not apply to this
+    protocol, and no GPU-time stop rule is set
+  expected: about 0.2 GPU-h per fit; ledger about 12.5 h after phase 1 and 13.9 h after phase 2
+  ledger: results/gpu_ledger.csv, one row per fit and one per scoring run

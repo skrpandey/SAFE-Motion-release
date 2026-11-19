@@ -1,0 +1,51 @@
+\textit{(a) Condition-by-policy means and responses}\\[2pt]
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+ & & \multicolumn{2}{c}{Mean AUROC} & \multicolumn{2}{c}{Mean logit AUROC} & \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Variant & Training & policy S & policy I & policy S & policy I & Response \R{} (logit) \\
+\midrule
+No remedy & Condition S & 0.852 & 0.757 & 1.754 & 1.135 & +0.619 [+0.544, +0.707] \\
+ & Condition I & 0.809 & 0.804 & 1.445 & 1.413 & +0.032 [+0.002, +0.065] \\
+\addlinespace
+Severity-group DRO & Condition S & 0.814 & 0.779 & 1.478 & 1.263 & +0.215 [+0.169, +0.260] \\
+ & Condition I & 0.800 & 0.802 & 1.387 & 1.402 & $-$0.015 [$-$0.042, +0.015] \\
+\addlinespace
+Input-group DRO & Condition S & 0.824 & 0.783 & 1.543 & 1.281 & +0.262 [+0.212, +0.312] \\
+ & Condition I & 0.798 & 0.796 & 1.373 & 1.363 & +0.010 [$-$0.021, +0.039] \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{(b) Interactions and changes from no remedy}\\[2pt]
+\begin{tabular}{@{}llcc@{}}
+\toprule
+Variant & Scale & TTI & $\Delta$TTI \\
+\midrule
+No remedy & logit & +0.587 [+0.520, +0.667] & -- \\
+ & raw & +0.091 [+0.072, +0.113] & -- \\
+\addlinespace
+Severity-group DRO & logit & +0.230 [+0.184, +0.278] & $-$0.357 [$-$0.419, $-$0.302] \\
+ & raw & +0.037 [+0.027, +0.049] & $-$0.054 [$-$0.069, $-$0.042] \\
+\addlinespace
+Input-group DRO & logit & +0.251 [+0.210, +0.299] & $-$0.335 [$-$0.389, $-$0.285] \\
+ & raw & +0.040 [+0.030, +0.051] & $-$0.051 [$-$0.064, $-$0.040] \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{(c) Clean performance}\\[2pt]
+\begin{tabular}{@{}llcc@{}}
+\toprule
+Variant & Training & Clean AUROC & $\Delta$clean \\
+\midrule
+No remedy & Condition S & 0.802 [0.753, 0.844] & -- \\
+ & Condition I & 0.814 [0.768, 0.854] & -- \\
+\addlinespace
+Severity-group DRO & Condition S & 0.802 [0.759, 0.841] & +0.001 [$-$0.013, +0.016] \\
+ & Condition I & 0.813 [0.767, 0.852] & $-$0.001 [$-$0.011, +0.009] \\
+\addlinespace
+Input-group DRO & Condition S & 0.804 [0.756, 0.846] & +0.002 [$-$0.011, +0.016] \\
+ & Condition I & 0.807 [0.761, 0.846] & $-$0.007 [$-$0.017, +0.001] \\
+\bottomrule
+\end{tabular}

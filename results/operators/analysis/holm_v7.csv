@@ -1,0 +1,10 @@
+# post hoc multiplicity sensitivity: p by percentile-interval inversion of the paired cluster bootstrap, conditional on fitted models and masks; Holm within the family and scale
+family,mechanism,cell,logit,raw,p_logit,p_raw,p_logit_holm,p_raw_holm,nominal_excludes_zero_logit,nominal_excludes_zero_raw,holm_excludes_zero_logit,holm_excludes_zero_raw,holm_both_scales
+input configurations (8),runs,A_both,"+0.007 [-0.048, +0.059]","-0.006 [-0.017, +0.003]",0.7996,0.1819,1.0,0.9095,False,False,False,False,False
+input configurations (8),runs,A_dropout,"+0.051 [+0.002, +0.095]","+0.002 [-0.008, +0.011]",0.043,0.6577,0.258,1.0,True,False,False,False,False
+input configurations (8),runs,A_velocity,"+0.018 [-0.034, +0.066]","+0.002 [-0.008, +0.010]",0.4968,0.7406,1.0,1.0,False,False,False,False,False
+input configurations (8),runs,B_coorddrop,"+0.066 [+0.026, +0.099]","+0.006 [-0.001, +0.011]",0.005,0.099,0.04,0.5940000000000001,True,False,True,False,False
+input configurations (8),whole,A_dropout,"+0.009 [-0.059, +0.079]","-0.003 [-0.014, +0.008]",0.8076,0.6197,1.0,1.0,False,False,False,False,False
+input configurations (8),whole,B_coorddrop,"+0.051 [-0.013, +0.107]","+0.003 [-0.006, +0.012]",0.1069,0.4558,0.4276,1.0,False,False,False,False,False
+input configurations (8),armruns,A_dropout,"+0.052 [-0.001, +0.105]","+0.007 [-0.001, +0.015]",0.057,0.076,0.28500000000000003,0.532,False,False,False,False,False
+input configurations (8),frozen,A_dropout,"+0.064 [+0.017, +0.111]","+0.010 [+0.004, +0.017]",0.007,0.003,0.049,0.024,True,True,True,True,True

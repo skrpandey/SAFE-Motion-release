@@ -1,0 +1,18 @@
+# post hoc: out-of-fold R^2 of identifier-grouped ridge probes of the four window statistics from the 136-d pooled features, host test, own-world policy, first mask
+mechanism,world,statistic,r2_adversarial,r2_no_remedy,difference,difference_range_seed_pairs
+runs,S,low_conf,0.931,0.921,+0.010,"[-0.014, +0.023]"
+runs,S,missing,0.923,0.924,-0.001,"[-0.028, +0.015]"
+runs,S,frozen,0.282,0.127,+0.155,"[-0.143, +0.384]"
+runs,S,arm_low_conf,0.933,0.897,+0.036,"[-0.002, +0.069]"
+runs,I,low_conf,0.900,0.908,-0.008,"[-0.069, +0.045]"
+runs,I,missing,0.891,0.896,-0.004,"[-0.042, +0.045]"
+runs,I,frozen,0.406,0.162,+0.245,"[+0.024, +0.409]"
+runs,I,arm_low_conf,0.879,0.850,+0.029,"[-0.031, +0.079]"
+frozen,S,low_conf,0.814,0.782,+0.031,"[-0.019, +0.063]"
+frozen,S,missing,0.751,0.735,+0.017,"[-0.012, +0.039]"
+frozen,S,frozen,0.722,0.721,+0.000,"[-0.100, +0.120]"
+frozen,S,arm_low_conf,0.721,0.690,+0.030,"[-0.117, +0.171]"
+frozen,I,low_conf,0.855,0.831,+0.024,"[-0.041, +0.088]"
+frozen,I,missing,0.754,0.725,+0.029,"[-0.027, +0.129]"
+frozen,I,frozen,0.465,0.524,-0.058,"[-0.106, +0.013]"
+frozen,I,arm_low_conf,0.736,0.649,+0.087,"[-0.060, +0.211]"

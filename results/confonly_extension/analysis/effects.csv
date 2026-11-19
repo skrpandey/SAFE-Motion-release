@@ -1,0 +1,41 @@
+# protocol v16, cleaned selection; mask mean over test masks 2000/3000/4000, seeds averaged inside 2000 identifier-clustered resamples
+part,quantity,logit,raw,R_S,R_I,R_I_verdict,clean_S_minus_I,clean_verdict,n_seeds,p_inv,raw_p_inv,note
+A,MWI (A),"+0.59287 [+0.50552, +0.68772]","+0.10889 [+0.09062, +0.12806]","+0.63916 [+0.56093, +0.72141]","+0.04629 [+0.01646, +0.08124]",differs_from_zero,"-0.02136 [-0.03997, -0.00384]",differs_from_zero,3/3,,,
+A,"MWI (A), seeds and masks resampled (logit)","+0.59287 [+0.47653, +0.71713]",,,,,,,,,,
+A,"MWI (A), seeds and masks resampled (raw)",,"+0.10889 [+0.08214, +0.13553]",,,,,,,,,
+A,"MWI(ST-GCN) - MWI(CompactCTRGCN, v15conf seeds 0-2) [descriptive]","+0.00601 [-0.05399, +0.06019]","+0.01815 [+0.00648, +0.02824]",,,,,,,0.8956,0.0050,
+B,MWI (base9),"+0.59529 [+0.53077, +0.66805]","+0.09189 [+0.07288, +0.11315]","+0.62452 [+0.54634, +0.70727]","+0.02922 [+0.00722, +0.05206]",differs_from_zero,"-0.00287 [-0.01367, +0.00762]",within_margin,9/9,,,
+B,"MWI (base9), seeds and masks resampled (logit)","+0.59529 [+0.50260, +0.70536]",,,,,,,,,,
+B,"MWI (base9), seeds and masks resampled (raw)",,"+0.09189 [+0.07089, +0.11731]",,,,,,,,,
+B,"MWI (base9), Welch t interval over per-seed responses (logit)","+0.59529 [+0.55133, +0.63926]",,,,,,,,,,"df 10.9; seed SD World S 0.0549, World I 0.0238"
+C,MWI (C),"+0.25143 [+0.21007, +0.29876]","+0.03953 [+0.02975, +0.05119]","+0.26155 [+0.21249, +0.31152]","+0.01012 [-0.02116, +0.03908]",within_margin,"-0.00273 [-0.02079, +0.01532]",undetermined,3/3,,,
+C,"MWI (C), seeds and masks resampled (logit)","+0.25143 [+0.17060, +0.34133]",,,,,,,,,,
+C,"MWI (C), seeds and masks resampled (raw)",,"+0.03953 [+0.02552, +0.05547]",,,,,,,,,
+C,"MWI(C_groupdro_obs) - MWI(A_none, v15conf seeds 0-2)","-0.33543 [-0.38879, -0.28534]","-0.05121 [-0.06420, -0.03968]",,,,,,,0.0010,0.0010,
+C,"MWI(C_groupdro_obs) - MWI(A_none, nine seeds) [sensitivity]","-0.34387 [-0.38971, -0.29881]","-0.05236 [-0.06420, -0.04149]",,,,,,,0.0010,0.0010,
+C,"MWI(C_groupdro_obs) - MWI(C_groupdro, v15conf, severity groups) [descriptive]","+0.02108 [-0.01827, +0.06367]","+0.00258 [-0.00404, +0.01030]",,,,,,,0.2969,0.4408,
+C,"clean AUROC(C_groupdro_obs) - clean AUROC(A_none), World S",,"+0.00244 [-0.01085, +0.01616]",,,,,,,,,
+C,"clean AUROC(C_groupdro_obs) - clean AUROC(A_none), World I",,"-0.00748 [-0.01651, +0.00125]",,,,,,,,,
+B0,MWI (base3),"+0.58686 [+0.52017, +0.66727]","+0.09074 [+0.07177, +0.11292]","+0.61919 [+0.54384, +0.70746]","+0.03232 [+0.00212, +0.06544]",differs_from_zero,"-0.01265 [-0.02712, +0.00070]",undetermined,3/3,,,
+B0,"MWI (base3), seeds and masks resampled (logit)","+0.58686 [+0.49095, +0.70567]",,,,,,,,,,
+B0,"MWI (base3), seeds and masks resampled (raw)",,"+0.09074 [+0.06827, +0.11813]",,,,,,,,,
+C,"MWI(C_groupdro_obs) - MWI(A_none, v15conf seeds 0-2), seeds and masks resampled (logit)","-0.33543 [-0.44188, -0.23649]",,,,,,,,,,
+C,"MWI(C_groupdro_obs) - MWI(A_none, v15conf seeds 0-2), seeds and masks resampled (raw)",,"-0.05121 [-0.07097, -0.03372]",,,,,,,,,
+C,"MWI(C_groupdro_obs) - MWI(A_none, nine seeds), seeds and masks resampled (logit)","-0.34387 [-0.43925, -0.25799]",,,,,,,,,,
+C,"MWI(C_groupdro_obs) - MWI(A_none, nine seeds), seeds and masks resampled (raw)",,"-0.05236 [-0.06992, -0.03701]",,,,,,,,,
+X,"crossed R under runs (mask 2000), base9, World S","+0.48913 [+0.34321, +0.63011]",,,,,,,,,,"CompactCTRGCN no remedy, nine seeds"
+X,"crossed R under whole (mask 2000), base9, World S","+0.30987 [+0.18314, +0.43926]",,,,,,,,,,"CompactCTRGCN no remedy, nine seeds"
+X,"crossed R under frozen (mask 2000), base9, World S","+0.35112 [+0.22962, +0.48941]",,,,,,,,,,"CompactCTRGCN no remedy, nine seeds"
+X,"crossed R under armruns (mask 2000), base9, World S","+0.59462 [+0.49700, +0.70898]",,,,,,,,,,"CompactCTRGCN no remedy, nine seeds"
+X,"crossed R under runs (mask 2000), base9, World I","-0.16855 [-0.27066, -0.06324]",,,,,,,,,,"CompactCTRGCN no remedy, nine seeds"
+X,"crossed R under whole (mask 2000), base9, World I","+0.09871 [-0.00457, +0.21013]",,,,,,,,,,"CompactCTRGCN no remedy, nine seeds"
+X,"crossed R under frozen (mask 2000), base9, World I","+0.34022 [+0.22207, +0.47437]",,,,,,,,,,"CompactCTRGCN no remedy, nine seeds"
+X,"crossed R under armruns (mask 2000), base9, World I","+0.03234 [-0.00661, +0.06882]",,,,,,,,,,"CompactCTRGCN no remedy, nine seeds"
+X,"crossed R under runs (mask 2000), A, World S","+0.70006 [+0.55657, +0.85230]",,,,,,,,,,ST-GCN no remedy
+X,"crossed R under whole (mask 2000), A, World S","+0.43770 [+0.30504, +0.55871]",,,,,,,,,,ST-GCN no remedy
+X,"crossed R under frozen (mask 2000), A, World S","+0.12025 [+0.06087, +0.19072]",,,,,,,,,,ST-GCN no remedy
+X,"crossed R under armruns (mask 2000), A, World S","+0.64745 [+0.54824, +0.75325]",,,,,,,,,,ST-GCN no remedy
+X,"crossed R under runs (mask 2000), A, World I","+0.60193 [+0.49635, +0.70942]",,,,,,,,,,ST-GCN no remedy
+X,"crossed R under whole (mask 2000), A, World I","+0.26964 [+0.14700, +0.39402]",,,,,,,,,,ST-GCN no remedy
+X,"crossed R under frozen (mask 2000), A, World I","+0.19558 [+0.12276, +0.27490]",,,,,,,,,,ST-GCN no remedy
+X,"crossed R under armruns (mask 2000), A, World I","+0.05300 [-0.00592, +0.11710]",,,,,,,,,,ST-GCN no remedy

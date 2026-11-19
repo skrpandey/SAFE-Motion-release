@@ -1,0 +1,5 @@
+# post hoc: AUROC of each statistic with non-SMM as the high class (fixed direction), identifier-clustered 95% interval (2,000); 'visible' statistics exclude frames with all 17 joints missing
+population,segments,identifiers,auc_q_arm_lowconf,auc_q_frozen,auc_q_arm_lowconf_visible,auc_q_frozen_visible,auc_absent_frac,absent_share_of_missing_nonSMM,qc_fail_nonSMM,qc_fail_visible_nonSMM,absent_share_of_missing_SMM,qc_fail_SMM,qc_fail_visible_SMM
+"train, length protocol",26393,286,"0.693 [0.679, 0.707]","0.670 [0.655, 0.684]","0.564 [0.551, 0.577]","0.500 [0.499, 0.501]","0.670 [0.655, 0.685]",0.620,0.588,0.329,0.238,0.306,0.184
+"test, length protocol",3834,40,"0.690 [0.658, 0.721]","0.651 [0.623, 0.682]","0.567 [0.531, 0.601]","0.498 [0.496, 0.500]","0.654 [0.626, 0.684]",0.580,0.551,0.308,0.173,0.242,0.173
+host test (QC pass),1966,40,"0.527 [0.495, 0.562]","0.494 [0.471, 0.518]","0.527 [0.493, 0.563]","0.499 [0.496, 0.500]","0.500 [0.477, 0.524]",0.030,0.000,0.000,0.031,0.000,0.000

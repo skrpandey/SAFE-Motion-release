@@ -1,0 +1,33 @@
+{
+ "fit": "v7_I_w0_whole_mid_A_none_s0",
+ "checkpoint": "results/aws/repair_v14/cache/clean/pilot_v7_I_w0_whole_mid_A_none_s0.pt",
+ "checkpoint_sha256_16": "4ee08ae28e3c7e5a",
+ "stored_file": "results/aws/repair_v14/results/clean/v7/scores/v7_I_w0_whole_mid_A_none_s0.csv",
+ "rule": "conf",
+ "device": "cuda",
+ "torch": "2.5.1",
+ "protocol_commit": "e5dca59",
+ "tolerance": 0.0001,
+ "gpu_minutes": 0.23,
+ "columns": {
+  "clean": {
+   "max_abs_diff": 0.00037297559356685994,
+   "n_rows_differing": 1960,
+   "auroc_new": 0.7978886004017048,
+   "auroc_stored": 0.7978830892078578
+  },
+  "armruns_S_mid_m2000": {
+   "max_abs_diff": 0.00036000427627558285,
+   "n_rows_differing": 1961,
+   "auroc_new": 0.750023269485132,
+   "auroc_stored": 0.7500496007446236
+  },
+  "armruns_I_mid_m2000": {
+   "max_abs_diff": 0.0004319817428588557,
+   "n_rows_differing": 1962,
+   "auroc_new": 0.7519828050751972,
+   "auroc_stored": 0.751983417430069
+  }
+ },
+ "pass": false
+}

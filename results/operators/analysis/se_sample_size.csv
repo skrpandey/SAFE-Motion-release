@@ -1,0 +1,22 @@
+# post hoc; SE on the mask mean from seed-ensembled scores; half-width of the 95% child bootstrap interval
+mechanism,SE_full,k_children,median_half_width,q25_half_width,q75_half_width,post_hoc
+missing runs,0.7807,10,0.2642,0.2178,0.3255,yes
+missing runs,0.7807,20,0.1646,0.1538,0.1906,yes
+missing runs,0.7807,30,0.1342,0.1237,0.1437,yes
+missing runs,0.7807,40,0.1121,0.1121,0.1121,yes
+"missing runs, low",0.416,10,0.2065,0.1636,0.2464,yes
+"missing runs, low",0.416,20,0.1509,0.1349,0.173,yes
+"missing runs, low",0.416,30,0.1272,0.1177,0.136,yes
+"missing runs, low",0.416,40,0.1135,0.1135,0.1135,yes
+whole-joint absence,0.5153,10,0.1737,0.1484,0.2373,yes
+whole-joint absence,0.5153,20,0.1186,0.1076,0.1372,yes
+whole-joint absence,0.5153,30,0.0964,0.0873,0.1062,yes
+whole-joint absence,0.5153,40,0.0844,0.0844,0.0844,yes
+frozen frames,0.4281,10,0.168,0.1346,0.2005,yes
+frozen frames,0.4281,20,0.1197,0.1074,0.1348,yes
+frozen frames,0.4281,30,0.1013,0.0928,0.1095,yes
+frozen frames,0.4281,40,0.083,0.083,0.083,yes
+arm confidence,0.5956,10,0.1576,0.1324,0.2069,yes
+arm confidence,0.5956,20,0.1133,0.0983,0.1258,yes
+arm confidence,0.5956,30,0.0908,0.0836,0.0978,yes
+arm confidence,0.5956,40,0.0745,0.0745,0.0745,yes

@@ -1,0 +1,30 @@
+# post hoc: illustrative hypothetical test-cluster scenarios, definitions in configs/protocols/cluster_scenarios_post_hoc.yaml; primary estimator unchanged; identity remains open
+scenario,n_clusters,cluster_sizes_min_median_max,n_rows,resamples_single_class,quantity,point,ci_lo,ci_hi,raw_point,raw_ci_lo,raw_ci_hi
+primary,40,1/48/123,1966,0,MWI missing runs mid,0.7514,0.6532,0.8629,0.131,0.1153,0.1493
+primary,40,1/48/123,1966,0,MWI missing runs low,0.3811,0.2939,0.475,0.0689,0.0518,0.0904
+primary,40,1/48/123,1966,0,MWI whole-joint absence mid,0.4726,0.4064,0.5477,0.0814,0.0663,0.0978
+primary,40,1/48/123,1966,0,MWI frozen frames mid,0.3609,0.287,0.446,0.0578,0.0464,0.0686
+primary,40,1/48/123,1966,0,MWI arm confidence mid,0.5501,0.4888,0.6181,0.0846,0.0675,0.1042
+primary,40,1/48/123,1966,0,"Group DRO - none, missing runs",-0.2973,-0.3566,-0.2313,-0.051,-0.0633,-0.0394
+primary,40,1/48/123,1966,0,"Group DRO - none, frozen frames",-0.2476,-0.3057,-0.1887,-0.0382,-0.0461,-0.029
+A_pairwise,29,5/60/178,1966,0,MWI missing runs mid,0.7514,0.6667,0.8617,0.131,0.1171,0.148
+A_pairwise,29,5/60/178,1966,0,MWI missing runs low,0.3811,0.3005,0.4883,0.0689,0.0533,0.0913
+A_pairwise,29,5/60/178,1966,0,MWI whole-joint absence mid,0.4726,0.4113,0.5449,0.0814,0.0692,0.0951
+A_pairwise,29,5/60/178,1966,0,MWI frozen frames mid,0.3609,0.2951,0.4423,0.0578,0.0477,0.0688
+A_pairwise,29,5/60/178,1966,0,MWI arm confidence mid,0.5501,0.4822,0.6195,0.0846,0.0714,0.0982
+A_pairwise,29,5/60/178,1966,0,"Group DRO - none, missing runs",-0.2973,-0.3519,-0.2489,-0.051,-0.0616,-0.0428
+A_pairwise,29,5/60/178,1966,0,"Group DRO - none, frozen frames",-0.2476,-0.3057,-0.1894,-0.0382,-0.0471,-0.0289
+B_one_cluster,19,5/49/1100,1966,0,MWI missing runs mid,0.7514,0.6712,0.9539,0.131,0.1174,0.171
+B_one_cluster,19,5/49/1100,1966,0,MWI missing runs low,0.3811,0.3278,0.5155,0.0689,0.056,0.0957
+B_one_cluster,19,5/49/1100,1966,0,MWI whole-joint absence mid,0.4726,0.4028,0.5657,0.0814,0.0694,0.1029
+B_one_cluster,19,5/49/1100,1966,0,MWI frozen frames mid,0.3609,0.3181,0.5183,0.0578,0.0508,0.0853
+B_one_cluster,19,5/49/1100,1966,0,MWI arm confidence mid,0.5501,0.4203,0.6016,0.0846,0.0653,0.0925
+B_one_cluster,19,5/49/1100,1966,0,"Group DRO - none, missing runs",-0.2973,-0.4203,-0.2554,-0.051,-0.0779,-0.044
+B_one_cluster,19,5/49/1100,1966,0,"Group DRO - none, frozen frames",-0.2476,-0.3587,-0.2107,-0.0382,-0.0573,-0.0324
+C_matched_only,18,5/47/122,866,0,MWI missing runs mid,0.8174,0.6334,1.0154,0.1425,0.1099,0.185
+C_matched_only,18,5/47/122,866,0,MWI missing runs low,0.4172,0.3072,0.5532,0.0739,0.0513,0.1063
+C_matched_only,18,5/47/122,866,0,MWI whole-joint absence mid,0.4768,0.3787,0.6013,0.0834,0.0646,0.1142
+C_matched_only,18,5/47/122,866,0,MWI frozen frames mid,0.436,0.3382,0.5636,0.0719,0.0559,0.0915
+C_matched_only,18,5/47/122,866,0,MWI arm confidence mid,0.4992,0.3961,0.6209,0.0765,0.062,0.0954
+C_matched_only,18,5/47/122,866,0,"Group DRO - none, missing runs",-0.336,-0.4493,-0.2377,-0.0602,-0.0854,-0.0423
+C_matched_only,18,5/47/122,866,0,"Group DRO - none, frozen frames",-0.2967,-0.3761,-0.2046,-0.0477,-0.0613,-0.0325

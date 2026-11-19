@@ -1,0 +1,19 @@
+mechanism,operator,valid_rule,mask_seed,path,comparison,n_segments,max_abs_diff_xy,segments_with_any_xy_diff,conf_channel_max_abs_diff,conf_channel_segments_with_diff
+armruns,confscale,coords,2000,evaluation (centre crop),S vs I,1966,0.000e+00,0,7.418e-01,1966
+armruns,confscale,coords,2000,evaluation (centre crop),S vs clean,1966,0.000e+00,0,7.418e-01,1959
+armruns,confscale,coords,2000,evaluation (centre crop),I vs clean,1966,0.000e+00,0,7.288e-01,1958
+armruns,confscale,coords,2000,"training (matched crops and flips, seed 0)",S vs I,1966,0.000e+00,0,7.418e-01,1966
+armruns,confscale,coords,2000,"training (matched crops and flips, seed 0)",S vs clean,1966,0.000e+00,0,7.418e-01,1959
+armruns,confscale,coords,2000,"training (matched crops and flips, seed 0)",I vs clean,1966,0.000e+00,0,7.288e-01,1956
+armruns,confscale,coords,3000,evaluation (centre crop),S vs I,1966,0.000e+00,0,7.293e-01,1966
+armruns,confscale,coords,3000,evaluation (centre crop),S vs clean,1966,0.000e+00,0,7.291e-01,1958
+armruns,confscale,coords,3000,evaluation (centre crop),I vs clean,1966,0.000e+00,0,7.293e-01,1959
+armruns,confscale,coords,3000,"training (matched crops and flips, seed 0)",S vs I,1966,0.000e+00,0,7.293e-01,1966
+armruns,confscale,coords,3000,"training (matched crops and flips, seed 0)",S vs clean,1966,0.000e+00,0,7.188e-01,1959
+armruns,confscale,coords,3000,"training (matched crops and flips, seed 0)",I vs clean,1966,0.000e+00,0,7.293e-01,1959
+armruns,confscale,coords,4000,evaluation (centre crop),S vs I,1966,0.000e+00,0,7.410e-01,1966
+armruns,confscale,coords,4000,evaluation (centre crop),S vs clean,1966,0.000e+00,0,7.191e-01,1958
+armruns,confscale,coords,4000,evaluation (centre crop),I vs clean,1966,0.000e+00,0,7.410e-01,1959
+armruns,confscale,coords,4000,"training (matched crops and flips, seed 0)",S vs I,1966,0.000e+00,0,7.410e-01,1965
+armruns,confscale,coords,4000,"training (matched crops and flips, seed 0)",S vs clean,1966,0.000e+00,0,7.191e-01,1954
+armruns,confscale,coords,4000,"training (matched crops and flips, seed 0)",I vs clean,1966,0.000e+00,0,7.410e-01,1957
